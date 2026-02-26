@@ -1,0 +1,520 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../paper/integration-data-scientist-team-implications-and-challenges-0.html" />
+<link rel="shortlink" href="../node/460.html" />
+<link rel="shortcut icon" href="../sites/default/files/favicon-96x96.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>The integration of the data scientist into the team: implications and challenges  | Data Science</title>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/system/system.base.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.menus.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.messages.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.core.css?t4kojz");
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/comment/comment.css?t4kojz");
+@import url("https://datasciencehub.net/modules/field/theme/field.css?t4kojz");
+@import url("../sites/all/modules/logintoboggan/logintoboggan.css%3Ft4kojz.css");
+@import url("https://datasciencehub.net/modules/node/node.css?t4kojz");
+@import url("https://datasciencehub.net/modules/search/search.css?t4kojz");
+@import url("https://datasciencehub.net/modules/user/user.css?t4kojz");
+@import url("../sites/all/modules/views/css/views.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/modules/ctools/css/ctools.css%3Ft4kojz.css");
+@import url("../sites/all/modules/ctools/css/modal.css%3Ft4kojz.css");
+@import url("../sites/default/modules/modal_forms/css/modal_forms_popup.css%3Ft4kojz.css");
+@import url("../sites/all/modules/responsive_menus/styles/responsive_menus_simple/css/responsive_menus_simple.css%3Ft4kojz.css");
+@import url("../sites/all/modules/date/date_api/date.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="screen">
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.headings.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.image.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.layout.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/themes/corolla/css/html-elements.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/forms.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/tables.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/page.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/articles.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/comments.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/fields.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/blocks.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/navigation.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/corolla.settings.style.css%3Ft4kojz.css");
+@import url("../sites/default/files/color/corolla-80fb2671/colors.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="print">
+@import url("../sites/all/themes/corolla/css/print.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/default/files/adaptivetheme/corolla_files/corolla.responsive.layout.css%3Ft4kojz.css" media="only screen" />
+<style type="text/css" media="screen">
+@import url("../sites/default/files/adaptivetheme/corolla_files/corolla.fonts.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.custom.css%3Ft4kojz.css" media="only screen" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.portrait.css%3Ft4kojz.css" media="only screen and (max-width:320px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.landscape.css%3Ft4kojz.css" media="only screen and (min-width:321px) and (max-width:480px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.portrait.css%3Ft4kojz.css" media="only screen and (min-width:481px) and (max-width:768px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.landscape.css%3Ft4kojz.css" media="only screen and (min-width:769px) and (max-width:1024px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.desktop.css%3Ft4kojz.css" media="only screen and (min-width:1025px)" />
+
+<!--[if lt IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/default/files/adaptivetheme/corolla_files/corolla.lt-ie9.layout.css?t4kojz");
+</style>
+<![endif]-->
+
+<!--[if lte IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/all/themes/corolla/css/ie-lte-9.css?t4kojz");
+</style>
+<![endif]-->
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-extend-3.4.0.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/drupal.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ui/jquery.ui.core.min.js?v=1.8.7"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.cookie.js?v=1.0"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.form.js?v=2.52"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form-single-submit.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ajax.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/default/modules/jquery_update/js/jquery_update.js%3Fv=0.0.1"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/progress.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/all/modules/ctools/js/modal.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/default/modules/modal_forms/js/modal_forms_popup.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/responsive_menus/styles/responsive_menus_simple/js/responsive_menus_simple.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js%3Ft4kojz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-107867597-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="../sites/all/modules/field_group/field_group.js%3Ft4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/tableheader.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/collapse.js?v=7.98"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"corolla","theme_token":"Vti2a-aEB4SS9Ake5ShMDdytjQr8kYImbrUY4RAinys","jquery_version":"default","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/form-single-submit.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/default\/modules\/jquery_update\/js\/jquery_update.js":1,"misc\/progress.js":1,"sites\/all\/modules\/ctools\/js\/modal.js":1,"sites\/default\/modules\/modal_forms\/js\/modal_forms_popup.js":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/js\/responsive_menus_simple.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/field_group\/field_group.js":1,"misc\/tableheader.js":1,"misc\/collapse.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ctools\/css\/modal.css":1,"sites\/default\/modules\/modal_forms\/css\/modal_forms_popup.css":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/css\/responsive_menus_simple.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.headings.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.image.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/corolla\/css\/html-elements.css":1,"sites\/all\/themes\/corolla\/css\/forms.css":1,"sites\/all\/themes\/corolla\/css\/tables.css":1,"sites\/all\/themes\/corolla\/css\/page.css":1,"sites\/all\/themes\/corolla\/css\/articles.css":1,"sites\/all\/themes\/corolla\/css\/comments.css":1,"sites\/all\/themes\/corolla\/css\/fields.css":1,"sites\/all\/themes\/corolla\/css\/blocks.css":1,"sites\/all\/themes\/corolla\/css\/navigation.css":1,"sites\/all\/themes\/corolla\/css\/fonts.css":1,"sites\/all\/themes\/corolla\/css\/corolla.settings.style.css":1,"sites\/all\/themes\/corolla\/color\/colors.css":1,"sites\/all\/themes\/corolla\/css\/print.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.responsive.layout.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.fonts.css":1,"sites\/all\/themes\/corolla\/css\/responsive.custom.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.desktop.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.lt-ie9.layout.css":1,"sites\/all\/themes\/corolla\/css\/ie-lte-9.css":1}},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E"},"modal-popup-small":{"modalSize":{"type":"fixed","width":500,"height":150},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-medium":{"modalSize":{"type":"fixed","width":550,"height":450},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-large":{"modalSize":{"type":"scale","width":0.8,"height":0.8},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"responsive_menus":[{"toggler_text":"\u2630 Menu","selectors":["#block-system-main-menu"],"media_size":"935","media_unit":"px","absolute":"1","remove_attributes":"1","responsive_menus_style":"responsive_menus_simple"}],"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/search\/node":true,"\/comment\/47":true},"field_group":{"fieldset":"full"},"ctools-sample-style":{"modalSize":{"type":"fixed","width":1098,"height":500,"addWidth":20,"addHeight":15},"modalOptions":{"opacity":0.5,"background-color":"#000"},"animation":"fadeIn","modalTheme":"CToolsSampleModal","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/ctools_ajax_sample\/images\/ajax-loader.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E"},"adaptivetheme":{"corolla":{"layout_settings":{"bigscreen":"three-col-grail","tablet_landscape":"three-col-grail","tablet_portrait":"one-col-vert","smalltouch_landscape":"one-col-vert","smalltouch_portrait":"one-col-stack"},"media_query_settings":{"bigscreen":"only screen and (min-width:1025px)","tablet_landscape":"only screen and (min-width:769px) and (max-width:1024px)","tablet_portrait":"only screen and (min-width:481px) and (max-width:768px)","smalltouch_landscape":"only screen and (min-width:321px) and (max-width:480px)","smalltouch_portrait":"only screen and (max-width:320px)"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]>
+<script src="https://datasciencehub.net/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?t4kojz"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-460 node-type-submit-paper site-name-hidden atr-7.x-3.x atv-7.x-3.1 lang-en site-name-data-science section-paper color-scheme-custom corolla bs-n bb-n mb-dd rc-6 rct-6">
+  <div id="skip-link" class="nocontent">
+    <a href="47.html#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="page-wrapper">
+  <div id="page" class="page ssc-n ssw-n ssa-l sss-n btc-n btw-b bta-l bts-n ntc-n ntw-b nta-l nts-n ctc-n ctw-b cta-l cts-n ptc-n ptw-b pta-l pts-n">
+
+          <div id="menu-bar-wrapper">
+        <div class="container clearfix">
+          <div id="menu-bar" class="nav clearfix"><nav id="block-system-main-menu" class="block block-system block-menu menu-wrapper menu-bar-wrapper clearfix odd first block-count-1 block-region-menu-bar block-main-menu"  role="navigation">  
+      <h2 class="element-invisible block-title">Main menu</h2>
+  
+  <ul class="menu clearfix"><li class="first leaf menu-depth-1 menu-item-757"><a href="../content/about-data-science.html">About</a></li><li class="leaf menu-depth-1 menu-item-758"><a href="../content/editors.html">Editorial Board</a></li><li class="leaf menu-depth-1 menu-item-1559"><a href="../content/submit-manuscript.html">Submit Manuscript</a></li><li class="leaf menu-depth-1 menu-item-1612"><a href="../content/calls.html">Calls</a></li><li class="leaf menu-depth-1 menu-item-759"><a href="../content/guidelines-authors.html">For Authors</a></li><li class="leaf menu-depth-1 menu-item-760"><a href="../content/guidelines-reviewers.html">For Reviewers</a></li><li class="leaf menu-depth-1 menu-item-582"><a href="../underreview.html" title="Under Review">Under Review</a></li><li class="leaf menu-depth-1 menu-item-583"><a href="../reviewed.html" title="">Reviewed</a></li><li class="last leaf menu-depth-1 menu-item-1611"><a href="../ReviewedAccepted.html" title="">Accepted</a></li></ul>
+  </nav><div id="block-orcid-login-orcid-login" class="block block-orcid-login no-title menu-wrapper menu-bar-wrapper clearfix even last block-count-2 block-region-menu-bar block-orcid-login" >  
+  
+  <p style="background-color: #003b3a; float:right;"><a style="vertical-align: middle; color: white; padding: 10px; display: inline-block; text-decoration: none;" href="https://orcid.org/oauth/authorize?client_id=APP-223SGGDDO35LKOT2&amp;response_type=code&amp;scope=%2Fauthenticate&amp;redirect_uri=https%3A%2F%2Fdatasciencehub.net%2F&amp;state=eyJyZWRpcmVjdCI6ImNvbW1lbnRcLzQ3In0%3D"><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle;"/> Log In with ORCID</a></p>
+  </div></div>        </div>
+      </div>
+    
+    <div id="header-wrapper">
+      <div class="container clearfix">
+	        <header class="clearfix with-logo" role="banner">
+
+                      <div id="branding" class="branding-elements clearfix">
+
+                              <div id="logo">
+                  <a href="../index.html"><img class="site-logo" typeof="foaf:Image" src="../sites/default/files/DS_LOGO_vertical.png" alt="Data Science" /></a>                </div>
+              
+                              <div class="element-invisible h-group" id="name-and-slogan">
+
+                                      <h1 class="element-invisible" id="site-name"><a href="../index.html" title="Home page">Data Science</a></h1>
+                  
+                  
+                </div>
+              
+            </div>
+          
+          
+        </header>
+
+      </div>
+    </div>
+
+          <div id="top-panels-wrapper">
+        <div class="container clearfix">
+          <!-- Three column 3x33 Gpanel -->
+          <div class="at-panel gpanel panel-display three-3x33 clearfix">
+                                                          </div>
+        </div>
+      </div>
+    
+    
+    
+    <div id="content-wrapper">
+      <div class="container">
+
+        <div id="columns">
+          <div class="columns-inner clearfix">
+
+            <div id="content-column">
+              <div class="content-inner">
+
+                
+                <section id="main-content" role="main">
+
+                  
+                  <div class="content-margin">
+                    <div class="content-style">
+
+                      
+                      
+                      
+                                              <header class="clearfix">
+                          <h1 id="page-title">
+                            The integration of the data scientist into the team: implications and challenges                           </h1>
+                        </header>
+                      
+                      
+                      
+                      <div id="content">
+                        <div class="region region-content"><div id="block-system-main" class="block block-system no-title odd first last block-count-3 block-region-content block-main" >  
+  
+  <article id="node-460" class="node node-submit-paper article odd node-lang-en node-full ia-n clearfix" about="/paper/integration-data-scientist-team-implications-and-challenges-0" typeof="sioc:Item foaf:Document" role="article">
+  <div class="node-inner">
+
+
+
+              <header class="node-header">
+
+        
+        
+      </header>
+        <span property="dc:title" content="The integration of the data scientist into the team: implications and challenges " class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="3" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+    <div class="node-content">
+        
+      <h3>Tracking #: 460-1440</h3>          								<fieldset>
+					<!-- legend>
+						<span class="fieldset-legend">Paper Data</span>
+					</legend -->
+
+					
+
+
+					
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><h5>Authors:</h5><br/><form action="47.html" method="post" id="authors-table-form-anonymus" accept-charset="UTF-8"><div><div id="authors_Container"><table class="sticky-enabled">
+ <thead><tr><th></th><th>Name</th><th>ORCID</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-1045">
+  <input type="checkbox" id="edit-authors-1045" name="authors[1045]" value="1045" class="form-checkbox" />
+</div>
+</td><td>Manisha Desai</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-6949-2651" target="_blank">https://orcid.org/0000-0002-6949-2651</a></td> </tr>
+</tbody>
+</table>
+</div><input type="hidden" name="author_nd" value="460" />
+<input type="hidden" name="author_vd" value="1440" />
+<input type="hidden" name="form_build_id" value="form-LqRnR7S3g4D2A78cgxmuYVVCV9ADOMUBLy2EWv5hF6g" />
+<input type="hidden" name="form_id" value="authors_table_form_anonymus" />
+</div></form><hr/></div><br/>
+
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-editor field-type-user-reference field-label-above view-mode-full"><h2 class="field-label">Responsible editor:&nbsp;</h2><div class="field-items"><div class="field-item even">Tobias Kuhn</div></div></section></div><br/>
+					                    <div style="background-color: #E3E5E3;border-radius:5px;padding-top:4px;padding-bottom:4px;padding-left:6px;">
+					<section class="field field-name-field-submission-type field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Submission Type:&nbsp;</h2><div class="field-items"><div class="field-item even">Position Paper</div></div></section><section class="field field-name-field-abstract field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Abstract:&nbsp;</h2><div class="field-items"><div class="field-item even">Modern biomedical research is complex and requires a cross section of experts collaborating using multi-, inter-, or transdisciplinary approaches to address scientific questions.  Known as team science, such approaches have become so critical it has given rise to a new field – the science of team science.  In biomedical research, data scientists often play a critical role in team-based collaborations. Integration of data scientists into research teams has multiple advantages to the clinical and translational investigator as well as to the data scientist.  Clinical and translational investigators benefit from having an invested dedicated collaborator who can assume principal responsibility for essential data-related activities, while the data scientist can build a career developing tools that are relevant and data-driven. Participation in team science, however, can pose challenges.  One particular challenge is the ability to appropriately evaluate the data scientist’s scholarly contributions, necessary for promotion.  Only a minority of academic health centers have attempted to address this challenge. In order for team science to thrive on academic campuses, leaders of institutions need to hire data science faculty for the purpose of doing team science, with novel systems in place that incentivize the data scientist’s engagement in team science and that allow for appropriate evaluation of performance. Until such systems are adopted at the institutional level, the ability to conduct team science to address modern biomedical research with its increasingly complex data needs will be compromised. Fostering team science on campuses by putting supportive systems in place will benefit not only clinical and translational investigators as well as data scientists, but also the larger academic institution.</div></div></section><section class="field field-name-field-pdf field-type-file field-label-above view-mode-full"><h2 class="field-label">Manuscript:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="File" title="application/vnd.openxmlformats-officedocument.wordprocessingml.document" src="https://datasciencehub.net/modules/file/icons/x-office-document.png" /> <a href="../system/files/ds-paper-460.docx" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document; length=110957">ds-paper-460.docx</a></span></div></div></section><section class="field field-name-field-supplementary-files field-type-file field-label-above view-mode-full"><h2 class="field-label">Supplementary Files (optional):&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="Microsoft Office document icon" title="application/msword" src="https://datasciencehub.net/modules/file/icons/x-office-document.png" /> <a href="../system/files/ds-supplementary-460.doc" type="application/msword; length=78336">ds-supplementary-460.doc</a></span></div></div></section><section class="field field-name-field-previous-version field-type-node-reference field-label-above view-mode-full"><h2 class="field-label">Previous Version:&nbsp;</h2><div class="field-items"><div class="field-item even"><a href="../paper/integration-data-scientist-team-implications-and-challenges.html">The integration of the data scientist into the team: implications and challenges</a></div></div></section><div class="view view-revised-verision view-id-revised_verision view-display-id-entity_view_1 view-dom-id-092f9c057109e349f0a0e936f4013c57">
+      
+      <div class="view-header">
+      <b>Revised Version:</b>    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="../paper/integration-data-scientist-team-implications-and-challenges-1.html">The integration of the data scientist into the team: implications and challenges</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> <section class="field field-name-field-tags field-type-taxonomy-term-reference field-label-above view-mode-full"><h2 class="field-label">Tags:&nbsp;</h2><ul class="field-items"><li class="field-item even">Reviewed</li></ul></section><section class="field field-name-field-data-repository-urls field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Data repository URLs:&nbsp;</h2><div class="field-items"><div class="field-item even"><p>None</p>
+</div></div></section><section class="field field-name-field-date-of-submission field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Submission:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-05-13T00:00:00-04:00">Saturday, May 13, 2017</span></div></div></section><section class="field field-name-field-date-of-decision field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Decision:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-05-30T00:00:00-04:00">Tuesday, May 30, 2017</span></div></div></section><br><br><b>Nanopublication URLs:</b> <br>                    </div>
+                    <br/>
+
+					
+                    
+                    <div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-decision field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Decision:&nbsp;</h2><div class="field-items"><div class="field-item even">Accept</div></div></section></div><br/>                    <div id="review">
+                    		                    	</div>
+
+					
+										<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><b>Solicited Reviews:</b><br/><form action="47.html" method="post" id="get-submitted-reviews" accept-charset="UTF-8"><div><fieldset class="collapsible collapsed form-wrapper" id="edit-fset1"><legend><span class="fieldset-legend">Review #1 <strong>submitted on 24/May/2017</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Olivia Woolley-Meza</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0003-4517-2765" target="_blank">https://orcid.org/0000-0003-4517-2765</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Good</br><b style="color:#f39222">Suggested Decision: </b> Accept</br><b style="color:#f39222">Technical Quality of the paper:</b> Average<br/><b style="color:#f39222">Presentation:</b> Good<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> High significance<br/><b style="color:#f39222">Background:</b> Reasonable<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences (summary of changes and improvements for
+second round reviews): </b><br/><p>As previous version</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>My comments have been addressed in a satisfactory manner.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>None</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>To clarify the first comment I made in my original review, the point was simply that some of the power of  different perspectives inherent in cross-disciplinary science could be lost in a team where social forces could lead to more conformism. There is nothing specific about cross-disciplinary work that makes it more susceptible to such a process. Rather I was just raising the point as a reminder that not all forms of team integration lead to the best science. But I do agree that this is outside the scope of the current paper.</p>
+</p></div></fieldset>
+<fieldset class="collapsible collapsed form-wrapper" id="edit-fset2"><legend><span class="fieldset-legend">Review #2 <strong>submitted on 26/May/2017</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">Review Details<br/><hr/></div><p>Reviewer has chosen to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Good</br><b style="color:#f39222">Suggested Decision: </b> Accept</br><b style="color:#f39222">Technical Quality of the paper:</b> Good<br/><b style="color:#f39222">Presentation:</b> Good<br/><b style="color:#f39222">Reviewer`s confidence:</b> High<br/><b style="color:#f39222">Significance:</b> High significance<br/><b style="color:#f39222">Background:</b> Comprehensive<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences (summary of changes and improvements for
+second round reviews): </b><br/><p>The paper raises awareness of the team-based nature of much scientific research (especially in biomedical research), and specifically the role of data scientists in these teams. It explores the issues arising from this in terms of incentives for data scientists to participate in teams and the appropriate distribution of credit for team work. The conclusion is that hiring panels and other institutional bodies should review how they assess the work of candidates to better account for the contributions data scientists make.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>The paper raises important questions about the role appropriate credit for scientists plays in maintaining well functioning teams and departments, and keeping excellent scientists involved in research. The specific focus on the role data scientists play is well suited to the journal and timely given the increasing number of researchers identifying as such.</p>
+<p>The paper is more complete and substantially improved after revision.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>None</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/></p></div></fieldset>
+<fieldset class="collapsible collapsed form-wrapper" id="edit-fset3"><legend><span class="fieldset-legend">Review #3 <strong>submitted on 30/May/2017</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Brian Davis</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-5759-2655" target="_blank">https://orcid.org/0000-0002-5759-2655</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Good</br><b style="color:#f39222">Suggested Decision: </b> Accept</br><b style="color:#f39222">Technical Quality of the paper:</b> Good<br/><b style="color:#f39222">Presentation:</b> Weak<br/><b style="color:#f39222">Reviewer`s confidence:</b> High<br/><b style="color:#f39222">Significance:</b> Moderate significance<br/><b style="color:#f39222">Background:</b> Reasonable<br/><b style="color:#f39222">Novelty:</b> Clear novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences (summary of changes and improvements for
+second round reviews): </b><br/><p>See previous review.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>My comments have been addressed in a satisfactory manner</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>No reasons</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>I would ask the Editor that there is a proper sectioning format in the final version.</p>
+</p></div></fieldset>
+<input type="hidden" name="form_build_id" value="form-OlNONlOddZzGltTWoH_8183rzMDgKziRdK27ZYQQiPw" />
+<input type="hidden" name="form_id" value="get_submitted_reviews" />
+</div></form></div><br/>                    
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"></div><br/>
+				</fieldset>
+				
+    </div>
+
+    <div id="admin-review">
+			</div>
+
+	<div id="decision">
+			</div>
+
+
+
+
+          <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first"><span><a href="../user/login%3Fdestination=comment%252Freply%252F460%23comment-form.html">Log in</a> to post comments</span></li><li class="camera_ready_files_field_paper last"></li></ul></nav>
+    
+    <section id="comments" class="comment-wrapper">
+
+          <h2 class="title">
+      3 Comments    </h2>
+      
+  <a id="comment-5"></a>
+<article class="comment odd first clearfix" about="/comment/5#comment-5" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="5.html#comment-5" rel="bookmark">Response by Author to Reviews of Previous Version</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2017-05-13T06:18:00-04:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/tobias-kuhn" typeof="sioc:UserAccount" property="foaf:name" datatype="">Tobias Kuhn</span> on <time datetime="2017-05-13T06:18:00Z"><span class="date-time">Sat, 05/13/2017 - 06:18</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/integration-data-scientist-team-implications-and-challenges-0" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p class="western" style="margin-left:0.48cm; margin-bottom:0cm"><font face="Arial, sans-serif"><u><b>Reviewer 1 </b></u></font></p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>Summary:</i></font></font></font></font></font></font></font></p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">This position paper in essence advocates for the importance of team science but more importantly in order to encourage the activity it must be recognised and rewarded in academic/research staff performance review. This is valid point but the paper could be more convincing with respect to structuring its arguments. I like the topic but it needs some more work. </font></font></font></font></font></font></font></p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>Reasons to accept:</i></font></font></font></font><font color="#2e2e2e"><font face="Arial, sans-serif"> </font></font></font></font></font></p>
+<ul><li>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">Well written</font></font></font></font></p>
+</li>
+<li>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">Team science is an important issue and I will a publication that is not concerned with a technical experiment but is concerned with scholarship with respect research skills and professional development of the research scientist (data scientist)</font></font></font></font></font></font></font></p>
+</li>
+<li>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">Relevant in that this is paper is concerned with the (academic/research) practitioner of data science.</font></font></font></font></font></font></font></p>
+</li>
+<li>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">I argue that perspectives on an emerging field such as this should be encouraged.</font></font></font></font></font></font></font></p>
+</li>
+<li>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">Good related work.</font></font></font></font></p>
+</li>
+</ul><p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>Reasons to reject with point by point responses: </i></font></font></font></font></font></font></font></p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">1. Referencing is little confusing. Either footnotes/citations?<br />There is what appears to be a quote from Dr. Julie Segre. This should be surrounded by "". Its not clear to me if the author is referring to her or someone else. The latter is not acceptable for quote in a publication.</font></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><b>Response:</b></font></font></font><font face="Arial, sans-serif"> </font><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>I apologize for the confusion. To rectify, I changed the article style so that instead of utilizing a superscript font to indicate citations, parentheses that include the numbered citation is utilized. There was no quote from Dr. Julie Segre. The superscript font was being used to indicate a reference from Dr. Segre’s work based on a team science approach. This should be clarified now in the newly revised presentation.</i></font></font></font></font></font></font></p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">2. The is not well structured. There are no sections.</font></font></font></font></p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"> </p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><b>Response:</b></font></font></font><font face="Arial, sans-serif"> </font><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>I have restructured the article to include sections.</i></font></font></font></font></font></font><br /> </p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">3. The author states the problem - but does not go into detail about possible causes and or/what methods are needed to verify explore this problems wrt to credit/promotion further. </font></font></font></font></p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><b>Response:</b></font></font></font><font face="Arial, sans-serif"> </font><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>I have revised so that I now have a section labeled “</i></font></font></font><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>Challenges and solutions to promotion of the team scientist</i></font></font></font><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>” and have included greater details of solutions so that explicit recommendations are clear. More specifically, as discussed and referenced in the paper, Mazumdar et al (2015) have detailed concrete criteria by which team scientists can have their scholarly contributions noted, and they use biostatisticians to illustrate. I further present additional solutions. These include hiring faculty for the specific purpose of doing team science, creating a faculty line that is appropriate for the team scientist where promotion criteria appropriately consider team science-based contributions and where career trajectories differ from those in faculty lines not specifically intended for team science, and incentivizing all faculty in participation of team science. I have revised this section so that the solutions are presented clearly (Paragraph 2, of Challenges and solutions section). </i></font></font></font></font></font></font></p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"> </p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">4. What can be found in related literature from other disciplines. How does one claim credit for scientific team work in other disciplines such as physics. How can team science skills be measured? What does the literature say with respect to other disciplines. I cant imagine that this is not a new problem but rather needs some detective work in other disciplines under the scholarship of research/academic practice</font></font></font></font></font></font></font></p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><b>Response:</b></font></font></font><font face="Arial, sans-serif"> </font><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>As the reviewer points out, Mazumdar et al (2015) and I are not the first to recognize that an issue with participating team science is the lack of appropriate recognition of scholarly contribution. For example, this has also been recognized in the Engineering field. Rikakis (2009) described the problem with respect to collaborative engineers and presented five measures with which to gauge scholarly contributions. The approach – that took years to establish, was specific to the engineering field, required knowledge of the field to implement and required a new informatics tool for data collection – was implemented exclusively at the University of Arizona and has not been adopted elsewhere. Mazumdar et al (2015) therefore propose a broader framework that could be implemented at other institutions if adopted at the institutional level. We limit the discussion to the paper by Mazumdar et al (2015) as it includes discussion of previous work and is the most recent assessment of this topic.</i></font></font></font></font></font></font><br /> </p>
+<p class="western" style="margin-left:0.48cm; margin-bottom:0cm"><font face="Arial, sans-serif"><u><b>Reviewer 2</b></u></font></p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>Summary:</i></font></font></font></font></font></font></font></p>
+<p class="western" style="margin-left:0.48cm; margin-bottom:0cm"> </p>
+<p class="western" style="margin-bottom:0cm"><font color="#2e2e2e"><font face="Arial, sans-serif">A review of the role of data scientists in 'team science', i.e. the conducting of large studies by large interdisciplinary teams. The paper identifies the importance of the data scientists in such teams and states that this will increase over time. As such it is important to consider now how that role should be defined and how it should interact with existing academic systems, especially with the criteria defining individual career progression for data scientists.</font></font><font face="Arial, sans-serif"><u><b> </b></u></font></p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>Reasons to accept:</i></font></font></font></font></font></font></font></p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">This paper makes some important points concerning the mechanics of collaboration when data scientists become part of large research teams. The author uses examples of her own experience working in such teams to illustrate the important role that data scientists can play in such teams, as well as the challenges to the team and the individual. With the large scale hiring of new roles in data-oriented positions (at least in my own university), and the subsequent pool of data scientists looking for collaborations, this is a timely issue to address.</font></font></font></font></p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>Reasons to reject with point by point responses:</i></font></font></font></font></font></font></font></p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">None. However, the paper skims or misses several issues which are detailed below in further comments. It would benefit from addressing these in more detail.</font></font></font></font></p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">1. I feel that the author lets other team members off the hook rather easily. For example, take the statement: ‘Thus, today, the modern scientist cannot be expected to know all that is necessary about the data generated or the implications of how to address the research question raised.’ In my experience, many scientists convince themselves that they could not possibly understand data and statistics. Of course, this opens opportunities for data scientists, but it also leads to the quasi-consultancy relationships that are then criticised later in the paper. It also abrogates the responsibility co-authors have to adequately check each other’s work. A major challenge in bringing data scientists into teams is avoiding a balkanisation where the data and analysis is the responsibility of one individual and the collection of that data another, with too little common knowledge. Indeed, the article touches on this area: ‘When data scientists dig deep as collaborators, gaps in methodology can easily be identified.’ The flip side of this is that (in my own experience) too much time is wasted because some researchers lack the statistical literacy to adequately explain all of the constraints or peculiarities of the data collection process, until they are finally uncovered by the frustrated analyst.</font></font></font></font></p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><b>Response:</b></font></font></font><font face="Arial, sans-serif"> </font><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>This is an important point raised by the reviewer that I agree with and I have revised accordingly. I fully agree with the reviewer that scientists – within and outside of the field of data – have a responsibility to fully understand the problem at hand and not simply contribute superficially (as the reviewer points out that a consultant might). To better reflect these ideas (Paragraph 1) I deleted the sentence “</i></font></font></font><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>Thus, today, the modern scientist cannot be expected to know all that is necessary about the data generated or the implications of how to address the research question raised.” Further, I revised to explain that the joining together of members within a team is largely due to the increasingly complex scientific landscape and the specialization of many labs, making collaboration across labs increasingly necessary to address today’s modern scientific questions (Paragraph 1).</i></font></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">2. On the issue of authorship, credit and evaluation (e.g. for promotion), the author focuses her attention on how institutions can appropriately change their metrics for promotion that relate to author-order. Perhaps this is a system-specific issue as I am not aware of any *explicit* metrics based on such factors in promotion within our university (though of course such things are relevant). If criteria are explicit and/or strictly quantitative then this should be an area of frequent review. However, I suggest that the author has neglected an equally important side of the equation: namely the responsibility or otherwise of the data scientist to demand the credit they deserve and need. For instance, how does this issue intersect with relative seniorities between colleagues, and with gender and ethnic biases? Considering why data scientists consistently occupying the middle author slots is as important as re-weighting the importance of those slots. This may mean also revisiting the previous point: are data scientists joining teams as full intellectual contributors or as consultants? Are both sides in agreement about this role a priori, or are they in unspoken disagreement? Could this be solved with a more explicit conversation about roles at the start of the collaboration, as in ‘this is what I want/need to get out the project’?</font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><b>Response:</b></font></font></font><font face="Arial, sans-serif"> </font><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>I agree that academic scientists need to demonstrate leadership to earn promotion, and I clarify this in the text (first paragraph under Challenges and solutions section). More specifically, I am not discussing situations where data scientists deserve an anchor position in the paper (first or last) and settle for something inappropriate. Rather I am suggesting that in the team science setting, we need to rethink contributions for a given effort. For example, if the data scientist leads in developing the analysis plan, oversees the analysis, provides principal interpretation for the study findings, and writes the methods and results section of the manuscript, a second place in authorship order may be appropriate, but should be recognized as a major contribution when promotion is considered because the effort greatly influenced the direction of the science. If not, data scientists may opt not to be involved in cutting-edge research where they are not listed as first or senior authors, and if this is the case, science that relies on team-based approaches will suffer. The revised text clarifies this position. </i></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">3. References are sometimes oddly formatted, for instance: 'This information directly informed how we data scientists designed the study and developed our statistical models. 7' - the reference superscript is outside the sentence.</font></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><b>Response:</b></font></font></font><font face="Arial, sans-serif"> </font><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>The reference style in the article has been revised.</i></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">4. It would be good to have a citation for the use of ‘team science’ as a previously recognised term near the start of the introduction.</font></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><b>Response:</b></font></font></font><font face="Arial, sans-serif"> </font><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>I have revised the manuscript so that the first sentence of the paper introduces this term with a citation and now reads:</i></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 9pt">Team science is a collaborative effort by scientists that join together across multiple disciplines to solve scientific questions (1).</font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">5. ‘Further, individual labs have become more specialized, as they have consequently been generating and/or handling more specific types of data for which a unique skill set is required. Thus, today, the modern scientist cannot be expected to know all that is necessary about the data generated…’ - This seems a bit vague, and the second sentence possibly contradicts the first - if most data is being generated in specialised labs with skill sets focused on that type of data, then it seems that most researchers would know how to deal with the data their lab produces (but potentially miss other techniques or know-how that they could translate from other areas)</font></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><b>Response:</b></font></font></font><font face="Arial, sans-serif"> </font><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>This is a good point. I have revised the language to clarify my meaning (Paragraph 1). </i></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">6. Some examples are needed for the statement: ‘Conferences that discuss new tools and strategies for successful cross-disciplinary (including multi-, inter-, and transdisciplinary) engagement have been established.’</font></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><b>Response: </b></font></font></font><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>I have now included two examples of such conferences.</i></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">7. ‘In addition, research articles in scientific journals that describe methods for cross-disciplinary collaboration are appearing (e.g.,See Börner et al., 2010 and Bennett and Galdlin, 2010)’ - these references are now 7 years old; are there no more recent examples?</font></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><b>Response: </b></font></font></font><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>I have revised to include a more recent example from 2017.</i></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">8. “For example, as part of a group working with investigators to study the comparative effectiveness of HIV anti-retroviral agents on cardiovascular disease, team members with expertise in treating HIV noted the importance of adjusting for potential confounders like CD4 count, viral load, and cholesterol levels. Further, they emphasized that while the literature implicated single agents as having a role in cardiovascular disease, in practice, therapy was prescribed and taken in combinations, making the entire combined therapy a more pertinent focus. In addition, as we observed in the data, patients switched their combinations with great frequency.” - this section seems to move awkwardly from third to first person. I suggest working in the first person immediately to let the reader know this is personally experienced example</font></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><b>Response: </b></font></font></font><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>Excellent suggestion. I have revised and think the paragraph reads better now (Paragraph 4).</i></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p class="western" style="margin-left:0.48cm; margin-bottom:0cm"><font face="Arial, sans-serif"><u><b>Reviewer 3</b></u></font></p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>Summary:</i></font></font></font></font></font></font></font></p>
+<p class="western" style="margin-bottom:0cm"> </p>
+<p class="western" style="margin-bottom:0cm"><font color="#2e2e2e"><font face="Arial, sans-serif">The author argues for the importance of multi-, trans- and interdisciplinary work where the data scientist is well integrated in a team with the necessary domain specific knowledge. The specific case she discusses is data-science in biomedical research. The main points she makes are, first, that domain specific knowledge helps the data scientist select relevant models and produce interpretable and usable results. Second, that new technical gaps can be exposed through applied data-science work especially when the non-data scientists in the team push the data scientist to detect shortcomings in the existing approaches. This leads to advancements in "pure" data-science research. Further, the author suggests some of the institution level frameworks necessary to sustain and encourage this activity. Namely, the appropriate metrics need to be designed to evaluate data science work that is primarily team and application driven, and career tracks opened up for researchers that work principally in this environment.</font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>Reasons to accept:</i></font></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">I think this is an important and urgent topic, with general applicability to the work of data-scientists. The commentary is well-written and an interesting read.</font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-top:0.21cm; margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>Reasons to reject with point by point responses:</i></font></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">However, I think that in some places the general thread of the argument is lost, and some critical points are touched upon superficially. I make some suggestions below. Once these points are addressed this will be a piece well-worth publishing.</font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">1. The author uses the idea of relevance of a model as a central argument for why integrating a data-scientist in the team is good. Another point is the appropriate clinical interpretation. Specifically: "Without the context provided by the HIV experts, the data scientists would have developed a less relevant model, and possibly provided misleading findings. Thus, integration of the data scientist into the team environment enabled the data scientists to arrive at an approach that yielded clinically appropriate interpretation. The iterative team-based process also more generally ensures that products from the collaboration will be relevant. " These are very important points, but also controversial. It is easy to make the opposite argument that the involvement in the team leads to "group-think", and narrowed/biased model selection according to conventional understanding, ruling out better and more innovative approaches. The author should address how to avoid/minimize this problem or why it is not an issue in the setting she is discussing.</font></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><b>Response: </b></font></font></font><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>This is an interesting point raised by the reviewer. It is certainly possible that a research team – whether intra-disciplinary or cross-disciplinary – can arrive at a narrowed model selection approach. It is not apparent, however, why a cross-disciplinary approach would be more susceptible to this issue. If anything, I would think that by leveraging expertise across disciplines, different perspectives would be incorporated, increasing the potential for novelty.</i></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">2. In the example of exposing gaps in existing methods, the author does not provide a reference for the missing data imputation method developed. Either a reference is required and/or an explanation of how the method developed is different from the standard, and how the input of domain experts made this so.</font></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><b>Response: </b></font></font></font><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>I have clarified in the text that this work is ongoing under a proposal to develop novel ideas for handling the missing data for this context and was awarded by PCORI (Paragraph 6).</i></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">3. It is unclear to me where the line is drawn between an external "consultant" data scientist and one who is really part of the team. I think spelling this out more clearly early on in the argument would make it clearer.</font></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><b>Response: </b></font></font></font><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>I agree with this comment and have revised the text to include a new paragraph that distinguishes between these two settings (Paragraph 5).</i></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font color="#2e2e2e"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt">4. Finally, in regards for how to evaluate contribution to team work, and the overall performance of a researcher who primarily engages in this work, the author says :"The authors developed an excellent and systematic approach for how evaluation and promotion could better recognize the intellectual leadership of the team scientist.[8] They further described how to evaluate contributions to publications, grants, and research programs, in order to summarize overall scholarship in a way that appropriately weights contributions to team-based science." What is the main idea behind this systematic approach? The innovation? A short explanation of the specific method suggested is really left wanting.</font></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><b>Response: </b></font></font></font><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>Great point. I agree and have elaborated to provide greater details on the approach (Paragraph 11). </i></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm"><font face="Cambria"><font size="3"><font style="font-size: 12pt"><font face="Arial, sans-serif"><font size="2"><font style="font-size: 11pt"><i>I wish to thank the reviewers and editor for their thoughtful review, and hope you will find the suggested changes have improved the manuscript.</i></font></font></font></font></font></font></p>
+<p style="margin-bottom:0cm"> </p>
+<p style="margin-bottom:0cm">Manisha Desai (<a href="http://orcid.org/0000-0002-6949-2651">http://orcid.org/0000-0002-6949-2651</a>)</p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F460%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+<a id="comment-10"></a>
+<article class="comment even clearfix" about="/comment/10#comment-10" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="10.html#comment-10" rel="bookmark">Meta-Review by Editor</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2017-05-30T06:27:00-04:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/tobias-kuhn" typeof="sioc:UserAccount" property="foaf:name" datatype="">Tobias Kuhn</span> on <time datetime="2017-05-30T06:27:00Z"><span class="date-time">Tue, 05/30/2017 - 06:27</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/integration-data-scientist-team-implications-and-challenges-0" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p>The previous issues are resolved with this revision, and I agree with the reviewers to accept this manuscript for publication.</p>
+<p>Tobias Kuhn (<a href="http://orcid.org/0000-0002-1267-0234">http://orcid.org/0000-0002-1267-0234</a>)</p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F460%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+<a id="comment-47"></a>
+<article class="comment odd last clearfix" about="/comment/47#comment-47" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="47.html#comment-47" rel="bookmark">Link to Final PDF and JATS/XML Files</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2018-07-04T08:41:32-04:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/tobias-kuhn" typeof="sioc:UserAccount" property="foaf:name" datatype="">Tobias Kuhn</span> on <time datetime="2018-07-04T08:41:32Z"><span class="date-time">Wed, 07/04/2018 - 08:41</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/integration-data-scientist-team-implications-and-challenges-0" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p><a href="https://github.com/data-science-hub/data/tree/master/publications/1-1-2/ds-1-1-2-ds008">https://github.com/data-science-hub/data/tree/master/publications/1-1-2/ds-1-1-2-ds008</a></p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F460%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+
+  
+</section>
+
+  </div>
+  </article>
+
+  </div></div>                      </div>
+
+                      
+                    </div>
+                  </div>
+
+                </section>
+
+                
+              </div>
+            </div>
+
+                        
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+    
+          <div id="footer-wrapper">
+        <div class="container clearfix">
+          <footer class="clearfix" role="contentinfo">
+            <div class="region region-footer"><div class="region-inner clearfix"><div id="block-block-16" class="block block-block no-title odd first last block-count-4 block-region-footer block-16" ><div class="block-inner clearfix">  
+  
+  <div class="block-content content"><p style="text-align:center;"><a href="https://www.iospress.nl/disclaimer/" target="_blank">Disclaimer</a> | <a href="https://content.iospress.com/page/privacy" target="_blank">Privacy Policy</a> | Data Science is Published by <a href="http://www.iospress.com" target="_blank">IOS Press</a>, Copyright 2023</p>
+</div>
+  </div></div></div></div>            <p class="attribute-creator"></p>
+          </footer>
+        </div>
+      </div>
+    
+  </div>
+</div>
+  </body>
+</html>

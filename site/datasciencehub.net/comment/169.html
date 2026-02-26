@@ -1,0 +1,466 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../paper/heterogeneous-multi-layered-network-modeling-complex-graph-data-1.html" />
+<link rel="shortlink" href="../node/874.html" />
+<link rel="shortcut icon" href="../sites/default/files/favicon-96x96.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>Heterogeneous Multi-layered Network for Modeling Complex Graph-Data | Data Science</title>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/system/system.base.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.menus.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.messages.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.core.css?t4kojz");
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/comment/comment.css?t4kojz");
+@import url("https://datasciencehub.net/modules/field/theme/field.css?t4kojz");
+@import url("../sites/all/modules/logintoboggan/logintoboggan.css%3Ft4kojz.css");
+@import url("https://datasciencehub.net/modules/node/node.css?t4kojz");
+@import url("https://datasciencehub.net/modules/search/search.css?t4kojz");
+@import url("https://datasciencehub.net/modules/user/user.css?t4kojz");
+@import url("../sites/all/modules/views/css/views.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/modules/ctools/css/ctools.css%3Ft4kojz.css");
+@import url("../sites/all/modules/ctools/css/modal.css%3Ft4kojz.css");
+@import url("../sites/default/modules/modal_forms/css/modal_forms_popup.css%3Ft4kojz.css");
+@import url("../sites/all/modules/responsive_menus/styles/responsive_menus_simple/css/responsive_menus_simple.css%3Ft4kojz.css");
+@import url("../sites/all/modules/date/date_api/date.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="screen">
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.headings.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.image.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.layout.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/themes/corolla/css/html-elements.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/forms.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/tables.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/page.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/articles.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/comments.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/fields.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/blocks.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/navigation.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/corolla.settings.style.css%3Ft4kojz.css");
+@import url("../sites/default/files/color/corolla-80fb2671/colors.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="print">
+@import url("../sites/all/themes/corolla/css/print.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/default/files/adaptivetheme/corolla_files/corolla.responsive.layout.css%3Ft4kojz.css" media="only screen" />
+<style type="text/css" media="screen">
+@import url("../sites/default/files/adaptivetheme/corolla_files/corolla.fonts.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.custom.css%3Ft4kojz.css" media="only screen" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.portrait.css%3Ft4kojz.css" media="only screen and (max-width:320px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.landscape.css%3Ft4kojz.css" media="only screen and (min-width:321px) and (max-width:480px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.portrait.css%3Ft4kojz.css" media="only screen and (min-width:481px) and (max-width:768px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.landscape.css%3Ft4kojz.css" media="only screen and (min-width:769px) and (max-width:1024px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.desktop.css%3Ft4kojz.css" media="only screen and (min-width:1025px)" />
+
+<!--[if lt IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/default/files/adaptivetheme/corolla_files/corolla.lt-ie9.layout.css?t4kojz");
+</style>
+<![endif]-->
+
+<!--[if lte IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/all/themes/corolla/css/ie-lte-9.css?t4kojz");
+</style>
+<![endif]-->
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-extend-3.4.0.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/drupal.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ui/jquery.ui.core.min.js?v=1.8.7"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.cookie.js?v=1.0"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.form.js?v=2.52"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form-single-submit.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ajax.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/default/modules/jquery_update/js/jquery_update.js%3Fv=0.0.1"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/progress.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/all/modules/ctools/js/modal.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/default/modules/modal_forms/js/modal_forms_popup.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/responsive_menus/styles/responsive_menus_simple/js/responsive_menus_simple.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js%3Ft4kojz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-107867597-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="../sites/all/modules/field_group/field_group.js%3Ft4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/tableheader.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/collapse.js?v=7.98"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"corolla","theme_token":"hwRMPS0h_McfR2lPn2Ws1h5QnwACHDaUYS7OAaTa-88","jquery_version":"default","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/form-single-submit.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/default\/modules\/jquery_update\/js\/jquery_update.js":1,"misc\/progress.js":1,"sites\/all\/modules\/ctools\/js\/modal.js":1,"sites\/default\/modules\/modal_forms\/js\/modal_forms_popup.js":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/js\/responsive_menus_simple.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/field_group\/field_group.js":1,"misc\/tableheader.js":1,"misc\/collapse.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ctools\/css\/modal.css":1,"sites\/default\/modules\/modal_forms\/css\/modal_forms_popup.css":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/css\/responsive_menus_simple.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.headings.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.image.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/corolla\/css\/html-elements.css":1,"sites\/all\/themes\/corolla\/css\/forms.css":1,"sites\/all\/themes\/corolla\/css\/tables.css":1,"sites\/all\/themes\/corolla\/css\/page.css":1,"sites\/all\/themes\/corolla\/css\/articles.css":1,"sites\/all\/themes\/corolla\/css\/comments.css":1,"sites\/all\/themes\/corolla\/css\/fields.css":1,"sites\/all\/themes\/corolla\/css\/blocks.css":1,"sites\/all\/themes\/corolla\/css\/navigation.css":1,"sites\/all\/themes\/corolla\/css\/fonts.css":1,"sites\/all\/themes\/corolla\/css\/corolla.settings.style.css":1,"sites\/all\/themes\/corolla\/color\/colors.css":1,"sites\/all\/themes\/corolla\/css\/print.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.responsive.layout.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.fonts.css":1,"sites\/all\/themes\/corolla\/css\/responsive.custom.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.desktop.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.lt-ie9.layout.css":1,"sites\/all\/themes\/corolla\/css\/ie-lte-9.css":1}},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E"},"modal-popup-small":{"modalSize":{"type":"fixed","width":500,"height":150},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-medium":{"modalSize":{"type":"fixed","width":550,"height":450},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-large":{"modalSize":{"type":"scale","width":0.8,"height":0.8},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"responsive_menus":[{"toggler_text":"\u2630 Menu","selectors":["#block-system-main-menu"],"media_size":"935","media_unit":"px","absolute":"1","remove_attributes":"1","responsive_menus_style":"responsive_menus_simple"}],"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/search\/node":true,"\/comment\/169":true},"field_group":{"fieldset":"full"},"ctools-sample-style":{"modalSize":{"type":"fixed","width":1098,"height":500,"addWidth":20,"addHeight":15},"modalOptions":{"opacity":0.5,"background-color":"#000"},"animation":"fadeIn","modalTheme":"CToolsSampleModal","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/ctools_ajax_sample\/images\/ajax-loader.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E"},"adaptivetheme":{"corolla":{"layout_settings":{"bigscreen":"three-col-grail","tablet_landscape":"three-col-grail","tablet_portrait":"one-col-vert","smalltouch_landscape":"one-col-vert","smalltouch_portrait":"one-col-stack"},"media_query_settings":{"bigscreen":"only screen and (min-width:1025px)","tablet_landscape":"only screen and (min-width:769px) and (max-width:1024px)","tablet_portrait":"only screen and (min-width:481px) and (max-width:768px)","smalltouch_landscape":"only screen and (min-width:321px) and (max-width:480px)","smalltouch_portrait":"only screen and (max-width:320px)"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]>
+<script src="https://datasciencehub.net/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?t4kojz"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-874 node-type-submit-paper site-name-hidden atr-7.x-3.x atv-7.x-3.1 lang-en site-name-data-science section-paper color-scheme-custom corolla bs-n bb-n mb-dd rc-6 rct-6">
+  <div id="skip-link" class="nocontent">
+    <a href="169.html#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="page-wrapper">
+  <div id="page" class="page ssc-n ssw-n ssa-l sss-n btc-n btw-b bta-l bts-n ntc-n ntw-b nta-l nts-n ctc-n ctw-b cta-l cts-n ptc-n ptw-b pta-l pts-n">
+
+          <div id="menu-bar-wrapper">
+        <div class="container clearfix">
+          <div id="menu-bar" class="nav clearfix"><nav id="block-system-main-menu" class="block block-system block-menu menu-wrapper menu-bar-wrapper clearfix odd first block-count-1 block-region-menu-bar block-main-menu"  role="navigation">  
+      <h2 class="element-invisible block-title">Main menu</h2>
+  
+  <ul class="menu clearfix"><li class="first leaf menu-depth-1 menu-item-757"><a href="../content/about-data-science.html">About</a></li><li class="leaf menu-depth-1 menu-item-758"><a href="../content/editors.html">Editorial Board</a></li><li class="leaf menu-depth-1 menu-item-1559"><a href="../content/submit-manuscript.html">Submit Manuscript</a></li><li class="leaf menu-depth-1 menu-item-1612"><a href="../content/calls.html">Calls</a></li><li class="leaf menu-depth-1 menu-item-759"><a href="../content/guidelines-authors.html">For Authors</a></li><li class="leaf menu-depth-1 menu-item-760"><a href="../content/guidelines-reviewers.html">For Reviewers</a></li><li class="leaf menu-depth-1 menu-item-582"><a href="../underreview.html" title="Under Review">Under Review</a></li><li class="leaf menu-depth-1 menu-item-583"><a href="../reviewed.html" title="">Reviewed</a></li><li class="last leaf menu-depth-1 menu-item-1611"><a href="../ReviewedAccepted.html" title="">Accepted</a></li></ul>
+  </nav><div id="block-orcid-login-orcid-login" class="block block-orcid-login no-title menu-wrapper menu-bar-wrapper clearfix even last block-count-2 block-region-menu-bar block-orcid-login" >  
+  
+  <p style="background-color: #003b3a; float:right;"><a style="vertical-align: middle; color: white; padding: 10px; display: inline-block; text-decoration: none;" href="https://orcid.org/oauth/authorize?client_id=APP-223SGGDDO35LKOT2&amp;response_type=code&amp;scope=%2Fauthenticate&amp;redirect_uri=https%3A%2F%2Fdatasciencehub.net%2F&amp;state=eyJyZWRpcmVjdCI6ImNvbW1lbnRcLzE2OSJ9"><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle;"/> Log In with ORCID</a></p>
+  </div></div>        </div>
+      </div>
+    
+    <div id="header-wrapper">
+      <div class="container clearfix">
+	        <header class="clearfix with-logo" role="banner">
+
+                      <div id="branding" class="branding-elements clearfix">
+
+                              <div id="logo">
+                  <a href="../index.html"><img class="site-logo" typeof="foaf:Image" src="../sites/default/files/DS_LOGO_vertical.png" alt="Data Science" /></a>                </div>
+              
+                              <div class="element-invisible h-group" id="name-and-slogan">
+
+                                      <h1 class="element-invisible" id="site-name"><a href="../index.html" title="Home page">Data Science</a></h1>
+                  
+                  
+                </div>
+              
+            </div>
+          
+          
+        </header>
+
+      </div>
+    </div>
+
+          <div id="top-panels-wrapper">
+        <div class="container clearfix">
+          <!-- Three column 3x33 Gpanel -->
+          <div class="at-panel gpanel panel-display three-3x33 clearfix">
+                                                          </div>
+        </div>
+      </div>
+    
+    
+          <div id="messages-help-wrapper">
+        <div class="container clearfix">
+          <div id="messages"><div class="messages error"><h2 class="element-invisible">Error message</h2>Access denied. You must log in to view this page.</div></div>                  </div>
+      </div>
+    
+    <div id="content-wrapper">
+      <div class="container">
+
+        <div id="columns">
+          <div class="columns-inner clearfix">
+
+            <div id="content-column">
+              <div class="content-inner">
+
+                
+                <section id="main-content" role="main">
+
+                  
+                  <div class="content-margin">
+                    <div class="content-style">
+
+                      
+                      
+                      
+                                              <header class="clearfix">
+                          <h1 id="page-title">
+                            Heterogeneous Multi-layered Network for Modeling Complex Graph-Data                          </h1>
+                        </header>
+                      
+                      
+                      
+                      <div id="content">
+                        <div class="region region-content"><div id="block-system-main" class="block block-system no-title odd first last block-count-3 block-region-content block-main" >  
+  
+  <article id="node-874" class="node node-submit-paper article odd node-lang-en node-full ia-n clearfix" about="/paper/heterogeneous-multi-layered-network-modeling-complex-graph-data-1" typeof="sioc:Item foaf:Document" role="article">
+  <div class="node-inner">
+
+
+
+              <header class="node-header">
+
+        
+        
+      </header>
+        <span property="dc:title" content="Heterogeneous Multi-layered Network for Modeling Complex Graph-Data" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="2" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+    <div class="node-content">
+        
+      <h3>Tracking #: 874-1854</h3>          								<fieldset>
+					<!-- legend>
+						<span class="fieldset-legend">Paper Data</span>
+					</legend -->
+
+					
+
+
+					
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><h5>Authors:</h5><br/><form action="169.html" method="post" id="authors-table-form-anonymus" accept-charset="UTF-8"><div><div id="authors_Container"><table class="sticky-enabled">
+ <thead><tr><th></th><th>Name</th><th>ORCID</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-2311">
+  <input type="checkbox" id="edit-authors-2311" name="authors[2311]" value="2311" class="form-checkbox" />
+</div>
+</td><td>Shraban Chatterjee</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0001-8935-9201" target="_blank">https://orcid.org/0000-0001-8935-9201</a></td> </tr>
+</tbody>
+</table>
+</div><input type="hidden" name="author_nd" value="874" />
+<input type="hidden" name="author_vd" value="1854" />
+<input type="hidden" name="form_build_id" value="form-ld6cWAurTsqZ5-CC9RtdRQgKK79l8UlBw1T98DL9no0" />
+<input type="hidden" name="form_id" value="authors_table_form_anonymus" />
+</div></form><hr/></div><br/>
+
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-editor field-type-user-reference field-label-above view-mode-full"><h2 class="field-label">Responsible editor:&nbsp;</h2><div class="field-items"><div class="field-item even">Michael Maes</div></div></section></div><br/>
+					                    <div style="background-color: #E3E5E3;border-radius:5px;padding-top:4px;padding-bottom:4px;padding-left:6px;">
+					<section class="field field-name-field-submission-type field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Submission Type:&nbsp;</h2><div class="field-items"><div class="field-item even">Research Paper</div></div></section><section class="field field-name-field-abstract field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Abstract:&nbsp;</h2><div class="field-items"><div class="field-item even">The present paper provides a generalized model of network, namely, Heterogeneous Multi-layered Network (HMN), which can simultaneously be multi-layered and heterogeneous. We proved that the sets of all homogeneous, heterogeneous and multi-layered networks are subsets of the set of all HMNs depicting the model&#039;s generalizability. The proposed HMN is more efficient in encoding different types of nodes and edges when compared to representing the same information through heterogeneous or multilayered networks. It is found experimentally that the HMN model when used with GNNs improve tasks such as link prediction. In addition, we present a novel parameterized algorithm (with complexity analysis) for generating synthetic HMNs. The networks generated from our proposed algorithm are more consistent in modelling the layer-wise degree distribution of a real-world Twitter network (represented as HMN) than those generated by existing models. Moreover, we also show that our algorithm is more effective in modelling an air-transportation multiplex network when compared to an algorithm designed specifically for the task. Further, we define different structural measures for HMN namely multilayer neighborhood, degree centrality, closeness centrality and betweeness centrality. Accordingly, we established the equivalency of the proposed structural measures of HMNs with that of homogeneous, heterogeneous, and multi-layered networks.</div></div></section><section class="field field-name-field-pdf field-type-file field-label-above view-mode-full"><h2 class="field-label">Manuscript:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="PDF icon" title="application/pdf" src="https://datasciencehub.net/modules/file/icons/application-pdf.png" /> <a href="../system/files/ds-paper-874.pdf" type="application/pdf; length=1767700">ds-paper-874.pdf</a></span></div></div></section><section class="field field-name-field-supplementary-files field-type-file field-label-above view-mode-full"><h2 class="field-label">Supplementary Files (optional):&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="PDF icon" title="application/pdf" src="https://datasciencehub.net/modules/file/icons/application-pdf.png" /> <a href="../system/files/ds-supplementary-874-1417.pdf" type="application/pdf; length=201489">ds-supplementary-874-1417.pdf</a></span></div></div></section><section class="field field-name-field-previous-version field-type-node-reference field-label-above view-mode-full"><h2 class="field-label">Previous Version:&nbsp;</h2><div class="field-items"><div class="field-item even"><a href="../paper/heterogeneous-multi-layered-network-modeling-complex-graph-data-0.html"> Heterogeneous Multi-layered Network for Modeling Complex Graph-Data</a></div></div></section><section class="field field-name-field-tags field-type-taxonomy-term-reference field-label-above view-mode-full"><h2 class="field-label">Tags:&nbsp;</h2><ul class="field-items"><li class="field-item even">Reviewed</li></ul></section><section class="field field-name-field-data-repository-urls field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Data repository URLs:&nbsp;</h2><div class="field-items"><div class="field-item even"><p>The datasets used in the paper: <a href="https://github.com/Shraban123/HMNData/tree/main">https://github.com/Shraban123/HMNData/tree/main</a></p>
+<p>Network Dataset: <a href="https://networkrepository.com/">https://networkrepository.com/</a></p>
+<p>European Air Transportation Network: <a href="https://github.com/CompNet/MultiplexCentrality/blob/master/data/EUAir_Multiplex_Transport/README.md">https://github.com/CompNet/MultiplexCentrality/blob/master/data/EUAir_Mu...</a></p>
+<p> </p>
+</div></div></section><section class="field field-name-field-date-of-submission field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Submission:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2024-08-30T00:00:00-04:00">Friday, August 30, 2024</span></div></div></section><section class="field field-name-field-date-of-decision field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Decision:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2024-10-30T00:00:00-04:00">Wednesday, October 30, 2024</span></div></div></section><br><br><b>Nanopublication URLs:</b> <br>                    </div>
+                    <br/>
+
+					
+                    
+                    <div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-decision field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Decision:&nbsp;</h2><div class="field-items"><div class="field-item even">Reject</div></div></section></div><br/>                    <div id="review">
+                    		                    	</div>
+
+					
+										<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><b>Solicited Reviews:</b><br/><form action="169.html" method="post" id="get-submitted-reviews" accept-charset="UTF-8"><div><fieldset class="collapsible collapsed form-wrapper" id="edit-fset1"><legend><span class="fieldset-legend">Review #1 <strong>submitted on 22/Sep/2024</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Fabio Sartori</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0009-0006-5376-5631" target="_blank">https://orcid.org/0009-0006-5376-5631</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Weak</br><b style="color:#f39222">Suggested Decision: </b> Undecided</br><b style="color:#f39222">Technical Quality of the paper:</b> Weak<br/><b style="color:#f39222">Presentation:</b> Weak<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> Low significance<br/><b style="color:#f39222">Background:</b> Incomplete or inappropriate<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data (if any) are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences (summary of changes and improvements for
+second round reviews): </b><br/><p>The authors expanded placing their work on the existing literature, and explained which parameters they used to generate the networks used in the manuscript.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>I thank the authors for mentioning some of the existing literature. Furthermore, I appreciate the work done in homogenizing the fonts used for figure 5, and clarifying for each example what set of parameters was used, to allow reproducibility of your results.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>I still have several points, see attachment for clarity</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>Page 16, I am happy to read the values used for the layers. I think that expanding on the process that led you to use 37 layers and not 35 or 40 would be helpful for a reader wanting to use your model to generate their own HMN with your algorithm.</p>
+</p><br/><b style="color:#f39222">Review Document: </b><a href="../system/files/review_document/Review_2.pdf.html" type="">Review_2.pdf</a></p></div></fieldset>
+<fieldset class="collapsible collapsed form-wrapper" id="edit-fset2"><legend><span class="fieldset-legend">Review #2 <strong>submitted on 01/Oct/2024</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">Review Details<br/><hr/></div><p>Reviewer has chosen to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Average</br><b style="color:#f39222">Suggested Decision: </b> Undecided</br><b style="color:#f39222">Technical Quality of the paper:</b> Good<br/><b style="color:#f39222">Presentation:</b> Average<br/><b style="color:#f39222">Reviewer`s confidence:</b> Low<br/><b style="color:#f39222">Significance:</b> Moderate significance<br/><b style="color:#f39222">Background:</b> Reasonable<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data (if any) are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences (summary of changes and improvements for
+second round reviews): </b><br/><p>The authors have made significant progress in addressing some of the suggested improvements. Specifically, they have provided more detailed descriptions of their experiments, clarified the rationale behind their methodological choices, and enhanced the presentation of data through more refined tables and figures. Moreover, the results have been better contextualized, allowing for a clearer interpretation of their findings within the broader literature. However, the limitations discussion section could be further improved. Although the authors briefly mention Unknown Node Correspondence (UNC), they fail to sufficiently explain its relevance and do not elaborate on why it constitutes a limitation in their work. Greater coherence and depth in this section would strengthen the overall discussion.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>The authors present a novel algorithm for generating Heterogeneous Multilayer Networks (HMN) and demonstrate its use in capturing the characteristics of real-life networks when compared to traditional network generators. They have situated their work more robustly within the existing literature and offer an argument for the contribution of their algorithm to the study of heterogeneous multilayer networks.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>Despite the advances made, the added value of the proposed approach for the research community and its potential application areas remain somewhat vague.</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/></p></div></fieldset>
+<input type="hidden" name="form_build_id" value="form-osy5YUaike-Fsk0YH_oEPXWsAu3QUja8ZwTy2u56IUA" />
+<input type="hidden" name="form_id" value="get_submitted_reviews" />
+</div></form></div><br/>                    
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><fieldset class="collapsible collapsed group-response-to-reviews field-group-fieldset form-wrapper"><legend><span class="fieldset-legend">RESPONSE TO REVIEWERS</span></legend><div class="fieldset-wrapper with-legend"><div class="field field-name-field-response-to-reviews field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even"><p>### We would like to thank both the reviewers for the detailed comments on our work. We have incorporated changes required for all the observations of the reviewers and highlighted the changes with blue color in the updated manuscript. These reviews have helped us in improving the manuscript.</p>
+<p>## Reviewer 1</p>
+<p>### Reasons to accept:</p>
+<p>The authors provide an innovative modelling approach that is of broader scientific significance and interest and the data sources are made publicly available for reproducibility.<br />
+Notably, various experiments with data sources spanning multiple domains are utilized to test for generalizability of their network approach that is situated with the scientific literature. The contribution is rigorously carved out and the results are presented in an adequate quality and elaboration degree.</p>
+<p>**Answer:** Thank you for your detailed feedback on our work.</p>
+<p>### Abstract:</p>
+<p>**You introduce the HMN as an abbreviation, please refer to the generalized network model in the same way for better clarity. Please provide an example of the structural measures that you deliver.**</p>
+<p>**Answer:** We have added the structural measures in the abstract, also modified the text for better clarity.</p>
+<p>**You state that heterogeneous multi-layered networks (HMN) are more efficient, but the comparison lacks context. Specify the benchmark or state-of-the-art (SOTA) methods against which you are comparing your approach.**</p>
+<p>**Answer:**  Our proposed HMN is more efficient when compared to representing the same information through existing heterogeneous or multilayered networks like \[90, 11\]. Also, we discuss this in more detail with relevant comparison in Section 4.1, Page 8, where we compare our representation with multiple existing representations \[10, 41, 97, 101, 1\]. The citations can be referred to in the updated manuscript.  </p>
+<p>**Explain the rationae behind choosing the Twitter network and air-transportation network as your use cases. What specific characteristics of these networks make them suitable for your research goals?l**</p>
+<p>**Answer:** We consider a Twitter dataset as an example of a real-life network that can be better modeled as a HMN with heterogeneity in its layers. The air transportation network, on the other hand, is a popular multilayer network; hence, we decided to experiment with the same. In reality, our model will be inevitable to model networks like Fediverse (<a href="https://en.wikipedia.org/wiki/Fediverse">https://en.wikipedia.org/wiki/Fediverse</a>), where each server can be considered as a layer, and each layer will be depicted as a heterogeneous network of its own. As Fediverse allows cross-server (in other words, cross layer) following, this depicts a true HMN in real world.  </p>
+<p>**You conducted multiple experiments with various datasets (e.g., molecule dataset, brain networks) to prove generalizability. Clearly state the research question/hypothesis and corresponding methodological choices for these experiments**</p>
+<p>**Answer:** We have tried to generate networks belonging to different categories like brain network, crime network, chemical and biological networks to show that our generation algorithm can be used to model different types of networks. We have also updated the manuscript to include a clear methodology for generating each network in Tables 2-5 (Section 7 and 7.3, Page 15-19).  </p>
+<p>### Section 4.1.1:</p>
+<p>**You use the MovieLens dataset for link prediction, which was not introduced earlier. Provide a clear introduction to the methods used and lay out all of the experiments beforehand to ensure coherence.**</p>
+<p>**Answer:** We have updated the manuscript providing a clear experiment design and more details about the movie lens dataset in Section 4.1.1, Page 9 in the modified manuscript.  </p>
+<p>**You mention "state-of-the-art GNN architectures available" (line 31, p.9) but do not specify which ones. Clarify this and explain why you chose to use t-SNE. Additionally, detail how you fine-tuned the hyperparameters of t-SNE.**</p>
+<p>**Answer:** We have updated the manuscript, highlighting the GNN architectures and the hyperparameters used for t-SNE in Section 4.1.1, Page 10.</p>
+<p>### Table Results:</p>
+<p>**Report the results presented in the tables (e.g., Table 4 and Table 5\) within the text to ensure they are clearly contextualized.**</p>
+<p>**Answer:** We have incorporated the suggestions made by the reviewers in our manuscript and added clear explanations for Tables 2-5 in the updated manuscript in Section 7.3, Pages 18 \- 19  in the modified manuscript. </p>
+<p>### Limitations Section:</p>
+<p>**Include a section discussing the limitations of your study to provide a balanced view and acknowledge areas for future research.**<br />
+**Answer** **:** We have added a limitations section addressing the limitations of our work (Section 8, Page 20\).</p>
+<p>### Figures:</p>
+<p>**Figure 2: Improve the interpretation. The text mentions, "The first layer contains tweets and the second layer contains users," but it is unclear which layer is which in the figure.**<br />
+**Answer:** We thank the reviewer for pointing this out. We have addressed this ambiguity in the updated manuscript in Section 4.1. The caption of Figure 2 is also modified in Page 8 of the new manuscript.  </p>
+<p>**Figure 3: The description says "with each rectangle representing a layer. The first layer contains tweets and the second layer contains users," but as a reader, I only see one layer (rectangle). You seem to express layers through edge types, which is challenging to understand. Clarify this representation.**<br />
+**Answer:** We have addressed this ambiguity in the updated manuscript. The caption of Figure 3 was incorrect and rectified in the modified manuscript. Thank you for pointing this out.  </p>
+<p>**Figure 5: This figure is never mentioned or discussed in the text. Ensure that every figure is referenced and discussed. Additionally, the captions of the subplots are too small to read, and the font differs from the rest of the manuscript. Ensure consistency in formatting.**<br />
+**Answer:** We thank the reviewer for pointing this out. We have updated the manuscript to include references and discussion on Figure 5 in Section 7.2 (Page 17\). Also, we have updated the figures to make the caption more visible in the text.  </p>
+<p>**Figure 6: The figure lacks an interpretation in the text. The caption does not adequately explain what subplots (a-d) specifically represent. Provide a detailed explanation in both the text and caption.**<br />
+**Answer:** We have updated the manuscript to include more discussion on Figure 6 in Section 7.3, Page 18.</p>
+<p>## Reviewer 2</p>
+<p>### The manuscript contains several extremely strong statements that are either false or conflicting with each other:</p>
+<p>1.  "A multi-layered network cannot support heterogeneity in a layer due to the absence of node or edge types." (Adding heterogeneity to layers is the main contribution of their manuscript)</p>
+<p>We have added appropriate citations in support of this statement. Also, we request the reviewer to kindly note that the main contribution of this paper is not only adding heterogeneity to a layer but also developing a generalized definition of network data structure (in addition to providing a generalized network generation algorithm). The same is proved through Lemma 4.1 to 4.3. In other words, the majority of other network data structures can be considered as a special case of our proposed model.</p>
+<p>2. "it is difficult to obtain heterogeneous multi-layered networks despite a lot of real-world networks being HMN" (contradicting what was said before, and easy to argue against it)</p>
+<p>We thank the reviewer for pointing this out. It was a typo; we missed the keyword “dataset” in between. We meant to say that it is difficult to obtain heterogeneous multi-layered network **datasets** despite a lot of networks being HMN. We have now corrected the typos in the modified manuscript. Furthermore, due to the availability of Fediverse \[1\] or ActivityPub \[2\] protocols that allow different social networking apps to communicate among them, we will see more heterogeneous multilayer datasets in the future. In fact, once the Fediverse-like data sets are available for research, we think it will be inevitable to utilize generalized network data structures such as the proposed HMN.</p>
+<p>1. <a href="https://www.fediverse.to">https://www.fediverse.to</a><br />
+2. ActivityPub by Evan Prodromou, Released August 2024, Publisher(s): O'Reilly Media, Inc, ISBN: 9781098169466\.</p>
+<p>3. "except this work, there is no mention of heterogeneous multilayered networks in the literature" (from a quick search from Google Scholar, more than 200 papers contain the wording "multilayer heterogeneous network", \[1\] itself propose a framework very similar to the one described in the Manuscript, but they don't mention it, nor they explain why their model is better, or where it differs from it)</p>
+<p>We agree with the reviewer that the word “heterogeneous multi-layered” has been used in several literatures, however, the statement we used in the paper is not for the literal name but for the definition of the data structure. We already highlighted (in Introduction and Related work) that in several works, the literal name of multilayer heterogeneous (or heterogeneous multilayer) is synonymously used for the data structure of a multilayer network or multiplex network. These definitions of multilayer networks and multiplex networks are quite well known in the field \[3\], and one can verify that the definitions used for “multilayer-heterogeneous” networks in the literature are nothing but multilayer or multiplex data structures used for specific applications in these papers \[1,2,4,5,6\]. The same is evident from the statement of the reviewer in the “Reason for Accept: (One could reduce each network generated by the authors manuscript to a network as described in \[1\], but that would multiply the number of layers)”. This is exactly the limitation of multilayer networks \[3\] in the literature, and widely used for many applications as mentioned before \[1,2,4,5,6\].</p>
+<p>Furthermore, we agree that we overlooked some of these papers in our literature review. We have now included several of them in the literature review Section 3, Page 4 in the modified manuscript based on the reviewer’s suggestion.</p>
+<p>Regarding the comparison, as the definition of the data structure itself is different, the comparison would not be fairly applicable. The paper provides a generalized data structure and is not targeted at any particular application (but we do mention some advantages of using our representation over existing heterogeneous or multilayer definitions in Section 4.1, Page 8).</p>
+<p>1. Wan, M. Zhang, X. Li, L. Sun, X. Wang and K. Liu, Identification of Important Nodes in Multilayer Heterogeneous Networks Incorporating Multirelational Information, IEEE Transactions on Computational Social Systems 9(6) (2022), 1715–1724. doi:10.1109/TCSS.2022.3161305.<br />
+2. L. Gyanendro Singh, A. Mitra and S. Ranbir Singh, Sentiment Analysis of Tweets using Heterogeneous Multi-layer Network Representation and Embedding, in: Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), ACL, Online, 2020, pp. 8932–8946. doi:10.18653/v1/2020.emnlp-main.718.<br />
+3. G. Bianconi, Multilayer Networks: Structure and Function, Oxford University Press, Oxford, 2018, p. 416\. ISBN 9780198753919\. doi:10.1093/oso/9780198753919.001.0001.<br />
+4. Y. Tian and O. Ya˘gan, Spreading Processes With Layer-Dependent Population Heterogeneity Over Multilayer Networks, IEEE Transactions on Network Science and Engineering 11(5) (2024), 4106–4119. doi:10.1109/TNSE.2024.3396730.<br />
+5. Liu, A. Li, A. Zeng, J. Zhou, Y. Fan and Z. Di, Motif-based community detection in heterogeneous multilayer networks, Scientific Reports 14(1) (2024), 8769\. doi:10.1038/s41598-024-59120-5.<br />
+6. M. Bazzi, L.G.S. Jeub, A. Arenas, S.D. Howison and M.A. Porter, A framework for the construction of generative models for mesoscale structure in multilayer networks, Phys. Rev. Research 2(2) (2020), 023100\. doi:10.1103/PhysRevResearch.2.023100.</p>
+<p>### </p>
+<p>### The most problematic section is Section 7\.</p>
+<p>**The authors introduced in Sec 6 an algorithm to generate HMN, and here they compare the network generated with their algorithm to real-life networks and show that their network is better suited to capture their characteristics compared to classical network generators. (Which is a lovely idea per se)**<br />
+**However, they fail to specify the parameters they used to generate the other network or why they chose such parameters. The result is an Erdos–Rènyi graph (they call it erdos-reyni) with a probability of connection p \&gt; 0.5, which leads to an average number of links per node above 10^4. I have more concerns about Figure 6: the degree distribution of an ER graph in a log-log scale should be extremely narrow, the one they generate is not shown in its entirety, and it's very flat, spanning an entire order of magnitude. The Barabasi-Albert degree distribution is not a power-law.**</p>
+<p>**Answer:** We have reported the parameters of our generated networks in the revised manuscript. Also, regarding the ER plot we use a regression plot with a log scale for both the axes. We chose regression plots with log scale to clearly distinguish between the degree distribution of each model. We would like to bring the difference between the log-log plot of the ER model (nodes \= 20000, p \= 0.5) and the BA (20000 nodes, m=3)  model with and without the regression in the figures (links below and also added in the supplementary material).</p>
+<p>![ER with regression](<a href="https://drive.google.com/file/d/1t0Ds6MFcOJDUm0jKMohTD-qQnCxdMOIA/view?usp=sharing">https://drive.google.com/file/d/1t0Ds6MFcOJDUm0jKMohTD-qQnCxdMOIA/view?u...</a>)<br />
+![ER without regression](<a href="https://drive.google.com/file/d/1FLQHulXvmLtyu-hcFklQSX24118Fvt0c/view?usp=sharing">https://drive.google.com/file/d/1FLQHulXvmLtyu-hcFklQSX24118Fvt0c/view?u...</a>)<br />
+![BA with regression](<a href="https://drive.google.com/file/d/1eLMkxO5FkQhNWa0pM19EBlP4cBdzzRjP/view?usp=sharing">https://drive.google.com/file/d/1eLMkxO5FkQhNWa0pM19EBlP4cBdzzRjP/view?u...</a>)<br />
+![BA without regression](<a href="https://drive.google.com/file/d/1BunSBgfu5gftb7PeLDA2fnuY4lRihsOF/view?usp=sharing">https://drive.google.com/file/d/1BunSBgfu5gftb7PeLDA2fnuY4lRihsOF/view?u...</a>)</p>
+<p>### </p>
+<p>### </p>
+<p>If we represent ER using the log log plot without regression then it is extremely narrow as mentioned by the reviewer. This is one of the reasons we went with the regression plot for clarity in demonstration. </p>
+<p>Kindly note that in the regression plot the degree distribution is smoothed that may exclude some of the edge case data points but it retains the overall characteristics of the degree distribution.</p>
+<p>**There is also a problem with inconsistencies in the labels. They are comparing their model to generate HMN with the TWITT dataset; in the plot, they refer to the TWITT dataset as "user-user", the network they generate is named "synthetic 20000" in the legend, and "synthetic" in the main body of the manuscript, the Erdos-Reny network is called "erdos-reyni", and "Internet as graph" in the main text became "random internet" in the figure legend.**</p>
+<p>We thank the reviewer for pointing out the inconsistencies in the labels. We have updated the manuscript to correct these inconsistencies.</p>
+<p>### </p>
+<p>### Tables</p>
+<p>**In Tables 2-5, the authors compared the network generated with their algorithm with several real-life networks. (I like the idea) But they fail even at generating networks with the same number of nodes. In table 2, for example, they generated both a HMN network and a BINBALL network to mimic the EATN network. The original network had 55 nodes and 97 edges, while the one they generated with their algorithm had 67 nodes and 208 edges, and the one generated with the classical model BINBALL had 106 nodes and 22 edges. Not only the BINBALL air network is not connected, but more than half of the airports (nodes) they generated have 0 connections with other airports.**</p>
+<p>**Answer:** The objective was to generate networks that are realistic and observe several properties of the network. In fact, when we generate a synthetic network from the statistics of another real world network, matching the number of nodes is possibly the lowest statistic of concern. The reason behind this is that our target was to generate a network with comparable global properties and not with the same number of nodes as shown in \[10\]. The same can be understood by the study of Barabasi on ER networks \[1\]. That was the same reason ER graphs were not able to explain many properties of real world networks \[2,11\]. The reviewer can refer to the following literature on synthetic network data set generators for similar approaches \[3-9\]. Now, in our experiments, we consider properties like centrality, clustering coefficient, and triangles, among others, so we did not match the exact number of nodes but tried to keep them comparable. This is in line with Unknown node-correspondence (UNC) methods where we compare two networks based on global structural properties \[10\]. The reviewer has correctly mentioned that we have not tried to exactly replicate the same network but modeled it using our algorithm which is a Known node-correspondence (KNC) method. Exact replication, possibly does not make any sense, as then rewiring network edges \[11\] will provide much better results. Our final objective is to generate networks that can be utilized to develop algorithms applicable to HMN. In the experiments, we tried to show that we can generate heterogeneous, homogeneous, and multilayer networks that follow real world network properties. Analogously, then the algorithm can be used to generate HMN as well. </p>
+<p>Following the reviewer's suggestion, we have updated all the tables in our manuscript with the parameters to make the results reproducible.</p>
+<p>Furthermore, for BINABLL, we have implemented the algorithm ourselves since the authors did not make the code available. We rechecked our implementation of the concern raised by the reviewer and found the results to be the same. So, we believe this is a problem with the BINBALL algorithm itself.</p>
+<p>1. L. Barabási and R. Albert, Emergence of Scaling in Random Networks, Science 286(5439) (1999), 509–512. doi:10.1126/science.286.5439.509.<br />
+2. P. Erdös and A. Rényi. On random graphs, i. Publicationes Mathematicae Debrecen, 6:290, 1959\.<br />
+3. Paul W. Holland, Kathryn Blackmond Laskey, and Samuel Leinhardt. Stochastic blockmodels: First steps. Social Networks, 5(2):109–137, June 1983\. doi:10.1016/0378-8733(83)90021-7.<br />
+4. Stephen J. Young and Edward R. Scheinerman. Random Dot Product Graph Models for Social Networks. In *Algorithms and Models for the Web-Graph*, pages 138–149. Springer, Berlin, Germany, 2007\. [doi:10.1007/978-3-540-77004-6\_11](<a href="https://doi.org/10.1007/978-3-540-77004-6">https://doi.org/10.1007/978-3-540-77004-6</a>\_11).<br />
+5. Benchmark graphs for testing community detection algorithms”, Andrea Lancichinetti, Santo Fortunato, and Filippo Radicchi, Phys. Rev. E 78, 046110 2008<br />
+6. Watts, D. J. ‘Networks, Dynamics, and the Small-World Phenomenon.’ Amer. J. Soc. 105, 493-527, 1999\.<br />
+7. Hakimi S., On Realizability of a Set of Integers as Degrees of the Vertices of a Linear Graph. I, Journal of SIAM, 10(3), pp. 496-506 (1962)<br />
+8. Albert, R., &amp; Barabási, A. L. (2000) Topology of evolving networks: local events and universality Physical review letters, 85(24), 5234\.<br />
+9. M. Bazzi, L.G.S. Jeub, A. Arenas, S.D. Howison and M.A. Porter, A framework for the construction of generative models for mesoscale structure in multilayer networks, Phys. Rev. Research 2(2) (2020), 023100\. doi:10.1103/PhysRevResearch.2.023100.<br />
+10. Tantardini, M., Ieva, F., Tajoli, L. *et al.* Comparing methods for comparing networks. *Sci Rep* **9**, 17557 (2019). <a href="https://doi.org/10.1038/s41598-019-53708-y">https://doi.org/10.1038/s41598-019-53708-y</a><br />
+11. The Structure and Function of Complex Networks, M. E. J. Newman, SIAM Review 2003 45:2, 167-256</p>
+</div></div></div></div></fieldset>
+</div><br/>
+				</fieldset>
+				
+    </div>
+
+    <div id="admin-review">
+			</div>
+
+	<div id="decision">
+			</div>
+
+
+
+
+          <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first"><span><a href="../user/login%3Fdestination=comment%252Freply%252F874%23comment-form.html">Log in</a> to post comments</span></li><li class="camera_ready_files_field_paper last"></li></ul></nav>
+    
+    <section id="comments" class="comment-wrapper">
+
+          <h2 class="title">
+      2 Comments    </h2>
+      
+  <a id="comment-169"></a>
+<article class="comment odd first clearfix" about="/comment/169#comment-169" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="169.html#comment-169" rel="bookmark">meta-review by editor</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2024-10-30T11:10:50-04:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/tobias-kuhn" typeof="sioc:UserAccount" property="foaf:name" datatype="">Tobias Kuhn</span> on <time datetime="2024-10-30T11:10:50Z"><span class="date-time">Wed, 10/30/2024 - 11:10</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/heterogeneous-multi-layered-network-modeling-complex-graph-data-1" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Both reviewers acknowledge improvements but also express that they consider the contribution of your work to be either unclear or limited. Considering the very skeptical evaluation of the reviewers, I expect the process of turning the manuscript into a paper publishable in Data Science to be very long. Accordingly, I decided to reject your submission.</p>
+<p>Michael Maes (<a href="https://orcid.org/0000-0001-9416-3211">https://orcid.org/0000-0001-9416-3211</a>)</p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F874%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+<a id="comment-170"></a>
+<article class="comment comment-by-node-author even last clearfix" about="/comment/170#comment-170" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="170.html#comment-170" rel="bookmark">Attachment not accesible</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2024-11-05T04:42:48-05:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/shraban-chatterjee" typeof="sioc:UserAccount" property="foaf:name" datatype="">Shraban Chatterjee</span> on <time datetime="2024-11-05T04:42:48Z"><span class="date-time">Tue, 11/05/2024 - 04:42</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/heterogeneous-multi-layered-network-modeling-complex-graph-data-1" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Kindly allow access to the attchment, we are not able to aceess it.</p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F874%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+
+  
+</section>
+
+  </div>
+  </article>
+
+  </div></div>                      </div>
+
+                      
+                    </div>
+                  </div>
+
+                </section>
+
+                
+              </div>
+            </div>
+
+                        
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+    
+          <div id="footer-wrapper">
+        <div class="container clearfix">
+          <footer class="clearfix" role="contentinfo">
+            <div class="region region-footer"><div class="region-inner clearfix"><div id="block-block-16" class="block block-block no-title odd first last block-count-4 block-region-footer block-16" ><div class="block-inner clearfix">  
+  
+  <div class="block-content content"><p style="text-align:center;"><a href="https://www.iospress.nl/disclaimer/" target="_blank">Disclaimer</a> | <a href="https://content.iospress.com/page/privacy" target="_blank">Privacy Policy</a> | Data Science is Published by <a href="http://www.iospress.com" target="_blank">IOS Press</a>, Copyright 2023</p>
+</div>
+  </div></div></div></div>            <p class="attribute-creator"></p>
+          </footer>
+        </div>
+      </div>
+    
+  </div>
+</div>
+  </body>
+</html>

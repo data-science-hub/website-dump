@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="enhanced-large-language-model-self-attention-mechanism-social-media-rumor-detection.html" />
+<link rel="shortlink" href="../node/917.html" />
+<link rel="shortcut icon" href="../sites/default/files/favicon-96x96.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>Enhanced Large language model with a self-attention mechanism for Social Media Rumor Detection | Data Science</title>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/system/system.base.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.menus.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.messages.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.core.css?t4kojz");
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/comment/comment.css?t4kojz");
+@import url("https://datasciencehub.net/modules/field/theme/field.css?t4kojz");
+@import url("../sites/all/modules/logintoboggan/logintoboggan.css%3Ft4kojz.css");
+@import url("https://datasciencehub.net/modules/node/node.css?t4kojz");
+@import url("https://datasciencehub.net/modules/search/search.css?t4kojz");
+@import url("https://datasciencehub.net/modules/user/user.css?t4kojz");
+@import url("../sites/all/modules/views/css/views.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/modules/ctools/css/ctools.css%3Ft4kojz.css");
+@import url("../sites/all/modules/ctools/css/modal.css%3Ft4kojz.css");
+@import url("../sites/default/modules/modal_forms/css/modal_forms_popup.css%3Ft4kojz.css");
+@import url("../sites/all/modules/responsive_menus/styles/responsive_menus_simple/css/responsive_menus_simple.css%3Ft4kojz.css");
+@import url("../sites/all/modules/date/date_api/date.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="screen">
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.headings.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.image.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.layout.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/themes/corolla/css/html-elements.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/forms.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/tables.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/page.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/articles.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/comments.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/fields.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/blocks.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/navigation.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/corolla.settings.style.css%3Ft4kojz.css");
+@import url("../sites/default/files/color/corolla-80fb2671/colors.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="print">
+@import url("../sites/all/themes/corolla/css/print.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/default/files/adaptivetheme/corolla_files/corolla.responsive.layout.css%3Ft4kojz.css" media="only screen" />
+<style type="text/css" media="screen">
+@import url("../sites/default/files/adaptivetheme/corolla_files/corolla.fonts.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.custom.css%3Ft4kojz.css" media="only screen" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.portrait.css%3Ft4kojz.css" media="only screen and (max-width:320px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.landscape.css%3Ft4kojz.css" media="only screen and (min-width:321px) and (max-width:480px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.portrait.css%3Ft4kojz.css" media="only screen and (min-width:481px) and (max-width:768px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.landscape.css%3Ft4kojz.css" media="only screen and (min-width:769px) and (max-width:1024px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.desktop.css%3Ft4kojz.css" media="only screen and (min-width:1025px)" />
+
+<!--[if lt IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/default/files/adaptivetheme/corolla_files/corolla.lt-ie9.layout.css?t4kojz");
+</style>
+<![endif]-->
+
+<!--[if lte IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/all/themes/corolla/css/ie-lte-9.css?t4kojz");
+</style>
+<![endif]-->
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-extend-3.4.0.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/drupal.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ui/jquery.ui.core.min.js?v=1.8.7"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.cookie.js?v=1.0"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.form.js?v=2.52"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form-single-submit.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ajax.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/default/modules/jquery_update/js/jquery_update.js%3Fv=0.0.1"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/progress.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/all/modules/ctools/js/modal.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/default/modules/modal_forms/js/modal_forms_popup.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/responsive_menus/styles/responsive_menus_simple/js/responsive_menus_simple.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js%3Ft4kojz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-107867597-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="../sites/all/modules/field_group/field_group.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/custom/reviewer_select/authors_table_form.js%3Ft4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/tableheader.js?t4kojz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"corolla","theme_token":"iyZRnCHuYF1oF0h0f1KbbBXNAyTYjYOgz8rZSlvvUko","jquery_version":"default","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/form-single-submit.js":1,"misc\/ajax.js":1,"sites\/default\/modules\/jquery_update\/js\/jquery_update.js":1,"misc\/progress.js":1,"sites\/all\/modules\/ctools\/js\/modal.js":1,"sites\/default\/modules\/modal_forms\/js\/modal_forms_popup.js":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/js\/responsive_menus_simple.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/field_group\/field_group.js":1,"sites\/all\/modules\/custom\/reviewer_select\/authors_table_form.js":1,"misc\/tableheader.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ctools\/css\/modal.css":1,"sites\/default\/modules\/modal_forms\/css\/modal_forms_popup.css":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/css\/responsive_menus_simple.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.headings.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.image.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/corolla\/css\/html-elements.css":1,"sites\/all\/themes\/corolla\/css\/forms.css":1,"sites\/all\/themes\/corolla\/css\/tables.css":1,"sites\/all\/themes\/corolla\/css\/page.css":1,"sites\/all\/themes\/corolla\/css\/articles.css":1,"sites\/all\/themes\/corolla\/css\/comments.css":1,"sites\/all\/themes\/corolla\/css\/fields.css":1,"sites\/all\/themes\/corolla\/css\/blocks.css":1,"sites\/all\/themes\/corolla\/css\/navigation.css":1,"sites\/all\/themes\/corolla\/css\/fonts.css":1,"sites\/all\/themes\/corolla\/css\/corolla.settings.style.css":1,"sites\/all\/themes\/corolla\/color\/colors.css":1,"sites\/all\/themes\/corolla\/css\/print.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.responsive.layout.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.fonts.css":1,"sites\/all\/themes\/corolla\/css\/responsive.custom.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.desktop.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.lt-ie9.layout.css":1,"sites\/all\/themes\/corolla\/css\/ie-lte-9.css":1}},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E"},"modal-popup-small":{"modalSize":{"type":"fixed","width":500,"height":150},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-medium":{"modalSize":{"type":"fixed","width":550,"height":450},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-large":{"modalSize":{"type":"scale","width":0.8,"height":0.8},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"responsive_menus":[{"toggler_text":"\u2630 Menu","selectors":["#block-system-main-menu"],"media_size":"935","media_unit":"px","absolute":"1","remove_attributes":"1","responsive_menus_style":"responsive_menus_simple"}],"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/search\/node":true,"\/paper\/enhanced-large-language-model-self-attention-mechanism-social-media-rumor-detection":true},"field_group":{"fieldset":"full"},"ctools-sample-style":{"modalSize":{"type":"fixed","width":1098,"height":500,"addWidth":20,"addHeight":15},"modalOptions":{"opacity":0.5,"background-color":"#000"},"animation":"fadeIn","modalTheme":"CToolsSampleModal","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/ctools_ajax_sample\/images\/ajax-loader.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E"},"adaptivetheme":{"corolla":{"layout_settings":{"bigscreen":"three-col-grail","tablet_landscape":"three-col-grail","tablet_portrait":"one-col-vert","smalltouch_landscape":"one-col-vert","smalltouch_portrait":"one-col-stack"},"media_query_settings":{"bigscreen":"only screen and (min-width:1025px)","tablet_landscape":"only screen and (min-width:769px) and (max-width:1024px)","tablet_portrait":"only screen and (min-width:481px) and (max-width:768px)","smalltouch_landscape":"only screen and (min-width:321px) and (max-width:480px)","smalltouch_portrait":"only screen and (max-width:320px)"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]>
+<script src="https://datasciencehub.net/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?t4kojz"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-917 node-type-submit-paper site-name-hidden atr-7.x-3.x atv-7.x-3.1 lang-en site-name-data-science section-paper color-scheme-custom corolla bs-n bb-n mb-dd rc-6 rct-6">
+  <div id="skip-link" class="nocontent">
+    <a href="enhanced-large-language-model-self-attention-mechanism-social-media-rumor-detection.html#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="page-wrapper">
+  <div id="page" class="page ssc-n ssw-n ssa-l sss-n btc-n btw-b bta-l bts-n ntc-n ntw-b nta-l nts-n ctc-n ctw-b cta-l cts-n ptc-n ptw-b pta-l pts-n">
+
+          <div id="menu-bar-wrapper">
+        <div class="container clearfix">
+          <div id="menu-bar" class="nav clearfix"><nav id="block-system-main-menu" class="block block-system block-menu menu-wrapper menu-bar-wrapper clearfix odd first block-count-1 block-region-menu-bar block-main-menu"  role="navigation">  
+      <h2 class="element-invisible block-title">Main menu</h2>
+  
+  <ul class="menu clearfix"><li class="first leaf menu-depth-1 menu-item-757"><a href="../content/about-data-science.html">About</a></li><li class="leaf menu-depth-1 menu-item-758"><a href="../content/editors.html">Editorial Board</a></li><li class="leaf menu-depth-1 menu-item-1559"><a href="../content/submit-manuscript.html">Submit Manuscript</a></li><li class="leaf menu-depth-1 menu-item-1612"><a href="../content/calls.html">Calls</a></li><li class="leaf menu-depth-1 menu-item-759"><a href="../content/guidelines-authors.html">For Authors</a></li><li class="leaf menu-depth-1 menu-item-760"><a href="../content/guidelines-reviewers.html">For Reviewers</a></li><li class="leaf menu-depth-1 menu-item-582"><a href="../underreview.html" title="Under Review">Under Review</a></li><li class="leaf menu-depth-1 menu-item-583"><a href="../reviewed.html" title="">Reviewed</a></li><li class="last leaf menu-depth-1 menu-item-1611"><a href="../ReviewedAccepted.html" title="">Accepted</a></li></ul>
+  </nav><div id="block-orcid-login-orcid-login" class="block block-orcid-login no-title menu-wrapper menu-bar-wrapper clearfix even last block-count-2 block-region-menu-bar block-orcid-login" >  
+  
+  <p style="background-color: #003b3a; float:right;"><a style="vertical-align: middle; color: white; padding: 10px; display: inline-block; text-decoration: none;" href="https://orcid.org/oauth/authorize?client_id=APP-223SGGDDO35LKOT2&amp;response_type=code&amp;scope=%2Fauthenticate&amp;redirect_uri=https%3A%2F%2Fdatasciencehub.net%2F&amp;state=eyJyZWRpcmVjdCI6InBhcGVyXC9lbmhhbmNlZC1sYXJnZS1sYW5ndWFnZS1tb2RlbC1zZWxmLWF0dGVudGlvbi1tZWNoYW5pc20tc29jaWFsLW1lZGlhLXJ1bW9yLWRldGVjdGlvbiJ9"><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle;"/> Log In with ORCID</a></p>
+  </div></div>        </div>
+      </div>
+    
+    <div id="header-wrapper">
+      <div class="container clearfix">
+	        <header class="clearfix with-logo" role="banner">
+
+                      <div id="branding" class="branding-elements clearfix">
+
+                              <div id="logo">
+                  <a href="../index.html"><img class="site-logo" typeof="foaf:Image" src="../sites/default/files/DS_LOGO_vertical.png" alt="Data Science" /></a>                </div>
+              
+                              <div class="element-invisible h-group" id="name-and-slogan">
+
+                                      <h1 class="element-invisible" id="site-name"><a href="../index.html" title="Home page">Data Science</a></h1>
+                  
+                  
+                </div>
+              
+            </div>
+          
+          
+        </header>
+
+      </div>
+    </div>
+
+          <div id="top-panels-wrapper">
+        <div class="container clearfix">
+          <!-- Three column 3x33 Gpanel -->
+          <div class="at-panel gpanel panel-display three-3x33 clearfix">
+                                                          </div>
+        </div>
+      </div>
+    
+    
+    
+    <div id="content-wrapper">
+      <div class="container">
+
+        <div id="columns">
+          <div class="columns-inner clearfix">
+
+            <div id="content-column">
+              <div class="content-inner">
+
+                
+                <section id="main-content" role="main">
+
+                  
+                  <div class="content-margin">
+                    <div class="content-style">
+
+                      
+                      
+                      
+                                              <header class="clearfix">
+                          <h1 id="page-title">
+                            Enhanced Large language model with a self-attention mechanism for Social Media Rumor Detection                          </h1>
+                        </header>
+                      
+                      
+                      
+                      <div id="content">
+                        <div class="region region-content"><div id="block-system-main" class="block block-system no-title odd first last block-count-3 block-region-content block-main" >  
+  
+  <article id="node-917" class="node node-submit-paper article odd node-lang-en node-full ia-n clearfix" about="/paper/enhanced-large-language-model-self-attention-mechanism-social-media-rumor-detection" typeof="sioc:Item foaf:Document" role="article">
+  <div class="node-inner">
+
+
+
+              <header class="node-header">
+
+        
+        
+      </header>
+        <span property="dc:title" content="Enhanced Large language model with a self-attention mechanism for Social Media Rumor Detection" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+    <div class="node-content">
+        
+      <h3>Tracking #: 917-1897</h3>          								<fieldset>
+					<!-- legend>
+						<span class="fieldset-legend">Paper Data</span>
+					</legend -->
+
+					
+
+
+					
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><b>Authors:</b><br/><form action="enhanced-large-language-model-self-attention-mechanism-social-media-rumor-detection.html" method="post" id="authors-table-form" accept-charset="UTF-8"><div><table class="sticky-enabled">
+ <thead><tr><th></th><th>Name</th><th>ORCID</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-2529">
+  <input type="checkbox" id="edit-authors-2529" name="authors[2529]" value="2529" class="form-checkbox" />
+</div>
+</td><td>Vikas B</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0009-0009-5564-1861" target="_blank">https://orcid.org/0009-0009-5564-1861</a></td> </tr>
+ <tr class="even"><td><div class="form-item form-type-checkbox form-item-authors-2530">
+  <input type="checkbox" id="edit-authors-2530" name="authors[2530]" value="2530" class="form-checkbox" />
+</div>
+</td><td>Sirisha Devi J</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0009-0006-3531-3949" target="_blank">https://orcid.org/0009-0006-3531-3949</a></td> </tr>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-2531">
+  <input type="checkbox" id="edit-authors-2531" name="authors[2531]" value="2531" class="form-checkbox" />
+</div>
+</td><td>Sukanya L </td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0009-0004-9855-5975" target="_blank">https://orcid.org/0009-0004-9855-5975</a></td> </tr>
+ <tr class="even"><td><div class="form-item form-type-checkbox form-item-authors-2532">
+  <input type="checkbox" id="edit-authors-2532" name="authors[2532]" value="2532" class="form-checkbox" />
+</div>
+</td><td>Sree Lakshmi Done</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0009-0002-0843-6426" target="_blank">https://orcid.org/0009-0002-0843-6426</a></td> </tr>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-2533">
+  <input type="checkbox" id="edit-authors-2533" name="authors[2533]" value="2533" class="form-checkbox" />
+</div>
+</td><td>Rayapati venkata  sudhakar</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0009-0002-1302-2279" target="_blank">https://orcid.org/0009-0002-1302-2279</a></td> </tr>
+ <tr class="even"><td><div class="form-item form-type-checkbox form-item-authors-2534">
+  <input type="checkbox" id="edit-authors-2534" name="authors[2534]" value="2534" class="form-checkbox" />
+</div>
+</td><td>Venkateswarlu D</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0009-0000-9963-3622" target="_blank">https://orcid.org/0009-0000-9963-3622</a></td> </tr>
+</tbody>
+</table>
+<input type="hidden" name="author_nd" value="917" />
+<input type="hidden" name="author_vd" value="1897" />
+<input type="submit" id="edit-authors-email" name="op" value="Compose Email" class="form-submit" /><input type="hidden" name="form_build_id" value="form-dB2h8yAdX17CfcSfIM81DMpSalw96owbp_Bm4G7uxVM" />
+<input type="hidden" name="form_id" value="authors_table_form" />
+</div></form><hr/></div><br/>
+
+					
+					                    <div style="background-color: #E3E5E3;border-radius:5px;padding-top:4px;padding-bottom:4px;padding-left:6px;">
+					<section class="field field-name-field-submission-type field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Submission Type:&nbsp;</h2><div class="field-items"><div class="field-item even">Research Paper</div></div></section><section class="field field-name-field-abstract field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Abstract:&nbsp;</h2><div class="field-items"><div class="field-item even">In today&#039;s digitally interconnected world, the unchecked spread of rumors and misinformation presents significant challenges to public discourse, trust, and decision-making. Rumors, often based on unsubstantiated information, speculation, or exaggerated accounts, can rapidly disseminate through social media and other communication channels, particularly in uncertain or anxious situations. False rumors not only damage reputation and trust but also have tangible economic consequences, affecting businesses and markets.This research aims to provide a robust method for detecting rumors on social media platforms, addressing urgent requirements for effective techniques and tools to mitigate their impact. Initially, data are collected from social media and pre-processed. Word embeddings are then used to extract features from the preprocessed data, providing rich, context-aware vector representations that capture essential semantic and syntactic nuances for accurate classification. The extracted features are subsequently classified using a Generative Pre-trained Transformer (GPT), which relies on a transformer architecture that employs a self-attention mechanism to weighthe significance of unusual terms in a sequence comparative to each other. Finally, hyperparameters are optimized using the Deer Hunting Optimization Algorithm (DHOA). For experimental analysis, three types of datasets are utilized. The proposed method achieves high accuracy rates of 99.5% for Twitter15, 99.30% for Twitter16, and 99.1% for the PHEME dataset.</div></div></section><section class="field field-name-field-pdf field-type-file field-label-above view-mode-full"><h2 class="field-label">Manuscript:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="File" title="application/vnd.openxmlformats-officedocument.wordprocessingml.document" src="https://datasciencehub.net/modules/file/icons/x-office-document.png" /> <a href="../system/files/ds-paper-917.docx" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document; length=324419">ds-paper-917.docx</a></span></div></div></section><section class="field field-name-field-tags field-type-taxonomy-term-reference field-label-above view-mode-full"><h2 class="field-label">Tags:&nbsp;</h2><ul class="field-items"><li class="field-item even">Reviewed</li></ul></section><section class="field field-name-field-data-repository-urls field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Data repository URLs:&nbsp;</h2><div class="field-items"><div class="field-item even"><p>Not Applicable</p>
+</div></div></section><section class="field field-name-field-date-of-submission field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Submission:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2025-05-29T00:00:00-04:00">Thursday, May 29, 2025</span></div></div></section><section class="field field-name-field-date-of-decision field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Decision:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2025-06-16T00:00:00-04:00">Monday, June 16, 2025</span></div></div></section><br><br><b>Nanopublication URLs:</b> <br>                    </div>
+                    <br/>
+
+					
+                    
+                    <div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-decision field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Decision:&nbsp;</h2><div class="field-items"><div class="field-item even">Reject (Pre-Screening)</div></div></section></div><br/>                    <div id="review">
+                    		                    	</div>
+
+					
+										                    
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"></div><br/>
+				</fieldset>
+				
+    </div>
+
+    <div id="admin-review">
+			</div>
+
+	<div id="decision">
+			</div>
+
+
+
+
+          <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first"><span><a href="../user/login%3Fdestination=comment%252Freply%252F917%23comment-form.html">Log in</a> to post comments</span></li><li class="camera_ready_files_field_paper last"></li></ul></nav>
+    
+    
+  </div>
+  </article>
+
+  </div></div>                      </div>
+
+                      
+                    </div>
+                  </div>
+
+                </section>
+
+                
+              </div>
+            </div>
+
+                        
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+    
+          <div id="footer-wrapper">
+        <div class="container clearfix">
+          <footer class="clearfix" role="contentinfo">
+            <div class="region region-footer"><div class="region-inner clearfix"><div id="block-block-16" class="block block-block no-title odd first last block-count-4 block-region-footer block-16" ><div class="block-inner clearfix">  
+  
+  <div class="block-content content"><p style="text-align:center;"><a href="https://www.iospress.nl/disclaimer/" target="_blank">Disclaimer</a> | <a href="https://content.iospress.com/page/privacy" target="_blank">Privacy Policy</a> | Data Science is Published by <a href="http://www.iospress.com" target="_blank">IOS Press</a>, Copyright 2023</p>
+</div>
+  </div></div></div></div>            <p class="attribute-creator"></p>
+          </footer>
+        </div>
+      </div>
+    
+  </div>
+</div>
+  </body>
+</html>

@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../paper/measuring-data-drift-unstable-population-indicator.html" />
+<link rel="shortlink" href="../node/779.html" />
+<link rel="shortcut icon" href="../sites/default/files/favicon-96x96.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>Measuring Data Drift with the Unstable Population Indicator | Data Science</title>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/system/system.base.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.menus.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.messages.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.core.css?t4kojz");
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/comment/comment.css?t4kojz");
+@import url("https://datasciencehub.net/modules/field/theme/field.css?t4kojz");
+@import url("../sites/all/modules/logintoboggan/logintoboggan.css%3Ft4kojz.css");
+@import url("https://datasciencehub.net/modules/node/node.css?t4kojz");
+@import url("https://datasciencehub.net/modules/search/search.css?t4kojz");
+@import url("https://datasciencehub.net/modules/user/user.css?t4kojz");
+@import url("../sites/all/modules/views/css/views.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/modules/ctools/css/ctools.css%3Ft4kojz.css");
+@import url("../sites/all/modules/ctools/css/modal.css%3Ft4kojz.css");
+@import url("../sites/default/modules/modal_forms/css/modal_forms_popup.css%3Ft4kojz.css");
+@import url("../sites/all/modules/responsive_menus/styles/responsive_menus_simple/css/responsive_menus_simple.css%3Ft4kojz.css");
+@import url("../sites/all/modules/date/date_api/date.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="screen">
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.headings.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.image.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.layout.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/themes/corolla/css/html-elements.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/forms.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/tables.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/page.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/articles.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/comments.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/fields.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/blocks.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/navigation.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/corolla.settings.style.css%3Ft4kojz.css");
+@import url("../sites/default/files/color/corolla-80fb2671/colors.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="print">
+@import url("../sites/all/themes/corolla/css/print.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/default/files/adaptivetheme/corolla_files/corolla.responsive.layout.css%3Ft4kojz.css" media="only screen" />
+<style type="text/css" media="screen">
+@import url("../sites/default/files/adaptivetheme/corolla_files/corolla.fonts.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.custom.css%3Ft4kojz.css" media="only screen" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.portrait.css%3Ft4kojz.css" media="only screen and (max-width:320px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.landscape.css%3Ft4kojz.css" media="only screen and (min-width:321px) and (max-width:480px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.portrait.css%3Ft4kojz.css" media="only screen and (min-width:481px) and (max-width:768px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.landscape.css%3Ft4kojz.css" media="only screen and (min-width:769px) and (max-width:1024px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.desktop.css%3Ft4kojz.css" media="only screen and (min-width:1025px)" />
+
+<!--[if lt IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/default/files/adaptivetheme/corolla_files/corolla.lt-ie9.layout.css?t4kojz");
+</style>
+<![endif]-->
+
+<!--[if lte IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/all/themes/corolla/css/ie-lte-9.css?t4kojz");
+</style>
+<![endif]-->
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-extend-3.4.0.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/drupal.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ui/jquery.ui.core.min.js?v=1.8.7"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.cookie.js?v=1.0"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.form.js?v=2.52"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form-single-submit.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ajax.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/default/modules/jquery_update/js/jquery_update.js%3Fv=0.0.1"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/progress.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/all/modules/ctools/js/modal.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/default/modules/modal_forms/js/modal_forms_popup.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/responsive_menus/styles/responsive_menus_simple/js/responsive_menus_simple.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js%3Ft4kojz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-107867597-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="../sites/all/modules/field_group/field_group.js%3Ft4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/tableheader.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/collapse.js?v=7.98"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"corolla","theme_token":"ieXsWLv0mZ2I2b860gsyU5pK6-8stF1eiEN7Bdp1RZ8","jquery_version":"default","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/form-single-submit.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/default\/modules\/jquery_update\/js\/jquery_update.js":1,"misc\/progress.js":1,"sites\/all\/modules\/ctools\/js\/modal.js":1,"sites\/default\/modules\/modal_forms\/js\/modal_forms_popup.js":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/js\/responsive_menus_simple.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/field_group\/field_group.js":1,"misc\/tableheader.js":1,"misc\/collapse.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ctools\/css\/modal.css":1,"sites\/default\/modules\/modal_forms\/css\/modal_forms_popup.css":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/css\/responsive_menus_simple.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.headings.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.image.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/corolla\/css\/html-elements.css":1,"sites\/all\/themes\/corolla\/css\/forms.css":1,"sites\/all\/themes\/corolla\/css\/tables.css":1,"sites\/all\/themes\/corolla\/css\/page.css":1,"sites\/all\/themes\/corolla\/css\/articles.css":1,"sites\/all\/themes\/corolla\/css\/comments.css":1,"sites\/all\/themes\/corolla\/css\/fields.css":1,"sites\/all\/themes\/corolla\/css\/blocks.css":1,"sites\/all\/themes\/corolla\/css\/navigation.css":1,"sites\/all\/themes\/corolla\/css\/fonts.css":1,"sites\/all\/themes\/corolla\/css\/corolla.settings.style.css":1,"sites\/all\/themes\/corolla\/color\/colors.css":1,"sites\/all\/themes\/corolla\/css\/print.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.responsive.layout.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.fonts.css":1,"sites\/all\/themes\/corolla\/css\/responsive.custom.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.desktop.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.lt-ie9.layout.css":1,"sites\/all\/themes\/corolla\/css\/ie-lte-9.css":1}},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E"},"modal-popup-small":{"modalSize":{"type":"fixed","width":500,"height":150},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-medium":{"modalSize":{"type":"fixed","width":550,"height":450},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-large":{"modalSize":{"type":"scale","width":0.8,"height":0.8},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"responsive_menus":[{"toggler_text":"\u2630 Menu","selectors":["#block-system-main-menu"],"media_size":"935","media_unit":"px","absolute":"1","remove_attributes":"1","responsive_menus_style":"responsive_menus_simple"}],"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/search\/node":true,"\/comment\/141":true},"field_group":{"fieldset":"full"},"ctools-sample-style":{"modalSize":{"type":"fixed","width":1098,"height":500,"addWidth":20,"addHeight":15},"modalOptions":{"opacity":0.5,"background-color":"#000"},"animation":"fadeIn","modalTheme":"CToolsSampleModal","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/ctools_ajax_sample\/images\/ajax-loader.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E"},"adaptivetheme":{"corolla":{"layout_settings":{"bigscreen":"three-col-grail","tablet_landscape":"three-col-grail","tablet_portrait":"one-col-vert","smalltouch_landscape":"one-col-vert","smalltouch_portrait":"one-col-stack"},"media_query_settings":{"bigscreen":"only screen and (min-width:1025px)","tablet_landscape":"only screen and (min-width:769px) and (max-width:1024px)","tablet_portrait":"only screen and (min-width:481px) and (max-width:768px)","smalltouch_landscape":"only screen and (min-width:321px) and (max-width:480px)","smalltouch_portrait":"only screen and (max-width:320px)"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]>
+<script src="https://datasciencehub.net/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?t4kojz"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-779 node-type-submit-paper site-name-hidden atr-7.x-3.x atv-7.x-3.1 lang-en site-name-data-science section-paper color-scheme-custom corolla bs-n bb-n mb-dd rc-6 rct-6">
+  <div id="skip-link" class="nocontent">
+    <a href="141.html#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="page-wrapper">
+  <div id="page" class="page ssc-n ssw-n ssa-l sss-n btc-n btw-b bta-l bts-n ntc-n ntw-b nta-l nts-n ctc-n ctw-b cta-l cts-n ptc-n ptw-b pta-l pts-n">
+
+          <div id="menu-bar-wrapper">
+        <div class="container clearfix">
+          <div id="menu-bar" class="nav clearfix"><nav id="block-system-main-menu" class="block block-system block-menu menu-wrapper menu-bar-wrapper clearfix odd first block-count-1 block-region-menu-bar block-main-menu"  role="navigation">  
+      <h2 class="element-invisible block-title">Main menu</h2>
+  
+  <ul class="menu clearfix"><li class="first leaf menu-depth-1 menu-item-757"><a href="../content/about-data-science.html">About</a></li><li class="leaf menu-depth-1 menu-item-758"><a href="../content/editors.html">Editorial Board</a></li><li class="leaf menu-depth-1 menu-item-1559"><a href="../content/submit-manuscript.html">Submit Manuscript</a></li><li class="leaf menu-depth-1 menu-item-1612"><a href="../content/calls.html">Calls</a></li><li class="leaf menu-depth-1 menu-item-759"><a href="../content/guidelines-authors.html">For Authors</a></li><li class="leaf menu-depth-1 menu-item-760"><a href="../content/guidelines-reviewers.html">For Reviewers</a></li><li class="leaf menu-depth-1 menu-item-582"><a href="../underreview.html" title="Under Review">Under Review</a></li><li class="leaf menu-depth-1 menu-item-583"><a href="../reviewed.html" title="">Reviewed</a></li><li class="last leaf menu-depth-1 menu-item-1611"><a href="../ReviewedAccepted.html" title="">Accepted</a></li></ul>
+  </nav><div id="block-orcid-login-orcid-login" class="block block-orcid-login no-title menu-wrapper menu-bar-wrapper clearfix even last block-count-2 block-region-menu-bar block-orcid-login" >  
+  
+  <p style="background-color: #003b3a; float:right;"><a style="vertical-align: middle; color: white; padding: 10px; display: inline-block; text-decoration: none;" href="https://orcid.org/oauth/authorize?client_id=APP-223SGGDDO35LKOT2&amp;response_type=code&amp;scope=%2Fauthenticate&amp;redirect_uri=https%3A%2F%2Fdatasciencehub.net%2F&amp;state=eyJyZWRpcmVjdCI6ImNvbW1lbnRcLzE0MSJ9"><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle;"/> Log In with ORCID</a></p>
+  </div></div>        </div>
+      </div>
+    
+    <div id="header-wrapper">
+      <div class="container clearfix">
+	        <header class="clearfix with-logo" role="banner">
+
+                      <div id="branding" class="branding-elements clearfix">
+
+                              <div id="logo">
+                  <a href="../index.html"><img class="site-logo" typeof="foaf:Image" src="../sites/default/files/DS_LOGO_vertical.png" alt="Data Science" /></a>                </div>
+              
+                              <div class="element-invisible h-group" id="name-and-slogan">
+
+                                      <h1 class="element-invisible" id="site-name"><a href="../index.html" title="Home page">Data Science</a></h1>
+                  
+                  
+                </div>
+              
+            </div>
+          
+          
+        </header>
+
+      </div>
+    </div>
+
+          <div id="top-panels-wrapper">
+        <div class="container clearfix">
+          <!-- Three column 3x33 Gpanel -->
+          <div class="at-panel gpanel panel-display three-3x33 clearfix">
+                                                          </div>
+        </div>
+      </div>
+    
+    
+    
+    <div id="content-wrapper">
+      <div class="container">
+
+        <div id="columns">
+          <div class="columns-inner clearfix">
+
+            <div id="content-column">
+              <div class="content-inner">
+
+                
+                <section id="main-content" role="main">
+
+                  
+                  <div class="content-margin">
+                    <div class="content-style">
+
+                      
+                      
+                      
+                                              <header class="clearfix">
+                          <h1 id="page-title">
+                            Measuring Data Drift with the Unstable Population Indicator                          </h1>
+                        </header>
+                      
+                      
+                      
+                      <div id="content">
+                        <div class="region region-content"><div id="block-system-main" class="block block-system no-title odd first last block-count-3 block-region-content block-main" >  
+  
+  <article id="node-779" class="node node-submit-paper article odd node-lang-en node-full ia-n clearfix" about="/paper/measuring-data-drift-unstable-population-indicator" typeof="sioc:Item foaf:Document" role="article">
+  <div class="node-inner">
+
+
+
+              <header class="node-header">
+
+        
+        
+      </header>
+        <span property="dc:title" content="Measuring Data Drift with the Unstable Population Indicator" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="2" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+    <div class="node-content">
+        
+      <h3>Tracking #: 779-1759</h3>          								<fieldset>
+					<!-- legend>
+						<span class="fieldset-legend">Paper Data</span>
+					</legend -->
+
+					
+
+
+					
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><h5>Authors:</h5><br/><form action="141.html" method="post" id="authors-table-form-anonymus" accept-charset="UTF-8"><div><div id="authors_Container"><table class="sticky-enabled">
+ <thead><tr><th></th><th>Name</th><th>ORCID</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-2112">
+  <input type="checkbox" id="edit-authors-2112" name="authors[2112]" value="2112" class="form-checkbox" />
+</div>
+</td><td>Marcel Haas</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0003-2581-8370" target="_blank">https://orcid.org/0000-0003-2581-8370</a></td> </tr>
+ <tr class="even"><td><div class="form-item form-type-checkbox form-item-authors-2115">
+  <input type="checkbox" id="edit-authors-2115" name="authors[2115]" value="2115" class="form-checkbox" />
+</div>
+</td><td>Lisette Sibbald</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0009-0003-5030-0108" target="_blank">https://orcid.org/0009-0003-5030-0108</a></td> </tr>
+</tbody>
+</table>
+</div><input type="hidden" name="author_nd" value="779" />
+<input type="hidden" name="author_vd" value="1759" />
+<input type="hidden" name="form_build_id" value="form-sROOZfIU6_K1oemAVY8625WRxEHKYSfgi-M0dahgaoM" />
+<input type="hidden" name="form_id" value="authors_table_form_anonymus" />
+</div></form><hr/></div><br/>
+
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-editor field-type-user-reference field-label-above view-mode-full"><h2 class="field-label">Responsible editor:&nbsp;</h2><div class="field-items"><div class="field-item even">Gargi Datta</div></div></section></div><br/>
+					                    <div style="background-color: #E3E5E3;border-radius:5px;padding-top:4px;padding-bottom:4px;padding-left:6px;">
+					<section class="field field-name-field-submission-type field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Submission Type:&nbsp;</h2><div class="field-items"><div class="field-item even">Resource Paper</div></div></section><section class="field field-name-field-abstract field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Abstract:&nbsp;</h2><div class="field-items"><div class="field-item even">Measuring data drift is essential in machine learning applications where training is necessarily done on strictly
+different samples than later scoring. The Kullback-Leibler divergence is a common measure of shifted probability distributions,
+for which discretized versions are invented to deal with binned or categorical data. We present the Unstable Population Indicator,
+a robust, flexible and numerically stable, discretized implementation of Jeffrey’s divergence, along with an implementation in a
+Python package that can deal with continuous, discrete, ordinal and nominal data in a variety of popular data types. We show
+the numerical and statistical properties in controlled experiments. It is not advised to employ a common cut-off to distinguish
+stable from unstable populations, but rather to let that cut-off depend on the use case.</div></div></section><section class="field field-name-field-pdf field-type-file field-label-above view-mode-full"><h2 class="field-label">Manuscript:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="PDF icon" title="application/pdf" src="https://datasciencehub.net/modules/file/icons/application-pdf.png" /> <a href="../system/files/ds-paper-779.pdf" type="application/pdf; length=265606">ds-paper-779.pdf</a></span></div></div></section><section class="field field-name-field-tags field-type-taxonomy-term-reference field-label-above view-mode-full"><h2 class="field-label">Tags:&nbsp;</h2><ul class="field-items"><li class="field-item even">Reviewed</li></ul></section><section class="field field-name-field-data-repository-urls field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Data repository URLs:&nbsp;</h2><div class="field-items"><div class="field-item even"><p><a href="https://github.com/harcel/unstable_populations">https://github.com/harcel/unstable_populations</a></p>
+</div></div></section><section class="field field-name-field-date-of-submission field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Submission:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2023-10-16T00:00:00-04:00">Monday, October 16, 2023</span></div></div></section><section class="field field-name-field-date-of-decision field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Decision:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2023-12-29T00:00:00-05:00">Friday, December 29, 2023</span></div></div></section><br><br><b>Nanopublication URLs:</b> <br><a href="http://ds.kpxl.org/RAagramW3zuY74wddL8L7yWtJHXOMuCscs3HUKNb8YL50">http://ds.kpxl.org/RAagramW3zuY74wddL8L7yWtJHXOMuCscs3HUKNb8YL50</a><br>                    </div>
+                    <br/>
+
+					
+                    
+                    <div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-decision field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Decision:&nbsp;</h2><div class="field-items"><div class="field-item even">Accept</div></div></section></div><br/>                    <div id="review">
+                    		                    	</div>
+
+					
+										<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><b>Solicited Reviews:</b><br/><form action="141.html" method="post" id="get-submitted-reviews" accept-charset="UTF-8"><div><fieldset class="collapsible collapsed form-wrapper" id="edit-fset1"><legend><span class="fieldset-legend">Review #1 <strong>submitted on 13/Nov/2023</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Samuel Ackerman</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0003-2631-0341" target="_blank">https://orcid.org/0000-0003-2631-0341</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Average</br><b style="color:#f39222">Suggested Decision: </b> Accept</br><b style="color:#f39222">Technical Quality of the paper:</b> Good<br/><b style="color:#f39222">Presentation:</b> Good<br/><b style="color:#f39222">Reviewer`s confidence:</b> High<br/><b style="color:#f39222">Significance:</b> Moderate significance<br/><b style="color:#f39222">Background:</b> Reasonable<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data (if any) are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences: </b><br/><p>The authors present a Python implementation of UPI, which is a slightly-modified version of the PSI distribution drift measure.  It improves upon existing implementations in that they can handle more data modalities (categorical, nominal, ordinal), and can handle cases where there are histogram bins that are empty.  They perform comparisons using Gaussian data, for which the underlying KL divergence can be calculated analytically, and compare it to the UPI and PSI values.  They discuss that UPI doesn't have a fixed cut-off value to designate drift but that it is situation-dependent.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>The writing is pretty clear and the contribution seems to be useful (but not tremendous novelty).  The discussion about the properties of the metric is good, but perhaps the experiments could be expanded to consider a non-Gaussian continuous distribution.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>None that I can think of</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>-Abstract: the last part "where training is necessarily done on strictly different samples than later scoring" is ungrammatical.  Maybe say "where model scoring (evaluation) is done on data samples that differ from those used in training".<br />
+-Page 2 line 3: "know" should be "known"<br />
+-Page 2 line 5: can you expand on what the citations in 7,8 refer to? You just say they are techniques that are "sometimes used," but what are examples?<br />
+-Page 2 line 13:  "Some care about the source of the drift, while some don’t".   Does "source" refer to an external cause or the nature of the distribution?  In what ways can the source of drift be incorporated into the metric?<br />
+-Page 2 line 22: to clarify, can the PSI only accept certain limited data modalities that you have extended your method to?  Make it clear in what ways there is an improvement.  Are the numerical nuisances allowing the metric to be defined in cases where the cells are 0 in one case?  Maybe find a way to say this in a non-technical way here.  "Numerical nuisances" is too vague.<br />
+-Page 2, equations 1-2: the definition x_i=x_1, ..., x_n and the notation works only in cases with a countable and finite set of values.  What about, say, binomial where x_i can be 'infinite'?  Probably better to define, say, $\mathcal{X}$, without length n, as the set of valid values (possibly uncountable), and say the integration and sum are done for all x \in \mathcal{X}.  Obviously numerically, there is discretization done based on the sample of values, but your definition should be more inclusive.<br />
+-Page 3 line 6: is it more correct to say "P(X) is more determined" rather than X?<br />
+-Page 3 line 21: "so information needs to be added about the random variable X" meaning is not quite clear.  You mean "we need to incorporate information about the values of the domain of X and not just the form of P(X)" or something like that?  Or maybe say more precisely that the metric is not sensitive to location shifts, which it should be to be useful.<br />
+-Page 3 line 22: maybe clarify you are saying that d(x) != d(x, x + change to left) + d(x, x - change).  I didn't quite get what you were saying at first.  Of course, distances are like this in general, the distance from the original x to itself is not 0 since you have traveled "there and back" which is how nonnegative distance metrics work.<br />
+-Page 4 line 6: I'd also add that possibly one would want the bins to be of unequal length to account for differences in the concentration to capture more important areas of the domain.<br />
+-Page 4 line 14: maybe instead of using alternative terms current/new and observed/baseline, be consistent with one or the other.   Same thing in line 22.<br />
+-Page 4 line 17: What do you mean by "it can be questioned"?  Do you mean "it is questionable/suspicious" or just "we may want to ask"?   Also when you say "ever true in practice", is this emphasis (e.g. it likely to never be true in practice)?  This is an issue in null hypothesis testing if the null is an unreasonable choice, but I'm not sure if that is what you mean here.<br />
+-Page 4 line 30: Have you considered Jensen-Shannon?  It should be defined in these cases, and it is also symmetric in that it averages the KL divergence in each direction.  It's probably worth mentioning in the related work and may be a good thing to look at.  See scipy.spatial.distance.jensenshannon.  Also, and I haven't seen this done, you can consider the values that are summed under the square root as elementwise measures of how much the two distributions differ at each point i.<br />
+-Page 4 line 41: if this is "common practice" can you cite some examples?<br />
+-Page 5 line 1: instead of "smearing" say "spreading", it's the wrong word<br />
+-Page 5 line 5: instead of "parts" say "fractions"?<br />
+-Page 5 line 29: "add the separate dimensions like distance measures in a Euclidean space" sounds confusing.  You mean "sum the marginal distance across dimensions"?  Also, in equation 7, shouldn't there be an external 1/d root like there is in 2-D Euclidean?<br />
+-Page 6: is the normal distribution the only one that can be used?  You mention "randomly sampled distribution functions" but I think you mean "random sampling from distribution functions".  If it's only normal, then justify the choice.  How sensitive is this to, say, if the distribution wasn't unimodal or symmetric?  Be up-front.<br />
+-Page 6 line 8: specify what this auto setting does (then say as a side note this is the "auto" setting).<br />
+-Page 6 line 8: instead of "together" say the two samples are "pooled" without weighting them to ensure the samples contribute equally even if they are of different size.  By the way, is that a good idea? Should they be equally weighted?   I guess you deal with this when you specify different sample sizes but maybe say something up-front about whether it is expected to be sensitive.  I would have thought you would want to equally-weight them.<br />
+-Page 6 line 26: this issue with the 0 cell counts seems to be a big drawback of these methods.  I mentioned above the Jensen Shannon.<br />
+-Page 6 line 27: "then", not "than"<br />
+-Page 6 line 38: call this "uniform discrete/categorical" rather than "completely flat"<br />
+-Page 6 line 40: can you describe this in terms of an increase in skew?  The description could use technical terms.<br />
+-Figure 1: - what is KL divergence when d/sigma = 0? It's not plotted.  Maybe also consider a lighter shading of the boxplots so the star is more visible.<br />
+-is d here the difference in means?  If so you already used d for dimension, maybe use \delta and define it earlier.  I don't see d defined.<br />
+-Figure 2: for the lineplots, use two lines of different thickness or solid/dashed.  The color is not always clear enough except digitally (plus for colorblindness).  Similarly, maybe the bars in the lower chart should be different grayscales or shading rather than colors.<br />
+-Page 8 line 44: maybe cite examples how it is uninformed or doesn't work well?<br />
+-Page 9 line 8L can you give examples of how to pick a cut-off?  It is usually based on some experiments?  It's not interpretable in terms of the original data.  Also, is the measure sensitive to constant multiples of the data?  I assume in this case the bins just get shrunk. Maybe mention explicitly.<br />
+-Page 9 line 16: for ordinal, does it work by recoding to equally-spaced integers?<br />
+-Page 9 line 20: what are the existing packages and implementations?  Also does something exist in R?  You just mention it's better than what exists but don't say what these are.<br />
+-Page 9 line 24: has the repo name changed to unstable_populations?  the link here doesn't work.  Maybe also print the link in the text in case the page is printed.</p>
+</p></div></fieldset>
+<fieldset class="collapsible collapsed form-wrapper" id="edit-fset2"><legend><span class="fieldset-legend">Review #2 <strong>submitted on 16/Nov/2023</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">Review Details<br/><hr/></div><p>Reviewer has chosen to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Good</br><b style="color:#f39222">Suggested Decision: </b> Accept</br><b style="color:#f39222">Technical Quality of the paper:</b> Excellent<br/><b style="color:#f39222">Presentation:</b> Good<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> Moderate significance<br/><b style="color:#f39222">Background:</b> Reasonable<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data (if any) are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences: </b><br/><p>The authors offer a new robust data drift measure extending existing measures. There new measure, the unstable population indicator, can handle null values when bin densities drop to zero. They also provide a python implementation of the measure.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>1. The paper challenges commonly accepted heuristics on measuring data drift and provides a solution to make the measure robust.<br />
+2. The evidence for the new metric and discussion are very good.<br />
+3. The added python implementation is great and makes the work more usable and impactful.<br />
+4. The addition is clever but simple and easy to understand.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>The work needs some minor edits but overall there is no reason to reject the paper that I see.</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>Overall the paper is very good. I have some minor comments. See below in order of appearence:<br />
+1. The introduction is very broad. It would be helpful to have an example for applicability. It seems the paper mainly focuses on machine learning as an example and it would be great to use that throughout more.<br />
+2. The gap could be more clearly stated that the current metrics cannot handle null values. This relates to page 2 line 16 where the authors state "In this paper we introduce yet another such measure..." This undermines the value of the work a little bit.<br />
+3. It is not always possible to know the data that will be used in production/predicted on later. One statement of what the needed data is would be helpful.<br />
+4. The language is mostly formal but there is "don't" on page 2 line 13.<br />
+5. Is the total population calculated with duplicates if the original and new populations are added? In a similar vein, can new bins or categories be added to the data or no? Sometimes there is a need for new categories that did not exist in the original population based on new information. A clear list of assumptions about the populations would be helpful.<br />
+6. I am curious what happens to the UPI when the populations are small and if there is a minimum population needed?<br />
+7. For the figures, the colors are hard to differentiate in black and white.<br />
+8. A small discussion of how to set a cutoff would be interesting and add to the implementation.</p>
+</p></div></fieldset>
+<fieldset class="collapsible collapsed form-wrapper" id="edit-fset3"><legend><span class="fieldset-legend">Review #3 <strong>submitted on 29/Nov/2023</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">Review Details<br/><hr/></div><p>Reviewer has chosen to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Good</br><b style="color:#f39222">Suggested Decision: </b> Accept</br><b style="color:#f39222">Technical Quality of the paper:</b> Good<br/><b style="color:#f39222">Presentation:</b> Good<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> Low significance<br/><b style="color:#f39222">Background:</b> Comprehensive<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data (if any) are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences: </b><br/><p>The paper introduces the Unstable Population Indicator (UPI) as a measure for quantifying data drift, a critical aspect for models that are trained on different samples than those encountered during production. UPI is defined as a flexible and robust implementation of Jeffrey's divergence, a symmetric and discretized version of the Kullback-Leibler divergence, designed to handle various data types, including continuous, discrete, ordinal, and nominal. It answers the problem of bins with zero count by adding a small quantity to each bin. The authors highlight the importance of measuring data drift in both target and feature variables, emphasizing that the choice of a cut-off value for distinguishing stable and unstable populations should be case-dependent. Numerical experiments demonstrate UPI's effectiveness in controlled scenarios, and the paper provides a Python package for practical implementation, offering improved flexibility and performance over existing measures.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>The paper provides a solution to the "zero count bin" problem arising in the PSI calculation. Although there may be other ways to resolve this issue, the paper provides an alternative to PSI by adding a measured small value to each bin. This analytical solution provides a solution which is applicable for large enough population sizes.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>None</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>Here are some notes for this paper. The following items should be reviewed and addressed in order to clarify the message of the paper: </p>
+<p>1. Note how the definition of PSI does not take into account any order in the bins, nor distances between the bins, which makes the measure equally suitable for categorical/nominal data, but interestingly this is rarely done. Besides, many posts and papers suggest the same, uninformed cut-off values for the PSI as a distinction between stable and shifted or drifted data sets. What counts as an important shift in your data should be strongly use case dependent and investigated on a per-feature basis.</p>
+<p>    The text above is not clear to me. What is the significance of order in the bins for calculation of PSI or the resulting PSI values and their interpretations?<br />
+2. What exactly the uninformed cut-off values? Do you mean .1,.25 etc.? Why are they uninformed? [11] suggests that PSI has a distribution and one can use {95th, 99th, 99.9th etc} percentiles of PSI as cut-off instead of fixed values .1,.25 etc.? That may be mentioned here.</p>
+<p>3. In section 2.3, a discussion of PSI and its relation to $\chi^2$ tests is included however, it is not clear why there is a relationship.  It may be illuminating to include that PSI has an asymptotic $\chi^2$ distribution with $B-1$ degrees of freedom where $B$ is the number of bins used in the calculation of PSI</p>
+<p>4. $$UPI = \sum_{bins, i} (f_{1,i} − f_{0,i}) · ln(\frac{f_{1,i} + \frac{1}{ntot}}{f_{0,i} + \frac{1}{ntot}})$$  <br />
+The formulation of UPI introduces an addition of a small fraction based on total count of the both dataset i.e. $ntot =$ number of observation in the base and target datasets.</p>
+<p>The impact of this addition for small population is not discussed. No warning is provided to use UPI with small population sizes.</p>
+<p>5. It is not clear how high dimensional UPI is connected with the rest of the paper</p>
+<p>6. On page 4, the footnote does not list the sources explicitly</p>
+</p></div></fieldset>
+<input type="hidden" name="form_build_id" value="form-kygTYmxQFd6p1qm7xqiEkO7SKEGalJZyU0jOD8NVONM" />
+<input type="hidden" name="form_id" value="get_submitted_reviews" />
+</div></form></div><br/>                    
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"></div><br/>
+				</fieldset>
+				
+    </div>
+
+    <div id="admin-review">
+			</div>
+
+	<div id="decision">
+			</div>
+
+
+
+
+          <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first"><span><a href="../user/login%3Fdestination=comment%252Freply%252F779%23comment-form.html">Log in</a> to post comments</span></li><li class="camera_ready_files_field_paper last"></li></ul></nav>
+    
+    <section id="comments" class="comment-wrapper">
+
+          <h2 class="title">
+      2 Comments    </h2>
+      
+  <a id="comment-141"></a>
+<article class="comment odd first clearfix" about="/comment/141#comment-141" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="141.html#comment-141" rel="bookmark">meta-review by editor</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2023-12-29T05:01:30-05:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/tobias-kuhn" typeof="sioc:UserAccount" property="foaf:name" datatype="">Tobias Kuhn</span> on <time datetime="2023-12-29T05:01:30Z"><span class="date-time">Fri, 12/29/2023 - 05:01</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/measuring-data-drift-unstable-population-indicator" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p>The authors of the paper extend the Population Stability Index (PSI) to a more flexible Unstable Population Indicator (UPI), which solves the problem of a zero bin size for categorical data in PSI by adding a fraction of the population to each bin. The authors have also released a python package for UPI, which makes it easily accessible by other researchers in the field. They present a comprehensive discussion around the statistical properties of UPI and how it compares to PSI and the well-known Kullback-Leibler divergence. While the modification presented in the publication is simple, it is clearly written and comprehensively evaluated, and it cleverly preserves Jeffrey’s divergence and is a smarter approach than adding a constant to the bin size (which can bias bins unexpectedly). The addition of the python package makes it an easily usable metric.</p>
+<p>Gargi Datta (<a href="https://orcid.org/0000-0002-1314-7824">https://orcid.org/0000-0002-1314-7824</a>)</p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F779%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+<a id="comment-142"></a>
+<article class="comment even last clearfix" about="/comment/142#comment-142" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="142.html#comment-142" rel="bookmark">Nanopublication</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2023-12-29T05:02:48-05:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/tobias-kuhn" typeof="sioc:UserAccount" property="foaf:name" datatype="">Tobias Kuhn</span> on <time datetime="2023-12-29T05:02:48Z"><span class="date-time">Fri, 12/29/2023 - 05:02</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/measuring-data-drift-unstable-population-indicator" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Please also take into account the reactions on the nanopublication, which you can find here: <a href="http://ds.kpxl.org/RAagramW3zuY74wddL8L7yWtJHXOMuCscs3HUKNb8YL50">http://ds.kpxl.org/RAagramW3zuY74wddL8L7yWtJHXOMuCscs3HUKNb8YL50</a></p>
+<p>And get in touch with us if you need help with that.</p>
+<p>Regards,</p>
+<p>Tobias</p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F779%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+
+  
+</section>
+
+  </div>
+  </article>
+
+  </div></div>                      </div>
+
+                      
+                    </div>
+                  </div>
+
+                </section>
+
+                
+              </div>
+            </div>
+
+                        
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+    
+          <div id="footer-wrapper">
+        <div class="container clearfix">
+          <footer class="clearfix" role="contentinfo">
+            <div class="region region-footer"><div class="region-inner clearfix"><div id="block-block-16" class="block block-block no-title odd first last block-count-4 block-region-footer block-16" ><div class="block-inner clearfix">  
+  
+  <div class="block-content content"><p style="text-align:center;"><a href="https://www.iospress.nl/disclaimer/" target="_blank">Disclaimer</a> | <a href="https://content.iospress.com/page/privacy" target="_blank">Privacy Policy</a> | Data Science is Published by <a href="http://www.iospress.com" target="_blank">IOS Press</a>, Copyright 2023</p>
+</div>
+  </div></div></div></div>            <p class="attribute-creator"></p>
+          </footer>
+        </div>
+      </div>
+    
+  </div>
+</div>
+  </body>
+</html>

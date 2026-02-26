@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="computational-social-science-gauge-online-extremism.html" />
+<link rel="shortlink" href="../node/486.html" />
+<link rel="shortcut icon" href="../sites/default/files/favicon-96x96.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>Computational Social Science to Gauge Online Extremism | Data Science</title>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/system/system.base.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.menus.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.messages.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.core.css?t4kojz");
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/comment/comment.css?t4kojz");
+@import url("https://datasciencehub.net/modules/field/theme/field.css?t4kojz");
+@import url("../sites/all/modules/logintoboggan/logintoboggan.css%3Ft4kojz.css");
+@import url("https://datasciencehub.net/modules/node/node.css?t4kojz");
+@import url("https://datasciencehub.net/modules/search/search.css?t4kojz");
+@import url("https://datasciencehub.net/modules/user/user.css?t4kojz");
+@import url("../sites/all/modules/views/css/views.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/modules/ctools/css/ctools.css%3Ft4kojz.css");
+@import url("../sites/all/modules/ctools/css/modal.css%3Ft4kojz.css");
+@import url("../sites/default/modules/modal_forms/css/modal_forms_popup.css%3Ft4kojz.css");
+@import url("../sites/all/modules/responsive_menus/styles/responsive_menus_simple/css/responsive_menus_simple.css%3Ft4kojz.css");
+@import url("../sites/all/modules/date/date_api/date.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="screen">
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.headings.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.image.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.layout.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/themes/corolla/css/html-elements.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/forms.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/tables.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/page.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/articles.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/comments.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/fields.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/blocks.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/navigation.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/corolla.settings.style.css%3Ft4kojz.css");
+@import url("../sites/default/files/color/corolla-80fb2671/colors.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="print">
+@import url("../sites/all/themes/corolla/css/print.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/default/files/adaptivetheme/corolla_files/corolla.responsive.layout.css%3Ft4kojz.css" media="only screen" />
+<style type="text/css" media="screen">
+@import url("../sites/default/files/adaptivetheme/corolla_files/corolla.fonts.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.custom.css%3Ft4kojz.css" media="only screen" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.portrait.css%3Ft4kojz.css" media="only screen and (max-width:320px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.landscape.css%3Ft4kojz.css" media="only screen and (min-width:321px) and (max-width:480px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.portrait.css%3Ft4kojz.css" media="only screen and (min-width:481px) and (max-width:768px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.landscape.css%3Ft4kojz.css" media="only screen and (min-width:769px) and (max-width:1024px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.desktop.css%3Ft4kojz.css" media="only screen and (min-width:1025px)" />
+
+<!--[if lt IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/default/files/adaptivetheme/corolla_files/corolla.lt-ie9.layout.css?t4kojz");
+</style>
+<![endif]-->
+
+<!--[if lte IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/all/themes/corolla/css/ie-lte-9.css?t4kojz");
+</style>
+<![endif]-->
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-extend-3.4.0.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/drupal.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ui/jquery.ui.core.min.js?v=1.8.7"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.cookie.js?v=1.0"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.form.js?v=2.52"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form-single-submit.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ajax.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/default/modules/jquery_update/js/jquery_update.js%3Fv=0.0.1"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/progress.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/all/modules/ctools/js/modal.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/default/modules/modal_forms/js/modal_forms_popup.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/responsive_menus/styles/responsive_menus_simple/js/responsive_menus_simple.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js%3Ft4kojz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-107867597-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="../sites/all/modules/field_group/field_group.js%3Ft4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/tableheader.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/collapse.js?v=7.98"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"corolla","theme_token":"55RI4hdaUxuhB3MUNgtBN1GCxEq-isVoN9hCsGEUPeA","jquery_version":"default","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/form-single-submit.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/default\/modules\/jquery_update\/js\/jquery_update.js":1,"misc\/progress.js":1,"sites\/all\/modules\/ctools\/js\/modal.js":1,"sites\/default\/modules\/modal_forms\/js\/modal_forms_popup.js":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/js\/responsive_menus_simple.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/field_group\/field_group.js":1,"misc\/tableheader.js":1,"misc\/collapse.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ctools\/css\/modal.css":1,"sites\/default\/modules\/modal_forms\/css\/modal_forms_popup.css":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/css\/responsive_menus_simple.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.headings.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.image.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/corolla\/css\/html-elements.css":1,"sites\/all\/themes\/corolla\/css\/forms.css":1,"sites\/all\/themes\/corolla\/css\/tables.css":1,"sites\/all\/themes\/corolla\/css\/page.css":1,"sites\/all\/themes\/corolla\/css\/articles.css":1,"sites\/all\/themes\/corolla\/css\/comments.css":1,"sites\/all\/themes\/corolla\/css\/fields.css":1,"sites\/all\/themes\/corolla\/css\/blocks.css":1,"sites\/all\/themes\/corolla\/css\/navigation.css":1,"sites\/all\/themes\/corolla\/css\/fonts.css":1,"sites\/all\/themes\/corolla\/css\/corolla.settings.style.css":1,"sites\/all\/themes\/corolla\/color\/colors.css":1,"sites\/all\/themes\/corolla\/css\/print.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.responsive.layout.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.fonts.css":1,"sites\/all\/themes\/corolla\/css\/responsive.custom.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.desktop.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.lt-ie9.layout.css":1,"sites\/all\/themes\/corolla\/css\/ie-lte-9.css":1}},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E"},"modal-popup-small":{"modalSize":{"type":"fixed","width":500,"height":150},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-medium":{"modalSize":{"type":"fixed","width":550,"height":450},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-large":{"modalSize":{"type":"scale","width":0.8,"height":0.8},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"responsive_menus":[{"toggler_text":"\u2630 Menu","selectors":["#block-system-main-menu"],"media_size":"935","media_unit":"px","absolute":"1","remove_attributes":"1","responsive_menus_style":"responsive_menus_simple"}],"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/search\/node":true,"\/paper\/computational-social-science-gauge-online-extremism":true},"field_group":{"fieldset":"full"},"ctools-sample-style":{"modalSize":{"type":"fixed","width":1098,"height":500,"addWidth":20,"addHeight":15},"modalOptions":{"opacity":0.5,"background-color":"#000"},"animation":"fadeIn","modalTheme":"CToolsSampleModal","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/ctools_ajax_sample\/images\/ajax-loader.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E"},"adaptivetheme":{"corolla":{"layout_settings":{"bigscreen":"three-col-grail","tablet_landscape":"three-col-grail","tablet_portrait":"one-col-vert","smalltouch_landscape":"one-col-vert","smalltouch_portrait":"one-col-stack"},"media_query_settings":{"bigscreen":"only screen and (min-width:1025px)","tablet_landscape":"only screen and (min-width:769px) and (max-width:1024px)","tablet_portrait":"only screen and (min-width:481px) and (max-width:768px)","smalltouch_landscape":"only screen and (min-width:321px) and (max-width:480px)","smalltouch_portrait":"only screen and (max-width:320px)"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]>
+<script src="https://datasciencehub.net/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?t4kojz"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-486 node-type-submit-paper site-name-hidden atr-7.x-3.x atv-7.x-3.1 lang-en site-name-data-science section-paper color-scheme-custom corolla bs-n bb-n mb-dd rc-6 rct-6">
+  <div id="skip-link" class="nocontent">
+    <a href="computational-social-science-gauge-online-extremism.html#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="page-wrapper">
+  <div id="page" class="page ssc-n ssw-n ssa-l sss-n btc-n btw-b bta-l bts-n ntc-n ntw-b nta-l nts-n ctc-n ctw-b cta-l cts-n ptc-n ptw-b pta-l pts-n">
+
+          <div id="menu-bar-wrapper">
+        <div class="container clearfix">
+          <div id="menu-bar" class="nav clearfix"><nav id="block-system-main-menu" class="block block-system block-menu menu-wrapper menu-bar-wrapper clearfix odd first block-count-1 block-region-menu-bar block-main-menu"  role="navigation">  
+      <h2 class="element-invisible block-title">Main menu</h2>
+  
+  <ul class="menu clearfix"><li class="first leaf menu-depth-1 menu-item-757"><a href="../content/about-data-science.html">About</a></li><li class="leaf menu-depth-1 menu-item-758"><a href="../content/editors.html">Editorial Board</a></li><li class="leaf menu-depth-1 menu-item-1559"><a href="../content/submit-manuscript.html">Submit Manuscript</a></li><li class="leaf menu-depth-1 menu-item-1612"><a href="../content/calls.html">Calls</a></li><li class="leaf menu-depth-1 menu-item-759"><a href="../content/guidelines-authors.html">For Authors</a></li><li class="leaf menu-depth-1 menu-item-760"><a href="../content/guidelines-reviewers.html">For Reviewers</a></li><li class="leaf menu-depth-1 menu-item-582"><a href="../underreview.html" title="Under Review">Under Review</a></li><li class="leaf menu-depth-1 menu-item-583"><a href="../reviewed.html" title="">Reviewed</a></li><li class="last leaf menu-depth-1 menu-item-1611"><a href="../ReviewedAccepted.html" title="">Accepted</a></li></ul>
+  </nav><div id="block-orcid-login-orcid-login" class="block block-orcid-login no-title menu-wrapper menu-bar-wrapper clearfix even last block-count-2 block-region-menu-bar block-orcid-login" >  
+  
+  <p style="background-color: #003b3a; float:right;"><a style="vertical-align: middle; color: white; padding: 10px; display: inline-block; text-decoration: none;" href="https://orcid.org/oauth/authorize?client_id=APP-223SGGDDO35LKOT2&amp;response_type=code&amp;scope=%2Fauthenticate&amp;redirect_uri=https%3A%2F%2Fdatasciencehub.net%2F&amp;state=eyJyZWRpcmVjdCI6InBhcGVyXC9jb21wdXRhdGlvbmFsLXNvY2lhbC1zY2llbmNlLWdhdWdlLW9ubGluZS1leHRyZW1pc20ifQ%3D%3D"><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle;"/> Log In with ORCID</a></p>
+  </div></div>        </div>
+      </div>
+    
+    <div id="header-wrapper">
+      <div class="container clearfix">
+	        <header class="clearfix with-logo" role="banner">
+
+                      <div id="branding" class="branding-elements clearfix">
+
+                              <div id="logo">
+                  <a href="../index.html"><img class="site-logo" typeof="foaf:Image" src="../sites/default/files/DS_LOGO_vertical.png" alt="Data Science" /></a>                </div>
+              
+                              <div class="element-invisible h-group" id="name-and-slogan">
+
+                                      <h1 class="element-invisible" id="site-name"><a href="../index.html" title="Home page">Data Science</a></h1>
+                  
+                  
+                </div>
+              
+            </div>
+          
+          
+        </header>
+
+      </div>
+    </div>
+
+          <div id="top-panels-wrapper">
+        <div class="container clearfix">
+          <!-- Three column 3x33 Gpanel -->
+          <div class="at-panel gpanel panel-display three-3x33 clearfix">
+                                                          </div>
+        </div>
+      </div>
+    
+    
+    
+    <div id="content-wrapper">
+      <div class="container">
+
+        <div id="columns">
+          <div class="columns-inner clearfix">
+
+            <div id="content-column">
+              <div class="content-inner">
+
+                
+                <section id="main-content" role="main">
+
+                  
+                  <div class="content-margin">
+                    <div class="content-style">
+
+                      
+                      
+                      
+                                              <header class="clearfix">
+                          <h1 id="page-title">
+                            Computational Social Science to Gauge Online Extremism                          </h1>
+                        </header>
+                      
+                      
+                      
+                      <div id="content">
+                        <div class="region region-content"><div id="block-system-main" class="block block-system no-title odd first last block-count-3 block-region-content block-main" >  
+  
+  <article id="node-486" class="node node-submit-paper article odd node-lang-en node-full ia-n clearfix" about="/paper/computational-social-science-gauge-online-extremism" typeof="sioc:Item foaf:Document" role="article">
+  <div class="node-inner">
+
+
+
+              <header class="node-header">
+
+        
+        
+      </header>
+        <span property="dc:title" content="Computational Social Science to Gauge Online Extremism" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="2" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+    <div class="node-content">
+        
+      <h3>Tracking #: 486-1466</h3>          								<fieldset>
+					<!-- legend>
+						<span class="fieldset-legend">Paper Data</span>
+					</legend -->
+
+					
+
+
+					
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><h5>Authors:</h5><br/><form action="computational-social-science-gauge-online-extremism.html" method="post" id="authors-table-form-anonymus" accept-charset="UTF-8"><div><div id="authors_Container"><table class="sticky-enabled">
+ <thead><tr><th></th><th>Name</th><th>ORCID</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-1229">
+  <input type="checkbox" id="edit-authors-1229" name="authors[1229]" value="1229" class="form-checkbox" />
+</div>
+</td><td>Emilio Ferrara</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-1942-2831" target="_blank">https://orcid.org/0000-0002-1942-2831</a></td> </tr>
+</tbody>
+</table>
+</div><input type="hidden" name="author_nd" value="486" />
+<input type="hidden" name="author_vd" value="1466" />
+<input type="hidden" name="form_build_id" value="form-y9RI3RTTy7d1kzkP5drG-0kh4xBc6a2HUklLQtuQL4A" />
+<input type="hidden" name="form_id" value="authors_table_form_anonymus" />
+</div></form><hr/></div><br/>
+
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-editor field-type-user-reference field-label-above view-mode-full"><h2 class="field-label">Responsible editor:&nbsp;</h2><div class="field-items"><div class="field-item even">Tobias Kuhn</div></div></section></div><br/>
+					                    <div style="background-color: #E3E5E3;border-radius:5px;padding-top:4px;padding-bottom:4px;padding-left:6px;">
+					<section class="field field-name-field-submission-type field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Submission Type:&nbsp;</h2><div class="field-items"><div class="field-item even">Research Paper</div></div></section><section class="field field-name-field-abstract field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Abstract:&nbsp;</h2><div class="field-items"><div class="field-item even">Recent terrorist attacks carried out on behalf of ISIS on American and European soil by lone wolf attackers or sleeper cells remind us of the importance of understanding the dynamics of radicalization mediated by social media communication channels. In this paper, we shed light on the social media activity of a group of twenty-five thousand users whose association with ISIS online radical propaganda has been manually verified. By using a computational tool known as dynamical activity-connectivity maps, based on network and temporal activity patterns, we investigate the dynamics of social influence within ISIS supporters. We finally quantify the effectiveness of ISIS propaganda by determining the adoption of extremist content in the general population and draw a parallel between radical propaganda and epidemics spreading, highlighting that information broadcasters and influential ISIS supporters generate highly-infectious cascades of information contagion. Our findings will help generate effective countermeasures to combat the group and other forms of online extremism.</div></div></section><section class="field field-name-field-pdf field-type-file field-label-above view-mode-full"><h2 class="field-label">Manuscript:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="PDF icon" title="application/pdf" src="https://datasciencehub.net/modules/file/icons/application-pdf.png" /> <a href="../system/files/ds-paper-486.pdf" type="application/pdf; length=1041486">ds-paper-486.pdf</a></span></div></div></section><section class="field field-name-field-tags field-type-taxonomy-term-reference field-label-above view-mode-full"><h2 class="field-label">Tags:&nbsp;</h2><ul class="field-items"><li class="field-item even">Reviewed</li></ul></section><section class="field field-name-field-data-repository-urls field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Data repository URLs:&nbsp;</h2><div class="field-items"><div class="field-item even"><p>None</p>
+</div></div></section><section class="field field-name-field-date-of-submission field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Submission:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-01-30T00:00:00-05:00">Monday, January 30, 2017</span></div></div></section><section class="field field-name-field-date-of-decision field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Decision:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-02-10T00:00:00-05:00">Friday, February 10, 2017</span></div></div></section><br><br><b>Nanopublication URLs:</b> <br>                    </div>
+                    <br/>
+
+					
+                    
+                    <div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-decision field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Decision:&nbsp;</h2><div class="field-items"><div class="field-item even">Reject</div></div></section></div><br/>                    <div id="review">
+                    		                    	</div>
+
+					
+										<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><b>Solicited Reviews:</b><br/><form action="computational-social-science-gauge-online-extremism.html" method="post" id="get-submitted-reviews" accept-charset="UTF-8"><div><fieldset class="collapsible collapsed form-wrapper" id="edit-fset1"><legend><span class="fieldset-legend">Review #1 <strong>submitted on 03/Feb/2017</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Floriana Gargiulo</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0001-9813-1815" target="_blank">https://orcid.org/0000-0001-9813-1815</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Average</br><b style="color:#f39222">Suggested Decision: </b> </br><b style="color:#f39222">Technical Quality of the paper:</b> Good<br/><b style="color:#f39222">Presentation:</b> Excellent<br/><b style="color:#f39222">Reviewer`s confidence:</b> High<br/><b style="color:#f39222">Significance:</b> Moderate significance<br/><b style="color:#f39222">Background:</b> Comprehensive<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> Not all used and produced data are FAIR and openly available in established data repositories; authors need to fix this<br/><b style="color:#f39222">Length of the manuscript:</b> he length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences: </b><br/><p>The paper presents a methodological framework to analyze the spreading of extremist contents on the web. In particular the focus is addressed on the case study of ISIS accounts on Twitter.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>The method for collecting data is based on a double level: an expert-based selection of the users to follow and a large data collection on the activity of the selected users. This methodology can be extremely useful in order to address the attention on the focal points where the extremist activity is centered. </p>
+<p>The idea to use an indicator inspired by epidemics to assess the “opinion” contagion is interesting and can provide a good framework to analyze the propagation of radical behaviors on social networks.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>What I will list in the following are NOT reasons to reject but rather points on which some more attention should be dedicated in the text and in the analyses. </p>
+<p>The fact that the analysis excludes the content (and the included hashtags) of the tweets do not allow to understand how the selected users are focused on the ISIS contents. Are these users twitting only ISIS propaganda? If not, the tweets, after retweeted by external users could be a priori based on “neutral” content. The association of more radical content with “viral” ones in order to improve visibility is a well know phenomenon in Twitter.<br />
+Idem: the followers/friends network of the selected users could be based on features external to ISIS propaganda (school mates, family, etc.)<br />
+Figure 6 should be put in relation with Figure 3: when the activity of a user is higher (Figure 3), it is much more probable that someone will adopt his content. Probably joining a timeline of the R0=RT/T could be useful to visualize an increase of the contagion.<br />
+How the histogram in Figure 8 is normalized?<br />
+A baseline comparison of ISIS accounts with a random sample of users could be useful to understand and detect anomalous behaviors. Is there a difference in the class partitioning respect to a random sample? Is the “contagion” process different from the baseline?<br />
+Are the used data available on some repository?</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/></p></div></fieldset>
+<fieldset class="collapsible collapsed form-wrapper" id="edit-fset2"><legend><span class="fieldset-legend">Review #2 <strong>submitted on 08/Feb/2017</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Karsten Donnay</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-9080-6539" target="_blank">https://orcid.org/0000-0002-9080-6539</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Good</br><b style="color:#f39222">Suggested Decision: </b> </br><b style="color:#f39222">Technical Quality of the paper:</b> Good<br/><b style="color:#f39222">Presentation:</b> Good<br/><b style="color:#f39222">Reviewer`s confidence:</b> High<br/><b style="color:#f39222">Significance:</b> High significance<br/><b style="color:#f39222">Background:</b> Comprehensive<br/><b style="color:#f39222">Novelty:</b> Clear novelty<br/><b style="color:#f39222">Data availability:</b> Not all used and produced data are FAIR and openly available in established data repositories; authors need to fix this<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences: </b><br/><p>The paper aims to shed light on online radicalisation dynamics by studying communication patterns of ISIS supporters on Twitter. The analysis relies on a corpus of human-coded pro-ISIS accounts studying their communication dynamics and their influence on the broader associated communication network. Characterising users based on their activity-connectivity relationship, the analysis reveals the differential influence of different classes of users in the sample studied. This may have implications for strategies designed to counter the spreading of radical content on social media.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>- Substantive Contribution:<br />
+The paper provides an in-depth analysis of online dynamics both within a pro-ISIS aggregate on Twitter as well as its impact on other users. The application of the activity-connectivity framework to this question and the substantive and differentiated findings derived from this are highly relevant. This confirms the substantial influence of only a core set of users and could lead to better strategies with which the spreading of radical content on social media might be countered.</p>
+<p>- Novelty and Methodological Sophistication:<br />
+The use of human-coded data on pro-ISIS accounts is novel and contrasts with approaches that rely on content analysis to identify radical online communities. In addition, the classification of users based on their activity-connectivity relationship is both methodologically sophisticated and appropriate. Together with the descriptive analyses of the pro-ISIS accounts, the analysis provides a novel and comprehensive take on the study of the spreading of radical content through social media.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>As it stands there are a number of shortcomings that, I believe, can be addressed in a revised manuscript. Pending changes that carefully address these issues detailed under “Further Comments” below, I do not have any objections to the publication of the paper.</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>The issues raised here concern the framing of the study, the data used, the presentation of methods and results and the implications of this work. They are structured accordingly. </p>
+<p>1) Framing:<br />
+- RQ 1:<br />
+The intention to identify a solid methodological framework is good and the paper demonstrates a set of best practices. However, simply applying such practices, in my view, is not actually a real research question. A research question would be to explore systematically whether the practices used here - human-coded accounts + retweets + mentions - provides a better coverage of such aggregates than alternative approaches. The author suggests that the alternatives are more limited but an explicit comparison is actually lacking.</p>
+<p>In my opinion, RQ 1 should therefore be dropped completely. Best practices can and should be mentioned in the method description, in fact, they should even be described in much greater detail. It may go beyond the scope of this contribution but having a human-coded dataset on pro-ISIS accounts would actually allow for the systematic comparison to other, alternative approaches for identifying these aggregates.</p>
+<p>- Comparison to related work:<br />
+I was very surprised to read only a short mention of the recent work by Johnson et al. in Science under “Related Work”. It is my understanding that the method employed there goes beyond the usual keyword-based identification criticised by the author. Instead, Johnson et al. appear to use a much more elaborate scheme that also involves verification by human coders. This would then be much closer to the kind of data used in the present study in terms of completeness of coverage of such aggregates. A more in-depth discussion would therefore certainly be warranted.</p>
+<p>- Scope:<br />
+Given potential concerns regarding the completeness of coverage of pro-ISIS activity on Twitter in the sample studied (see also comment on data below), I would advise to more clearly emphasise that this study only pertains to this very specific aggregate of pro-ISIS users identified by the Lucky Troll Club. This does not negatively affect the relevance of this work but simply clarifies its scope.</p>
+<p>2) Data<br />
+- Data availability concerns:<br />
+The first concern pertains to the Twitter data used. While the author uses OSoMe at Indiana University, he apparently had access to full tweets and meta information that goes beyond the simple summary statistics provided by the API. Barring similar access, researchers can therefore not actually readily reproduce his findings. In addition, no information was provided that would allow to exactly reconstitute the sample used. Information given in the text is too generic and I would suggest to either provide a much more detailed description (as supplementary material) or the code used to generate the dataset. Since Twitter data may not be shared, it is also customary to provide an index of Tweet IDs such that, given sufficient access, researchers can reconstitute the full sample used.</p>
+<p>The second concern is in relation to the list of 25,538 accounts obtained from the Lucky Troll Club. Neither this list of accounts was provided nor is any information given on how this list could be obtained. This list forms the basis of the analysis and should be made available through one of the recommended data repositories. In addition, a more detailed description of how these accounts were identified (if available) is sorely lacking. It is simply not possible to judge the quality of the coding without this information.</p>
+<p>- Data quality concerns:<br />
+The papers mentions a Guardian report on the number of suspended accounts that is larger than those coded by the Lucky Troll Club. While this number is given for a longer period than that considered in this study, it still points to questions regarding the quality and completeness of the data. Validation against the suspension list only verifies true positive identification of suspended accounts. But how many accounts did the Lucky Troll Club incorrectly flag (false positives)? And more importantly, how many did they miss (false negatives)? It may be that evaluating this is beyond the scope of this paper but a more in-depth discussion of these issues and the potential problems of bias that might arise would still be necessary.</p>
+<p>- Dynamically changing sample properties:<br />
+From the description of the data it is not clear when the Lucky Troll Club coded these accounts. Was it a continuous coding or did they stop after some time? Give that these accounts were suspended by Twitter, the underlying population of accounts was constantly changing, something that should be acknowledged. In particular, if accounts were identified only in a given period and then analysed for a longer period until their suspension, this could lead to at least two conceptual issues. First, what if pro-ISIS activity simply shifted to other accounts not identified yet? In this case, we are getting a potentially very biased view on pro-ISIS Twitter activity. Second, what are the implications from comparing an account that was suspended at the beginning of the study to one that was suspended last? Are they fully comparable? A short discussion of the sample as such would help clarify if and why these issues arise or not.</p>
+<p>- Sampling:<br />
+The Gardenhose API is still a sample, why then not use the Search API (as mentioned elsewhere in the paper) to recover the full set of tweets send by the 25,538 accounts? Without access to the Powertrack API it is infeasible to get an even larger and more complete sample of retweets and mentions but for the initial “seed” of tweets from the pro-ISIS aggregate there appears to be no immediate reason to limit data to those in the Gardenhose. Rate limits do apply for the Search API but ~25,000 accounts should not be impossible to query.</p>
+<p>In addition, the manuscript only refers to mentions and retweets as means of expanding the sample beyond the original corpus of tweets from the 25,538 accounts. Is there any reason why the tweets of followers of these accounts were not also included? Is it a problem of data access?</p>
+<p>3) Presentation of methods and results<br />
+- activity-connectivity map:<br />
+The intuition for this methodology, in my view, is not stated clearly enough up-front. Its purpose only becomes clearer throughout the subsequent discussion. It would help to add a few sentences at the beginning of the respective section that give a clear motivation for using it and a simple intuition of what it represents. This would make the section more accessible.</p>
+<p>- followee distributional signature (Figure 2):<br />
+The interpretation of the upward trend in the followee distribution is not fully clear. Parallels to similar results are drawn but no clear intuition is given of what this plateau in the pdf means.</p>
+<p>- identifying the most influential users:<br />
+In Figure 2, is there a way to systematically delineate the tweeting behaviour of the most active and influential users from the “rest”. Is there, for example, a statistical cut-off in the scaling of the pdf? Visually, it appears that while the distribution is heavy-tailed it does not necessarily follow a power law throughout.</p>
+<p>- Common users:<br />
+Why are there so few common users in Figure 7 and 8? Is it because of the filtering described in section 3.3? This point should be clarified.</p>
+<p>- Analogy to disease spreading:<br />
+The analogy to disease spreading and the calculation of R_0 is intuitive at a superficial level. But are the assumptions underlying the corresponding models of disease spreading also true on Twitter? Or are there no such limiting assumptions? As is, the discussion is very cursory and would benefit from a more in-depth description. In particular, it should be made clearer why this is a valid framework for studying contagion on Twitter. For example, there is no reference provided that would illustrate the use of these arguments from disease modelling for the study of social media.</p>
+<p>- Retweet reproduction of common users:<br />
+In Figure 8, there is a noticeable fraction of common users with a very high reproduction rate (&gt;5). Otherwise, only influentials feature these magnitudes of reproduction rates. What is the interpretation of this? The finding is not directly intuitive and should be explained further. Generally, the discussion of the results in Figure 8 is perhaps a bit too short and cursory.</p>
+<p>4) Implications<br />
+A discussion of the implications of this work appears to be largely lacking. This is a bit surprising since the whole contribution is framed as providing such insights. A number of the substantive findings, as they stand, could already allow to formulate such recommendations. Or, if not, why does the author not want to draw conclusions? The paper ends on a very cautionary note but no real reason is given.</p>
+<p>The question is whether we can, based on the analysis presented, make a recommendation for which group should be targeted first to curb activity most significantly? In addition, can one test some of these implications more explicitly or why not? For example, what effect does it have to remove all broadcasters of influentials from the sample? If the findings of this work are to inform Twitter policy or their strategy for suspending these accounts, the author should provide a much more elaborate interpretation of his results.</p>
+<p>There is also an important additional caveat to be made that arises from the fact that the present analysis is intentionally not considering tweet contents: content can decisively matter for the impact on potential supporters. For example, should we not target the accounts first that spread the most inciting messages? Or if not, why? How is the limited screening capacity of accounts best used to target these kinds of accounts? Are there potentially simple mechanisms that rely on social dynamics to enable detection? Maybe something like a permanent Lucky Troll Club of volunteers helping Twitter? There are indications in the current U.S. debate that these grassroots movements are playing an increasingly important role in policing the accuracy of content on social media.</p>
+<p>5) Minor points:<br />
+- define astroturf campaigns (p.1)<br />
+- incomplete reference: P. Suarez-Serrato, M. E. Roberts, C. Davis, and F. Menczer</p>
+</p></div></fieldset>
+<fieldset class="collapsible collapsed form-wrapper" id="edit-fset3"><legend><span class="fieldset-legend">Review #3 <strong>submitted on 09/Feb/2017</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Olivia Woolley-Meza</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0003-4517-2765" target="_blank">https://orcid.org/0000-0003-4517-2765</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Average</br><b style="color:#f39222">Suggested Decision: </b> </br><b style="color:#f39222">Technical Quality of the paper:</b> Weak<br/><b style="color:#f39222">Presentation:</b> Average<br/><b style="color:#f39222">Reviewer`s confidence:</b> High<br/><b style="color:#f39222">Significance:</b> Moderate significance<br/><b style="color:#f39222">Background:</b> Reasonable<br/><b style="color:#f39222">Novelty:</b> Reasonable<br/><b style="color:#f39222">Data availability:</b> Not all used and produced data are FAIR and openly available in established
+  data repositories; authors need to fix this<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences: </b><br/><p>The author studies the activity of extremist groups, specifically ISIS, on the Twitter microblogging platform. Accounts are manually identified as associated with extremist ISIS related content. The tweets, retweets and mentions generated by these 25 thousand ISIS supporters are obtained for the period of January 2014 to June 2015, together with their followers and friends. Using this dataset, different analyses are performed to characterize spreading of extremist information and identify different types of information spreading strategies.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>The spread of radical (non-true) information is clearly an important and germane topic. The use of manually verified extremist accounts is, as the author highlights, a good and uncommon practice in understanding  information spread. There are initial indications of interesting systematic variation in the effectiveness of different user "types" at spreading extremist information.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>Unfortunately the analysis is underdeveloped, staying on a purely descriptive level. More importantly, there are technical issues that need to be addressed in order to asses whether the  results are correct and meaningful. Lastly, it is not clear to me that this stands as a unified position paper, it is rather half a position paper and half a research paper combined, but not reaching the necessary standard or depth for either. I discuss below in more detail.</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>Undoubtedly this paper addresses an important topic, unfortunately I see a number of problems that mean it is not yet ready for publication.<br />
+The first issue is that I am not sure this is a position paper -- it seems to fall more into the are of a research paper, but for this it lacks sufficient rigor, depth of analysis and interpretation. Perhaps I am missing the point, but I think that the author has to make it clearer how the more novel an interesting part of the approach, namely using a manually verified list of accounts on Twitter that can be linked to ISIS, is adding substantive new insight to our understanding of how extremist information can spread online.<br />
+Q1 and Q2 are not specific enough research questions to unify the content of the piece -- currently the introduction, addressing Q1 mainly,  reads more like a position piece, and is disconnected from the analysis which addresses Q2 and is more a research piece. </p>
+<p>Unfortunately, there are a number of technical issues:</p>
+<p>The Base reproduction Number R0 is not used correctly. Ro is conceptually simple, but in fact very hard to estimate in a real population, for a real disease when there is a lack of homogeneity in transmission and contact dynamics and when the population is far from the assumed purely susceptible state. The situation is clearly much murkier in the case of information spread, where the transmission mechanism is more complex. I will skip a full discussion of the issues so as not to be a bore and avoid inaccuracies myself! My main point here is that a different term needs to be used to describe the "transmission" factor in this system. The comparison with specific disease Ro values is not only conceptually misleading, there is also no citation for the Ro numbers used for different diseases. These numbers further seem rather inaccurate and imprecise to my knowledge. This comparison should simply be avoided.</p>
+<p>One important issue that should be clarified however: the computation of Ro per person is also hard to evaluate given that there is no clear statement in this case (there is for the global Ro calculation) whether only unique users retweeting are counted or whether the same user can contribute to the count (of one user or a number of users) multiple times. In the later case, the assumptions that the retweeter is susceptible (i.e. not infected) becomes suspect.</p>
+<p>There is generally insufficient discussion of the limitations of the methodology. Especially in what relates to the oversimplified calculations for the "virality" of different users through retweeting. For instance, is it possible that some users appear to be retweeted simply because they mimic the behavior of other users that are heavily retweeted? In this case they are not infecting anyone themselves but would appear to. Also, a more careful characterization of the out-of-sample accounts is needed since this can introduce many limitations. For example, it is possible that the original classification misses individuals that are already ardent ISIS supporters. These individuals thus were already "infected" and can give the impression that virality of content is much higher than it really is.</p>
+<p>Beyond the Ro and infectivity analysis, there is generally insufficient explanation and interpretation of results and of the limitations. In the conclusion the author says that their work supports the theory that extremists are using complex information strategies. Although they do not spell it out here, I believe this is in reference to the fact that different user types are revealed by the dynamic activity-connectivity maps. It is not clear to me this represents complex strategies. The classes are defined through arbitrary cutoffs and could simply be an expression of statistical variation along two dimensions. Perhaps the differences in how viral the content produced by some users would be much better explained by types along different dimensions. In my opinion, a more interesting analysis, which would address Q2 more specifically, is learning types through natural clustering (along these two dimensions or others) and quantifying how well they explain the variability in e.g. retweets.</p>
+<p>Unless I am missing something, there seems to be a mistake in a number of the pdf plots: there are some curves (representing a specific class of users for instance), that appear to have strictly more area under them than other curves. Yet the area under all curves should be one. This is most salient in Figs. 7 and 8. How is it possible that the influential (yellow) bars in the top panel of figure 8 are taller for all Ro values? This would mean that influentials have a higher proportion of users in every Ro class! Perhaps I am missing something? All the pdf plots seem suspect to incorrect normalization or another mistake. </p>
+<p>Furthermore, there are no error margins or statistical significance calculations for any of the numbers computed from the data. This makes it almost impossible to gage significance of the results. </p>
+<p>More nit-picky issues that still need to be addressed:</p>
+<p>Why is the related work section at the end? It would seem to belong more naturally around the introduction. It also needs to be more clearly connected to the work presented here (e.g. what limitations does the current study address?) so that a clearer assessment can be made of what the novelty is. </p>
+<p>The author claims that in Fig. 2 the solid blue and dashed red lines are the "typical power-law shape". I agree that these distributions are heterogeneous and with a heavy tail, but there is no indication that a power law is a particularly good fit. A more rigorous fit or wording less likely to mislead would be appropriate here. </p>
+<p>There are a number of typos, so proof reading is needed (since pages and lines are not numbered it is hard to point each one out here). However, those most confusing:<br />
+- In the definition of /delta f, a superscript says "mix" instead of "max" .<br />
+- In section 3.4, first paragraph, the third sentence, where the notion of adoption is defined, has some missing words or incorrect grammar and therefore I cannot understand it. </p>
+<p>Figure 1 seems to have the wrong caption (I see no log axis etc...)</p>
+<p>Figure 5 is not very "user friendly". The comparisons that the authors wish to draw attention to and are discussed in the text, cannot be easily made in the figure. Instead of the current presentation where the different user types are represented in different panels, the panels could for example be the three different communication statistics and  within each panel the level for each group could be presented side-by-side to enable comparisons. Or everything could be incorporated in one panel, with the comparison measurements side-by-side... Furthermore, the meaning of the different markers and symbols in the box plots should be clearly explained in the caption for those of us who forget. In this manner the reader can actually draw conclusions about to what degree the noted differences are statistically significant.</p>
+</p></div></fieldset>
+<input type="hidden" name="form_build_id" value="form-NuE_xPC0hbdJ9v4JgSJOkicrsJ7m92sK57A-wuve7nw" />
+<input type="hidden" name="form_id" value="get_submitted_reviews" />
+</div></form></div><br/>                    
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"></div><br/>
+				</fieldset>
+				
+    </div>
+
+    <div id="admin-review">
+			</div>
+
+	<div id="decision">
+			</div>
+
+
+
+
+          <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first"><span><a href="../user/login%3Fdestination=comment%252Freply%252F486%23comment-form.html">Log in</a> to post comments</span></li><li class="camera_ready_files_field_paper last"></li></ul></nav>
+    
+    <section id="comments" class="comment-wrapper">
+
+          <h2 class="title">
+      2 Comments    </h2>
+      
+  <a id="comment-36"></a>
+<article class="comment odd first clearfix" about="/comment/36#comment-36" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="../comment/36.html#comment-36" rel="bookmark">Paper Withdrawn by Author</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2018-06-27T10:53:58-04:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/tobias-kuhn" typeof="sioc:UserAccount" property="foaf:name" datatype="">Tobias Kuhn</span> on <time datetime="2018-06-27T10:53:58Z"><span class="date-time">Wed, 06/27/2018 - 10:53</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/computational-social-science-gauge-online-extremism" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p>This paper was withdrawn by the author on 10 February 2017.</p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F486%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+<a id="comment-37"></a>
+<article class="comment even last clearfix" about="/comment/37#comment-37" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="../comment/37.html#comment-37" rel="bookmark">Meta-Review by Editor</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2018-06-27T10:57:39-04:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/tobias-kuhn" typeof="sioc:UserAccount" property="foaf:name" datatype="">Tobias Kuhn</span> on <time datetime="2018-06-27T10:57:39Z"><span class="date-time">Wed, 06/27/2018 - 10:57</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/computational-social-science-gauge-online-extremism" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p>The following is the meta-review from 10 February 2017 before the paper was withdrawn by the author:</p>
+<p>Thank you for your submission to Data Science. I inform you that the acceptance or rejection of your manuscript is still UNDECIDED (we don't use "major revisions" or "minor revisions"). I ask you to respond to the enclosed comments by the reviewers, and to take them into account for your revised version.<br /><br />In particular, the following problems identified by the reviewers need to be addressed:<br /><br />- Data availability: Your work does currently not follow our data availability requirements (see the paragraph on "Data" in the author guidelines: <a class="moz-txt-link-freetext" href="http://datasciencehub.net/guidelines.html">http://datasciencehub.net/guidelines.html</a>)<br />- The problem of Research Question 1, as noted by Reviewer 2 ("not actually a real research question")<br />- Lacking discussion of implications, as noted by Reviewer 2<br />- Problems with the contagion part of the analysis, as noted by Reviewer 3<br />- Potential problems with the plots, as noted by Reviewer 3<br /><br />Below I also list some very minor comments and typos from my side.<br /><br />Please provide point-by-point responses to the issues raised by the reviewers, and prepare a separate text file that contains these responses. The revised version of the paper is expected within 20 days.<br /><br />Typos and minor comments from my side (I might be wrong about some of the typos though):<br /><br />- "1.2 million of these tweets was" &gt; "... were"<br />- "The plot also introduce" &gt; "... introduces"<br />- "We note how the connectivity growth dimension spans three orders of magnitude [...] This<br />means that some users’ followerships grows tens of times faster than the rate at which<br />they follow others": Shouldn't it be (at least) "hundreds of times faster"?<br />- I would be helpful if Figure 4 had labels for what the x and y axes stand for, instead of just "x" and "y".<br />- "significantly less tweets" &gt; "... fewer ..."<br />- "similar amounts of retweets than broadcasters": not sure how to correctly phrase this but "similar ... than" sounds wrong to me<br />- "does not appear set of" &gt; "does not appear in the set of"</p>
+<p>Tobias Kuhn (<a href="http://orcid.org/0000-0002-1267-0234">http://orcid.org/0000-0002-1267-0234</a>)</p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F486%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+
+  
+</section>
+
+  </div>
+  </article>
+
+  </div></div>                      </div>
+
+                      
+                    </div>
+                  </div>
+
+                </section>
+
+                
+              </div>
+            </div>
+
+                        
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+    
+          <div id="footer-wrapper">
+        <div class="container clearfix">
+          <footer class="clearfix" role="contentinfo">
+            <div class="region region-footer"><div class="region-inner clearfix"><div id="block-block-16" class="block block-block no-title odd first last block-count-4 block-region-footer block-16" ><div class="block-inner clearfix">  
+  
+  <div class="block-content content"><p style="text-align:center;"><a href="https://www.iospress.nl/disclaimer/" target="_blank">Disclaimer</a> | <a href="https://content.iospress.com/page/privacy" target="_blank">Privacy Policy</a> | Data Science is Published by <a href="http://www.iospress.com" target="_blank">IOS Press</a>, Copyright 2023</p>
+</div>
+  </div></div></div></div>            <p class="attribute-creator"></p>
+          </footer>
+        </div>
+      </div>
+    
+  </div>
+</div>
+  </body>
+</html>

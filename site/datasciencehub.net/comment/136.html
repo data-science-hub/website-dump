@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../paper/mining-timed-sequential-patterns-minits-allocc-technique.html" />
+<link rel="shortlink" href="../node/734.html" />
+<link rel="shortcut icon" href="../sites/default/files/favicon-96x96.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>Mining Timed Sequential Patterns: The Minits-AllOcc Technique  | Data Science</title>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/system/system.base.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.menus.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.messages.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.core.css?t4kojz");
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/comment/comment.css?t4kojz");
+@import url("https://datasciencehub.net/modules/field/theme/field.css?t4kojz");
+@import url("../sites/all/modules/logintoboggan/logintoboggan.css%3Ft4kojz.css");
+@import url("https://datasciencehub.net/modules/node/node.css?t4kojz");
+@import url("https://datasciencehub.net/modules/search/search.css?t4kojz");
+@import url("https://datasciencehub.net/modules/user/user.css?t4kojz");
+@import url("../sites/all/modules/views/css/views.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/modules/ctools/css/ctools.css%3Ft4kojz.css");
+@import url("../sites/all/modules/ctools/css/modal.css%3Ft4kojz.css");
+@import url("../sites/default/modules/modal_forms/css/modal_forms_popup.css%3Ft4kojz.css");
+@import url("../sites/all/modules/responsive_menus/styles/responsive_menus_simple/css/responsive_menus_simple.css%3Ft4kojz.css");
+@import url("../sites/all/modules/date/date_api/date.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="screen">
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.headings.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.image.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.layout.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/themes/corolla/css/html-elements.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/forms.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/tables.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/page.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/articles.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/comments.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/fields.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/blocks.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/navigation.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/corolla.settings.style.css%3Ft4kojz.css");
+@import url("../sites/default/files/color/corolla-80fb2671/colors.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="print">
+@import url("../sites/all/themes/corolla/css/print.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/default/files/adaptivetheme/corolla_files/corolla.responsive.layout.css%3Ft4kojz.css" media="only screen" />
+<style type="text/css" media="screen">
+@import url("../sites/default/files/adaptivetheme/corolla_files/corolla.fonts.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.custom.css%3Ft4kojz.css" media="only screen" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.portrait.css%3Ft4kojz.css" media="only screen and (max-width:320px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.landscape.css%3Ft4kojz.css" media="only screen and (min-width:321px) and (max-width:480px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.portrait.css%3Ft4kojz.css" media="only screen and (min-width:481px) and (max-width:768px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.landscape.css%3Ft4kojz.css" media="only screen and (min-width:769px) and (max-width:1024px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.desktop.css%3Ft4kojz.css" media="only screen and (min-width:1025px)" />
+
+<!--[if lt IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/default/files/adaptivetheme/corolla_files/corolla.lt-ie9.layout.css?t4kojz");
+</style>
+<![endif]-->
+
+<!--[if lte IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/all/themes/corolla/css/ie-lte-9.css?t4kojz");
+</style>
+<![endif]-->
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-extend-3.4.0.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/drupal.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ui/jquery.ui.core.min.js?v=1.8.7"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.cookie.js?v=1.0"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.form.js?v=2.52"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form-single-submit.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ajax.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/default/modules/jquery_update/js/jquery_update.js%3Fv=0.0.1"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/progress.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/all/modules/ctools/js/modal.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/default/modules/modal_forms/js/modal_forms_popup.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/responsive_menus/styles/responsive_menus_simple/js/responsive_menus_simple.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js%3Ft4kojz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-107867597-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="../sites/all/modules/field_group/field_group.js%3Ft4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/tableheader.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/collapse.js?v=7.98"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"corolla","theme_token":"Mhsfo8FawJnx175hD-xgPwaAdKaWw5EjoK-VbN-deNo","jquery_version":"default","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/form-single-submit.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/default\/modules\/jquery_update\/js\/jquery_update.js":1,"misc\/progress.js":1,"sites\/all\/modules\/ctools\/js\/modal.js":1,"sites\/default\/modules\/modal_forms\/js\/modal_forms_popup.js":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/js\/responsive_menus_simple.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/field_group\/field_group.js":1,"misc\/tableheader.js":1,"misc\/collapse.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ctools\/css\/modal.css":1,"sites\/default\/modules\/modal_forms\/css\/modal_forms_popup.css":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/css\/responsive_menus_simple.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.headings.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.image.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/corolla\/css\/html-elements.css":1,"sites\/all\/themes\/corolla\/css\/forms.css":1,"sites\/all\/themes\/corolla\/css\/tables.css":1,"sites\/all\/themes\/corolla\/css\/page.css":1,"sites\/all\/themes\/corolla\/css\/articles.css":1,"sites\/all\/themes\/corolla\/css\/comments.css":1,"sites\/all\/themes\/corolla\/css\/fields.css":1,"sites\/all\/themes\/corolla\/css\/blocks.css":1,"sites\/all\/themes\/corolla\/css\/navigation.css":1,"sites\/all\/themes\/corolla\/css\/fonts.css":1,"sites\/all\/themes\/corolla\/css\/corolla.settings.style.css":1,"sites\/all\/themes\/corolla\/color\/colors.css":1,"sites\/all\/themes\/corolla\/css\/print.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.responsive.layout.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.fonts.css":1,"sites\/all\/themes\/corolla\/css\/responsive.custom.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.desktop.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.lt-ie9.layout.css":1,"sites\/all\/themes\/corolla\/css\/ie-lte-9.css":1}},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E"},"modal-popup-small":{"modalSize":{"type":"fixed","width":500,"height":150},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-medium":{"modalSize":{"type":"fixed","width":550,"height":450},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-large":{"modalSize":{"type":"scale","width":0.8,"height":0.8},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"responsive_menus":[{"toggler_text":"\u2630 Menu","selectors":["#block-system-main-menu"],"media_size":"935","media_unit":"px","absolute":"1","remove_attributes":"1","responsive_menus_style":"responsive_menus_simple"}],"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/search\/node":true,"\/comment\/136":true},"field_group":{"fieldset":"full"},"ctools-sample-style":{"modalSize":{"type":"fixed","width":1098,"height":500,"addWidth":20,"addHeight":15},"modalOptions":{"opacity":0.5,"background-color":"#000"},"animation":"fadeIn","modalTheme":"CToolsSampleModal","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/ctools_ajax_sample\/images\/ajax-loader.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E"},"adaptivetheme":{"corolla":{"layout_settings":{"bigscreen":"three-col-grail","tablet_landscape":"three-col-grail","tablet_portrait":"one-col-vert","smalltouch_landscape":"one-col-vert","smalltouch_portrait":"one-col-stack"},"media_query_settings":{"bigscreen":"only screen and (min-width:1025px)","tablet_landscape":"only screen and (min-width:769px) and (max-width:1024px)","tablet_portrait":"only screen and (min-width:481px) and (max-width:768px)","smalltouch_landscape":"only screen and (min-width:321px) and (max-width:480px)","smalltouch_portrait":"only screen and (max-width:320px)"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]>
+<script src="https://datasciencehub.net/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?t4kojz"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-734 node-type-submit-paper site-name-hidden atr-7.x-3.x atv-7.x-3.1 lang-en site-name-data-science section-paper color-scheme-custom corolla bs-n bb-n mb-dd rc-6 rct-6">
+  <div id="skip-link" class="nocontent">
+    <a href="136.html#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="page-wrapper">
+  <div id="page" class="page ssc-n ssw-n ssa-l sss-n btc-n btw-b bta-l bts-n ntc-n ntw-b nta-l nts-n ctc-n ctw-b cta-l cts-n ptc-n ptw-b pta-l pts-n">
+
+          <div id="menu-bar-wrapper">
+        <div class="container clearfix">
+          <div id="menu-bar" class="nav clearfix"><nav id="block-system-main-menu" class="block block-system block-menu menu-wrapper menu-bar-wrapper clearfix odd first block-count-1 block-region-menu-bar block-main-menu"  role="navigation">  
+      <h2 class="element-invisible block-title">Main menu</h2>
+  
+  <ul class="menu clearfix"><li class="first leaf menu-depth-1 menu-item-757"><a href="../content/about-data-science.html">About</a></li><li class="leaf menu-depth-1 menu-item-758"><a href="../content/editors.html">Editorial Board</a></li><li class="leaf menu-depth-1 menu-item-1559"><a href="../content/submit-manuscript.html">Submit Manuscript</a></li><li class="leaf menu-depth-1 menu-item-1612"><a href="../content/calls.html">Calls</a></li><li class="leaf menu-depth-1 menu-item-759"><a href="../content/guidelines-authors.html">For Authors</a></li><li class="leaf menu-depth-1 menu-item-760"><a href="../content/guidelines-reviewers.html">For Reviewers</a></li><li class="leaf menu-depth-1 menu-item-582"><a href="../underreview.html" title="Under Review">Under Review</a></li><li class="leaf menu-depth-1 menu-item-583"><a href="../reviewed.html" title="">Reviewed</a></li><li class="last leaf menu-depth-1 menu-item-1611"><a href="../ReviewedAccepted.html" title="">Accepted</a></li></ul>
+  </nav><div id="block-orcid-login-orcid-login" class="block block-orcid-login no-title menu-wrapper menu-bar-wrapper clearfix even last block-count-2 block-region-menu-bar block-orcid-login" >  
+  
+  <p style="background-color: #003b3a; float:right;"><a style="vertical-align: middle; color: white; padding: 10px; display: inline-block; text-decoration: none;" href="https://orcid.org/oauth/authorize?client_id=APP-223SGGDDO35LKOT2&amp;response_type=code&amp;scope=%2Fauthenticate&amp;redirect_uri=https%3A%2F%2Fdatasciencehub.net%2F&amp;state=eyJyZWRpcmVjdCI6ImNvbW1lbnRcLzEzNiJ9"><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle;"/> Log In with ORCID</a></p>
+  </div></div>        </div>
+      </div>
+    
+    <div id="header-wrapper">
+      <div class="container clearfix">
+	        <header class="clearfix with-logo" role="banner">
+
+                      <div id="branding" class="branding-elements clearfix">
+
+                              <div id="logo">
+                  <a href="../index.html"><img class="site-logo" typeof="foaf:Image" src="../sites/default/files/DS_LOGO_vertical.png" alt="Data Science" /></a>                </div>
+              
+                              <div class="element-invisible h-group" id="name-and-slogan">
+
+                                      <h1 class="element-invisible" id="site-name"><a href="../index.html" title="Home page">Data Science</a></h1>
+                  
+                  
+                </div>
+              
+            </div>
+          
+          
+        </header>
+
+      </div>
+    </div>
+
+          <div id="top-panels-wrapper">
+        <div class="container clearfix">
+          <!-- Three column 3x33 Gpanel -->
+          <div class="at-panel gpanel panel-display three-3x33 clearfix">
+                                                          </div>
+        </div>
+      </div>
+    
+    
+    
+    <div id="content-wrapper">
+      <div class="container">
+
+        <div id="columns">
+          <div class="columns-inner clearfix">
+
+            <div id="content-column">
+              <div class="content-inner">
+
+                
+                <section id="main-content" role="main">
+
+                  
+                  <div class="content-margin">
+                    <div class="content-style">
+
+                      
+                      
+                      
+                                              <header class="clearfix">
+                          <h1 id="page-title">
+                            Mining Timed Sequential Patterns: The Minits-AllOcc Technique                           </h1>
+                        </header>
+                      
+                      
+                      
+                      <div id="content">
+                        <div class="region region-content"><div id="block-system-main" class="block block-system no-title odd first last block-count-3 block-region-content block-main" >  
+  
+  <article id="node-734" class="node node-submit-paper article odd node-lang-en node-full ia-n clearfix" about="/paper/mining-timed-sequential-patterns-minits-allocc-technique" typeof="sioc:Item foaf:Document" role="article">
+  <div class="node-inner">
+
+
+
+              <header class="node-header">
+
+        
+        
+      </header>
+        <span property="dc:title" content="Mining Timed Sequential Patterns: The Minits-AllOcc Technique " class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="4" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+    <div class="node-content">
+        
+      <h3>Tracking #: 734-1714</h3>          								<fieldset>
+					<!-- legend>
+						<span class="fieldset-legend">Paper Data</span>
+					</legend -->
+
+					
+
+
+					
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><h5>Authors:</h5><br/><form action="136.html" method="post" id="authors-table-form-anonymus" accept-charset="UTF-8"><div><div id="authors_Container"><table class="sticky-enabled">
+ <thead><tr><th></th><th>Name</th><th>ORCID</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-1930">
+  <input type="checkbox" id="edit-authors-1930" name="authors[1930]" value="1930" class="form-checkbox" />
+</div>
+</td><td>Somayah Karsoum</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-8855-0175" target="_blank">https://orcid.org/0000-0002-8855-0175</a></td> </tr>
+ <tr class="even"><td><div class="form-item form-type-checkbox form-item-authors-2014">
+  <input type="checkbox" id="edit-authors-2014" name="authors[2014]" value="2014" class="form-checkbox" />
+</div>
+</td><td>Clark Barrus</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0001-8239-8689" target="_blank">https://orcid.org/0000-0001-8239-8689</a></td> </tr>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-2015">
+  <input type="checkbox" id="edit-authors-2015" name="authors[2015]" value="2015" class="form-checkbox" />
+</div>
+</td><td>Le Gruenwald</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-5245-4747" target="_blank">https://orcid.org/0000-0002-5245-4747</a></td> </tr>
+ <tr class="even"><td><div class="form-item form-type-checkbox form-item-authors-2016">
+  <input type="checkbox" id="edit-authors-2016" name="authors[2016]" value="2016" class="form-checkbox" />
+</div>
+</td><td>Eleazar Leal</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-3055-1845" target="_blank">https://orcid.org/0000-0002-3055-1845</a></td> </tr>
+</tbody>
+</table>
+</div><input type="hidden" name="author_nd" value="734" />
+<input type="hidden" name="author_vd" value="1714" />
+<input type="hidden" name="form_build_id" value="form-39FLS3fytnoieZuKHq1YABFDmuFkZPb88-7G8WNPvOo" />
+<input type="hidden" name="form_id" value="authors_table_form_anonymus" />
+</div></form><hr/></div><br/>
+
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-editor field-type-user-reference field-label-above view-mode-full"><h2 class="field-label">Responsible editor:&nbsp;</h2><div class="field-items"><div class="field-item even">Richard Mann</div></div></section></div><br/>
+					                    <div style="background-color: #E3E5E3;border-radius:5px;padding-top:4px;padding-bottom:4px;padding-left:6px;">
+					<section class="field field-name-field-submission-type field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Submission Type:&nbsp;</h2><div class="field-items"><div class="field-item even">Research Paper</div></div></section><section class="field field-name-field-abstract field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Abstract:&nbsp;</h2><div class="field-items"><div class="field-item even">Sequential pattern mining is one of the data mining tasks used to find the subsequences in a sequence dataset that appear together in order based on time. Sequence data can be collected from devices, such as sensors, GPS, or satellites, and ordered based on timestamps, which are the times when they are generated/collected. Mining patterns in such data can be used to support many applications, including weather forecasting and transportation recommendation systems. Numerous techniques have been proposed to address the problem of how to mine subsequences in a sequence dataset; however, current traditional algorithms ignore the temporal information between the itemset in a sequential pattern. This information is essential in many situations. For example, doctors, even if they know a symptom B will appear after symptom A for a specific disease, must know the time interval of when symptom B is expected to appear to reduce the disease&#039;s risk and provide a suitable treatment. Considering temporal relationship information for sequential patterns raises new issues to be solved, such as designing a new data structure to save this information and traversing this structure efficiently to discover patterns without re-scanning the database. In this paper, we propose an algorithm called Minits-AllOcc (MINIng Timed Sequential Pattern for All-time Occurrences) to find sequential patterns and the transition time between itemsets based on all occurrences of a pattern in the database. We also propose a parallel multi-core CPU version of this algorithm, called MMinits-AllOcc (Multi-core for MINIng Timed Sequential Pattern for All-time Occurrences), to deal with Big Data. Extensive experiments on real and synthetic datasets show the advantages of this approach over the brute-force method. Also, the multi-core CPU version of the algorithm is shown to outperform the single-core version on Big Data by 2.5X. </div></div></section><section class="field field-name-field-pdf field-type-file field-label-above view-mode-full"><h2 class="field-label">Manuscript:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="PDF icon" title="application/pdf" src="https://datasciencehub.net/modules/file/icons/application-pdf.png" /> <a href="../system/files/ds-paper-734.pdf" type="application/pdf; length=959440">ds-paper-734.pdf</a></span></div></div></section><section class="field field-name-field-tags field-type-taxonomy-term-reference field-label-above view-mode-full"><h2 class="field-label">Tags:&nbsp;</h2><ul class="field-items"><li class="field-item even">Reviewed</li></ul></section><section class="field field-name-field-data-repository-urls field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Data repository URLs:&nbsp;</h2><div class="field-items"><div class="field-item even"><p><a href="https://www.mesonet.org/index.php/site/research">https://www.mesonet.org/index.php/site/research</a></p>
+<p><a href="https://www.microsoft.com/en-us/research/publication/t-drive-trajectory-data-sample/">https://www.microsoft.com/en-us/research/publication/t-drive-trajectory-...</a></p>
+<p> </p>
+</div></div></section><section class="field field-name-field-date-of-submission field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Submission:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2022-11-26T00:00:00-05:00">Saturday, November 26, 2022</span></div></div></section><section class="field field-name-field-date-of-decision field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Decision:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2023-04-28T00:00:00-04:00">Friday, April 28, 2023</span></div></div></section><br><br><b>Nanopublication URLs:</b> <br>                    </div>
+                    <br/>
+
+					
+                    
+                    <div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-decision field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Decision:&nbsp;</h2><div class="field-items"><div class="field-item even">Reject</div></div></section></div><br/>                    <div id="review">
+                    		                    	</div>
+
+					
+										<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><b>Solicited Reviews:</b><br/><form action="136.html" method="post" id="get-submitted-reviews" accept-charset="UTF-8"><div><fieldset class="collapsible collapsed form-wrapper" id="edit-fset1"><legend><span class="fieldset-legend">Review #1 <strong>submitted on 27/Mar/2023</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Emanuele  Della Valle</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-5176-5885" target="_blank">https://orcid.org/0000-0002-5176-5885</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Good</br><b style="color:#f39222">Suggested Decision: </b> Undecided</br><b style="color:#f39222">Technical Quality of the paper:</b> Excellent<br/><b style="color:#f39222">Presentation:</b> Good<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> High significance<br/><b style="color:#f39222">Background:</b> Incomplete or inappropriate<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> Not all used and produced data are FAIR and openly available in established data repositories; authors need to fix this<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences: </b><br/><p>The paper focuses on sequential pattern mining. The authors claim that finding subsequences in sequences is helpful for many applications, such as those cited by the author: weather forecasting and mobility. To address this issue, the authors propose an algorithm called Minits-AllOcc to find sequential patterns and transition times between events. They also introduce a parallel version of the algorithm called MMinits-AllOcc, which runs on a multi-core CPU. The authors bring experimental evidence that Minits-AllOcc outperforms brute-force methods and that MMinits-AllOcc is 2.5X faster than the single-core version.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>The paper is very well written. It is well organized, and it reads smoothly. The motivation of the paper is strong. The proposed method is sound. The experimental campaign is extensive and proves the claims of the authors.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>I have severe doubts about the novelty of the paper. I am not an expert in sequential pattern mining; thus, I read the reviews referenced in the paper (citations 9 and 10). I discovered that state-of-the-art algorithms ignore the temporal information between itemsets in a sequential pattern. </p>
+<p>As my stream processing area of expertise, temporal information is essential for many situations, and engines are optimized for it. While basic stream processing queries can use the order of events coming on a stream (e.g., A followed by B or A followed by B and not C), expressive queries require at least one temporal annotation per event. Temporal annotations allow computing intervals and reason on time (e.g., A followed by B within N seconds). </p>
+<p>Indeed, in stream processing, finite state machines (FSMs) and trees are used to improve the efficiency and accuracy of processing systems by reducing the need for brute-force pattern matching. FSMs and Trees represent the states and the transitions in modeling sequences, time intervals, and causality and recognizing complex event patterns [*]. Moreover, as in the authors' setting, stream processing cannot re-scan the data because the input is an unbounded data structure that the engine cannot memorize. Last but not least, in both settings, latency matters. In stream processing, patterns of events must be detected in real-time since actions must be triggered based on those patterns. In the authors' settings, the real-time requirement does not hold, but it is clear that the faster, the better requirement holds.</p>
+<p>[*] Artikis, A., Margara, A., Ugarte, M., Vansummeren, S. and Weidlich, M., 2017. Tutorial: Complex event recognition languages. In Proceedings of the 11th ACM International Conference on Distributed and Event-based Systems (pp. 7-10). ACM. <a href="https://cer.iit.demokritos.gr/publications/papers/2017/2017_debs_tut_paper.pdf">https://cer.iit.demokritos.gr/publications/papers/2017/2017_debs_tut_pap...</a></p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>* The quality of the tables is low: the font is too tiny, and pixelled.<br />
+* References 22, 23, 28, 29, and 32 are written in different fonts.<br />
+* The first paragraph in each section should be either indented or not indented. Currently, there is a mix.<br />
+* Figure 18 and figure 19 have different resolutions.<br />
+* I would avoid short sections (e.g., 4.5.*, and 5.* )</p>
+</p></div></fieldset>
+<fieldset class="collapsible collapsed form-wrapper" id="edit-fset2"><legend><span class="fieldset-legend">Review #2 <strong>submitted on 28/Apr/2023</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Tobias Kuhn</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-1267-0234" target="_blank">https://orcid.org/0000-0002-1267-0234</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Average</br><b style="color:#f39222">Suggested Decision: </b> Undecided</br><b style="color:#f39222">Technical Quality of the paper:</b> Unable to judge<br/><b style="color:#f39222">Presentation:</b> Average<br/><b style="color:#f39222">Reviewer`s confidence:</b> Low<br/><b style="color:#f39222">Significance:</b> Moderate significance<br/><b style="color:#f39222">Background:</b> Reasonable<br/><b style="color:#f39222">Novelty:</b> Unable to judge<br/><b style="color:#f39222">Data availability:</b> Not all used and produced data are FAIR and openly available in established data repositories; authors need to fix this<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences: </b><br/><p>The paper motivates and introduces the concept of timed sequential patterns. It then reports on the development of two algorithms and implementations, a plain one and one optimized for multi-core processing. Finally, it presents evaluation results in term of execution time and effect of different parameters.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>- Interesting and relevant topic<br />
+- Overall model and approach seem sound and valuable<br />
+- Good comparison of two versions of the algorithm/implementation</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>- The novelty could be better established<br />
+- The formal definitions and arguments are quite hard to follow (at least to me) due to sometimes unconventional (at least to me) notation and omissions<br />
+- No "sanity check" with other existing implementations of plain (non-timed) sequences, to see whether outputs are consistent and execution times are reasonable</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>- The table in Figure 1 could be presented better: unclear why elements are shown in this order; use of color could make it easier to understand; as an introductory illustration, this could possibly also be made more into an actual figure and less like a strict table</p>
+<p>- In the introduction about patterns being "extended": It wasn't clear to me why "extending" a pattern isn't treated like creating a new pattern (so then obviously the result has to be calculated again). Are such "extension" just things that happen frequently and therefore need specific support? Or did I misunderstand what these "extensions" are? This should clarified either way.</p>
+<p>- In the end of the introduction: "The time can be any descriptive statistic based on the user's preference, such as range, average, etc." could have been better introduced in the example and motivations before.</p>
+<p>- "The idea of incorporating transition time ...": I'd use a word that's a bit stronger than "idea", e.g. "concept" or "model".</p>
+<p>- It took me a bit to understand the first paragraph of Section 2. I was confused by the notation &lt;{a1},{a2},...&gt;, where {a1} etc seem to be sets with a single element. But I think they should just be sequences of sets, so  where a1, a2, etc are sets? I believe that the curly brackets are in this case superfluous and confusing. Also, it's not explicitly specified in the text that a1 etc are itemsets.</p>
+<p>- "A timed event is a pair e = (I, t), where I am an item set that ...": I suppose it should be "where I *is*"</p>
+<p>- "ei.x subsetof I (1 ≤ i ≤ n)": here it's unclear what x and I stand for.</p>
+<p>- Definition of "delta": what do p and j stand for here?</p>
+<p>- {a, 10} seem to be a tuple (not a set). I might not be familiar with the conventions of this particular community, but to me using curly brackets normally indicate a set, and round brackets are more usual for tuples, so (a, 10). But again, there might be different conventions in this community.</p>
+<p>- I cannot really judge the novelty, as I am not an expert in the field. Based on the Related Work section, it seems novel, but it would be good to see in a bit more detail (at some point in the paper, maybe based on examples) how the presented approach differs from some other recent approaches.</p>
+<p>- "The drawback of these methods is ..." in Related Work: I was wondering what happens if these methods are used with an arbitrarily high ("infinite") time interval. Does it break or would it still work? If the latter, how does it then compare to your method?</p>
+<p>- "A node can have multiple parent nodes": this confused me. Does it mean "multiple direct parents"? Then it's not a tree! Or "multiple indirect parents going up the tree hierarchy"? The latter is kind of obvious, and I would remove this part to avoid confusion.</p>
+<p>- "&lt;{a,2},&lt;{a,b,19},{d,25}&gt;" this seems mal-formed.</p>
+<p>- I got lost following the algorithm/method somewhere around Figure 8. It wasn't clear to me here what example exactly we are seeing here. Where do all these numbers come from? Are the upper ones (&lt;{a}&gt; and &lt;{b}&gt;) just given as an example, and they then produce the bottom onces? Is TS3 in &lt;{a}&gt; the same as TS3 in &lt;{b}&gt;? If so, why are the trees different? If not, why are they called the same?</p>
+<p>- "For air temperature ...": This paragraph (and some other parts) in Section 5 are not very pleasant to read. It would be better to put this into some kind of table or figure.</p>
+<p>- "Competing Algorithms": I would have liked to see some rough comparison to other algorithms. For example, I suppose the timed sequences can be used to "simulate" plain sequences, so you could create some such cases, which would allow you to test whether our algorithms get you the same results as the established ones do for the plain sequences (as a kind of sanity check). Measuring the execution time in this scenario would also be an interesting thing to do. It's perfectly fine if your algorithm would be slower in this scenario, but it would be interesting to see how much slower (like doubled execution time or 100x execution time or ...?).</p>
+</p></div></fieldset>
+<input type="hidden" name="form_build_id" value="form-g4ymhqUVusFetTAxreqvY7opfkYI14eLmfVS2sZrJlE" />
+<input type="hidden" name="form_id" value="get_submitted_reviews" />
+</div></form></div><br/>                    
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"></div><br/>
+				</fieldset>
+				
+    </div>
+
+    <div id="admin-review">
+			</div>
+
+	<div id="decision">
+			</div>
+
+
+
+
+          <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first"><span><a href="../user/login%3Fdestination=comment%252Freply%252F734%23comment-form.html">Log in</a> to post comments</span></li><li class="camera_ready_files_field_paper last"></li></ul></nav>
+    
+    <section id="comments" class="comment-wrapper">
+
+          <h2 class="title">
+      4 Comments    </h2>
+      
+  <a id="comment-128"></a>
+<article class="comment odd first clearfix" about="/comment/128#comment-128" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="128.html#comment-128" rel="bookmark">Review the paper and comment.</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2023-03-07T05:33:01-05:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/malik-jawarneh" typeof="sioc:UserAccount" property="foaf:name" datatype="">Malik Jawarneh</span> on <time datetime="2023-03-07T05:33:01Z"><span class="date-time">Tue, 03/07/2023 - 05:33</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/mining-timed-sequential-patterns-minits-allocc-technique" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Positive:</p>
+<p>• The proposed Minits-AllOcc and MMinits-AllOcc algorithms are capable of mining sequential patterns and the transition time between itemsets based on all occurrences of a pattern in the database. <br />• The proposed parallel multi-core CPU version of this algorithm, MMinits-AllOcc, is able to efficiently deal with Big Data.<br />• Extensive experiments on real and synthetic datasets show the advantages of this approach over the brute-force method, with the multi-core CPU version of the algorithm shown to outperform the single-core version on Big Data by 2.5X.</p>
+<p>Negative:<br />• Some parts of the proposed algorithm lack clarity and could be better explained. <br />• The proposed algorithm could be further improved by incorporating more advanced techniques to optimize the computation time.</p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F734%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+
+<div class="indented"><a id="comment-131"></a>
+<article class="comment even clearfix" about="/comment/131#comment-131" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="131.html#comment-131" rel="bookmark">Review comment </a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2023-03-11T09:19:22-05:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/malik-jawarneh" typeof="sioc:UserAccount" property="foaf:name" datatype="">Malik Jawarneh</span> on <time datetime="2023-03-11T09:19:22Z"><span class="date-time">Sat, 03/11/2023 - 09:19</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/mining-timed-sequential-patterns-minits-allocc-technique" class="rdf-meta element-hidden"></span><span rel="sioc:reply_of" resource="/comment/128#comment-128" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><ol><li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt"><span style="background:white"><span style="line-height:12.65pt"><span style="color:#222222"><span style="background-image:initial"><span style="background-position:initial"><span style="background-size:initial"><span style="background-repeat:initial"><span style="background-origin:initial"><span style="background-clip:initial">Structure your abstract as follows- 1) Background 2) Aim/Objective 3) Methodology 4) Results 5) Conclusion. Write 2-4 lines for each and merge everything in one paragraph without any subheading</span></span></span></span></span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:start; -webkit-text-stroke-width:0px"><span style="background:white"><span style="line-height:12.65pt"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="word-spacing:0px"><span style="color:#222222"><span style="background-image:initial"><span style="background-position:initial"><span style="background-size:initial"><span style="background-repeat:initial"><span style="background-origin:initial"><span style="background-clip:initial">Abstract must contain the motivation and objective of the article. The Abstract must be very clear and the motive of the paper should be represented in a nutshell.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:start; -webkit-text-stroke-width:0px"><span style="background:white"><span style="line-height:12.65pt"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="word-spacing:0px"><span style="color:#222222"><span style="background-image:initial"><span style="background-position:initial"><span style="background-size:initial"><span style="background-repeat:initial"><span style="background-origin:initial"><span style="background-clip:initial">Introduction should be of 5-7 solid paragraphs and provide structure of work at the end of the Introduction section</span></span></span></span></span></span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#222222">.</span></span></span></span></span></span></span></span></span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:start; -webkit-text-stroke-width:0px"><span style="background:white"><span style="line-height:12.65pt"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="word-spacing:0px"><span style="color:#222222"><span style="background-image:initial"><span style="background-position:initial"><span style="background-size:initial"><span style="background-repeat:initial"><span style="background-origin:initial"><span style="background-clip:initial">Add more contribution to your study field.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:start; -webkit-text-stroke-width:0px"><span style="background:white"><span style="line-height:12.65pt"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="word-spacing:0px"><span style="color:#222222">The purpose of study not clear.</span></span></span></span></span></span></span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:start; -webkit-text-stroke-width:0px"><span style="background:white"><span style="line-height:12.65pt"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="word-spacing:0px"><span style="color:#222222">Make highlight for objectives</span></span></span></span></span></span></span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:start; -webkit-text-stroke-width:0px"><span style="background:white"><span style="line-height:12.65pt"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="word-spacing:0px"><span style="color:#222222"><span style="background-image:initial"><span style="background-position:initial"><span style="background-size:initial"><span style="background-repeat:initial"><span style="background-origin:initial"><span style="background-clip:initial">Remove any table or figure which is taken from web. Otherwise you have to get approval from publisher and author in a provided form by springer</span></span></span></span></span></span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#222222">.</span></span></span></span></span></span></span></span></span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:start; -webkit-text-stroke-width:0px"><span style="background:white"><span style="line-height:12.65pt"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="word-spacing:0px"><span style="color:#222222"><span style="background-image:initial"><span style="background-position:initial"><span style="background-size:initial"><span style="background-repeat:initial"><span style="background-origin:initial"><span style="background-clip:initial">Please avoid to write definitions of terms like </span></span></span></span></span></span></span><span style="font-size:10.0pt"><span style="color:#222222">Data mining, Sequential pattern mining, Timed sequential patterns, Singe-core and multi-core processor.</span></span><span style="color:#222222">, etc., which are already available over web, try to cite work for such information.</span></span></span></span></span></span></span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:start; -webkit-text-stroke-width:0px"><span style="background:white"><span style="line-height:12.65pt"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="word-spacing:0px"><span style="color:#222222"><span style="background-image:initial"><span style="background-position:initial"><span style="background-size:initial"><span style="background-repeat:initial"><span style="background-origin:initial"><span style="background-clip:initial">In summary, only provide useful content in your work.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></li>
+</ol><p style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; margin-left:.5in; text-align:start; -webkit-text-stroke-width:0px"><span style="background:white"><span style="line-height:12.65pt"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="word-spacing:0px"><span style="color:#222222">10. </span><span style="color:#222222"><span style="background-image:initial"><span style="background-position:initial"><span style="background-size:initial"><span style="background-repeat:initial"><span style="background-origin:initial"><span style="background-clip:initial"> These are Title related to your area, you may use.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p> </p>
+<ul><li><span style="font-size:10.0pt"><span style="background:white"><span style="line-height:107%"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><span style="color:black">JAWARNEH, M. (2023). Development of Machine Learning Based Security Model for IoT Network.</span></span></span></span></span></li>
+<li><span style="font-size:10.0pt"><span style="background:white"><span style="line-height:107%"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><span style="color:black">Jawarneh, M., Alshare, M., Bsoul, Q., &amp; Kalash, H. S. The Impact of Machine Learning On Educational Institutions: An Empirical Study.</span></span></span></span></span></li>
+<li><span style="font-size:10.0pt"><span style="background:white"><span style="line-height:107%"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><span style="color:black">Arumugam, K., Swathi, Y., Sanchez, D. T., Mustafa, M., Phoemchalard, C., Phasinam, K., &amp; Okoronkwo, E. (2022). Towards applicability of machine learning techniques in agriculture and energy sector. </span></span></span></span></span><i style="font-variant-ligatures:normal; font-variant-caps:normal; orphans:2; widows:2; -webkit-text-stroke-width:0px; text-decoration-thickness:initial; text-decoration-style:initial; text-decoration-color:initial; word-spacing:0px">Materials Today: Proceedings</i><span style="font-variant-ligatures:normal; -webkit-text-stroke-width:0px"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="float:none"><span style="word-spacing:0px">, </span></span></span></span></span></span></span></span></span><i style="font-variant-ligatures:normal; font-variant-caps:normal; orphans:2; widows:2; -webkit-text-stroke-width:0px; text-decoration-thickness:initial; text-decoration-style:initial; text-decoration-color:initial; word-spacing:0px">51</i><span style="font-variant-ligatures:normal; -webkit-text-stroke-width:0px"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="float:none"><span style="word-spacing:0px">, 2260-2263.</span></span></span></span></span></span></span></span></span></li>
+<li><span style="font-size:10.0pt"><span style="background:white"><span style="line-height:107%"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><span style="color:black">Sajja, G. S., Mustafa, M., Phasinam, K., Kaliyaperumal, K., Ventayen, R. J. M., &amp; Kassanuk, T. (2021, August). Towards application of machine learning in classification and prediction of heart disease. In </span></span></span></span></span><i style="font-variant-ligatures:normal; font-variant-caps:normal; orphans:2; widows:2; -webkit-text-stroke-width:0px; text-decoration-thickness:initial; text-decoration-style:initial; text-decoration-color:initial; word-spacing:0px">2021 Second International Conference on Electronics and Sustainable Communication Systems (ICESC)</i><span style="font-variant-ligatures:normal; -webkit-text-stroke-width:0px"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="float:none"><span style="word-spacing:0px"> (pp. 1664-1669). IEEE.</span></span></span></span></span></span></span></span></span></li>
+</ul></div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F734%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+</div><a id="comment-136"></a>
+<article class="comment odd clearfix" about="/comment/136#comment-136" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="136.html#comment-136" rel="bookmark">Meta-Review by Editor</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2023-04-28T14:12:17-04:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/tobias-kuhn" typeof="sioc:UserAccount" property="foaf:name" datatype="">Tobias Kuhn</span> on <time datetime="2023-04-28T14:12:17Z"><span class="date-time">Fri, 04/28/2023 - 14:12</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/mining-timed-sequential-patterns-minits-allocc-technique" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Your manuscript has been reviewed by two reviewers. Both reviewers found the paper to be interesting and potentially signficant. However, the reviewers also raised concerns about the novelty of the paper, with both noting that it was hard to evaluate the novelty as this wasn't clearly enough described in the manuscript. I consider this to be the major concern that your revision should address. In particular you should clearly compare the algorithm proposed in this manuscript to other existing algorithms, and give some idea of their relative performance, as well as delineating precisely where the new algorithm differs from existing approaches. As noted by reviewer 2, it does not necessarily matter if the computational performance of the new algorithm is slower than other methods, but the manuscript should give some idea of the relative performance in this domain.</p>
+<p>Please also note that both reviewers highlighted that 'Not all used and produced data are FAIR and openly available in established data repositories; authors need to fix this'. Making all data FAIR and openly available will be a condition of eventual acceptance.</p>
+<p>The reviewers also provided detailed comments on other aspects of the manuscript, and I invite you to consider these carefully in formulating your response and revision of the manuscript.</p>
+<p>Richard Mann (<a href="https://orcid.org/0000-0003-0701-1274">https://orcid.org/0000-0003-0701-1274</a>)</p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F734%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+<a id="comment-140"></a>
+<article class="comment even last clearfix" about="/comment/140#comment-140" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="140.html#comment-140" rel="bookmark">Withdrawn by the authors</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2023-07-24T00:59:38-04:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/tobias-kuhn" typeof="sioc:UserAccount" property="foaf:name" datatype="">Tobias Kuhn</span> on <time datetime="2023-07-24T00:59:38Z"><span class="date-time">Mon, 07/24/2023 - 00:59</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/mining-timed-sequential-patterns-minits-allocc-technique" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p>This submission was withdrawn upon request by the authors. Thereby it is now marked Rejected instead of Undecided.</p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F734%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+
+  
+</section>
+
+  </div>
+  </article>
+
+  </div></div>                      </div>
+
+                      
+                    </div>
+                  </div>
+
+                </section>
+
+                
+              </div>
+            </div>
+
+                        
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+    
+          <div id="footer-wrapper">
+        <div class="container clearfix">
+          <footer class="clearfix" role="contentinfo">
+            <div class="region region-footer"><div class="region-inner clearfix"><div id="block-block-16" class="block block-block no-title odd first last block-count-4 block-region-footer block-16" ><div class="block-inner clearfix">  
+  
+  <div class="block-content content"><p style="text-align:center;"><a href="https://www.iospress.nl/disclaimer/" target="_blank">Disclaimer</a> | <a href="https://content.iospress.com/page/privacy" target="_blank">Privacy Policy</a> | Data Science is Published by <a href="http://www.iospress.com" target="_blank">IOS Press</a>, Copyright 2023</p>
+</div>
+  </div></div></div></div>            <p class="attribute-creator"></p>
+          </footer>
+        </div>
+      </div>
+    
+  </div>
+</div>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+## This file contains the author responses to points raised by reviewers.
+
+Title: Application of Concepts of Neighbours to Knowledge Graph Completion
+Author: Sébastien Ferré
+Tracking #: 622-1602
+
+I kindly thank the reviewers for their careful reading, and their
+valuable suggestions for improvement.
+
+The parts of the paper that have been added or significantly changed
+are shown in bold in the supplementary file of the new manuscript.
+
+I hereafter answer to each point raised by the reviewers by describing
+the changes that have been made.
+
+# Approach name
+
+> review 1
+> I am not sure it is wise to name the approach CNN, since the acronym
+> has become synonymous with Convolutional Neural Networks. It may be
+> difficult for people to find this paper, especially if all they
+> remember is that it is called CNN.
+
+True. Given that this name has already been used in former
+publications, it is difficult to make a radical change. We replaced
+CNN by C-NN, which has a nice analogy with k-NN for the classical
+nearest neighbour approach.
+
+
+# The big picture
+
+> review 2
+> Overall, the paper is written in a very confusing style. Although a
+> running example is used, it is often hard to grasp the idea and the
+> example per se. What would help is a big picture explaining how the
+> different pieces (queries, answers, extensions, intensions, neighbors,
+> inference, ...) fit together and how they are combined in order to
+> produce a prediction. For the actual prediction part, I miss a
+> pseudocode explaining how the approach actually computes an inference.
+
+Thank you for the suggestion of "a big picture", we agree that this
+was missing. We added a short section "Overview of the Approach",
+before the technical sections, supported by a new figure showing the
+whole workflow of the approach in a schematic way. The new section
+summarizes the whole approach along with a small running example, and
+with references to the relevant sections. We hope that it will
+facilitate the reading of the paper.
+
+A pseudocode algorithm (Algorithm 2) was added to explain the
+inference and ranking process.
+
+
+# Formal terminology
+
+> review 1 
+> I think the terminology and use of definitions and symbols can be
+> simplified, and I encourage you to do so to make your theory more
+> accessible.
+
+We strived to simplify and clarify the technical sections. In
+particular, in Section "Concepts of Nearest Neighbours", we added
+before each formal definition a short paragraph to provide context and
+intuition about what is defined and why.
+
+We also significantly simplified the very definition of C-NNs
+(Definition 3). Table 1 has been changed accordingly.
+
+
+# Scalability
+
+> review 1
+> I think the paper makes a valid and different contribution to the
+> field; hence, it should be accepted, even though it's not without some
+> limitations, mainly that I am not confident that it can be applied to
+> large-scale knowledge graphs due to its reliance
+> anytime-computation. In contrast, embeddings are only linear in the
+> total numbers of relations and entities.
+
+> review 2
+> It would be good to address the scalability limitations in the
+> beginning of the paper. It seems to me that storing the KG in memory
+> is important for the practical merits of this approach. Either way,
+> this needs to be mentioned somewhere in the introduction.
+
+We added the following paragraph in the introduction:
+
+«The combinatorial aspect of graph patterns over knowledge graphs is
+tackled by delaying their computation to inference time, which enables
+to bound the number of C-NNs by the number of entities, and in
+practice it is generally much smaller. The intensive knowledge-based
+computation at inference time is managed with in-memory KG indices (as
+is common in RDF stores), and an any-time algorithm for both C-NN
+computation and inference.»
+
+And the following paragraph at the end of the section on C-NNs computation:
+
+«A last point to discuss is the scalability of C-NNs
+  computation w.r.t. the KG size, i.e. what is the impact of doubling
+  the number of entities. If we make the reasonable assumption that
+  the new knowledge follows the same schema as the old knowledge
+  (e.g., adding film descriptions to a film KG), then the impacts are
+  that: a) the query answers are two times larger, and b) the number
+  of C-NNs is somewhere between the same and the double, depending on
+  the novelty of the new knowledge. As a consequence, if our objective
+  is to compute a constant number of C-NNs for further inference, then
+  it suffices to increase timeout linearly with KG size.»
+
+
+# Explainability
+
+> review 2
+> One major claim of the paper is that the inference is
+> explainable. However, I find that claim problematic, in particular
+> since the paper does not show examples of how such an explanation
+> would be presented to a user. Just because the patterns learned are
+> explicit, it does not mean that the inference itself is
+> explainable. In fact, as the paper claims, many rules are combined
+> into a final inference. Which one is then chosen as an explanation? Is
+> there a difference whether the inference is created by one strong or
+> by 100 weak rules?
+
+This is discussed along with the description of Algorithm 2, in the
+new subsection 6.3.

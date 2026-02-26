@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../paper/arangopipe-tool-machine-learning-meta-data-management-0.html" />
+<link rel="shortlink" href="696.html" />
+<link rel="shortcut icon" href="../sites/default/files/favicon-96x96.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>Arangopipe, a Tool for Machine Learning Meta-Data Management | Data Science</title>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/system/system.base.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.menus.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.messages.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.core.css?t4kojz");
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/comment/comment.css?t4kojz");
+@import url("https://datasciencehub.net/modules/field/theme/field.css?t4kojz");
+@import url("../sites/all/modules/logintoboggan/logintoboggan.css%3Ft4kojz.css");
+@import url("https://datasciencehub.net/modules/node/node.css?t4kojz");
+@import url("https://datasciencehub.net/modules/search/search.css?t4kojz");
+@import url("https://datasciencehub.net/modules/user/user.css?t4kojz");
+@import url("../sites/all/modules/views/css/views.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/modules/ctools/css/ctools.css%3Ft4kojz.css");
+@import url("../sites/all/modules/ctools/css/modal.css%3Ft4kojz.css");
+@import url("../sites/default/modules/modal_forms/css/modal_forms_popup.css%3Ft4kojz.css");
+@import url("../sites/all/modules/responsive_menus/styles/responsive_menus_simple/css/responsive_menus_simple.css%3Ft4kojz.css");
+@import url("../sites/all/modules/date/date_api/date.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="screen">
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.headings.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.image.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.layout.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/themes/corolla/css/html-elements.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/forms.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/tables.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/page.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/articles.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/comments.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/fields.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/blocks.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/navigation.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/corolla.settings.style.css%3Ft4kojz.css");
+@import url("../sites/default/files/color/corolla-80fb2671/colors.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="print">
+@import url("../sites/all/themes/corolla/css/print.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/default/files/adaptivetheme/corolla_files/corolla.responsive.layout.css%3Ft4kojz.css" media="only screen" />
+<style type="text/css" media="screen">
+@import url("../sites/default/files/adaptivetheme/corolla_files/corolla.fonts.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.custom.css%3Ft4kojz.css" media="only screen" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.portrait.css%3Ft4kojz.css" media="only screen and (max-width:320px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.landscape.css%3Ft4kojz.css" media="only screen and (min-width:321px) and (max-width:480px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.portrait.css%3Ft4kojz.css" media="only screen and (min-width:481px) and (max-width:768px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.landscape.css%3Ft4kojz.css" media="only screen and (min-width:769px) and (max-width:1024px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.desktop.css%3Ft4kojz.css" media="only screen and (min-width:1025px)" />
+
+<!--[if lt IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/default/files/adaptivetheme/corolla_files/corolla.lt-ie9.layout.css?t4kojz");
+</style>
+<![endif]-->
+
+<!--[if lte IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/all/themes/corolla/css/ie-lte-9.css?t4kojz");
+</style>
+<![endif]-->
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-extend-3.4.0.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/drupal.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ui/jquery.ui.core.min.js?v=1.8.7"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.cookie.js?v=1.0"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.form.js?v=2.52"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form-single-submit.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ajax.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/default/modules/jquery_update/js/jquery_update.js%3Fv=0.0.1"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/progress.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/all/modules/ctools/js/modal.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/default/modules/modal_forms/js/modal_forms_popup.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/responsive_menus/styles/responsive_menus_simple/js/responsive_menus_simple.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js%3Ft4kojz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-107867597-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="../sites/all/modules/field_group/field_group.js%3Ft4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/tableheader.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/collapse.js?v=7.98"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"corolla","theme_token":"AgcmQOXZoNspNw0yesCwsuFJ9YlTvFDdYseB9-In6bU","jquery_version":"default","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/form-single-submit.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/default\/modules\/jquery_update\/js\/jquery_update.js":1,"misc\/progress.js":1,"sites\/all\/modules\/ctools\/js\/modal.js":1,"sites\/default\/modules\/modal_forms\/js\/modal_forms_popup.js":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/js\/responsive_menus_simple.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/field_group\/field_group.js":1,"misc\/tableheader.js":1,"misc\/collapse.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ctools\/css\/modal.css":1,"sites\/default\/modules\/modal_forms\/css\/modal_forms_popup.css":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/css\/responsive_menus_simple.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.headings.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.image.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/corolla\/css\/html-elements.css":1,"sites\/all\/themes\/corolla\/css\/forms.css":1,"sites\/all\/themes\/corolla\/css\/tables.css":1,"sites\/all\/themes\/corolla\/css\/page.css":1,"sites\/all\/themes\/corolla\/css\/articles.css":1,"sites\/all\/themes\/corolla\/css\/comments.css":1,"sites\/all\/themes\/corolla\/css\/fields.css":1,"sites\/all\/themes\/corolla\/css\/blocks.css":1,"sites\/all\/themes\/corolla\/css\/navigation.css":1,"sites\/all\/themes\/corolla\/css\/fonts.css":1,"sites\/all\/themes\/corolla\/css\/corolla.settings.style.css":1,"sites\/all\/themes\/corolla\/color\/colors.css":1,"sites\/all\/themes\/corolla\/css\/print.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.responsive.layout.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.fonts.css":1,"sites\/all\/themes\/corolla\/css\/responsive.custom.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.desktop.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.lt-ie9.layout.css":1,"sites\/all\/themes\/corolla\/css\/ie-lte-9.css":1}},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E"},"modal-popup-small":{"modalSize":{"type":"fixed","width":500,"height":150},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-medium":{"modalSize":{"type":"fixed","width":550,"height":450},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-large":{"modalSize":{"type":"scale","width":0.8,"height":0.8},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"responsive_menus":[{"toggler_text":"\u2630 Menu","selectors":["#block-system-main-menu"],"media_size":"935","media_unit":"px","absolute":"1","remove_attributes":"1","responsive_menus_style":"responsive_menus_simple"}],"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/search\/node":true,"\/node\/696":true},"field_group":{"fieldset":"full"},"ctools-sample-style":{"modalSize":{"type":"fixed","width":1098,"height":500,"addWidth":20,"addHeight":15},"modalOptions":{"opacity":0.5,"background-color":"#000"},"animation":"fadeIn","modalTheme":"CToolsSampleModal","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/ctools_ajax_sample\/images\/ajax-loader.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E"},"adaptivetheme":{"corolla":{"layout_settings":{"bigscreen":"three-col-grail","tablet_landscape":"three-col-grail","tablet_portrait":"one-col-vert","smalltouch_landscape":"one-col-vert","smalltouch_portrait":"one-col-stack"},"media_query_settings":{"bigscreen":"only screen and (min-width:1025px)","tablet_landscape":"only screen and (min-width:769px) and (max-width:1024px)","tablet_portrait":"only screen and (min-width:481px) and (max-width:768px)","smalltouch_landscape":"only screen and (min-width:321px) and (max-width:480px)","smalltouch_portrait":"only screen and (max-width:320px)"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]>
+<script src="https://datasciencehub.net/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?t4kojz"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-696 node-type-submit-paper site-name-hidden atr-7.x-3.x atv-7.x-3.1 lang-en site-name-data-science section-paper color-scheme-custom corolla bs-n bb-n mb-dd rc-6 rct-6">
+  <div id="skip-link" class="nocontent">
+    <a href="696.html#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="page-wrapper">
+  <div id="page" class="page ssc-n ssw-n ssa-l sss-n btc-n btw-b bta-l bts-n ntc-n ntw-b nta-l nts-n ctc-n ctw-b cta-l cts-n ptc-n ptw-b pta-l pts-n">
+
+          <div id="menu-bar-wrapper">
+        <div class="container clearfix">
+          <div id="menu-bar" class="nav clearfix"><nav id="block-system-main-menu" class="block block-system block-menu menu-wrapper menu-bar-wrapper clearfix odd first block-count-1 block-region-menu-bar block-main-menu"  role="navigation">  
+      <h2 class="element-invisible block-title">Main menu</h2>
+  
+  <ul class="menu clearfix"><li class="first leaf menu-depth-1 menu-item-757"><a href="../content/about-data-science.html">About</a></li><li class="leaf menu-depth-1 menu-item-758"><a href="../content/editors.html">Editorial Board</a></li><li class="leaf menu-depth-1 menu-item-1559"><a href="../content/submit-manuscript.html">Submit Manuscript</a></li><li class="leaf menu-depth-1 menu-item-1612"><a href="../content/calls.html">Calls</a></li><li class="leaf menu-depth-1 menu-item-759"><a href="../content/guidelines-authors.html">For Authors</a></li><li class="leaf menu-depth-1 menu-item-760"><a href="../content/guidelines-reviewers.html">For Reviewers</a></li><li class="leaf menu-depth-1 menu-item-582"><a href="../underreview.html" title="Under Review">Under Review</a></li><li class="leaf menu-depth-1 menu-item-583"><a href="../reviewed.html" title="">Reviewed</a></li><li class="last leaf menu-depth-1 menu-item-1611"><a href="../ReviewedAccepted.html" title="">Accepted</a></li></ul>
+  </nav><div id="block-orcid-login-orcid-login" class="block block-orcid-login no-title menu-wrapper menu-bar-wrapper clearfix even last block-count-2 block-region-menu-bar block-orcid-login" >  
+  
+  <p style="background-color: #003b3a; float:right;"><a style="vertical-align: middle; color: white; padding: 10px; display: inline-block; text-decoration: none;" href="https://orcid.org/oauth/authorize?client_id=APP-223SGGDDO35LKOT2&amp;response_type=code&amp;scope=%2Fauthenticate&amp;redirect_uri=https%3A%2F%2Fdatasciencehub.net%2F&amp;state=eyJyZWRpcmVjdCI6Im5vZGVcLzY5NiJ9"><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle;"/> Log In with ORCID</a></p>
+  </div></div>        </div>
+      </div>
+    
+    <div id="header-wrapper">
+      <div class="container clearfix">
+	        <header class="clearfix with-logo" role="banner">
+
+                      <div id="branding" class="branding-elements clearfix">
+
+                              <div id="logo">
+                  <a href="../index.html"><img class="site-logo" typeof="foaf:Image" src="../sites/default/files/DS_LOGO_vertical.png" alt="Data Science" /></a>                </div>
+              
+                              <div class="element-invisible h-group" id="name-and-slogan">
+
+                                      <h1 class="element-invisible" id="site-name"><a href="../index.html" title="Home page">Data Science</a></h1>
+                  
+                  
+                </div>
+              
+            </div>
+          
+          
+        </header>
+
+      </div>
+    </div>
+
+          <div id="top-panels-wrapper">
+        <div class="container clearfix">
+          <!-- Three column 3x33 Gpanel -->
+          <div class="at-panel gpanel panel-display three-3x33 clearfix">
+                                                          </div>
+        </div>
+      </div>
+    
+    
+    
+    <div id="content-wrapper">
+      <div class="container">
+
+        <div id="columns">
+          <div class="columns-inner clearfix">
+
+            <div id="content-column">
+              <div class="content-inner">
+
+                
+                <section id="main-content" role="main">
+
+                  
+                  <div class="content-margin">
+                    <div class="content-style">
+
+                      
+                      
+                      
+                                              <header class="clearfix">
+                          <h1 id="page-title">
+                            Arangopipe, a Tool for Machine Learning Meta-Data Management                          </h1>
+                        </header>
+                      
+                      
+                      
+                      <div id="content">
+                        <div class="region region-content"><div id="block-system-main" class="block block-system no-title odd first last block-count-3 block-region-content block-main" >  
+  
+  <article id="node-696" class="node node-submit-paper article odd node-lang-en node-full ia-n clearfix" about="/paper/arangopipe-tool-machine-learning-meta-data-management-0" typeof="sioc:Item foaf:Document" role="article">
+  <div class="node-inner">
+
+
+
+              <header class="node-header">
+
+        
+        
+      </header>
+        <span property="dc:title" content="Arangopipe, a Tool for Machine Learning Meta-Data Management" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="1" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+    <div class="node-content">
+        
+      <h3>Tracking #: 696-1676</h3>          								<fieldset>
+					<!-- legend>
+						<span class="fieldset-legend">Paper Data</span>
+					</legend -->
+
+					
+
+
+					
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><h5>Authors:</h5><br/><form action="696.html" method="post" id="authors-table-form-anonymus" accept-charset="UTF-8"><div><div id="authors_Container"><table class="sticky-enabled">
+ <thead><tr><th></th><th>Name</th><th>ORCID</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-1758">
+  <input type="checkbox" id="edit-authors-1758" name="authors[1758]" value="1758" class="form-checkbox" />
+</div>
+</td><td>Rajiv Sambasivan</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-4865-7218" target="_blank">https://orcid.org/0000-0002-4865-7218</a></td> </tr>
+ <tr class="even"><td><div class="form-item form-type-checkbox form-item-authors-1774">
+  <input type="checkbox" id="edit-authors-1774" name="authors[1774]" value="1774" class="form-checkbox" />
+</div>
+</td><td>Jörg Schad</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-1552-382X" target="_blank">https://orcid.org/0000-0002-1552-382X</a></td> </tr>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-1775">
+  <input type="checkbox" id="edit-authors-1775" name="authors[1775]" value="1775" class="form-checkbox" />
+</div>
+</td><td>Christopher Woodward</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0003-4850-3101" target="_blank">https://orcid.org/0000-0003-4850-3101</a></td> </tr>
+</tbody>
+</table>
+</div><input type="hidden" name="author_nd" value="696" />
+<input type="hidden" name="author_vd" value="1676" />
+<input type="hidden" name="form_build_id" value="form-8zTX1ZVpRs15ZmRGBiE0xwqmMA3GqCKgUbnk6R4KEhI" />
+<input type="hidden" name="form_id" value="authors_table_form_anonymus" />
+</div></form><hr/></div><br/>
+
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-editor field-type-user-reference field-label-above view-mode-full"><h2 class="field-label">Responsible editor:&nbsp;</h2><div class="field-items"><div class="field-item even">Brian Davis</div></div></section></div><br/>
+					                    <div style="background-color: #E3E5E3;border-radius:5px;padding-top:4px;padding-bottom:4px;padding-left:6px;">
+					<section class="field field-name-field-submission-type field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Submission Type:&nbsp;</h2><div class="field-items"><div class="field-item even">Resource Paper</div></div></section><section class="field field-name-field-abstract field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Abstract:&nbsp;</h2><div class="field-items"><div class="field-item even">Experimenting with different models, documenting results and findings,
+and repeating these tasks are day-to-day activities for machine learning
+engineers and data scientists. There is a need to keep control of the
+machine-learning pipeline and its metadata. This allows users to iterate
+quickly through experiments and retrieve key findings and observations
+from historical activity. This is the need that Arangopipe serves.
+Arangopipe is an open-source tool that provides a data model that
+captures the essential components of any machine learning life cycle.
+Arangopipe provides an application programming interface that permits
+machine-learning engineers to record the details of the salient steps in
+building their machine learning models. The components of the data model
+and an overview of the application programming interface is provided.
+Illustrative examples of basic and advanced machine learning workflows
+are provided. Arangopipe is not only useful for users involved in
+developing machine learning models but also useful for users deploying
+and maintaining them.</div></div></section><section class="field field-name-field-pdf field-type-file field-label-above view-mode-full"><h2 class="field-label">Manuscript:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="PDF icon" title="application/pdf" src="https://datasciencehub.net/modules/file/icons/application-pdf.png" /> <a href="../system/files/ds-paper-696.pdf" type="application/pdf; length=1124361">ds-paper-696.pdf</a></span></div></div></section><section class="field field-name-field-previous-version field-type-node-reference field-label-above view-mode-full"><h2 class="field-label">Previous Version:&nbsp;</h2><div class="field-items"><div class="field-item even"><a href="../paper/arangopipe-tool-machine-learning-meta-data-management.html">Arangopipe, a Tool for Machine Learning Meta-Data Management</a></div></div></section><section class="field field-name-field-tags field-type-taxonomy-term-reference field-label-above view-mode-full"><h2 class="field-label">Tags:&nbsp;</h2><ul class="field-items"><li class="field-item even">Reviewed</li></ul></section><section class="field field-name-field-data-repository-urls field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Data repository URLs:&nbsp;</h2><div class="field-items"><div class="field-item even"><p>The data and code associated with this submission are available at:</p>
+<p><a href="https://github.com/arangoml/arangopipe">https://github.com/arangoml/arangopipe</a></p>
+</div></div></section><section class="field field-name-field-date-of-submission field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Submission:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2021-06-15T00:00:00-04:00">Tuesday, June 15, 2021</span></div></div></section><section class="field field-name-field-date-of-decision field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Decision:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2021-07-12T00:00:00-04:00">Monday, July 12, 2021</span></div></div></section><br><br><b>Nanopublication URLs:</b> <br>                    </div>
+                    <br/>
+
+					
+                    
+                    <div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-decision field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Decision:&nbsp;</h2><div class="field-items"><div class="field-item even">Accept</div></div></section></div><br/>                    <div id="review">
+                    		                    	</div>
+
+					
+										<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><b>Solicited Reviews:</b><br/><form action="696.html" method="post" id="get-submitted-reviews" accept-charset="UTF-8"><div><fieldset class="collapsible collapsed form-wrapper" id="edit-fset1"><legend><span class="fieldset-legend">Review #1 <strong>submitted on 29/Jun/2021</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">Review Details<br/><hr/></div><p>Reviewer has chosen to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Good</br><b style="color:#f39222">Suggested Decision: </b> Accept</br><b style="color:#f39222">Technical Quality of the paper:</b> Good<br/><b style="color:#f39222">Presentation:</b> Good<br/><b style="color:#f39222">Reviewer`s confidence:</b> High<br/><b style="color:#f39222">Significance:</b> Moderate significance<br/><b style="color:#f39222">Background:</b> Reasonable<br/><b style="color:#f39222">Novelty:</b> Clear novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data (if any) are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences (summary of changes and improvements for
+second round reviews): </b><br/><p>The authors have addressed issues identified within he text by provided more technical detail and illustrative examples. More detail has been provided across all sections illustrating usage with references for further reading/documentation. </p>
+<p>One small point, the reference in 3.0.7 “Feature engineering is very important in many machine learning tasks (Domingos, 2012)” should be changed to the updated referencing style.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>The authors have revised the manuscript and included required technical information. The work is pertinent and addresses the key issue of reproducibility within ML.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>N/A</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/></p></div></fieldset>
+<fieldset class="collapsible collapsed form-wrapper" id="edit-fset2"><legend><span class="fieldset-legend">Review #2 <strong>submitted on 09/Jul/2021</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">Review Details<br/><hr/></div><p>Reviewer has chosen to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Average</br><b style="color:#f39222">Suggested Decision: </b> Accept</br><b style="color:#f39222">Technical Quality of the paper:</b> Good<br/><b style="color:#f39222">Presentation:</b> Weak<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> High significance<br/><b style="color:#f39222">Background:</b> Reasonable<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data (if any) are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences (summary of changes and improvements for
+second round reviews): </b><br/><p>In this paper, the authors introduce Arangopipe, which is a tool used to manage the pipeline of machine learning projects, and illustrate examples of how to install and use it.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>The authors address a growing need and important pain point from machine learning projects, build a tool to manage machine learning experiments.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>There is still room to improve their presentation qualities.</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>Some typos and comments:</p>
+<p>Page 1<br />
+Line 26, business is strong [1].<br />
+Line 27, Artificial Intelligence (AI) in ...</p>
+<p>Page 2<br />
+Line 22, In section In section 4 ...</p>
+<p>Page 2, Line 43, in Fig. 1,  Page 4, Line 6 in Figure 2. It is better to use a consistent way to explain figures.</p>
+<p>It is not common to directly use the screenshots of codes, it would be better to put them into Appendix, or Supplementary. Or edit and reformat these codes in the paper. </p>
+<p>Page Line 15, 28, ..., it is wired to go to subsubsection without subsection. </p>
+<p>Suggest to put Related Work either after Introduction or before Conclusion, do not get the point why put it between Section 3 and Section 5. </p>
+<p>Some writings are slightly redundant, e.g., Page 1, Line 35-37.</p>
+</p></div></fieldset>
+<input type="hidden" name="form_build_id" value="form-Xs7u7OrwDYe-NIYSCjdn0blHTtkLMNVbaCSUXn5vdlw" />
+<input type="hidden" name="form_id" value="get_submitted_reviews" />
+</div></form></div><br/>                    
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><fieldset class="collapsible collapsed group-response-to-reviews field-group-fieldset form-wrapper"><legend><span class="fieldset-legend">RESPONSE TO REVIEWERS</span></legend><div class="fieldset-wrapper with-legend"><div class="field field-name-field-response-to-reviews field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even"><p>Review comments for submission #690-1670: Review Comments, Reviewer #2: 1. In this paper, the authors cite a lot of online articles, which should be fine, however, they need to edit these references carefully and properly. It would be better to provide such as author, page title, year (date created or last updated), etc., of these articles rather than just an URL. Similar issues have also existed for other academic articles referenced. Response: Duly noted. The article was prepared with an authoring tool unfamiliar to us. The PDF version submitted for review was generated from it. Our unfamiliarity with the tool as well as artifacts from the conversion process have caused this issue. With that said, the HTML authoring enviornment did seem like a good idea, and in particular, it seemed to do a great job of providing an online context to ideas we wanted to reference for further details. However, this did not carry over to the PDF version generated by the tool. This PDF version is what was submitted for the review. We have prepared the revised submission with a tool we are familiar with (Latex) and we hope that this resolves these issues. The new article is prepared as a conventional manuscript taking the comments from the review into consideration. We think the revised manuscript resolves these issues. 2. This article seems to have been completed in a rash and lacks many details, either in technical or user interface perspectives. For example, using an Arangepipe UI concrete example to illustrate it will help readers to follow it easier; how to use AQL to search, how to launch Docker images etc. In many paragraphs, the authors just simply put 'Please see ...' with a link, it would be better to address it with some details. Response: The application that we used to author the initial version rendered the article very differently from the pdf version. An online context for all referenced resources seemed to work well in that tool. However, it looks like the exported version had many issues. Perhaps this is due to our unfamiliarity with the tool. In the revised submission we have revised the manuscript to be along the lines of a conventional paper prepared in an environment best suited for us (Latex). In the revised submission we have provided a substantial context for all examples with excerpts that illustrate the important steps. 3. Some sentences seem to be incomplete. For example, Page 4, The details of doing this are provided in section??, Page 5 notebooks (see section ). ?? Response: This was an artifact of generating the pdf from the authoring tool. The revised manuscript does not have these issues. 4. One of my concern is how this tool to manage the collaborations among colleagues, for example, what happens if a model is retrained by another colleague? Response: The package offers a lookup method that can be used to search for any project asset and then perform updates on it. See Figure 7 (lookup a dataset) in the revised manuscript. Project team members can browse project assets using either AQL (through the web interface) or the Arangopipe UI. Having a naming convention for project assets is a relevant and important point. Review Comments, Reviewer #3: Comment: In this paper, the authors present a tool for ML Metadata management. The system presents a multi-model database structure and supplemental api to record the activities and parameters within a machine learning project. The authors motivate the need for such a system, however, the submission is very light on the technical implementations. Below is a series of comments section by section. Data Science Workflow – This section presents a graph model used to represent a machine learning project lifecycle with nodes representing the key components. The authors allude to how this graph model can be used to represent different activities (e.g. “Hyperparameter tuning experiments.” However, they provide no example of what this would look like. In addition, the authors state that the graph can be extended, but instead of documenting how this process works, refer the reader to examples on the projects Github repo. Response: 1. The key idea is that this data model fits most machine learning project activities. 2. This model was developed after reviewing standards development efforts that identified the key abstractions needed to capture machine learning project tasks. However, should you need to add refinements, there are methods provided in the library for that purpose. 3. Each example in the illustrative examples section is an example of an instance of the data model. The purpose of the illustrative example s section is to illustrate exactly this. A review of the examples would reveal that each example uses the same data model and uses the same methods to create and update the data model. 4. With that said, it appears that the following is not obvious from the narrative of the data model: 1. The data model is general and should fit most machine learning workflows. 2. Exploratory data analysis, model selection, hyper-parameter tuning are examples of such workflows. 3. Each workflow would use the same data model to capture meta-data from the machine learning project activity. The assets in the data model are the same, the properties of the assets can be different. The document-oriented feature of the database provides this flexibility. 4. The basic template for the workflow is to define the properties of a resource, if it is new, as a document. If it is an existing resource, retrieve it using a search and update its properties. 5. If you need to use a new resource that is not provided in the data model, there is an API to create this resource. The reviewer’s point about pointing to the repository for details is taken well. In the revised document. The key ideas for each example are summarized. The reader is then pointed to the github repository for details. In the revised submission, the data science workflow section has been updated to reflect the above ideas. We have provided excerpts that illustrate the key features in the revised submission. Comment: Software Implementation The authors list the components within the application, starting with the API, however, no examples of API endpoints are provided so it is hard to quantify the functionality of the API. Response: Duly noted. Arapopipe is a python package. So API probably suggested HTTP endpoints. This is not available now, but could be available shortly. It is a good suggestion. The relevant component is now called a python package rather than an API in the revised submission. Comment: The authors state that AranoDB is the database used, however the authors in the previous section state “To use Arangopipe in your organization, the graph used to track machine learning and data science activities needs to be provisioned. This graph is called Enterprise ML Tracker Graph and is provisioned using the administrative interface”. Does this mean the ML tracker graph is a “component” within the AranoDB ? Response: The Enterprise ML Tracker Graph is a graph in the database. A graph in a graph database is a fundamental abstraction in the data model. The Enterprise ML tracker graph is like the set of tables that you would need to start data capture in a relational database. When Arangopipe is provisioned, ie., an administrator creates an instance of the administrative component using the python API, this graph is created. Figure 5 (Provision Arangopipe) in the revised manuscript provides the excerpt that performs this step. Comment: In addition, no information on AQL is provided, what is the syntax, what does a query in AQL look like? Response: Noted. A comprehensive introduction to AQL, its syntax and its usage is available in the ArangoDB website. The section describing the Arango DB web user interface has been updated to include this information. The section has also been updated with a reference to using AQL with the web user interface. See the section, Using the Arangopipe Web User-Interface, in the revised document. Comment: The authors then state that a web user interface is a component of the system, a screenshot of the web user interface would be appreciated. Response: This has been added to the revised document. Comment: The sentence “It is possible to use Arangopipe with Oasis, Arango DB’s managed service offering on the cloud. This would require no installations or downloads. The details of doing this are provided in section” is missing the section number at the end. Response: This has been resolved. It is an artifact of using the tool used for preparing the initial submission. Comment: The authors state that Arangopipe is available as a series of container images. Are these container images a “component” of the overall system or are they merely a means of distribution and deployment of said system? Response: They are a means of distribution. The advantage is that they are a self-contained executable unit. If you have docker installed, you can run arangopipe container with pytorch installed by simply running: docker run -p 6529:8529 -p 8888:8888 -p 3000:3000 -it arangopipe/ap_torch Comment: The authors state “The administrator would use the administration API” – Is this a separate API from the one mentioned previously? Illustrative Examples of Arangopipe This section (which I assume is to demonstrate the usage of the system) immediately starts by redirecting the user to Github and proceeds to describe a notebook. The rest of this section proceeds to describe this notebook. Having some examples within the paper on how to use the system would be a better approach. Response: As indicated in the revised Datascience Workflow section, the same data model is used to capture meta-data from a range of machine learning experiment activities. The “Ilustrative Examples” section now provides the basic template used for tracking all machine learning project activity as well as the excerpts that illustrate how a particular step in the basic template is performed. Comment: Reusing Archived Steps This is a key issue within ML, however, the authors again redirect the reader to user guides for actual information e.g. “Please see using Arangopipe with TFDV for exploratory data analysis for an example of performing this in an exploratory data analysis task using tensor flow data validation tensorflow data validation. Please see performing hyper-parameter optimization with Arangopipe for an example with a hyperparameter tuning experiment.” – why are these steps not outlined within the text itself? The authors state “Node data and results from modeling are easily converted into JSON, which is the format that ArangoDB stores documents in.” – If this is the format they are stored in, how are they converted, is it not just a read at that point. If some transformation is necessary, what is that transformation? Extending the data model This paragraph serves to point the user to the Github repo Response: TFDV, Hyperopt examples: The process to use Arangopipe to capture meta-data from an exploratory data analysis task or a hyper-parameter task is similar to the basic workflow. The only deviation is the step needed to serialize programmatic objects to JSON and JSON objects to programmatic objects. There are JSON serializer-deserializers available for this purpose. The section, Reusing Archived Steps, has been updated to discuss these steps. An excerpt illustrating this process is also provided. Extending the data model: An excerpt discussing an example is now provided in the section, Extending the data model. Comment: Experimenting and documenting facts about models and data This paragraph points to the Github repo and does not contain any technical information Response: Model bias and Model variance are model properties that are of interest to model developers. The work reports a resource to capture such facts. The link shows how this can be done. A detailed discussion of computing model bias and model variance is outside the scope of the work. However, the resource pointed to in the paragraph does describe it for the interested reader. Further, the notebook also contains pointers to material that can provide more background should the reader be interested. Comment: Checking the validity and effectiveness of machine learning models after deployment The authors state “Arangopipe provides an extensible API to check for dataset drift” – what is this API - what are the inputs and outputs Response: An excerpt showing the use of the relevant method in Arangopipe is now included in the section “Checking the validity and effectiveness of machine learning models after deployment”. Comment: Storing Features From Model Development The authors state “Arangopipe can be used to capture features generated from machine development.” However, no information on how this is achieved is presented. Response: The example referred to in the section: <a href="https://github.com/arangoml/networkx-adapter/blob/master/examples/IMDB_Networkx_Adapter.ipynb">https://github.com/arangoml/networkx-adapter/blob/master/examples/IMDB_N...</a> , pertains to storing node embeddings from a node2vec model in Arangopipe. The description of the context around the problem and model development fall significantly outside the scope of this paper. The point here is that capturing features, such as embeddings, can be done with Arangopipe. A notebook that describes a problem and an illustration of the feature is provided. The notebook does illustrate how this is achieved. Overall comments: The paper is incredibly light on the technical components with the authors repeatedly telling the reader to go their Github repository instead – making the paper read more like an advertisement for the project rather than an academic paper. I am concerned with this level of offloading the technical documentation to links on external websites, what if the project migrates to a new repo name, or to a different version control system altogether, such crucial documentation would be lost. While I believe that the project indeed addresses fundamental issues within ML, I cannot recommend this paper due to the severe lack of information provided within the text. Response: This is a resource paper. The intents with this paper are: • To identify tracking machine learning meta-data from ML experiments as a problem that has practical utility to the machine learning community. • Using a graph data model with features being stored as documents presents some unique advantages to capture a data model for this problem • The provided data model is flexible and can capture machine learning meta-data from a range of representative machine learning tasks. • The provided data model is extensible. • There is a range of options to get started using this resource easily. • There are detailed examples that show how the tool can be used in a range of common scenarios. • Documentation to build and test it is available. The test suite is comprehensive and shows the semantics of using each and every feature in the library. • Arango DB is committed to the development of this tool and welcomes feedback in the form of questions and suggestions through either the github repository or the slack channel. • ArangoDB is actively looking at emerging standards in this area for alignment. The HTML preference in authoring tools led the authors to believe that providing online contexts for the representative scenarios was a new approach. However, it looks like there were several problems with this. It looks like this approach has left gaps in providing sufficient information for the illustrative examples. We have now revised the manuscript as a conventional paper taking all the suggestions from the review into consideration. We do believe that the illustrative examples and the revised content illustrate the intents described above. We hope that the revised content alleviates your concerns. The concerns about the repo moving are understandable, but ArangoDB has been developing open-source projects for a while. Issues such as these have well-defined clear redirects, should they arise. The code is under Apache2 license and is accessible to everyone.</p>
+</div></div></div></div></fieldset>
+</div><br/>
+				</fieldset>
+				
+    </div>
+
+    <div id="admin-review">
+			</div>
+
+	<div id="decision">
+			</div>
+
+
+
+
+          <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first"><span><a href="../user/login%3Fdestination=comment%252Freply%252F696%23comment-form.html">Log in</a> to post comments</span></li><li class="camera_ready_files_field_paper last"></li></ul></nav>
+    
+    <section id="comments" class="comment-wrapper">
+
+          <h2 class="title">
+      1 Comment    </h2>
+      
+  <a id="comment-115"></a>
+<article class="comment odd first last clearfix" about="/comment/115#comment-115" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="../comment/115.html#comment-115" rel="bookmark">Meta-Review by Editor</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2021-07-12T10:40:53-04:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/tobias-kuhn" typeof="sioc:UserAccount" property="foaf:name" datatype="">Tobias Kuhn</span> on <time datetime="2021-07-12T10:40:53Z"><span class="date-time">Mon, 07/12/2021 - 10:40</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/arangopipe-tool-machine-learning-meta-data-management-0" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p>I am delighted to inform you that your paper has been accepted for publication! This acceptance is on <strong>condition </strong>that you address all the remaining minor issues concerning presentation.</p>
+<p>Brian Davis (<a href="https://orcid.org/0000-0002-5759-2655">https://orcid.org/0000-0002-5759-2655</a>)</p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F696%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+
+  
+</section>
+
+  </div>
+  </article>
+
+  </div></div>                      </div>
+
+                      
+                    </div>
+                  </div>
+
+                </section>
+
+                
+              </div>
+            </div>
+
+                        
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+    
+          <div id="footer-wrapper">
+        <div class="container clearfix">
+          <footer class="clearfix" role="contentinfo">
+            <div class="region region-footer"><div class="region-inner clearfix"><div id="block-block-16" class="block block-block no-title odd first last block-count-4 block-region-footer block-16" ><div class="block-inner clearfix">  
+  
+  <div class="block-content content"><p style="text-align:center;"><a href="https://www.iospress.nl/disclaimer/" target="_blank">Disclaimer</a> | <a href="https://content.iospress.com/page/privacy" target="_blank">Privacy Policy</a> | Data Science is Published by <a href="http://www.iospress.com" target="_blank">IOS Press</a>, Copyright 2023</p>
+</div>
+  </div></div></div></div>            <p class="attribute-creator"></p>
+          </footer>
+        </div>
+      </div>
+    
+  </div>
+</div>
+  </body>
+</html>

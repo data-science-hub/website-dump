@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="benchmark-dataset-retail-multiskilled-personnel-planning-under-uncertain-demand-0.html" />
+<link rel="shortlink" href="../node/776.html" />
+<link rel="shortcut icon" href="../sites/default/files/favicon-96x96.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>A benchmark dataset for the retail multiskilled personnel planning under uncertain demand | Data Science</title>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/system/system.base.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.menus.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.messages.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.core.css?t4kojz");
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/comment/comment.css?t4kojz");
+@import url("https://datasciencehub.net/modules/field/theme/field.css?t4kojz");
+@import url("../sites/all/modules/logintoboggan/logintoboggan.css%3Ft4kojz.css");
+@import url("https://datasciencehub.net/modules/node/node.css?t4kojz");
+@import url("https://datasciencehub.net/modules/search/search.css?t4kojz");
+@import url("https://datasciencehub.net/modules/user/user.css?t4kojz");
+@import url("../sites/all/modules/views/css/views.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/modules/ctools/css/ctools.css%3Ft4kojz.css");
+@import url("../sites/all/modules/ctools/css/modal.css%3Ft4kojz.css");
+@import url("../sites/default/modules/modal_forms/css/modal_forms_popup.css%3Ft4kojz.css");
+@import url("../sites/all/modules/responsive_menus/styles/responsive_menus_simple/css/responsive_menus_simple.css%3Ft4kojz.css");
+@import url("../sites/all/modules/date/date_api/date.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="screen">
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.headings.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.image.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.layout.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/themes/corolla/css/html-elements.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/forms.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/tables.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/page.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/articles.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/comments.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/fields.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/blocks.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/navigation.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/corolla.settings.style.css%3Ft4kojz.css");
+@import url("../sites/default/files/color/corolla-80fb2671/colors.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="print">
+@import url("../sites/all/themes/corolla/css/print.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/default/files/adaptivetheme/corolla_files/corolla.responsive.layout.css%3Ft4kojz.css" media="only screen" />
+<style type="text/css" media="screen">
+@import url("../sites/default/files/adaptivetheme/corolla_files/corolla.fonts.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.custom.css%3Ft4kojz.css" media="only screen" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.portrait.css%3Ft4kojz.css" media="only screen and (max-width:320px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.landscape.css%3Ft4kojz.css" media="only screen and (min-width:321px) and (max-width:480px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.portrait.css%3Ft4kojz.css" media="only screen and (min-width:481px) and (max-width:768px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.landscape.css%3Ft4kojz.css" media="only screen and (min-width:769px) and (max-width:1024px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.desktop.css%3Ft4kojz.css" media="only screen and (min-width:1025px)" />
+
+<!--[if lt IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/default/files/adaptivetheme/corolla_files/corolla.lt-ie9.layout.css?t4kojz");
+</style>
+<![endif]-->
+
+<!--[if lte IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/all/themes/corolla/css/ie-lte-9.css?t4kojz");
+</style>
+<![endif]-->
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-extend-3.4.0.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/drupal.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ui/jquery.ui.core.min.js?v=1.8.7"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.cookie.js?v=1.0"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.form.js?v=2.52"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form-single-submit.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ajax.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/default/modules/jquery_update/js/jquery_update.js%3Fv=0.0.1"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/progress.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/all/modules/ctools/js/modal.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/default/modules/modal_forms/js/modal_forms_popup.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/responsive_menus/styles/responsive_menus_simple/js/responsive_menus_simple.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js%3Ft4kojz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-107867597-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="../sites/all/modules/field_group/field_group.js%3Ft4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/tableheader.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/collapse.js?v=7.98"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"corolla","theme_token":"FMiTM0dSWAUumPMDtKx8iMFdMmxA0az8dXNzyKBM4qU","jquery_version":"default","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/form-single-submit.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/default\/modules\/jquery_update\/js\/jquery_update.js":1,"misc\/progress.js":1,"sites\/all\/modules\/ctools\/js\/modal.js":1,"sites\/default\/modules\/modal_forms\/js\/modal_forms_popup.js":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/js\/responsive_menus_simple.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/field_group\/field_group.js":1,"misc\/tableheader.js":1,"misc\/collapse.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ctools\/css\/modal.css":1,"sites\/default\/modules\/modal_forms\/css\/modal_forms_popup.css":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/css\/responsive_menus_simple.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.headings.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.image.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/corolla\/css\/html-elements.css":1,"sites\/all\/themes\/corolla\/css\/forms.css":1,"sites\/all\/themes\/corolla\/css\/tables.css":1,"sites\/all\/themes\/corolla\/css\/page.css":1,"sites\/all\/themes\/corolla\/css\/articles.css":1,"sites\/all\/themes\/corolla\/css\/comments.css":1,"sites\/all\/themes\/corolla\/css\/fields.css":1,"sites\/all\/themes\/corolla\/css\/blocks.css":1,"sites\/all\/themes\/corolla\/css\/navigation.css":1,"sites\/all\/themes\/corolla\/css\/fonts.css":1,"sites\/all\/themes\/corolla\/css\/corolla.settings.style.css":1,"sites\/all\/themes\/corolla\/color\/colors.css":1,"sites\/all\/themes\/corolla\/css\/print.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.responsive.layout.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.fonts.css":1,"sites\/all\/themes\/corolla\/css\/responsive.custom.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.desktop.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.lt-ie9.layout.css":1,"sites\/all\/themes\/corolla\/css\/ie-lte-9.css":1}},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E"},"modal-popup-small":{"modalSize":{"type":"fixed","width":500,"height":150},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-medium":{"modalSize":{"type":"fixed","width":550,"height":450},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-large":{"modalSize":{"type":"scale","width":0.8,"height":0.8},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"responsive_menus":[{"toggler_text":"\u2630 Menu","selectors":["#block-system-main-menu"],"media_size":"935","media_unit":"px","absolute":"1","remove_attributes":"1","responsive_menus_style":"responsive_menus_simple"}],"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/search\/node":true,"\/paper\/benchmark-dataset-retail-multiskilled-personnel-planning-under-uncertain-demand-0":true},"field_group":{"fieldset":"full"},"ctools-sample-style":{"modalSize":{"type":"fixed","width":1098,"height":500,"addWidth":20,"addHeight":15},"modalOptions":{"opacity":0.5,"background-color":"#000"},"animation":"fadeIn","modalTheme":"CToolsSampleModal","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/ctools_ajax_sample\/images\/ajax-loader.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E"},"adaptivetheme":{"corolla":{"layout_settings":{"bigscreen":"three-col-grail","tablet_landscape":"three-col-grail","tablet_portrait":"one-col-vert","smalltouch_landscape":"one-col-vert","smalltouch_portrait":"one-col-stack"},"media_query_settings":{"bigscreen":"only screen and (min-width:1025px)","tablet_landscape":"only screen and (min-width:769px) and (max-width:1024px)","tablet_portrait":"only screen and (min-width:481px) and (max-width:768px)","smalltouch_landscape":"only screen and (min-width:321px) and (max-width:480px)","smalltouch_portrait":"only screen and (max-width:320px)"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]>
+<script src="https://datasciencehub.net/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?t4kojz"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-776 node-type-submit-paper site-name-hidden atr-7.x-3.x atv-7.x-3.1 lang-en site-name-data-science section-paper color-scheme-custom corolla bs-n bb-n mb-dd rc-6 rct-6">
+  <div id="skip-link" class="nocontent">
+    <a href="benchmark-dataset-retail-multiskilled-personnel-planning-under-uncertain-demand-0.html#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="page-wrapper">
+  <div id="page" class="page ssc-n ssw-n ssa-l sss-n btc-n btw-b bta-l bts-n ntc-n ntw-b nta-l nts-n ctc-n ctw-b cta-l cts-n ptc-n ptw-b pta-l pts-n">
+
+          <div id="menu-bar-wrapper">
+        <div class="container clearfix">
+          <div id="menu-bar" class="nav clearfix"><nav id="block-system-main-menu" class="block block-system block-menu menu-wrapper menu-bar-wrapper clearfix odd first block-count-1 block-region-menu-bar block-main-menu"  role="navigation">  
+      <h2 class="element-invisible block-title">Main menu</h2>
+  
+  <ul class="menu clearfix"><li class="first leaf menu-depth-1 menu-item-757"><a href="../content/about-data-science.html">About</a></li><li class="leaf menu-depth-1 menu-item-758"><a href="../content/editors.html">Editorial Board</a></li><li class="leaf menu-depth-1 menu-item-1559"><a href="../content/submit-manuscript.html">Submit Manuscript</a></li><li class="leaf menu-depth-1 menu-item-1612"><a href="../content/calls.html">Calls</a></li><li class="leaf menu-depth-1 menu-item-759"><a href="../content/guidelines-authors.html">For Authors</a></li><li class="leaf menu-depth-1 menu-item-760"><a href="../content/guidelines-reviewers.html">For Reviewers</a></li><li class="leaf menu-depth-1 menu-item-582"><a href="../underreview.html" title="Under Review">Under Review</a></li><li class="leaf menu-depth-1 menu-item-583"><a href="../reviewed.html" title="">Reviewed</a></li><li class="last leaf menu-depth-1 menu-item-1611"><a href="../ReviewedAccepted.html" title="">Accepted</a></li></ul>
+  </nav><div id="block-orcid-login-orcid-login" class="block block-orcid-login no-title menu-wrapper menu-bar-wrapper clearfix even last block-count-2 block-region-menu-bar block-orcid-login" >  
+  
+  <p style="background-color: #003b3a; float:right;"><a style="vertical-align: middle; color: white; padding: 10px; display: inline-block; text-decoration: none;" href="https://orcid.org/oauth/authorize?client_id=APP-223SGGDDO35LKOT2&amp;response_type=code&amp;scope=%2Fauthenticate&amp;redirect_uri=https%3A%2F%2Fdatasciencehub.net%2F&amp;state=eyJyZWRpcmVjdCI6InBhcGVyXC9iZW5jaG1hcmstZGF0YXNldC1yZXRhaWwtbXVsdGlza2lsbGVkLXBlcnNvbm5lbC1wbGFubmluZy11bmRlci11bmNlcnRhaW4tZGVtYW5kLTAifQ%3D%3D"><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle;"/> Log In with ORCID</a></p>
+  </div></div>        </div>
+      </div>
+    
+    <div id="header-wrapper">
+      <div class="container clearfix">
+	        <header class="clearfix with-logo" role="banner">
+
+                      <div id="branding" class="branding-elements clearfix">
+
+                              <div id="logo">
+                  <a href="../index.html"><img class="site-logo" typeof="foaf:Image" src="../sites/default/files/DS_LOGO_vertical.png" alt="Data Science" /></a>                </div>
+              
+                              <div class="element-invisible h-group" id="name-and-slogan">
+
+                                      <h1 class="element-invisible" id="site-name"><a href="../index.html" title="Home page">Data Science</a></h1>
+                  
+                  
+                </div>
+              
+            </div>
+          
+          
+        </header>
+
+      </div>
+    </div>
+
+          <div id="top-panels-wrapper">
+        <div class="container clearfix">
+          <!-- Three column 3x33 Gpanel -->
+          <div class="at-panel gpanel panel-display three-3x33 clearfix">
+                                                          </div>
+        </div>
+      </div>
+    
+    
+    
+    <div id="content-wrapper">
+      <div class="container">
+
+        <div id="columns">
+          <div class="columns-inner clearfix">
+
+            <div id="content-column">
+              <div class="content-inner">
+
+                
+                <section id="main-content" role="main">
+
+                  
+                  <div class="content-margin">
+                    <div class="content-style">
+
+                      
+                      
+                      
+                                              <header class="clearfix">
+                          <h1 id="page-title">
+                            A benchmark dataset for the retail multiskilled personnel planning under uncertain demand                          </h1>
+                        </header>
+                      
+                      
+                      
+                      <div id="content">
+                        <div class="region region-content"><div id="block-system-main" class="block block-system no-title odd first last block-count-3 block-region-content block-main" >  
+  
+  <article id="node-776" class="node node-submit-paper article odd node-lang-en node-full ia-n clearfix" about="/paper/benchmark-dataset-retail-multiskilled-personnel-planning-under-uncertain-demand-0" typeof="sioc:Item foaf:Document" role="article">
+  <div class="node-inner">
+
+
+
+              <header class="node-header">
+
+        
+        
+      </header>
+        <span property="dc:title" content="A benchmark dataset for the retail multiskilled personnel planning under uncertain demand" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="1" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+    <div class="node-content">
+        
+      <h3>Tracking #: 776-1756</h3>          								<fieldset>
+					<!-- legend>
+						<span class="fieldset-legend">Paper Data</span>
+					</legend -->
+
+					
+
+
+					
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><h5>Authors:</h5><br/><form action="benchmark-dataset-retail-multiskilled-personnel-planning-under-uncertain-demand-0.html" method="post" id="authors-table-form-anonymus" accept-charset="UTF-8"><div><div id="authors_Container"><table class="sticky-enabled">
+ <thead><tr><th></th><th>Name</th><th>ORCID</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-2063">
+  <input type="checkbox" id="edit-authors-2063" name="authors[2063]" value="2063" class="form-checkbox" />
+</div>
+</td><td>César Augusto Henao</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0001-8253-5794" target="_blank">https://orcid.org/0000-0001-8253-5794</a></td> </tr>
+ <tr class="even"><td><div class="form-item form-type-checkbox form-item-authors-2102">
+  <input type="checkbox" id="edit-authors-2102" name="authors[2102]" value="2102" class="form-checkbox" />
+</div>
+</td><td>Andrés Felipe Porto</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0003-1110-1547" target="_blank">https://orcid.org/0000-0003-1110-1547</a></td> </tr>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-2103">
+  <input type="checkbox" id="edit-authors-2103" name="authors[2103]" value="2103" class="form-checkbox" />
+</div>
+</td><td>Virginia I. González</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0003-3676-4865" target="_blank">https://orcid.org/0000-0003-3676-4865</a></td> </tr>
+</tbody>
+</table>
+</div><input type="hidden" name="author_nd" value="776" />
+<input type="hidden" name="author_vd" value="1756" />
+<input type="hidden" name="form_build_id" value="form-TWqK6lKZAYl3-8OJtFXJXJc5bnym3IPYUamucN9cvjg" />
+<input type="hidden" name="form_id" value="authors_table_form_anonymus" />
+</div></form><hr/></div><br/>
+
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-editor field-type-user-reference field-label-above view-mode-full"><h2 class="field-label">Responsible editor:&nbsp;</h2><div class="field-items"><div class="field-item even">Tobias Kuhn</div></div></section></div><br/>
+					                    <div style="background-color: #E3E5E3;border-radius:5px;padding-top:4px;padding-bottom:4px;padding-left:6px;">
+					<section class="field field-name-field-submission-type field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Submission Type:&nbsp;</h2><div class="field-items"><div class="field-item even">Resource Paper</div></div></section><section class="field field-name-field-abstract field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Abstract:&nbsp;</h2><div class="field-items"><div class="field-item even">In this data article, a database is presented and described that can be used to solve multiskilled personnel assignment problems (MPAP) under uncertain demand. This database contains simulated datasets along with a real dataset taken from a Chilean retail store. Information about the store such as the number of departments and workers, the type of labor contract, the cost parameter values, and the average demand in all store departments, are presented in the real dataset. While information related to stochastic demand of the store departments was created with a Monte Carlo simulation, and is presented in the simulated dataset, consisting of 18 text files categorized by: (i) Type of sample (in-sample or out-of-sample). (ii) Type of truncation method (zero-truncated or percentile-truncated). (iii) Demand coefficient of variation (5, 10, 20, 30, 40, 50%). Academics and practitioners may utilize this dataset to benchmark the performance of diverse methods to optimize under uncertain demand and, therefore, obtain robust multiskilling levels to the same (or similar) MPAP. Additionally, it is provided an Excel workbook that generates up to 10,000 demand scenarios with different coefficients of variation.</div></div></section><section class="field field-name-field-pdf field-type-file field-label-above view-mode-full"><h2 class="field-label">Manuscript:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="File" title="application/vnd.openxmlformats-officedocument.wordprocessingml.document" src="https://datasciencehub.net/modules/file/icons/x-office-document.png" /> <a href="../system/files/ds-paper-776.docx" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document; length=292043">ds-paper-776.docx</a></span></div></div></section><section class="field field-name-field-previous-version field-type-node-reference field-label-above view-mode-full"><h2 class="field-label">Previous Version:&nbsp;</h2><div class="field-items"><div class="field-item even"><a href="benchmark-dataset-retail-multiskilled-personnel-planning-under-uncertain-demand.html">A benchmark dataset for the retail multiskilled personnel planning under uncertain demand</a></div></div></section><div class="view view-revised-verision view-id-revised_verision view-display-id-entity_view_1 view-dom-id-6ec0783025a4cf72eed5d630398adf20">
+      
+      <div class="view-header">
+      <b>Revised Version:</b>    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="benchmark-dataset-retail-multiskilled-personnel-planning-under-uncertain-demand-1.html">A benchmark dataset for the retail multiskilled personnel planning under uncertain demand</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> <section class="field field-name-field-tags field-type-taxonomy-term-reference field-label-above view-mode-full"><h2 class="field-label">Tags:&nbsp;</h2><ul class="field-items"><li class="field-item even">Reviewed</li></ul></section><section class="field field-name-field-data-repository-urls field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Data repository URLs:&nbsp;</h2><div class="field-items"><div class="field-item even"><p><a href="https://zenodo.org/record/8317623">https://zenodo.org/record/8317623</a></p>
+</div></div></section><section class="field field-name-field-date-of-submission field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Submission:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2023-09-26T00:00:00-04:00">Tuesday, September 26, 2023</span></div></div></section><section class="field field-name-field-date-of-decision field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Decision:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2024-01-16T00:00:00-05:00">Tuesday, January 16, 2024</span></div></div></section><br><br><b>Nanopublication URLs:</b> <br>                    </div>
+                    <br/>
+
+					
+                    
+                    <div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-decision field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Decision:&nbsp;</h2><div class="field-items"><div class="field-item even">Undecided</div></div></section></div><br/>                    <div id="review">
+                    		                    	</div>
+
+					
+										<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><b>Solicited Reviews:</b><br/><form action="benchmark-dataset-retail-multiskilled-personnel-planning-under-uncertain-demand-0.html" method="post" id="get-submitted-reviews" accept-charset="UTF-8"><div><fieldset class="collapsible collapsed form-wrapper" id="edit-fset1"><legend><span class="fieldset-legend">Review #1 <strong>submitted on 08/Jan/2024</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Tobias Sprodowski</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-6792-5126" target="_blank">https://orcid.org/0000-0002-6792-5126</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Weak</br><b style="color:#f39222">Suggested Decision: </b> Reject</br><b style="color:#f39222">Technical Quality of the paper:</b> Average<br/><b style="color:#f39222">Presentation:</b> Good<br/><b style="color:#f39222">Reviewer`s confidence:</b> High<br/><b style="color:#f39222">Significance:</b> Moderate significance<br/><b style="color:#f39222">Background:</b> Reasonable<br/><b style="color:#f39222">Novelty:</b> Lack of novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data (if any) are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The authors need to elaborate more on certain aspects and the manuscript should therefore be extended (if the general length limit is already reached, I urge the editor to allow for an exception)</p><p><b style="color:#f39222">Summary of paper in a few sentences (summary of changes and improvements for
+second round reviews): </b><br/><p>The authors present a multiskilled personal planning problem dataset from a home department company in Chile. Although the dataset might help to assess further planning algorithms and approaches, the aforementioned literature is not discussed appropriately and is mostly just enumerated (see first and second paragraph). Also previous work from the authors, where this dataset was already published, is not mentioned: <a href="https://doi.org/10.1016/j.dib.2020.106066">https://doi.org/10.1016/j.dib.2020.106066</a></p>
+<p>Therefore, the authors should mention the difference to their previous article as the dataset seems to be the same and is already available there.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>Real data and promising dataset</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>No real discussion about former approaches, methods or datasets. Just enumerate them is not a scientific evaluation.<br />
+Duplicate from <a href="https://doi.org/10.1016/j.dib.2020.106066">https://doi.org/10.1016/j.dib.2020.106066</a></p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/></p></div></fieldset>
+<fieldset class="collapsible collapsed form-wrapper" id="edit-fset2"><legend><span class="fieldset-legend">Review #2 <strong>submitted on 09/Jan/2024</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Pieter Smet</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-3955-7725" target="_blank">https://orcid.org/0000-0002-3955-7725</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Weak</br><b style="color:#f39222">Suggested Decision: </b> Reject</br><b style="color:#f39222">Technical Quality of the paper:</b> Good<br/><b style="color:#f39222">Presentation:</b> Weak<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> Moderate significance<br/><b style="color:#f39222">Background:</b> Reasonable<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data (if any) are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences (summary of changes and improvements for
+second round reviews): </b><br/><p>The authors present two datasets for a personnel scheduling problem that involves multiple skills and training. The first dataset comes directly from a software company and presents real-world data. The second dataset is generated by the authors themselves. Having this dataset available may be helpful for other researchers working on similar problems. However, it would have been nice if additional information would have been present in the dataset, eg about employee availability (which is also stochastic) or learning rates. Moreover, the current presentation (specifically the text) is very poor in terms of grammar, which makes it sometimes hard to understand the paper.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>- dataset based on real-world data for a challenging personnel scheduling problem</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>- limited data in the dataset itself (only demand, information regarding employee availability is missing)<br />
+- the text itself is of very poor quality which makes the paper hard to understand at times</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>Mistakes in the text that should be corrected:</p>
+<p>-p2, 1st paragraph: 'Staffing requirements in this industry exhibits..' -&gt; change to exhibit<br />
+-p2, 1st paragraph, sentence below: making AN effective workforce plan...<br />
+-p2, 2nd paragraph: 'Below, a list of articles is provided that have...<br />
+-p2: replace 'database' with dataset?<br />
+-p2, 4th paragraph, first sentence: remove 'in the paper written' and 'retail'<br />
+-p2, 4th paragraph: 'The database contains real and simulated data TAKEN from...'<br />
+-p2, 4th paragraph: 'randomly created' -&gt; 'randomly generated'<br />
+-p2, enumeration near the bottom of the page: 'demand uncertain' -&gt; change to 'demand uncertainty'<br />
+-p2, enumeration near the bottom of the page: 'The robust multiskilling levels' -&gt; change to 'Robust multiskilling levels'<br />
+-p3, 1st paragraph: 'THE real dataset...'<br />
+-p3, 1st paragraph: 'Such that the Chilean company...' I do not understand this sentence. I suggest to rewrite.<br />
+-p3, 1st paragraph: 'a retail store is conformed by' I do not understand this sentence. I suggest to rewrite to avoid the word 'conformed'<br />
+-p3, 2nd paragraph: 'Also, it is provided a file named ‘real-data.txt’ with these sets and parameters written in A Mathematical Programming Language named AMPL' change to 'Also provided with these sets and parameters is a file named ‘real-data.txt’ written in the mathematical programming language AMPL'<br />
+-p3, 2nd paragraph: 'Lastly, a full explanation of how the mean demand all departments...' change to 'A complete explanation of how the mean demand for all departments...'<br />
+-p4, 1st paragraph: 'THE simulated datasets consists of...'<br />
+-p4, 2nd paragraph: 'To generate the in-sample data, Monte Carlo simulation (MCS) was used to randomly create...'<br />
+-p4, 2nd paragraph: 'Particularly, it was used a normal probability distribution...' change to 'More specifically, a normal probability distribution was used...'<br />
+-p4, 2nd paragraph: 'and for comparison purposes it was created two datasets.' change to '. To enable a comparison (BEWTEEN WHAT??), two datasets were created'.<br />
+-p4, 3rd paragraph: 'Similarly, for the out-of-sample data, it was again utilized a MCS to randomly create demand scenarios' change to 'Similarly, a MCS was also used to create random demand scenarios for the out-of-sample data.'<br />
+-p4, 3rd paragraph: 'it was created 10,000 demand scenarios ' change to '10,000 demand scenarios were created'</p>
+<p>I stopped correct grammar mistakes here, but there are still many left. I strongly suggest the authors to make use of a proofreading service to further correct the text!</p>
+</p></div></fieldset>
+<fieldset class="collapsible collapsed form-wrapper" id="edit-fset3"><legend><span class="fieldset-legend">Review #3 <strong>submitted on 11/Jan/2024</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Sahana Athreya</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0009-0005-6217-1328" target="_blank">https://orcid.org/0009-0005-6217-1328</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Good</br><b style="color:#f39222">Suggested Decision: </b> Accept</br><b style="color:#f39222">Technical Quality of the paper:</b> Good<br/><b style="color:#f39222">Presentation:</b> Good<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> Moderate significance<br/><b style="color:#f39222">Background:</b> Comprehensive<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> With exceptions that are admissible according to the data availability guidelines, all used and produced data are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences (summary of changes and improvements for
+second round reviews): </b><br/><p>The paper introduces a valuable contribution to the field of workforce optimization by presenting a comprehensive database designed to address Multiskilled Personnel Assignment Problems (MPAP) in the context of uncertain demand. The dataset includes both simulated and real-world data, offering a rich resource for researchers and practitioners seeking to benchmark and optimize various methods under conditions of demand uncertainty.<br />
+The real dataset, sourced from a Chilean retail store, provides essential information about the store's structure, including the number of departments and workers, labor contract types, cost parameter values, and average demand across all store departments. This real-world data adds a practical dimension to the dataset, making it particularly relevant for applications in retail workforce management.<br />
+The simulated dataset, generated through Monte Carlo simulations, further enhances the utility of the database. The inclusion of 18 text files categorized by type of sample, truncation method, and demand coefficient of variation provides a diverse set of scenarios for testing and evaluating different optimization approaches. This categorization allows academics and practitioners to select scenarios that align with their specific research or application needs, enhancing the flexibility and applicability of the dataset.<br />
+The paper not only offers datasets but also provides an Excel workbook capable of generating up to 10,000 demand scenarios with varying coefficients of variation. This feature adds an extra layer of practicality and scalability, allowing users to customize and generate demand scenarios tailored to their specific requirements.<br />
+The keywords associated with the paper, including multiskilling, personnel scheduling, retail, stochastic programming, and workforce flexibility, aptly capture the core themes and applications of the presented database. Researchers and practitioners in these domains will find this resource particularly valuable for testing and refining optimization methods in the face of uncertain demand scenarios.<br />
+In conclusion, the paper provides a commendable contribution to the field, offering a well-structured and versatile database for addressing multiskilled personnel assignment problems under uncertain demand. The inclusion of both real and simulated datasets, along with the Excel workbook for scenario generation, makes this resource a valuable tool for advancing research and practical applications in workforce optimization.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>1. Comprehensive Dataset:<br />
+   - The paper presents a comprehensive dataset that combines real-world data from a Chilean retail store with simulated datasets. This dual-source approach enriches the dataset, providing a diverse and representative collection of scenarios for addressing multiskilled personnel assignment problems under uncertain demand.</p>
+<p>2. Practical Relevance:<br />
+   - The inclusion of a real-world dataset from a Chilean retail store adds practical relevance to the research. Information about the store's structure, labor contracts, and average demand enhances the applicability of the dataset to real-world workforce management scenarios, particularly in the retail industry.</p>
+<p>3. Versatility for Benchmarking:<br />
+   - The dataset's versatility for benchmarking diverse optimization methods is a strong point. Categorized simulated datasets, along with an Excel workbook capable of generating various demand scenarios, offer users flexibility in testing and evaluating different approaches under different conditions.</p>
+<p>4. Scalability:<br />
+   - The Excel workbook's capability to generate up to 10,000 demand scenarios with different coefficients of variation enhances the scalability of the dataset. This feature accommodates the diverse needs of researchers and practitioners, allowing for a broad range of experiments and analyses.</p>
+<p>5. Relevance to Key Keywords:<br />
+   - The paper aligns well with key keywords in the field, including multiskilling, personnel scheduling, retail, stochastic programming, and workforce flexibility. This alignment ensures that the paper addresses and contributes to essential themes within the broader domain.</p>
+<p>6. Potential Impact on Research and Practice:<br />
+   - The paper has the potential to significantly impact both academic research and practical applications in workforce optimization. Researchers can leverage the dataset to test and refine optimization methods, while practitioners can benefit from insights gained in addressing multiskilled personnel assignment problems under uncertain demand.</p>
+<p>7. Contribution to Knowledge:<br />
+   - By providing a database that encompasses both simulated and real-world scenarios, the paper contributes to the advancement of knowledge in the field. This resource fills a gap by offering a tool for researchers and practitioners to explore and address challenges related to workforce optimization in uncertain demand environments.</p>
+<p>8. Clear Presentation of Resources:<br />
+   - The paper effectively communicates the availability and structure of the dataset, making it accessible to potential users. The mention of the Excel workbook for scenario generation further adds to the clarity and usability of the resources provided.</p>
+<p>9. Reproducibility and Transparency:<br />
+   - The paper's inclusion of simulated datasets and details about the Monte Carlo simulation process contributes to the reproducibility of the research. This transparency enhances the credibility of the dataset and facilitates the validation of results by other researchers.</p>
+<p>Considering these reasons, the paper demonstrates a strong contribution to the field and offers a valuable resource for both researchers and practitioners engaged in addressing multiskilled personnel assignment problems under uncertain demand.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>N/A</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>While the paper makes a valuable contribution to the field, there are some areas where improvements could be considered:<br />
+1. Clarity in Methodology Description:<br />
+• The paper could benefit from a more detailed and explicit explanation of the methodology used for Monte Carlo simulation to generate the simulated dataset. Providing step-by-step details would enhance the transparency of the simulation process for readers.<br />
+2. Data Validation and Quality Assurance:<br />
+• It would be beneficial to include information on data validation and quality assurance processes applied to both the real and simulated datasets. Ensuring the accuracy and reliability of the data is crucial for the credibility and usability of the database.<br />
+3. Discussion of Limitations:<br />
+• The paper lacks a discussion of potential limitations associated with the dataset. Acknowledging and addressing any constraints or shortcomings in the data, such as assumptions made during simulation or constraints in the real-world data, would provide a more balanced perspective for users.<br />
+4. Comparison with Existing Databases:<br />
+• While the paper mentions the utility of the dataset for benchmarking, a more thorough discussion comparing this database with existing datasets in the field would strengthen the paper. Highlighting the unique features and advantages of this dataset in comparison to others would enhance its appeal to researchers.<br />
+5. Illustrative Examples:<br />
+• Including illustrative examples or case studies demonstrating the application of the dataset in solving multiskilled personnel assignment problems under uncertain demand would provide practical insights for readers. This could help bridge the gap between the theoretical presentation and real-world application.<br />
+6. Future Directions and Use Cases:<br />
+• Including a section on potential future directions for research and practical applications based on the dataset would inspire further exploration in the field. This could involve suggesting specific research questions or highlighting industries beyond retail where the dataset could be applied.<br />
+Addressing these areas of improvement would enhance the overall quality and applicability of the paper, providing a more comprehensive resource for researchers and practitioners in the domain of multiskilled personnel assignment problems under uncertain demand.</p>
+</p></div></fieldset>
+<input type="hidden" name="form_build_id" value="form-3PCiKpHNmrHSsQxwgZkqI7-O7Pu_5weRexJXB27oDDA" />
+<input type="hidden" name="form_id" value="get_submitted_reviews" />
+</div></form></div><br/>                    
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><fieldset class="collapsible collapsed group-response-to-reviews field-group-fieldset form-wrapper"><legend><span class="fieldset-legend">RESPONSE TO REVIEWERS</span></legend><div class="fieldset-wrapper with-legend"><div class="field field-name-field-response-to-reviews field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even"><p>Dear Editor, Thank you for your valuable feedback on our manuscript. We greatly appreciate your insights, and we have taken your recommendations to heart. In response to your suggestion, we have made improvements to the manuscript by expanding our list of references. We have now included a comprehensive range of references that not only encompass our previous work but also incorporate relevant state-of-the-art research conducted by other scholars in the field. These additional references provide a more holistic view of the topic and position our contribution within the broader research landscape. Furthermore, the references we have included feature case studies from various industrial sectors, offering a diverse perspective on the problem we have studied. In addition, we have retained only the references to our own work that we deem crucial. We believe that these enhancements will significantly strengthen the manuscript's value and relevance to the readers of this journal. We hope that you find these changes align with your expectations and address the concerns you raised. Please do not hesitate to reach out if you have any further suggestions or if there are any other areas where we can improve the manuscript. Once again, we thank you for your thoughtful review, and we look forward to your continued guidance in refining our work. Sincerely, César Henao</p>
+</div></div></div></div></fieldset>
+</div><br/>
+				</fieldset>
+				
+    </div>
+
+    <div id="admin-review">
+			</div>
+
+	<div id="decision">
+			</div>
+
+
+
+
+          <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first"><span><a href="../user/login%3Fdestination=comment%252Freply%252F776%23comment-form.html">Log in</a> to post comments</span></li><li class="camera_ready_files_field_paper last"></li></ul></nav>
+    
+    <section id="comments" class="comment-wrapper">
+
+          <h2 class="title">
+      1 Comment    </h2>
+      
+  <a id="comment-143"></a>
+<article class="comment odd first last clearfix" about="/comment/143#comment-143" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="../comment/143.html#comment-143" rel="bookmark">meta-review by editor</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2024-01-16T05:32:01-05:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/tobias-kuhn" typeof="sioc:UserAccount" property="foaf:name" datatype="">Tobias Kuhn</span> on <time datetime="2024-01-16T05:32:01Z"><span class="date-time">Tue, 01/16/2024 - 05:32</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/benchmark-dataset-retail-multiskilled-personnel-planning-under-uncertain-demand-0" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p>The reviewers see clear merit in your resource and paper, but two of them also point out some important shortcomings:</p>
+<p>- You seem to have published a similar article (<a href="https://doi.org/10.1016/j.dib.2020.106066">https://doi.org/10.1016/j.dib.2020.106066</a>), which is not cited and the differences to this work are not explained.</p>
+<p>- The discussion about related work should be improved.</p>
+<p>- The language doesn't always have the necessary quality. You might want to use a tool like DeepL to get suggestions on how to improve the grammar and flow of your text.</p>
+<p>These points should be addressed for the submission of a revised version.</p>
+<p>Tobias Kuhn (<a href="https://orcid.org/0000-0002-1267-0234">https://orcid.org/0000-0002-1267-0234</a>)</p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F776%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+
+  
+</section>
+
+  </div>
+  </article>
+
+  </div></div>                      </div>
+
+                      
+                    </div>
+                  </div>
+
+                </section>
+
+                
+              </div>
+            </div>
+
+                        
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+    
+          <div id="footer-wrapper">
+        <div class="container clearfix">
+          <footer class="clearfix" role="contentinfo">
+            <div class="region region-footer"><div class="region-inner clearfix"><div id="block-block-16" class="block block-block no-title odd first last block-count-4 block-region-footer block-16" ><div class="block-inner clearfix">  
+  
+  <div class="block-content content"><p style="text-align:center;"><a href="https://www.iospress.nl/disclaimer/" target="_blank">Disclaimer</a> | <a href="https://content.iospress.com/page/privacy" target="_blank">Privacy Policy</a> | Data Science is Published by <a href="http://www.iospress.com" target="_blank">IOS Press</a>, Copyright 2023</p>
+</div>
+  </div></div></div></div>            <p class="attribute-creator"></p>
+          </footer>
+        </div>
+      </div>
+    
+  </div>
+</div>
+  </body>
+</html>

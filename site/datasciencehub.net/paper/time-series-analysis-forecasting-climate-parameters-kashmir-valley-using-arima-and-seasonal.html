@@ -1,0 +1,422 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="time-series-analysis-forecasting-climate-parameters-kashmir-valley-using-arima-and-seasonal.html" />
+<link rel="shortlink" href="../node/742.html" />
+<link rel="shortcut icon" href="../sites/default/files/favicon-96x96.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>Time-Series Analysis for Forecasting Climate Parameters of Kashmir Valley Using ARIMA and Seasonal ARIMA Model. | Data Science</title>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/system/system.base.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.menus.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.messages.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.core.css?t4kojz");
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/comment/comment.css?t4kojz");
+@import url("https://datasciencehub.net/modules/field/theme/field.css?t4kojz");
+@import url("../sites/all/modules/logintoboggan/logintoboggan.css%3Ft4kojz.css");
+@import url("https://datasciencehub.net/modules/node/node.css?t4kojz");
+@import url("https://datasciencehub.net/modules/search/search.css?t4kojz");
+@import url("https://datasciencehub.net/modules/user/user.css?t4kojz");
+@import url("../sites/all/modules/views/css/views.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/modules/ctools/css/ctools.css%3Ft4kojz.css");
+@import url("../sites/all/modules/ctools/css/modal.css%3Ft4kojz.css");
+@import url("../sites/default/modules/modal_forms/css/modal_forms_popup.css%3Ft4kojz.css");
+@import url("../sites/all/modules/responsive_menus/styles/responsive_menus_simple/css/responsive_menus_simple.css%3Ft4kojz.css");
+@import url("../sites/all/modules/date/date_api/date.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="screen">
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.headings.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.image.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.layout.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/themes/corolla/css/html-elements.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/forms.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/tables.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/page.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/articles.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/comments.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/fields.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/blocks.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/navigation.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/corolla.settings.style.css%3Ft4kojz.css");
+@import url("../sites/default/files/color/corolla-80fb2671/colors.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="print">
+@import url("../sites/all/themes/corolla/css/print.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/default/files/adaptivetheme/corolla_files/corolla.responsive.layout.css%3Ft4kojz.css" media="only screen" />
+<style type="text/css" media="screen">
+@import url("../sites/default/files/adaptivetheme/corolla_files/corolla.fonts.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.custom.css%3Ft4kojz.css" media="only screen" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.portrait.css%3Ft4kojz.css" media="only screen and (max-width:320px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.landscape.css%3Ft4kojz.css" media="only screen and (min-width:321px) and (max-width:480px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.portrait.css%3Ft4kojz.css" media="only screen and (min-width:481px) and (max-width:768px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.landscape.css%3Ft4kojz.css" media="only screen and (min-width:769px) and (max-width:1024px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.desktop.css%3Ft4kojz.css" media="only screen and (min-width:1025px)" />
+
+<!--[if lt IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/default/files/adaptivetheme/corolla_files/corolla.lt-ie9.layout.css?t4kojz");
+</style>
+<![endif]-->
+
+<!--[if lte IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/all/themes/corolla/css/ie-lte-9.css?t4kojz");
+</style>
+<![endif]-->
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-extend-3.4.0.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/drupal.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ui/jquery.ui.core.min.js?v=1.8.7"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.cookie.js?v=1.0"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.form.js?v=2.52"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form-single-submit.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ajax.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/default/modules/jquery_update/js/jquery_update.js%3Fv=0.0.1"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/progress.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/all/modules/ctools/js/modal.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/default/modules/modal_forms/js/modal_forms_popup.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/responsive_menus/styles/responsive_menus_simple/js/responsive_menus_simple.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js%3Ft4kojz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-107867597-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="../sites/all/modules/field_group/field_group.js%3Ft4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/tableheader.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/collapse.js?v=7.98"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"corolla","theme_token":"ccgBhCZalA9qbvhRt2Tv3CrHTGAkWwmxcWqq-yeMFpU","jquery_version":"default","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/form-single-submit.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/default\/modules\/jquery_update\/js\/jquery_update.js":1,"misc\/progress.js":1,"sites\/all\/modules\/ctools\/js\/modal.js":1,"sites\/default\/modules\/modal_forms\/js\/modal_forms_popup.js":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/js\/responsive_menus_simple.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/field_group\/field_group.js":1,"misc\/tableheader.js":1,"misc\/collapse.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ctools\/css\/modal.css":1,"sites\/default\/modules\/modal_forms\/css\/modal_forms_popup.css":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/css\/responsive_menus_simple.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.headings.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.image.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/corolla\/css\/html-elements.css":1,"sites\/all\/themes\/corolla\/css\/forms.css":1,"sites\/all\/themes\/corolla\/css\/tables.css":1,"sites\/all\/themes\/corolla\/css\/page.css":1,"sites\/all\/themes\/corolla\/css\/articles.css":1,"sites\/all\/themes\/corolla\/css\/comments.css":1,"sites\/all\/themes\/corolla\/css\/fields.css":1,"sites\/all\/themes\/corolla\/css\/blocks.css":1,"sites\/all\/themes\/corolla\/css\/navigation.css":1,"sites\/all\/themes\/corolla\/css\/fonts.css":1,"sites\/all\/themes\/corolla\/css\/corolla.settings.style.css":1,"sites\/all\/themes\/corolla\/color\/colors.css":1,"sites\/all\/themes\/corolla\/css\/print.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.responsive.layout.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.fonts.css":1,"sites\/all\/themes\/corolla\/css\/responsive.custom.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.desktop.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.lt-ie9.layout.css":1,"sites\/all\/themes\/corolla\/css\/ie-lte-9.css":1}},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E"},"modal-popup-small":{"modalSize":{"type":"fixed","width":500,"height":150},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-medium":{"modalSize":{"type":"fixed","width":550,"height":450},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-large":{"modalSize":{"type":"scale","width":0.8,"height":0.8},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"responsive_menus":[{"toggler_text":"\u2630 Menu","selectors":["#block-system-main-menu"],"media_size":"935","media_unit":"px","absolute":"1","remove_attributes":"1","responsive_menus_style":"responsive_menus_simple"}],"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/search\/node":true,"\/paper\/time-series-analysis-forecasting-climate-parameters-kashmir-valley-using-arima-and-seasonal":true},"field_group":{"fieldset":"full"},"ctools-sample-style":{"modalSize":{"type":"fixed","width":1098,"height":500,"addWidth":20,"addHeight":15},"modalOptions":{"opacity":0.5,"background-color":"#000"},"animation":"fadeIn","modalTheme":"CToolsSampleModal","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/ctools_ajax_sample\/images\/ajax-loader.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E"},"adaptivetheme":{"corolla":{"layout_settings":{"bigscreen":"three-col-grail","tablet_landscape":"three-col-grail","tablet_portrait":"one-col-vert","smalltouch_landscape":"one-col-vert","smalltouch_portrait":"one-col-stack"},"media_query_settings":{"bigscreen":"only screen and (min-width:1025px)","tablet_landscape":"only screen and (min-width:769px) and (max-width:1024px)","tablet_portrait":"only screen and (min-width:481px) and (max-width:768px)","smalltouch_landscape":"only screen and (min-width:321px) and (max-width:480px)","smalltouch_portrait":"only screen and (max-width:320px)"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]>
+<script src="https://datasciencehub.net/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?t4kojz"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-742 node-type-submit-paper site-name-hidden atr-7.x-3.x atv-7.x-3.1 lang-en site-name-data-science section-paper color-scheme-custom corolla bs-n bb-n mb-dd rc-6 rct-6">
+  <div id="skip-link" class="nocontent">
+    <a href="time-series-analysis-forecasting-climate-parameters-kashmir-valley-using-arima-and-seasonal.html#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="page-wrapper">
+  <div id="page" class="page ssc-n ssw-n ssa-l sss-n btc-n btw-b bta-l bts-n ntc-n ntw-b nta-l nts-n ctc-n ctw-b cta-l cts-n ptc-n ptw-b pta-l pts-n">
+
+          <div id="menu-bar-wrapper">
+        <div class="container clearfix">
+          <div id="menu-bar" class="nav clearfix"><nav id="block-system-main-menu" class="block block-system block-menu menu-wrapper menu-bar-wrapper clearfix odd first block-count-1 block-region-menu-bar block-main-menu"  role="navigation">  
+      <h2 class="element-invisible block-title">Main menu</h2>
+  
+  <ul class="menu clearfix"><li class="first leaf menu-depth-1 menu-item-757"><a href="../content/about-data-science.html">About</a></li><li class="leaf menu-depth-1 menu-item-758"><a href="../content/editors.html">Editorial Board</a></li><li class="leaf menu-depth-1 menu-item-1559"><a href="../content/submit-manuscript.html">Submit Manuscript</a></li><li class="leaf menu-depth-1 menu-item-1612"><a href="../content/calls.html">Calls</a></li><li class="leaf menu-depth-1 menu-item-759"><a href="../content/guidelines-authors.html">For Authors</a></li><li class="leaf menu-depth-1 menu-item-760"><a href="../content/guidelines-reviewers.html">For Reviewers</a></li><li class="leaf menu-depth-1 menu-item-582"><a href="../underreview.html" title="Under Review">Under Review</a></li><li class="leaf menu-depth-1 menu-item-583"><a href="../reviewed.html" title="">Reviewed</a></li><li class="last leaf menu-depth-1 menu-item-1611"><a href="../ReviewedAccepted.html" title="">Accepted</a></li></ul>
+  </nav><div id="block-orcid-login-orcid-login" class="block block-orcid-login no-title menu-wrapper menu-bar-wrapper clearfix even last block-count-2 block-region-menu-bar block-orcid-login" >  
+  
+  <p style="background-color: #003b3a; float:right;"><a style="vertical-align: middle; color: white; padding: 10px; display: inline-block; text-decoration: none;" href="https://orcid.org/oauth/authorize?client_id=APP-223SGGDDO35LKOT2&amp;response_type=code&amp;scope=%2Fauthenticate&amp;redirect_uri=https%3A%2F%2Fdatasciencehub.net%2F&amp;state=eyJyZWRpcmVjdCI6InBhcGVyXC90aW1lLXNlcmllcy1hbmFseXNpcy1mb3JlY2FzdGluZy1jbGltYXRlLXBhcmFtZXRlcnMta2FzaG1pci12YWxsZXktdXNpbmctYXJpbWEtYW5kLXNlYXNvbmFsIn0%3D"><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle;"/> Log In with ORCID</a></p>
+  </div></div>        </div>
+      </div>
+    
+    <div id="header-wrapper">
+      <div class="container clearfix">
+	        <header class="clearfix with-logo" role="banner">
+
+                      <div id="branding" class="branding-elements clearfix">
+
+                              <div id="logo">
+                  <a href="../index.html"><img class="site-logo" typeof="foaf:Image" src="../sites/default/files/DS_LOGO_vertical.png" alt="Data Science" /></a>                </div>
+              
+                              <div class="element-invisible h-group" id="name-and-slogan">
+
+                                      <h1 class="element-invisible" id="site-name"><a href="../index.html" title="Home page">Data Science</a></h1>
+                  
+                  
+                </div>
+              
+            </div>
+          
+          
+        </header>
+
+      </div>
+    </div>
+
+          <div id="top-panels-wrapper">
+        <div class="container clearfix">
+          <!-- Three column 3x33 Gpanel -->
+          <div class="at-panel gpanel panel-display three-3x33 clearfix">
+                                                          </div>
+        </div>
+      </div>
+    
+    
+    
+    <div id="content-wrapper">
+      <div class="container">
+
+        <div id="columns">
+          <div class="columns-inner clearfix">
+
+            <div id="content-column">
+              <div class="content-inner">
+
+                
+                <section id="main-content" role="main">
+
+                  
+                  <div class="content-margin">
+                    <div class="content-style">
+
+                      
+                      
+                      
+                                              <header class="clearfix">
+                          <h1 id="page-title">
+                            Time-Series Analysis for Forecasting Climate Parameters of Kashmir Valley Using ARIMA and Seasonal ARIMA Model.                          </h1>
+                        </header>
+                      
+                      
+                      
+                      <div id="content">
+                        <div class="region region-content"><div id="block-system-main" class="block block-system no-title odd first last block-count-3 block-region-content block-main" >  
+  
+  <article id="node-742" class="node node-submit-paper article odd node-lang-en node-full ia-n clearfix" about="/paper/time-series-analysis-forecasting-climate-parameters-kashmir-valley-using-arima-and-seasonal" typeof="sioc:Item foaf:Document" role="article">
+  <div class="node-inner">
+
+
+
+              <header class="node-header">
+
+        
+        
+      </header>
+        <span property="dc:title" content="Time-Series Analysis for Forecasting Climate Parameters of Kashmir Valley Using ARIMA and Seasonal ARIMA Model." class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="2" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+    <div class="node-content">
+        
+      <h3>Tracking #: 742-1722</h3>          								<fieldset>
+					<!-- legend>
+						<span class="fieldset-legend">Paper Data</span>
+					</legend -->
+
+					
+
+
+					
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><h5>Authors:</h5><br/><form action="time-series-analysis-forecasting-climate-parameters-kashmir-valley-using-arima-and-seasonal.html" method="post" id="authors-table-form-anonymus" accept-charset="UTF-8"><div><div id="authors_Container"><table class="sticky-enabled">
+ <thead><tr><th></th><th>Name</th><th>ORCID</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-1962">
+  <input type="checkbox" id="edit-authors-1962" name="authors[1962]" value="1962" class="form-checkbox" />
+</div>
+</td><td>Sheikh Umar</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-0382-4035" target="_blank">https://orcid.org/0000-0002-0382-4035</a></td> </tr>
+ <tr class="even"><td><div class="form-item form-type-checkbox form-item-authors-1963">
+  <input type="checkbox" id="edit-authors-1963" name="authors[1963]" value="1963" class="form-checkbox" />
+</div>
+</td><td>Fahad Farooq Jamie</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-7566-0076" target="_blank">https://orcid.org/0000-0002-7566-0076</a></td> </tr>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-1964">
+  <input type="checkbox" id="edit-authors-1964" name="authors[1964]" value="1964" class="form-checkbox" />
+</div>
+</td><td>Khalid Hussain</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0003-4052-0468" target="_blank">https://orcid.org/0000-0003-4052-0468</a></td> </tr>
+ <tr class="even"><td><div class="form-item form-type-checkbox form-item-authors-1965">
+  <input type="checkbox" id="edit-authors-1965" name="authors[1965]" value="1965" class="form-checkbox" />
+</div>
+</td><td>Salim Mir</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-8103-2017" target="_blank">https://orcid.org/0000-0002-8103-2017</a></td> </tr>
+</tbody>
+</table>
+</div><input type="hidden" name="author_nd" value="742" />
+<input type="hidden" name="author_vd" value="1722" />
+<input type="hidden" name="form_build_id" value="form-MgzMiN-ND9psNsEY4Dgc-4kYSL25OPgxJzUHD-5Z9TU" />
+<input type="hidden" name="form_id" value="authors_table_form_anonymus" />
+</div></form><hr/></div><br/>
+
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-editor field-type-user-reference field-label-above view-mode-full"><h2 class="field-label">Responsible editor:&nbsp;</h2><div class="field-items"><div class="field-item even">Thomas Chadefaux</div></div></section></div><br/>
+					                    <div style="background-color: #E3E5E3;border-radius:5px;padding-top:4px;padding-bottom:4px;padding-left:6px;">
+					<section class="field field-name-field-submission-type field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Submission Type:&nbsp;</h2><div class="field-items"><div class="field-item even">Research Paper</div></div></section><section class="field field-name-field-abstract field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Abstract:&nbsp;</h2><div class="field-items"><div class="field-item even">The valley of Kashmir being an extremely ecologically sensitive area deserves significant attention with regard to climate change. As the region is part of the Indian Himalayan Region (IHR) and home to multiple rivers and glaciers, it holds significant geopolitical, economic, as well as geographical importance. Climate change in the region can have ripple effects on the Indian subcontinent in general. As such effective prediction of the different climate variables of the region is of paramount importance and can help us to reverse or slow down the negative climate change process. In this paper, we investigate CRU TS4.04 time series data of 120 years (1901-2019) for three major climate variables - precipitation, temperature, and cloud cover observed in the region. The analysis revealed some key and concerning trends. Thereafter, forecasting of the climate parameters for the next 80 years (2020-2100) was performed using the ARIMA and S-ARIMA models after a thorough analysis of the data and proper hard tuning of the model hyper-parameters, separately for each of the three climate parameters. The resulting projections show drastic temperature changes, with a projected increase of about 2°C by the end of the century, slight changes in precipitation and cloud cover, and other alarming climatic conditions. This study also brings forth the inability of the ARIMA model to substantially forecast erratic changes in any climate variable. The insights gathered in this study may serve as a presage for the concerned government and stakeholders, and will pave way for the development of robust and efficient plans to tackle climate change in the area. This is the first kind of work that is using effective machine learning-based time-series forecasting models trained over such a large data set for all three major climate variables.</div></div></section><section class="field field-name-field-pdf field-type-file field-label-above view-mode-full"><h2 class="field-label">Manuscript:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="PDF icon" title="application/pdf" src="https://datasciencehub.net/modules/file/icons/application-pdf.png" /> <a href="../system/files/ds-paper-742.pdf" type="application/pdf; length=2034768">ds-paper-742.pdf</a></span></div></div></section><section class="field field-name-field-tags field-type-taxonomy-term-reference field-label-above view-mode-full"><h2 class="field-label">Tags:&nbsp;</h2><ul class="field-items"><li class="field-item even">Reviewed</li></ul></section><section class="field field-name-field-data-repository-urls field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Data repository URLs:&nbsp;</h2><div class="field-items"><div class="field-item even"><p style="text-align:justify"><a href="https://github.com/fahad-farooq/climchange_jk"><span style="font-family:&quot;Times New Roman&quot;,serif">https://github.com/fahad-farooq/climchange_jk</span></a></p>
+</div></div></section><section class="field field-name-field-date-of-submission field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Submission:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2023-01-11T00:00:00-05:00">Wednesday, January 11, 2023</span></div></div></section><section class="field field-name-field-date-of-decision field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Decision:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2023-04-18T00:00:00-04:00">Tuesday, April 18, 2023</span></div></div></section><br><br><b>Nanopublication URLs:</b> <br>                    </div>
+                    <br/>
+
+					
+                    
+                    <div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-decision field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Decision:&nbsp;</h2><div class="field-items"><div class="field-item even">Reject</div></div></section></div><br/>                    <div id="review">
+                    		                    	</div>
+
+					
+										<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><b>Solicited Reviews:</b><br/><form action="time-series-analysis-forecasting-climate-parameters-kashmir-valley-using-arima-and-seasonal.html" method="post" id="get-submitted-reviews" accept-charset="UTF-8"><div><fieldset class="collapsible collapsed form-wrapper" id="edit-fset1"><legend><span class="fieldset-legend">Review #1 <strong>submitted on 23/Jan/2023</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Thomas SCHINCARIOL</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0001-8807-3367" target="_blank">https://orcid.org/0000-0001-8807-3367</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Weak</br><b style="color:#f39222">Suggested Decision: </b> Reject</br><b style="color:#f39222">Technical Quality of the paper:</b> Weak<br/><b style="color:#f39222">Presentation:</b> Weak<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> High significance<br/><b style="color:#f39222">Background:</b> Reasonable<br/><b style="color:#f39222">Novelty:</b> Lack of novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data (if any) are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences: </b><br/><p>This paper has a twofold objective : the first one is to analyze the past dynamic of three climatic variables (temperature, cloud cover and precipitation). The authors show an increasing value in the temperature trend in the last 120 years. In a second part, the three climate variables are forecasted in the 80 next years (2020-2100). The authors show a predicted increased value in temperature of 2 °C, and slight changes in precipitation and cloud cover. To perform these predictions, the authors used a Seasonal ARIMA model.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>Paper with some interesting results. The method and model are well-known and already applied in climate change analysis/prediction. The novelty is the application to this specific region. It also adds a new argument to the increase of temperature in the next couple of decades and comfort the actual predictions made in other part of the world.<br />
+The results with temperatures (mean, minimum and maximum) are good, and the model shows a good fit and great prediction for the validation set.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>General reasons : </p>
+<p>First, the novelty here is debatable. The only new thing is the application to this specific region. The model is widely used in the existing literature.<br />
+Then, as said before, results with temperatures are good. However, on Fig 16-18, we can spot a high seasonality. It seems that the model is predicting the same pattern and does not catch the little annual variation and trend. The analysis and prediction of the trends (as shown in Fig 2-6), monthly or split in season, seems to be a better option. Like this, the focus would be on the trend (the real interest of the study) and less on fitting the monthly seasonality, that we already know and assume.<br />
+For precipitation and cloud cover, the results are mixed. As the rainfall are extremely fluctuant, it is way harder to fit it with an (S)ARIMA model. However, as said in the literature review, the main problem with rainfall is heavy rains and drought. In the region, it already provoked catastrophes and might be one of the major issues caused by climate change in the next decades. The problem could then be adapted by focusing on the extreme events related to rainfall. For example, a study could be run counting the number of months/weeks exceeding a dangerous threshold. ARIMA model could fit and then forecast this metrics. Like this, we would be able to have a better idea of the extreme rainfall events coming with climate change.  </p>
+<p>More specific remarks :</p>
+<p>Fig 1, page 2 : Good overall figure but maybe on the left part, print the overall shape of India for the readers to have a more overall idea of the localization of study zone.<br />
+Fig 2 to 5, page 7-8 : Combining the figure would let the reader comparing the four seasons’ trends with putting the point in transparency (alpha=0.3 for example). Same for the regression tables 1-3 and figure 6, combining them would make the presentation clearer, with subtitles.<br />
+Fig 7 and 8 : Scatter plot would be more appropriate than line. Regression line could be eventually added.<br />
+Model optimization : ACF and PACF are good to determine the ARIMA and SARIMA parameter. However, it may just be a starting point for the parameter tuning. It is not clear if you test other set of parameters with value around the ones extracted from ACF and PACF curves analyze. Maybe it would be a good idea to try with +/- 1 value on each parameter to see if it better the evaluation metric (AIC or BIC). For example, if the best MA value is 3 based on the ACF curve, try 2 and 4 to see if it gets a better AIC and try then with the new best value, and so on.</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>To conclude, this paper provides a new argument in the temperature change in the next couple of years of Kashmir Valley. However, some things should be changed (model tuning, metric used for optimization, the study around rainfall) to make it even stronger and a solid paper on the future issues we might face with climate change.</p>
+</p></div></fieldset>
+<fieldset class="collapsible collapsed form-wrapper" id="edit-fset2"><legend><span class="fieldset-legend">Review #2 <strong>submitted on 14/Apr/2023</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Tobias Kuhn</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-1267-0234" target="_blank">https://orcid.org/0000-0002-1267-0234</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Weak</br><b style="color:#f39222">Suggested Decision: </b> Reject</br><b style="color:#f39222">Technical Quality of the paper:</b> Weak<br/><b style="color:#f39222">Presentation:</b> Good<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> High significance<br/><b style="color:#f39222">Background:</b> Incomplete or inappropriate<br/><b style="color:#f39222">Novelty:</b> Lack of novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data (if any) are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences: </b><br/><p>The paper presents a study to analyze the past climate of the region of the Kashmir Valley, and presents a prediction of its future.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>- very relevant topic<br />
+- well written</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>- analysis of existing data with existing techniques is not novel enough<br />
+- prediction of future climate is not convincing</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>The paper is generally well written, in particular in the introduction of the specific problem and region, and it tackles an interesting and highly relevant problem. However, the paper has some crucial weaknesses.</p>
+<p>The related work section is mostly helpful but sometimes also uses exaggerated language, e.g. "exceptionally accurate results". The related work is weak on the multi-decade prediction aspect, however. The authors note that none of the existing studies aimed to "forecasting the future climate trends", but do not discuss why this is the case (most obviously because it is incredibly hard to do so in a convincing way).</p>
+<p>The shown analyses seems technically correct, even though I cannot judge the details. The analysis of the past data is certainly interesting, even though often done in too much detail to be really insightful, but the novelty of these results is in any case not sufficiently established. Descriptively analyzing public data doesn't meet the standards for novelty for this journal.</p>
+<p>The future predictions form the more innovate and more interesting aspect, but this part is unfortunately not convincing, and could even be misleading to lay audiences. Making multi-decade predictions of the climate of a region by only extrapolating (or "learning") from the past data of the given region seems naive. We are most probably not in some sort of slowly shifting equilibrium, but in a highly complex global system with wide-ranging interactions and possibly major feedback loops. At the very least the *global* climate would have to be taken into account for predicting the climate of the given region. To make it actually convincing, it would have to involve also variables that reflect several possible trajectories of important variables like global CO2 emission, technological progress, and policies that cannot be inferred from past data. The paper also doesn't really highlight these limitations in the discussion. For these reasons, the interpretations we can draw from the results are very limited.</p>
+<p>For these reasons, I suggest to reject the paper, as I think part of it can be more misleading than enlightening.</p>
+</p></div></fieldset>
+<input type="hidden" name="form_build_id" value="form-foQ3apqK4B64csuwweJdB7wNDz_I_uEVPLaedQOt_nc" />
+<input type="hidden" name="form_id" value="get_submitted_reviews" />
+</div></form></div><br/>                    
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"></div><br/>
+				</fieldset>
+				
+    </div>
+
+    <div id="admin-review">
+			</div>
+
+	<div id="decision">
+			</div>
+
+
+
+
+          <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first"><span><a href="../user/login%3Fdestination=comment%252Freply%252F742%23comment-form.html">Log in</a> to post comments</span></li><li class="camera_ready_files_field_paper last"></li></ul></nav>
+    
+    <section id="comments" class="comment-wrapper">
+
+          <h2 class="title">
+      2 Comments    </h2>
+      
+  <a id="comment-126"></a>
+<article class="comment odd first clearfix" about="/comment/126#comment-126" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="../comment/126.html#comment-126" rel="bookmark">Review the paper and comment.</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2023-03-07T05:30:20-05:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/malik-jawarneh" typeof="sioc:UserAccount" property="foaf:name" datatype="">Malik Jawarneh</span> on <time datetime="2023-03-07T05:30:20Z"><span class="date-time">Tue, 03/07/2023 - 05:30</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/time-series-analysis-forecasting-climate-parameters-kashmir-valley-using-arima-and-seasonal" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><ol><li style="margin:0cm; margin-bottom:.0001pt"><span style="background:white"><span style="line-height:12.65pt"><span style="color:#222222">Structure your abstract as follows- 1) Background 2) Aim/Objective 3) Methodology 4) Results 5) Conclusion. Write 2-4 lines for each and merge everything in one paragraph without any subheading</span></span></span></li>
+<li style="margin:0cm; margin-bottom:.0001pt"><span style="background:white"><span style="line-height:12.65pt"><span style="color:#222222">Abstract must contain the motivation and objective of the article. The Abstract must be very clear and the motive of the paper should be represented in a nutshell.</span></span></span></li>
+<li style="margin:0cm; margin-bottom:.0001pt"><span style="background:white"><span style="line-height:12.65pt"><span style="color:#222222">Introduction should be of 5-7 solid paragraphs and provide structure of work at the end of the Introduction section.</span></span></span></li>
+<li style="margin:0cm; margin-bottom:.0001pt"><span style="background:white"><span style="line-height:12.65pt"><span style="color:#222222">Add more contribution to your study field.</span></span></span></li>
+<li style="margin:0cm; margin-bottom:.0001pt"><span style="background:white"><span style="line-height:12.65pt"><span style="color:#222222">The purpose of study not clear.</span></span></span></li>
+<li style="margin:0cm; margin-bottom:.0001pt"><span style="background:white"><span style="line-height:12.65pt"><span style="color:#222222">Make highlight for objectives</span></span></span></li>
+<li style="margin:0cm; margin-bottom:.0001pt"><span style="background:white"><span style="line-height:12.65pt"><span style="color:#222222">Remove any table or figure which is taken from web. Otherwise you have to get approval from publisher and author in a provided form by springer.</span></span></span></li>
+<li style="margin-top:0cm; margin-right:0cm; margin-bottom:.0001pt"><span style="background:white"><span style="line-height:12.65pt"><span style="color:#222222">Please avoid to write definitions of terms ARIMA; climate; Kashmir valley; analysis; time-series forecasting;etc., which are already available over web, try to cite work for such information.</span></span></span></li>
+<li style="margin:0cm; margin-bottom:.0001pt"><span style="background:white"><span style="line-height:12.65pt"><span style="color:#222222">In summary, only provide useful content in your work.</span></span></span></li>
+<li style="margin:0cm; margin-bottom:.0001pt"><span style="background:white"><span style="line-height:12.65pt"><span style="color:#222222">These are Title related to your area, you may use.</span></span></span></li>
+<li style="margin:0cm; margin-bottom:.0001pt"><span style="background:white"><span style="line-height:12.65pt"><span style="color:#222222">Add your references section </span></span></span></li>
+<li style="margin:0cm; margin-bottom:.0001pt"><span style="background:white"><span style="line-height:12.65pt"><span style="color:#222222">Please list all abbreviations used in your manuscript under the heading "Abbreviations" after the conclusions section</span></span></span></li>
+<li style="margin:0cm; margin-bottom:.0001pt"><span style="background:white"><span style="line-height:12.65pt"><span style="color:#222222">The</span><span data-offset-key="hc7u-364-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-364-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> authors</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-365-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-365-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> have</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-366-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-366-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> not</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-367-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-367-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> discussed</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-368-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-368-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> any</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-369-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-369-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> limitations</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-370-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-370-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> or</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-371-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-371-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> challenges</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-372-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-372-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> faced</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-373-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-373-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> during</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-374-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-374-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> the</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-375-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-375-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> development</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-376-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-376-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> of</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-377-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-377-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> the</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-378-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-378-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> dataset</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-379-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-379-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> or</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-380-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-380-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> the</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-381-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-381-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> machine</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-382-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-382-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> learning</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-383-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-383-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> system</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-384-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-384-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box">.</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-385-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-385-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> There</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-386-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-386-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> is</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-387-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-387-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> also</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-388-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-388-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> no</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-389-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-389-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> comparison</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-390-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-390-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> to</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-391-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-391-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> other</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-392-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-392-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> existing</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-393-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-393-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> datasets</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-394-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-394-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> and</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-395-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-395-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box"> systems</span></span></span></span></span></span></span></span></span></span></span></span></span><span data-offset-key="hc7u-396-0" style="box-sizing:border-box; -webkit-text-stroke-width:0px"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="white-space:break-spaces"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="background-color:var(--green-100)"><span style="word-spacing:0px"><span data-offset-key="hc7u-396-0" style="box-sizing:border-box"><span data-text="true" style="box-sizing:border-box">.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></li>
+</ol><ul><li><span style="font-size:10.0pt"><span style="background:white"><span style="line-height:115%"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><span style="color:black">JAWARNEH, M. (2023). Development of Machine Learning Based Security Model for IoT Network.</span></span></span></span></span></li>
+<li><span style="font-size:10.0pt"><span style="background:white"><span style="line-height:115%"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><span style="color:#222222">Nageswaran, S., Arunkumar, G., Bisht, A. K., Mewada, S., Kumar, J. N. V. R., Jawarneh, M., &amp; Asenso, E. (2022). Lung cancer classification and prediction using machine learning and image processing. </span></span></span></span></span><i style="font-variant-ligatures:normal; font-variant-caps:normal; orphans:2; widows:2; -webkit-text-stroke-width:0px; text-decoration-thickness:initial; text-decoration-style:initial; text-decoration-color:initial; word-spacing:0px">BioMed Research International</i><span style="font-variant-ligatures:normal; -webkit-text-stroke-width:0px"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="float:none"><span style="word-spacing:0px">, </span></span></span></span></span></span></span></span></span><i style="font-variant-ligatures:normal; font-variant-caps:normal; orphans:2; widows:2; -webkit-text-stroke-width:0px; text-decoration-thickness:initial; text-decoration-style:initial; text-decoration-color:initial; word-spacing:0px">2022</i><span style="font-variant-ligatures:normal; -webkit-text-stroke-width:0px"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="float:none"><span style="word-spacing:0px">.</span></span></span></span></span></span></span></span></span></li>
+<li><span style="font-size:10.0pt"><span style="background:white"><span style="line-height:115%"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><span style="color:#222222">Ansari, A. S., Jawarneh, M., Ritonga, M., Jamwal, P., Mohammadi, M. S., Veluri, R. K., ... &amp; Shah, M. A. (2022). Improved Support Vector Machine and Image Processing Enabled Methodology for Detection and Classification of Grape Leaf Disease. </span></span></span></span></span><i style="font-variant-ligatures:normal; font-variant-caps:normal; orphans:2; widows:2; -webkit-text-stroke-width:0px; text-decoration-thickness:initial; text-decoration-style:initial; text-decoration-color:initial; word-spacing:0px">Journal of Food Quality</i><span style="font-variant-ligatures:normal; -webkit-text-stroke-width:0px"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="float:none"><span style="word-spacing:0px">, </span></span></span></span></span></span></span></span></span><i style="font-variant-ligatures:normal; font-variant-caps:normal; orphans:2; widows:2; -webkit-text-stroke-width:0px; text-decoration-thickness:initial; text-decoration-style:initial; text-decoration-color:initial; word-spacing:0px">2022</i><span style="font-variant-ligatures:normal; -webkit-text-stroke-width:0px"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="float:none"><span style="word-spacing:0px">.</span></span></span></span></span></span></span></span></span></li>
+<li><span style="font-size:10.0pt"><span style="background:white"><span style="line-height:115%"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><span style="color:#222222">Pallathadka, H., Jawarneh, M., Sammy, F., Garchar, V., Sanchez, T., &amp; Naved, M. (2022, April). A Review of Using Artificial Intelligence and Machine Learning in Food and Agriculture Industry. In </span></span></span></span></span><i style="font-variant-ligatures:normal; font-variant-caps:normal; orphans:2; widows:2; -webkit-text-stroke-width:0px; text-decoration-thickness:initial; text-decoration-style:initial; text-decoration-color:initial; word-spacing:0px">2022 2nd International Conference on Advance Computing and Innovative Technologies in Engineering (ICACITE)</i><span style="font-variant-ligatures:normal; -webkit-text-stroke-width:0px"><span style="font-variant-caps:normal"><span style="orphans:2"><span style="widows:2"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="float:none"><span style="word-spacing:0px"> (pp. 2215-2218). IEEE.</span></span></span></span></span></span></span></span></span></li>
+</ul><p> </p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F742%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+<a id="comment-135"></a>
+<article class="comment even last clearfix" about="/comment/135#comment-135" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="../comment/135.html#comment-135" rel="bookmark">Meta-Review by Editor</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2023-04-18T05:32:04-04:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/tobias-kuhn" typeof="sioc:UserAccount" property="foaf:name" datatype="">Tobias Kuhn</span> on <time datetime="2023-04-18T05:32:04Z"><span class="date-time">Tue, 04/18/2023 - 05:32</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/time-series-analysis-forecasting-climate-parameters-kashmir-valley-using-arima-and-seasonal" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Below is a summary of the main issues raised by the reviewers:</p>
+<ol><li>Lack of novelty: Both reviewers agreed that the novelty of the paper is limited, with the only new aspect being the application to a specific region. The method and model used are well-known and widely used in the existing literature.</li>
+<li>Weaknesses in the analysis: While the analysis of past data is interesting, the novelty of these results is not sufficiently established. The future predictions, which form the more innovative and interesting aspect of the paper, are not convincing due to their reliance on extrapolation from past data without taking into account global climate or other important variables. The interpretation of the results is therefore limited.</li>
+<li>Presentation and clarity: The reviewers suggested improvements to the presentation of figures and tables to enhance clarity and facilitate comparison of results.</li>
+<li>Model optimization: One reviewer suggested that model optimization could be improved by testing different parameter sets and better evaluation metrics.</li>
+</ol><p>While the paper presents some interesting results and adds to the current understanding of temperature increases in the coming decades, the issues highlighted above prevent us from accepting this submission. We appreciate your interest in our journal and hope that the feedback provided will be helpful for any future submissions.</p>
+<p>Once again, we apologize for the delay in our decision, and we thank you for considering our journal for your work.</p>
+<p>Thomas Chadefaux (<a href="https://orcid.org/0000-0002-8456-8124">https://orcid.org/0000-0002-8456-8124</a>)</p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F742%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+
+  
+</section>
+
+  </div>
+  </article>
+
+  </div></div>                      </div>
+
+                      
+                    </div>
+                  </div>
+
+                </section>
+
+                
+              </div>
+            </div>
+
+                        
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+    
+          <div id="footer-wrapper">
+        <div class="container clearfix">
+          <footer class="clearfix" role="contentinfo">
+            <div class="region region-footer"><div class="region-inner clearfix"><div id="block-block-16" class="block block-block no-title odd first last block-count-4 block-region-footer block-16" ><div class="block-inner clearfix">  
+  
+  <div class="block-content content"><p style="text-align:center;"><a href="https://www.iospress.nl/disclaimer/" target="_blank">Disclaimer</a> | <a href="https://content.iospress.com/page/privacy" target="_blank">Privacy Policy</a> | Data Science is Published by <a href="http://www.iospress.com" target="_blank">IOS Press</a>, Copyright 2023</p>
+</div>
+  </div></div></div></div>            <p class="attribute-creator"></p>
+          </footer>
+        </div>
+      </div>
+    
+  </div>
+</div>
+  </body>
+</html>

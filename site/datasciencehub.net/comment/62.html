@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../paper/scholarly-data-analysis-aid-scientific-model-development-0.html" />
+<link rel="shortlink" href="../node/549.html" />
+<link rel="shortcut icon" href="../sites/default/files/favicon-96x96.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>Scholarly data analysis to aid scientific model development | Data Science</title>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/system/system.base.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.menus.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.messages.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.core.css?t4kojz");
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/comment/comment.css?t4kojz");
+@import url("https://datasciencehub.net/modules/field/theme/field.css?t4kojz");
+@import url("../sites/all/modules/logintoboggan/logintoboggan.css%3Ft4kojz.css");
+@import url("https://datasciencehub.net/modules/node/node.css?t4kojz");
+@import url("https://datasciencehub.net/modules/search/search.css?t4kojz");
+@import url("https://datasciencehub.net/modules/user/user.css?t4kojz");
+@import url("../sites/all/modules/views/css/views.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/modules/ctools/css/ctools.css%3Ft4kojz.css");
+@import url("../sites/all/modules/ctools/css/modal.css%3Ft4kojz.css");
+@import url("../sites/default/modules/modal_forms/css/modal_forms_popup.css%3Ft4kojz.css");
+@import url("../sites/all/modules/responsive_menus/styles/responsive_menus_simple/css/responsive_menus_simple.css%3Ft4kojz.css");
+@import url("../sites/all/modules/date/date_api/date.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="screen">
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.headings.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.image.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.layout.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/themes/corolla/css/html-elements.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/forms.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/tables.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/page.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/articles.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/comments.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/fields.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/blocks.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/navigation.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/corolla.settings.style.css%3Ft4kojz.css");
+@import url("../sites/default/files/color/corolla-80fb2671/colors.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="print">
+@import url("../sites/all/themes/corolla/css/print.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/default/files/adaptivetheme/corolla_files/corolla.responsive.layout.css%3Ft4kojz.css" media="only screen" />
+<style type="text/css" media="screen">
+@import url("../sites/default/files/adaptivetheme/corolla_files/corolla.fonts.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.custom.css%3Ft4kojz.css" media="only screen" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.portrait.css%3Ft4kojz.css" media="only screen and (max-width:320px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.landscape.css%3Ft4kojz.css" media="only screen and (min-width:321px) and (max-width:480px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.portrait.css%3Ft4kojz.css" media="only screen and (min-width:481px) and (max-width:768px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.landscape.css%3Ft4kojz.css" media="only screen and (min-width:769px) and (max-width:1024px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.desktop.css%3Ft4kojz.css" media="only screen and (min-width:1025px)" />
+
+<!--[if lt IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/default/files/adaptivetheme/corolla_files/corolla.lt-ie9.layout.css?t4kojz");
+</style>
+<![endif]-->
+
+<!--[if lte IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/all/themes/corolla/css/ie-lte-9.css?t4kojz");
+</style>
+<![endif]-->
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-extend-3.4.0.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/drupal.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ui/jquery.ui.core.min.js?v=1.8.7"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.cookie.js?v=1.0"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.form.js?v=2.52"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form-single-submit.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ajax.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/default/modules/jquery_update/js/jquery_update.js%3Fv=0.0.1"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/progress.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/all/modules/ctools/js/modal.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/default/modules/modal_forms/js/modal_forms_popup.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/responsive_menus/styles/responsive_menus_simple/js/responsive_menus_simple.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js%3Ft4kojz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-107867597-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="../sites/all/modules/field_group/field_group.js%3Ft4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/tableheader.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/collapse.js?v=7.98"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"corolla","theme_token":"yotKUv2Y-cexSfNBg-hwAMUv2csF9TTnJbrjONgZULY","jquery_version":"default","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/form-single-submit.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/default\/modules\/jquery_update\/js\/jquery_update.js":1,"misc\/progress.js":1,"sites\/all\/modules\/ctools\/js\/modal.js":1,"sites\/default\/modules\/modal_forms\/js\/modal_forms_popup.js":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/js\/responsive_menus_simple.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/field_group\/field_group.js":1,"misc\/tableheader.js":1,"misc\/collapse.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ctools\/css\/modal.css":1,"sites\/default\/modules\/modal_forms\/css\/modal_forms_popup.css":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/css\/responsive_menus_simple.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.headings.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.image.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/corolla\/css\/html-elements.css":1,"sites\/all\/themes\/corolla\/css\/forms.css":1,"sites\/all\/themes\/corolla\/css\/tables.css":1,"sites\/all\/themes\/corolla\/css\/page.css":1,"sites\/all\/themes\/corolla\/css\/articles.css":1,"sites\/all\/themes\/corolla\/css\/comments.css":1,"sites\/all\/themes\/corolla\/css\/fields.css":1,"sites\/all\/themes\/corolla\/css\/blocks.css":1,"sites\/all\/themes\/corolla\/css\/navigation.css":1,"sites\/all\/themes\/corolla\/css\/fonts.css":1,"sites\/all\/themes\/corolla\/css\/corolla.settings.style.css":1,"sites\/all\/themes\/corolla\/color\/colors.css":1,"sites\/all\/themes\/corolla\/css\/print.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.responsive.layout.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.fonts.css":1,"sites\/all\/themes\/corolla\/css\/responsive.custom.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.desktop.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.lt-ie9.layout.css":1,"sites\/all\/themes\/corolla\/css\/ie-lte-9.css":1}},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E"},"modal-popup-small":{"modalSize":{"type":"fixed","width":500,"height":150},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-medium":{"modalSize":{"type":"fixed","width":550,"height":450},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-large":{"modalSize":{"type":"scale","width":0.8,"height":0.8},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"responsive_menus":[{"toggler_text":"\u2630 Menu","selectors":["#block-system-main-menu"],"media_size":"935","media_unit":"px","absolute":"1","remove_attributes":"1","responsive_menus_style":"responsive_menus_simple"}],"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/search\/node":true,"\/comment\/62":true},"field_group":{"fieldset":"full"},"ctools-sample-style":{"modalSize":{"type":"fixed","width":1098,"height":500,"addWidth":20,"addHeight":15},"modalOptions":{"opacity":0.5,"background-color":"#000"},"animation":"fadeIn","modalTheme":"CToolsSampleModal","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/ctools_ajax_sample\/images\/ajax-loader.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E"},"adaptivetheme":{"corolla":{"layout_settings":{"bigscreen":"three-col-grail","tablet_landscape":"three-col-grail","tablet_portrait":"one-col-vert","smalltouch_landscape":"one-col-vert","smalltouch_portrait":"one-col-stack"},"media_query_settings":{"bigscreen":"only screen and (min-width:1025px)","tablet_landscape":"only screen and (min-width:769px) and (max-width:1024px)","tablet_portrait":"only screen and (min-width:481px) and (max-width:768px)","smalltouch_landscape":"only screen and (min-width:321px) and (max-width:480px)","smalltouch_portrait":"only screen and (max-width:320px)"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]>
+<script src="https://datasciencehub.net/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?t4kojz"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-549 node-type-submit-paper site-name-hidden atr-7.x-3.x atv-7.x-3.1 lang-en site-name-data-science section-paper color-scheme-custom corolla bs-n bb-n mb-dd rc-6 rct-6">
+  <div id="skip-link" class="nocontent">
+    <a href="62.html#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="page-wrapper">
+  <div id="page" class="page ssc-n ssw-n ssa-l sss-n btc-n btw-b bta-l bts-n ntc-n ntw-b nta-l nts-n ctc-n ctw-b cta-l cts-n ptc-n ptw-b pta-l pts-n">
+
+          <div id="menu-bar-wrapper">
+        <div class="container clearfix">
+          <div id="menu-bar" class="nav clearfix"><nav id="block-system-main-menu" class="block block-system block-menu menu-wrapper menu-bar-wrapper clearfix odd first block-count-1 block-region-menu-bar block-main-menu"  role="navigation">  
+      <h2 class="element-invisible block-title">Main menu</h2>
+  
+  <ul class="menu clearfix"><li class="first leaf menu-depth-1 menu-item-757"><a href="../content/about-data-science.html">About</a></li><li class="leaf menu-depth-1 menu-item-758"><a href="../content/editors.html">Editorial Board</a></li><li class="leaf menu-depth-1 menu-item-1559"><a href="../content/submit-manuscript.html">Submit Manuscript</a></li><li class="leaf menu-depth-1 menu-item-1612"><a href="../content/calls.html">Calls</a></li><li class="leaf menu-depth-1 menu-item-759"><a href="../content/guidelines-authors.html">For Authors</a></li><li class="leaf menu-depth-1 menu-item-760"><a href="../content/guidelines-reviewers.html">For Reviewers</a></li><li class="leaf menu-depth-1 menu-item-582"><a href="../underreview.html" title="Under Review">Under Review</a></li><li class="leaf menu-depth-1 menu-item-583"><a href="../reviewed.html" title="">Reviewed</a></li><li class="last leaf menu-depth-1 menu-item-1611"><a href="../ReviewedAccepted.html" title="">Accepted</a></li></ul>
+  </nav><div id="block-orcid-login-orcid-login" class="block block-orcid-login no-title menu-wrapper menu-bar-wrapper clearfix even last block-count-2 block-region-menu-bar block-orcid-login" >  
+  
+  <p style="background-color: #003b3a; float:right;"><a style="vertical-align: middle; color: white; padding: 10px; display: inline-block; text-decoration: none;" href="https://orcid.org/oauth/authorize?client_id=APP-223SGGDDO35LKOT2&amp;response_type=code&amp;scope=%2Fauthenticate&amp;redirect_uri=https%3A%2F%2Fdatasciencehub.net%2F&amp;state=eyJyZWRpcmVjdCI6ImNvbW1lbnRcLzYyIn0%3D"><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle;"/> Log In with ORCID</a></p>
+  </div></div>        </div>
+      </div>
+    
+    <div id="header-wrapper">
+      <div class="container clearfix">
+	        <header class="clearfix with-logo" role="banner">
+
+                      <div id="branding" class="branding-elements clearfix">
+
+                              <div id="logo">
+                  <a href="../index.html"><img class="site-logo" typeof="foaf:Image" src="../sites/default/files/DS_LOGO_vertical.png" alt="Data Science" /></a>                </div>
+              
+                              <div class="element-invisible h-group" id="name-and-slogan">
+
+                                      <h1 class="element-invisible" id="site-name"><a href="../index.html" title="Home page">Data Science</a></h1>
+                  
+                  
+                </div>
+              
+            </div>
+          
+          
+        </header>
+
+      </div>
+    </div>
+
+          <div id="top-panels-wrapper">
+        <div class="container clearfix">
+          <!-- Three column 3x33 Gpanel -->
+          <div class="at-panel gpanel panel-display three-3x33 clearfix">
+                                                          </div>
+        </div>
+      </div>
+    
+    
+    
+    <div id="content-wrapper">
+      <div class="container">
+
+        <div id="columns">
+          <div class="columns-inner clearfix">
+
+            <div id="content-column">
+              <div class="content-inner">
+
+                
+                <section id="main-content" role="main">
+
+                  
+                  <div class="content-margin">
+                    <div class="content-style">
+
+                      
+                      
+                      
+                                              <header class="clearfix">
+                          <h1 id="page-title">
+                            Scholarly data analysis to aid scientific model development                          </h1>
+                        </header>
+                      
+                      
+                      
+                      <div id="content">
+                        <div class="region region-content"><div id="block-system-main" class="block block-system no-title odd first last block-count-3 block-region-content block-main" >  
+  
+  <article id="node-549" class="node node-submit-paper article odd node-lang-en node-full ia-n clearfix" about="/paper/scholarly-data-analysis-aid-scientific-model-development-0" typeof="sioc:Item foaf:Document" role="article">
+  <div class="node-inner">
+
+
+
+              <header class="node-header">
+
+        
+        
+      </header>
+        <span property="dc:title" content="Scholarly data analysis to aid scientific model development" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="1" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+    <div class="node-content">
+        
+      <h3>Tracking #: 549-1529</h3>          								<fieldset>
+					<!-- legend>
+						<span class="fieldset-legend">Paper Data</span>
+					</legend -->
+
+					
+
+
+					
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><h5>Authors:</h5><br/><form action="62.html" method="post" id="authors-table-form-anonymus" accept-charset="UTF-8"><div><div id="authors_Container"><table class="sticky-enabled">
+ <thead><tr><th></th><th>Name</th><th>ORCID</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-1289">
+  <input type="checkbox" id="edit-authors-1289" name="authors[1289]" value="1289" class="form-checkbox" />
+</div>
+</td><td>Gabriele Scalia</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0003-3305-9220" target="_blank">https://orcid.org/0000-0003-3305-9220</a></td> </tr>
+ <tr class="even"><td><div class="form-item form-type-checkbox form-item-authors-1291">
+  <input type="checkbox" id="edit-authors-1291" name="authors[1291]" value="1291" class="form-checkbox" />
+</div>
+</td><td>Matteo Pelucchi</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0003-3106-0236" target="_blank">https://orcid.org/0000-0003-3106-0236</a></td> </tr>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-1292">
+  <input type="checkbox" id="edit-authors-1292" name="authors[1292]" value="1292" class="form-checkbox" />
+</div>
+</td><td>Alessandro Stagni</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0003-4339-7872" target="_blank">https://orcid.org/0000-0003-4339-7872</a></td> </tr>
+ <tr class="even"><td><div class="form-item form-type-checkbox form-item-authors-1293">
+  <input type="checkbox" id="edit-authors-1293" name="authors[1293]" value="1293" class="form-checkbox" />
+</div>
+</td><td>Alberto Cuoci</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0001-5653-0180" target="_blank">https://orcid.org/0000-0001-5653-0180</a></td> </tr>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-1294">
+  <input type="checkbox" id="edit-authors-1294" name="authors[1294]" value="1294" class="form-checkbox" />
+</div>
+</td><td>Tiziano Faravelli</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0001-8382-7342" target="_blank">https://orcid.org/0000-0001-8382-7342</a></td> </tr>
+ <tr class="even"><td><div class="form-item form-type-checkbox form-item-authors-1295">
+  <input type="checkbox" id="edit-authors-1295" name="authors[1295]" value="1295" class="form-checkbox" />
+</div>
+</td><td>Barbara Pernici</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-2034-9774" target="_blank">https://orcid.org/0000-0002-2034-9774</a></td> </tr>
+</tbody>
+</table>
+</div><input type="hidden" name="author_nd" value="549" />
+<input type="hidden" name="author_vd" value="1529" />
+<input type="hidden" name="form_build_id" value="form-W1pIy4XtHo-dzfbGjxKYDriTg9kH-U9rmj2Gu63YQms" />
+<input type="hidden" name="form_id" value="authors_table_form_anonymus" />
+</div></form><hr/></div><br/>
+
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-editor field-type-user-reference field-label-above view-mode-full"><h2 class="field-label">Responsible editor:&nbsp;</h2><div class="field-items"><div class="field-item even">Silvio Peroni</div></div></section></div><br/>
+					                    <div style="background-color: #E3E5E3;border-radius:5px;padding-top:4px;padding-bottom:4px;padding-left:6px;">
+					<section class="field field-name-field-submission-type field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Submission Type:&nbsp;</h2><div class="field-items"><div class="field-item even">Research Paper</div></div></section><section class="field field-name-field-abstract field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Abstract:&nbsp;</h2><div class="field-items"><div class="field-item even">The sharing of scientific and scholarly data has been increasingly promoted over the last decade, leading to open repositories in many different scientific domains. However, data sharing and open data are not final goals by themselves, while the real benefit is in data reuse, which allows leveraging investments in research and enables large-scale data-driven research progresses. 
+Focusing on  reuse, this paper discusses the design of an integrated framework to automatically take  advantage  of  large  amounts  of  scholarly scientific data  to  support  research, and in particular scientific model development. Scientific models reproduce and predict complex phenomena and their development is a rather challenging task, within which scientific experiments have a key role in their continuous validation.
+Starting from the chemical kinetics domain, this paper discusses a set of use cases and a first prototype for such a framework which lead to a set of functional requirements and an architecture that can easily be generalized to other domains. The paper analyzes the needs, the challenges and the research directions for such a framework, in particular those related to data management, automatic scientific model validation, data aggregation and data analysis, to leverage large amounts of scholarly data for new knowledge extraction.</div></div></section><section class="field field-name-field-pdf field-type-file field-label-above view-mode-full"><h2 class="field-label">Manuscript:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="PDF icon" title="application/pdf" src="https://datasciencehub.net/modules/file/icons/application-pdf.png" /> <a href="../system/files/ds-paper-549.pdf" type="application/pdf; length=1184352">ds-paper-549.pdf</a></span></div></div></section><div class="view view-revised-verision view-id-revised_verision view-display-id-entity_view_1 view-dom-id-a5fdf36e75fff301007c4d87033dfeb6">
+      
+      <div class="view-header">
+      <b>Revised Version:</b>    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="../paper/towards-scientific-data-framework-support-scientific-model-development.html">Towards a scientific data framework to support scientific model development</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> <section class="field field-name-field-tags field-type-taxonomy-term-reference field-label-above view-mode-full"><h2 class="field-label">Tags:&nbsp;</h2><ul class="field-items"><li class="field-item even">Reviewed</li></ul></section><section class="field field-name-field-special-issue field-type-text field-label-above view-mode-full"><h2 class="field-label">Special issue (if applicable):&nbsp;</h2><div class="field-items"><div class="field-item even">Special issue of Data Science, including a selection of extended papers from SAVE-SD 2017 and 2018</div></div></section><section class="field field-name-field-data-repository-urls field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Data repository URLs:&nbsp;</h2><div class="field-items"><div class="field-item even"><p>None</p>
+</div></div></section><section class="field field-name-field-date-of-submission field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Submission:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2018-12-16T00:00:00-05:00">Sunday, December 16, 2018</span></div></div></section><section class="field field-name-field-date-of-decision field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Decision:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2019-02-06T00:00:00-05:00">Wednesday, February 6, 2019</span></div></div></section><br><br><b>Nanopublication URLs:</b> <br>                    </div>
+                    <br/>
+
+					
+                    
+                    <div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-decision field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Decision:&nbsp;</h2><div class="field-items"><div class="field-item even">Undecided</div></div></section></div><br/>                    <div id="review">
+                    		                    	</div>
+
+					
+										<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><b>Solicited Reviews:</b><br/><form action="62.html" method="post" id="get-submitted-reviews" accept-charset="UTF-8"><div><fieldset class="collapsible collapsed form-wrapper" id="edit-fset1"><legend><span class="fieldset-legend">Review #1 <strong>submitted on 13/Jan/2019</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Hanna Ćwiek-Kupczyńska</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0001-9113-567X" target="_blank">https://orcid.org/0000-0001-9113-567X</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Good</br><b style="color:#f39222">Suggested Decision: </b> Accept</br><b style="color:#f39222">Technical Quality of the paper:</b> Good<br/><b style="color:#f39222">Presentation:</b> Average<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> High significance<br/><b style="color:#f39222">Background:</b> Reasonable<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data (if any) are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences: </b><br/><p>The paper discusses the design of a framework that implements the idea of scientific data reuse. The authors propose a system taking advantage of public datasets to improve scientific models and validate both datasets and the models in a continuous process. Requirements and a prototype of the proposed solution is demonstrated for data from chemical kinetics domain, but general considerations seem reasonable for other research domains.<br />
+The paper is an extension of work presented at SAVE-SD workshop at The Web Conference 2018 that presents new requirements and improvements to the design of the system after testing the initial prototype. The authors well present the domain-specific problem, and they describe the general functionality of system to integrate data and services in order to automatize and improve the progress in the domain. The second prototype is partly-implemented; its modular architecture is given in the paper along with screenshots for exemplary use cases.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>The paper proposes a fairly solid way to implement experimental data reuse. As the authors point out in their motivations, data reuse is an understudied problem. In the view of common focus on making the data FAIR, the practical example of the reuse should be a notable work to promote. The use case of chemical kinetics seems interesting and demanding. Some of the requirements formulated in the paper can be applied to a general case of experimental data reuse and tracking development of scientific progress.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>The article needs some improvements, in particular to rethink the title*, and to explicitly provide the basic requirements for the system (from the previous paper) before formulating the additional ones.<br />
+The reading flow could be improved by some enhancements to the structure of the article. Initial sections could benefit from shortening and more strict distinction of the content between them, as currently they share some common descriptions.**<br />
+Some language corrections *** and other changes**** are recommended.</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>* Title and the use of “scholarly data”: I have some doubts about the adequacy of the title to the article content. Authors use the term “scholarly data” few times across the paper, without attracting reader’s attention with its meaning (at times it seems interchangeable with “scientific data” or “experimental data”, e.g. p.2 l.39 or p.6 l.33) and its role in the whole system until the last section, where the use of data from publications is explicitly mentioned (as one of the features of the system only). Perhaps the title should focus more on exposing the fact of scientific data reuse or the proposed system itself.</p>
+<p>** Structure and content:<br />
+- Introduction – shorter and less details (perhaps the details of the chemical kinetics domain (p.2 l. 26 - p.3 l.7) can be skipped until section 2)<br />
+- Scenario – could benefit from clear distinction in parts about the general research area, and about the proposed approach with explicit assumptions about its functionality (i.e. naming the requirements, which can later be generalized and referred to while discussing solutions in section 3)<br />
+- Towards an integrated framework – Despite the reference to [44], it would be nice to remind the reader what the basic requirements were (in contrast to New Requirements discussed in section 5). Are the initial functional requirements the “use cases”?<br />
+- Proposed architecture – description of DW and OLAP systems repeats the text from section 3<br />
+- Concluding remarks (or other section) – It would be advantageous for these considerations to elaborate a bit more on the envisioned role for the domain-specific ontology and human actors (domain experts, operators, manual actions) in the whole system – which steps cannot be automatized?</p>
+<p>*** Other improvements<br />
+- The information about the existence (yes or no?) of a domain-specific ontology is inconsistent (p.12 l.36, p. 16 l.33, p. 19 l.30).<br />
+- Figure 2 is not clear and doesn’t simplify understanding the whole process: use of nodes, arrows and additional text around the nodes inconsistent (physical objects, actions, or goals) and confusing.<br />
+   - e.g.1. The central node (Exp. Data) is confusing – what does it stand for and where does “Compare’ fit in the sequence?<br />
+   - e.g.2. “Analysis tools (… uncertainty quantification)” node lies on alternative path to “Model reduction” while the textual description (p.4 l.39-42) says that uncertainty is a diverging point (“if the model shows … uncertainties, relevant pathways can be identified by analysis tools ...”)</p>
+<p>**** Language – some examples:<br />
+- verbs in 3rd person (“leadS to” p.1 l.27, “requireS” p.7 l.2, “comeS from” p.7 l.7, “involveS” p.8 l.4, “concernS” p.10 l.21<br />
+- typos and spelling (OpenSMOKE++ and alternatives, ReSpecTh alternatives, “Djangoi” p.12 l.24, “stred” p.16 l.23)<br />
+- use of definite / indefinite articles<br />
+- other: unnecessary symbols for temperature and pressure p.4 l.12, “industry industry” p.4 l.40, repeated “highlighted in the literature” p.1 l.39 and l.41, “one [variable functions]” p.4 l.32, “increasingly availability” p.6 l.32, “is not be limited” p.6 l.36, “indipendent” p.6 l.37, “as a meanS to” p.6 l.39, “it doesn’t exist” -&gt; “there” p.10 l.3 and l.4, “a changes” p.10 l.43. “since from” p.12 l.11, “impacts on” p.16 l.19, “an automatically and manually querying” p.17 l.40, </p>
+<p>***** Some formal issues:<br />
+- Recommended capitalisation (title, headings) missing<br />
+- In-text citations and reference format other than suggested in the guidelines, citation starts with [32] which seems strange<br />
+- multiple citations of some papers for the same context, e.g. [6] or [17]</p>
+</p></div></fieldset>
+<fieldset class="collapsible collapsed form-wrapper" id="edit-fset2"><legend><span class="fieldset-legend">Review #2 <strong>submitted on 22/Jan/2019</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Aliaksandr  Birukou</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-4925-9131" target="_blank">https://orcid.org/0000-0002-4925-9131</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Good</br><b style="color:#f39222">Suggested Decision: </b> Undecided</br><b style="color:#f39222">Technical Quality of the paper:</b> Weak<br/><b style="color:#f39222">Presentation:</b> Good<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> Moderate significance<br/><b style="color:#f39222">Background:</b> Reasonable<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> Not all used and produced data are FAIR and openly available in established data repositories; authors need to fix this<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences: </b><br/><p>The paper presents an architecture and a prototype of the system for sharing and reusing the models and the data of scientific experiments in the chemical kinetics domain. The paper touches upon some issues in aggregating, managing and processing this data. It also mentions possible extensions to other domains and automated integration of even more of the gathered experimental data without going into details - I understand that both these aspects are part of the future work.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>The paper is well written, the figures and the screenshots are readable and help to present the material.<br />
+The paper deals with an important problem of reusing experimental result and is interdisciplinary, as the authors represent both data/software engineering and chemical engineering communities.<br />
+It also provides a nice introduction to the domain, accessible for a person who is not an expert in chemical kinetics.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>I would encourage the authors to clarify the main contribution. The requirements and the architecture do not qualify as good enough contribution, worth a journal paper as 1) they have been already presented already at SAVE-SD 2018 and 2) the design of the architecture does not mean it will work in practice. I would encourage authors to go for the "first version of the system" being presented and limit the discussion of "extension to other domains and new requirements" to the discussion section, as both are not tested in practice. Right now the paper mentions them several times, but discussing the problems does not solve them...</p>
+<p>A possible reason to reject would be that neither the data (or samples of data) or the software (prototype) presented in the paper are not available online. I leave it up to the editors to decide if it is a reason for rejection.For instance, when the authors describe supplementary materials in p.4, examples of such materials can be given. The same for the "experiment consists of a set of conditions, ... and output variables" - including an example would help a lot!</p>
+<p>It is not the strongest reason for rejection, but before accepting this manuscript, the paper should clarify the title and the use of terms. [1, 2] use "scholarly data" as "the data describing the publications, authors, etc.". This paper deals with the "experimental data from the chemical kinetics domain" or "scientific data". Therefore, the title "scholarly data analysis to aid ..." is misleading, as no such analysis happens at the moment (it is just mentioned as a possible source of new data). Such analysis, if already performed is non-trivial and can constitute contribution per se. For instance, on p.17, 5.3: "can be retrieved automatically from external sources". Can be? Or "is retrieved"? From which sources?</p>
+<p>[1] F. Xia, W. Wang, T. M. Bekele and H. Liu, "Big Scholarly Data: A Survey," in IEEE Transactions on Big Data, vol. 3, no. 1, pp. 18-35, 1 March 2017.<br />
+doi: 10.1109/TBDATA.2016.2641460<br />
+[2] <a href="http://www.scholarlydata.org/">http://www.scholarlydata.org/</a></p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>1. Please give concrete examples when mentioning other domains besides "chemical kinetics": which domains, which data will be stored and managed? If you do not have anything concrete at this stage, it is better to just say "we are going to look into extending our system to work with domains A, B, C". Right now the reader might be mislead by claims like "can be easily generalized to other domains", </p>
+<p>The same at p.6 "The need of a continuous validation of models based on new experiments is shared among most scientific fields, and therefore the activities of acquiring, analyzing and evaluating models and experiments is certainly shared with other scientific domains" - consider giving a couple of examples to be specific. </p>
+<p>2. p.3, one of the contributions: "A data-based and service-based architecture for such a system is proposed and discussed, providing a data model to support data integration and the development of a set of data curation and analysis services." - please be more concrete when describing the data integration in the paper. For instance, in Fig. 1 it is not clear which steps are covered by the system, and which are automated, which are performed manually? Elaborating on this aspects and relating the authors' contribution to this general model refinement procedure would help to clarify the benefits of the presented approach.</p>
+<p>3. In the related work section a good analysis of the scholarly data and chemical kinetics experimental data is presented. However, the work seems to be also very relevant to the Google Dataset Search <a href="https://toolbox.google.com/datasetsearch">https://toolbox.google.com/datasetsearch</a>, Figshare and other data repositories, as well as to platforms for sharing code/experiements (MyExperiment, Gigantum, Code Ocean). I would strongly recommend relating the solution to those platforms in the Related Work section.</p>
+<p>4. Sections 4 and 5 miss the description of what exactly is done (or not done) by the described prototype and within the approach. For instance "In other cases new experiments could be directly extracted by domain experts and inserted manually" - it is not clear if this is the main source of filling the repository or only a theoretical possibility. In the former case, how often do experts add experiments manually, can they really cope with the "big data" announced earlier? Is it scalable? For the automated integration of structured formats - which repositories are already connected and continuously provide new experiments for the repository? How many experiments are added every year/month/...? </p>
+<p>The section 4.1.2 decribes a lot of difficulties in matching experimental data with different parameters and levels of granularity. However, it is not clear what is managed by the system at the moment. The sentence in 4.1.3 about "handling volumes of data largely beyond those manageable manually" hints that the problem is solved to the certain extent, and the screenshots in Fig 3-6 suggest this too. </p>
+<p>4.1.4 and managing changes in the models describe a very interesting problem of reusing the existing experimental results to predict the new ones or to get new results by re-running only some parts of the experiments. It is not clear, though, which use cases are supported at the moment and what limitations the system still has.</p>
+<p>on p.17, section 5.4 it is not clear who performs manual interventions (if at all). Or is it one more "possibility" for the system rather than implemented feature? </p>
+<p>5. Section 6 should correspond to 4-5. Right now it describes "continuous data integration" which is only explained at high-level in 4 and 5. The same concern relates to the discussion of using the domain-ontologies vs OLAP - it would be nice to see in 4 and 5 how and what is used, then such choice becomes clearer.</p>
+<p>In the description of the scientific model (p.19) and also earlier the authors mention 10^5-10^6" experimental parameters. It is not clear how the user can search with so many parameters (Fig 3) then. Could you please explain this better?</p>
+<p>6. To summarize, I would suggest that the authors focus on what is done, what can be done soon and present those. For cases where no implementation was done you should only mention the most important in the future work or discussion sections. In particular, the dillemma of "scholarly data" vs "experimental data" should be solved. Right now the paper leaves the impression that "scholarly data could be used to get more experimental data for the repository". But it is not seen through the paper if this is the reality in the current version of the system. I would suggest shortening Section 6 and other places where it is written "what could be used" and focus on "what IS used".</p>
+<p>***Minor comments / language errors***<br />
+- "a first prorotype" - p.3<br />
+- "indipendent" - p.6<br />
+- "a simulation software" - p.9<br />
+- "In general, it does not exist a pre-defined" - p.10<br />
+- Opensmoke vs OpenSMOKE++ - capitalization<br />
+- p. 16 "stred" - "stored"?<br />
+- p.16 "one respect to the others"<br />
+- p. 16 "the lacks"<br />
+- p.17 "composed by" - "contains"</p>
+</p></div></fieldset>
+<fieldset class="collapsible collapsed form-wrapper" id="edit-fset3"><legend><span class="fieldset-legend">Review #3 <strong>submitted on 05/Feb/2019</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Stian  Soiland-Reyes</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0001-9842-9718" target="_blank">https://orcid.org/0000-0001-9842-9718</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Good</br><b style="color:#f39222">Suggested Decision: </b> Accept</br><b style="color:#f39222">Technical Quality of the paper:</b> Good<br/><b style="color:#f39222">Presentation:</b> Weak<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> High significance<br/><b style="color:#f39222">Background:</b> Reasonable<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> Not all used and produced data are FAIR and openly available in established data repositories; authors need to fix this<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences: </b><br/><p>The authors address the development of scientific models from experimental data, focusing on automation and semantic data integration from a use case of chemical kinetics models, but deriving requirements for a framework that I would argue is general enough to apply for any model/experiment research across domains (e.g. systems biology).</p>
+<p>The paper also presents a service-oriented architecture to address the requirements, which has been partially implemented in a prototype. The prototype is shown by screenshot only (no name, URL or source code cited). Additional requirements for future work are laid out, summarising potential and existing methods from literature.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>* Identified requirements are generalizable to any modelling domain.<br />
+* Well-founded reasoning behind arguments.<br />
+* Domain example (kinetic combustion modelling) explained well.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>* Language: Several grammar and phrasing issues (see attached PDF)<br />
+* Length: Some repetition across sections (see PDF)<br />
+* Confusion between "proposed architecture" and what has been implemented in<br />
+* Architectural choices not clearLy derived from requirements (e.g. SOA for functions)<br />
+* No source code or URL provided for developed prototype</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>## Overview</p>
+<p>The main value I find in this article is that it identifies and describes well requirements for experiment-based model development, and in particular showing the issues that must be addressed when automating and scaling up such research across multiple open data sources. As I think this would apply across domains, I would have liked some citation to similar work in automating modelling work for other fields, for instance in systems biology.</p>
+<p>I think this paper should be accepted following a minor revision. Some more concern must be placed on the language.</p>
+<p>A detailed annotated PDF is attached in the web version of this review at </p>
+<p>## Language</p>
+<p>The presentation of this article is generally good and well reasoned, however the grammar is of varying quality and so the language can get confusing at places. I have suggested numerous small modifications in the attached PDF (ISO5776 notation), some of which I hope will simplify the text where I identified repetition or unnecessary phrasings.</p>
+<p>As I see was pointed out in SAVE-SD 2018 open peer reviews , it is odd to use exponential notation for small numbers. I understand the intention is to show scale rather than actual values or proportions, so I suggest changing them to "scale in the hundreds", "..thousands" and "..hundred thousands".</p>
+<p>## Architecture section</p>
+<p>The wording in the section of "Proposed Architecture" is floating between describing a potential general architecture ("It could be translated in the future") and features of the existing developed prototype<br />
+("the database has been designed..to privilege performance").</p>
+<p>While I can read between the lines that the architecture was partially derived from the development of the prototype (which is good), this section attempts to give the opposite picture. This means a tension is artificially introduced that confuses the reader as to what parts of the architecture has been realized or not. </p>
+<p>I suggest to be more concrete in the architecture section and focus on what has been implemented. The other design ideas are well reasoned and should be kept, but I would move them to a new subsection on future architectural work. This will show more clearly the distinction between features you can prove with the prototype and potential benefits which implementation (e.g exploratory OLAPs) may have hidden pitfalls yet to be discovered. </p>
+<p>I have some questions on the choice of Service-Oriented Architecture. I understand the authors wanted to support multiple modelling systems and data formats, and so argue that individual workflow functions should be services to facilitate interoperability.  While I certainly recognize this reasoning (as a developer of the Web Service-based workflow system Apache Taverna), I would also disagree with the argument that simply using SOA means data interoperability is easy.</p>
+<p>## (Lack of) availability</p>
+<p>The article focuses for a large part around development of a prototype. Yet, this prototype seem *not* to be available except for a couple of screenshots. </p>
+<p>From </p>
+<p>&gt; All relevant data that were used or produced for conducting the work presented in a paper must be made FAIR and compliant with the PLOS data availability guidelines prior to submission.</p>
+<p>In addition to a URL,  I would highly recommend the authors to provide Open Source code of the developed prototype. </p>
+<p>An associated Zenodo DOI  can then be used as a Code Citation from the paper.</p>
+</p></div></fieldset>
+<input type="hidden" name="form_build_id" value="form-O5W3QeVzQzeTzcFTFf8MX-abPYBJe-tx2v91Y2g6MDg" />
+<input type="hidden" name="form_id" value="get_submitted_reviews" />
+</div></form></div><br/>                    
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"></div><br/>
+				</fieldset>
+				
+    </div>
+
+    <div id="admin-review">
+			</div>
+
+	<div id="decision">
+			</div>
+
+
+
+
+          <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first"><span><a href="../user/login%3Fdestination=comment%252Freply%252F549%23comment-form.html">Log in</a> to post comments</span></li><li class="camera_ready_files_field_paper last"></li></ul></nav>
+    
+    <section id="comments" class="comment-wrapper">
+
+          <h2 class="title">
+      1 Comment    </h2>
+      
+  <a id="comment-62"></a>
+<article class="comment odd first last clearfix" about="/comment/62#comment-62" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="62.html#comment-62" rel="bookmark">Meta-Review by Editor</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2019-02-06T03:39:08-05:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/tobias-kuhn" typeof="sioc:UserAccount" property="foaf:name" datatype="">Tobias Kuhn</span> on <time datetime="2019-02-06T03:39:08Z"><span class="date-time">Wed, 02/06/2019 - 03:39</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/scholarly-data-analysis-aid-scientific-model-development-0" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p>We have received three complete and interesting reviews that should help you in expanding the paper and fixing the issues identified in the paper. I ask you to consider all the concerns raised by all the reviewers, since they are all very sensitive and important.A major concern, which has been raised by all, is the lack of availability of the data and of the software described in the paper, which is not acceptable for a publication in Data Science. I would strongly suggest to make them available online, following the FAIR principles and also the guidelines used in the ISWC Resource Track (the most recent ones are available at <a href="https://iswc2019.semanticweb.org/call-for-resources-track-papers/">https://iswc2019.semanticweb.org/call-for-resources-track-papers/</a>). For the latter ones, see in particular the section related to availability. Data (e.g. by publishing them in Figshare or Zenodo) and software (e.g. by using the GitHub+Zenodo feature for assigning DOIs to code) should be appropriately cited in the paper, see <a href="https://peerj.com/articles/cs-1/">https://peerj.com/articles/cs-1/</a> and <a href="https://peerj.com/articles/cs-86/">https://peerj.com/articles/cs-86/</a> for extensive discussion on the topic.</p>
+<p>Silvio Peroni (<a href="https://orcid.org/0000-0003-0530-4305">https://orcid.org/0000-0003-0530-4305</a>)</p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F549%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+
+  
+</section>
+
+  </div>
+  </article>
+
+  </div></div>                      </div>
+
+                      
+                    </div>
+                  </div>
+
+                </section>
+
+                
+              </div>
+            </div>
+
+                        
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+    
+          <div id="footer-wrapper">
+        <div class="container clearfix">
+          <footer class="clearfix" role="contentinfo">
+            <div class="region region-footer"><div class="region-inner clearfix"><div id="block-block-16" class="block block-block no-title odd first last block-count-4 block-region-footer block-16" ><div class="block-inner clearfix">  
+  
+  <div class="block-content content"><p style="text-align:center;"><a href="https://www.iospress.nl/disclaimer/" target="_blank">Disclaimer</a> | <a href="https://content.iospress.com/page/privacy" target="_blank">Privacy Policy</a> | Data Science is Published by <a href="http://www.iospress.com" target="_blank">IOS Press</a>, Copyright 2023</p>
+</div>
+  </div></div></div></div>            <p class="attribute-creator"></p>
+          </footer>
+        </div>
+      </div>
+    
+  </div>
+</div>
+  </body>
+</html>

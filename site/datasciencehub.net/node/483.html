@@ -1,0 +1,527 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../paper/automating-semantic-publishing-applying-format-independent-and-language-agnostic-approach.html" />
+<link rel="shortlink" href="483.html" />
+<link rel="shortcut icon" href="../sites/default/files/favicon-96x96.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>Automating the Semantic Publishing - Applying a format-independent and language-agnostic approach for the compositional and iterative semantic enhancement of scholarly articles | Data Science</title>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/system/system.base.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.menus.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.messages.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.core.css?t4kojz");
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/comment/comment.css?t4kojz");
+@import url("https://datasciencehub.net/modules/field/theme/field.css?t4kojz");
+@import url("../sites/all/modules/logintoboggan/logintoboggan.css%3Ft4kojz.css");
+@import url("https://datasciencehub.net/modules/node/node.css?t4kojz");
+@import url("https://datasciencehub.net/modules/search/search.css?t4kojz");
+@import url("https://datasciencehub.net/modules/user/user.css?t4kojz");
+@import url("../sites/all/modules/views/css/views.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/modules/ctools/css/ctools.css%3Ft4kojz.css");
+@import url("../sites/all/modules/ctools/css/modal.css%3Ft4kojz.css");
+@import url("../sites/default/modules/modal_forms/css/modal_forms_popup.css%3Ft4kojz.css");
+@import url("../sites/all/modules/responsive_menus/styles/responsive_menus_simple/css/responsive_menus_simple.css%3Ft4kojz.css");
+@import url("../sites/all/modules/date/date_api/date.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="screen">
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.headings.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.image.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.layout.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/themes/corolla/css/html-elements.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/forms.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/tables.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/page.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/articles.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/comments.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/fields.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/blocks.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/navigation.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/corolla.settings.style.css%3Ft4kojz.css");
+@import url("../sites/default/files/color/corolla-80fb2671/colors.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="print">
+@import url("../sites/all/themes/corolla/css/print.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/default/files/adaptivetheme/corolla_files/corolla.responsive.layout.css%3Ft4kojz.css" media="only screen" />
+<style type="text/css" media="screen">
+@import url("../sites/default/files/adaptivetheme/corolla_files/corolla.fonts.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.custom.css%3Ft4kojz.css" media="only screen" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.portrait.css%3Ft4kojz.css" media="only screen and (max-width:320px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.landscape.css%3Ft4kojz.css" media="only screen and (min-width:321px) and (max-width:480px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.portrait.css%3Ft4kojz.css" media="only screen and (min-width:481px) and (max-width:768px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.landscape.css%3Ft4kojz.css" media="only screen and (min-width:769px) and (max-width:1024px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.desktop.css%3Ft4kojz.css" media="only screen and (min-width:1025px)" />
+
+<!--[if lt IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/default/files/adaptivetheme/corolla_files/corolla.lt-ie9.layout.css?t4kojz");
+</style>
+<![endif]-->
+
+<!--[if lte IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/all/themes/corolla/css/ie-lte-9.css?t4kojz");
+</style>
+<![endif]-->
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-extend-3.4.0.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/drupal.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ui/jquery.ui.core.min.js?v=1.8.7"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.cookie.js?v=1.0"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.form.js?v=2.52"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form-single-submit.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ajax.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/default/modules/jquery_update/js/jquery_update.js%3Fv=0.0.1"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/progress.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/all/modules/ctools/js/modal.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/default/modules/modal_forms/js/modal_forms_popup.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/responsive_menus/styles/responsive_menus_simple/js/responsive_menus_simple.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js%3Ft4kojz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-107867597-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="../sites/all/modules/field_group/field_group.js%3Ft4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/tableheader.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/collapse.js?v=7.98"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"corolla","theme_token":"0g30yCR6fg-cOOgp-AhlseZHo3Pc1wdxhXqqUJFJX7s","jquery_version":"default","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/form-single-submit.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/default\/modules\/jquery_update\/js\/jquery_update.js":1,"misc\/progress.js":1,"sites\/all\/modules\/ctools\/js\/modal.js":1,"sites\/default\/modules\/modal_forms\/js\/modal_forms_popup.js":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/js\/responsive_menus_simple.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/field_group\/field_group.js":1,"misc\/tableheader.js":1,"misc\/collapse.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ctools\/css\/modal.css":1,"sites\/default\/modules\/modal_forms\/css\/modal_forms_popup.css":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/css\/responsive_menus_simple.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.headings.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.image.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/corolla\/css\/html-elements.css":1,"sites\/all\/themes\/corolla\/css\/forms.css":1,"sites\/all\/themes\/corolla\/css\/tables.css":1,"sites\/all\/themes\/corolla\/css\/page.css":1,"sites\/all\/themes\/corolla\/css\/articles.css":1,"sites\/all\/themes\/corolla\/css\/comments.css":1,"sites\/all\/themes\/corolla\/css\/fields.css":1,"sites\/all\/themes\/corolla\/css\/blocks.css":1,"sites\/all\/themes\/corolla\/css\/navigation.css":1,"sites\/all\/themes\/corolla\/css\/fonts.css":1,"sites\/all\/themes\/corolla\/css\/corolla.settings.style.css":1,"sites\/all\/themes\/corolla\/color\/colors.css":1,"sites\/all\/themes\/corolla\/css\/print.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.responsive.layout.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.fonts.css":1,"sites\/all\/themes\/corolla\/css\/responsive.custom.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.desktop.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.lt-ie9.layout.css":1,"sites\/all\/themes\/corolla\/css\/ie-lte-9.css":1}},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E"},"modal-popup-small":{"modalSize":{"type":"fixed","width":500,"height":150},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-medium":{"modalSize":{"type":"fixed","width":550,"height":450},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-large":{"modalSize":{"type":"scale","width":0.8,"height":0.8},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"responsive_menus":[{"toggler_text":"\u2630 Menu","selectors":["#block-system-main-menu"],"media_size":"935","media_unit":"px","absolute":"1","remove_attributes":"1","responsive_menus_style":"responsive_menus_simple"}],"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/search\/node":true,"\/node\/483":true},"field_group":{"fieldset":"full"},"ctools-sample-style":{"modalSize":{"type":"fixed","width":1098,"height":500,"addWidth":20,"addHeight":15},"modalOptions":{"opacity":0.5,"background-color":"#000"},"animation":"fadeIn","modalTheme":"CToolsSampleModal","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/ctools_ajax_sample\/images\/ajax-loader.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E"},"adaptivetheme":{"corolla":{"layout_settings":{"bigscreen":"three-col-grail","tablet_landscape":"three-col-grail","tablet_portrait":"one-col-vert","smalltouch_landscape":"one-col-vert","smalltouch_portrait":"one-col-stack"},"media_query_settings":{"bigscreen":"only screen and (min-width:1025px)","tablet_landscape":"only screen and (min-width:769px) and (max-width:1024px)","tablet_portrait":"only screen and (min-width:481px) and (max-width:768px)","smalltouch_landscape":"only screen and (min-width:321px) and (max-width:480px)","smalltouch_portrait":"only screen and (max-width:320px)"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]>
+<script src="https://datasciencehub.net/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?t4kojz"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-483 node-type-submit-paper site-name-hidden atr-7.x-3.x atv-7.x-3.1 lang-en site-name-data-science section-paper color-scheme-custom corolla bs-n bb-n mb-dd rc-6 rct-6">
+  <div id="skip-link" class="nocontent">
+    <a href="483.html#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="page-wrapper">
+  <div id="page" class="page ssc-n ssw-n ssa-l sss-n btc-n btw-b bta-l bts-n ntc-n ntw-b nta-l nts-n ctc-n ctw-b cta-l cts-n ptc-n ptw-b pta-l pts-n">
+
+          <div id="menu-bar-wrapper">
+        <div class="container clearfix">
+          <div id="menu-bar" class="nav clearfix"><nav id="block-system-main-menu" class="block block-system block-menu menu-wrapper menu-bar-wrapper clearfix odd first block-count-1 block-region-menu-bar block-main-menu"  role="navigation">  
+      <h2 class="element-invisible block-title">Main menu</h2>
+  
+  <ul class="menu clearfix"><li class="first leaf menu-depth-1 menu-item-757"><a href="../content/about-data-science.html">About</a></li><li class="leaf menu-depth-1 menu-item-758"><a href="../content/editors.html">Editorial Board</a></li><li class="leaf menu-depth-1 menu-item-1559"><a href="../content/submit-manuscript.html">Submit Manuscript</a></li><li class="leaf menu-depth-1 menu-item-1612"><a href="../content/calls.html">Calls</a></li><li class="leaf menu-depth-1 menu-item-759"><a href="../content/guidelines-authors.html">For Authors</a></li><li class="leaf menu-depth-1 menu-item-760"><a href="../content/guidelines-reviewers.html">For Reviewers</a></li><li class="leaf menu-depth-1 menu-item-582"><a href="../underreview.html" title="Under Review">Under Review</a></li><li class="leaf menu-depth-1 menu-item-583"><a href="../reviewed.html" title="">Reviewed</a></li><li class="last leaf menu-depth-1 menu-item-1611"><a href="../ReviewedAccepted.html" title="">Accepted</a></li></ul>
+  </nav><div id="block-orcid-login-orcid-login" class="block block-orcid-login no-title menu-wrapper menu-bar-wrapper clearfix even last block-count-2 block-region-menu-bar block-orcid-login" >  
+  
+  <p style="background-color: #003b3a; float:right;"><a style="vertical-align: middle; color: white; padding: 10px; display: inline-block; text-decoration: none;" href="https://orcid.org/oauth/authorize?client_id=APP-223SGGDDO35LKOT2&amp;response_type=code&amp;scope=%2Fauthenticate&amp;redirect_uri=https%3A%2F%2Fdatasciencehub.net%2F&amp;state=eyJyZWRpcmVjdCI6Im5vZGVcLzQ4MyJ9"><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle;"/> Log In with ORCID</a></p>
+  </div></div>        </div>
+      </div>
+    
+    <div id="header-wrapper">
+      <div class="container clearfix">
+	        <header class="clearfix with-logo" role="banner">
+
+                      <div id="branding" class="branding-elements clearfix">
+
+                              <div id="logo">
+                  <a href="../index.html"><img class="site-logo" typeof="foaf:Image" src="../sites/default/files/DS_LOGO_vertical.png" alt="Data Science" /></a>                </div>
+              
+                              <div class="element-invisible h-group" id="name-and-slogan">
+
+                                      <h1 class="element-invisible" id="site-name"><a href="../index.html" title="Home page">Data Science</a></h1>
+                  
+                  
+                </div>
+              
+            </div>
+          
+          
+        </header>
+
+      </div>
+    </div>
+
+          <div id="top-panels-wrapper">
+        <div class="container clearfix">
+          <!-- Three column 3x33 Gpanel -->
+          <div class="at-panel gpanel panel-display three-3x33 clearfix">
+                                                          </div>
+        </div>
+      </div>
+    
+    
+    
+    <div id="content-wrapper">
+      <div class="container">
+
+        <div id="columns">
+          <div class="columns-inner clearfix">
+
+            <div id="content-column">
+              <div class="content-inner">
+
+                
+                <section id="main-content" role="main">
+
+                  
+                  <div class="content-margin">
+                    <div class="content-style">
+
+                      
+                      
+                      
+                                              <header class="clearfix">
+                          <h1 id="page-title">
+                            Automating the Semantic Publishing - Applying a format-independent and language-agnostic approach for the compositional and iterative semantic enhancement of scholarly articles                          </h1>
+                        </header>
+                      
+                      
+                      
+                      <div id="content">
+                        <div class="region region-content"><div id="block-system-main" class="block block-system no-title odd first last block-count-3 block-region-content block-main" >  
+  
+  <article id="node-483" class="node node-submit-paper article odd node-lang-en node-full ia-n clearfix" about="/paper/automating-semantic-publishing-applying-format-independent-and-language-agnostic-approach" typeof="sioc:Item foaf:Document" role="article">
+  <div class="node-inner">
+
+
+
+              <header class="node-header">
+
+        
+        
+      </header>
+        <span property="dc:title" content="Automating the Semantic Publishing - Applying a format-independent and language-agnostic approach for the compositional and iterative semantic enhancement of scholarly articles" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="2" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+    <div class="node-content">
+        
+      <h3>Tracking #: 483-1463</h3>          								<fieldset>
+					<!-- legend>
+						<span class="fieldset-legend">Paper Data</span>
+					</legend -->
+
+					
+
+
+					
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><h5>Authors:</h5><br/><form action="483.html" method="post" id="authors-table-form-anonymus" accept-charset="UTF-8"><div><div id="authors_Container"><table class="sticky-enabled">
+ <thead><tr><th></th><th>Name</th><th>ORCID</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-1099">
+  <input type="checkbox" id="edit-authors-1099" name="authors[1099]" value="1099" class="form-checkbox" />
+</div>
+</td><td>Silvio Peroni</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0003-0530-4305" target="_blank">https://orcid.org/0000-0003-0530-4305</a></td> </tr>
+</tbody>
+</table>
+</div><input type="hidden" name="author_nd" value="483" />
+<input type="hidden" name="author_vd" value="1463" />
+<input type="hidden" name="form_build_id" value="form-hT_XudgyG9rFd3xrk5VyKMheR2vXgwfD4JzDaqsgRGE" />
+<input type="hidden" name="form_id" value="authors_table_form_anonymus" />
+</div></form><hr/></div><br/>
+
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-editor field-type-user-reference field-label-above view-mode-full"><h2 class="field-label">Responsible editor:&nbsp;</h2><div class="field-items"><div class="field-item even">Michel Dumontier</div></div></section></div><br/>
+					                    <div style="background-color: #E3E5E3;border-radius:5px;padding-top:4px;padding-bottom:4px;padding-left:6px;">
+					<section class="field field-name-field-submission-type field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Submission Type:&nbsp;</h2><div class="field-items"><div class="field-item even">Position Paper</div></div></section><section class="field field-name-field-abstract field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Abstract:&nbsp;</h2><div class="field-items"><div class="field-item even">The Semantic Publishing concerns the use of Web and Semantic Web technologies and standards for enhancing a scholarly work semantically so as to improve its discoverability, interactivity, openness and (re-)usability for both humans and machines. Recently, people suggest that the semantic enhancement of a scholarly work should be actually done by the authors of that scholarly work and it should be considered as part of the contribution and reviewed properly. However, the main bottleneck for the concrete adoption of this approach is that authors should always spend additional time and effort for actually adding such semantic annotations, and often they do not have that time available. Thus, the most pragmatic way to convince authors in doing this additional job is to have services that enable the automatic annotation of their scholarly papers by parsing the content that they have already written, thus reducing the total time spent by them to few clicks for adding the semantic annotations. In this paper I propose a generic approach called compositional and iterative semantic enhancement (CISE) that enables the automatic enhancement of scholarly papers with additional semantic annotations in a way that is independent from the markup used for storing scholarly papers and the natural language used for writing their content. In addition, I report the outcomes of some experiments that suggest that the approach proposed has a quite good margin of being feasibly implemented.</div></div></section><section class="field field-name-field-pdf field-type-file field-label-above view-mode-full"><h2 class="field-label">Manuscript:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="Package icon" title="application/zip" src="https://datasciencehub.net/modules/file/icons/package-x-generic.png" /> <a href="../system/files/ds-paper-483.zip" type="application/zip; length=1456785">ds-paper-483.zip</a></span></div></div></section><div class="view view-revised-verision view-id-revised_verision view-display-id-entity_view_1 view-dom-id-ebb4d1265811088f1c3c20ef72ca4f63">
+      
+      <div class="view-header">
+      <b>Revised Version:</b>    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="../paper/automating-semantic-publishing.html">Automating Semantic Publishing</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> <section class="field field-name-field-tags field-type-taxonomy-term-reference field-label-above view-mode-full"><h2 class="field-label">Tags:&nbsp;</h2><ul class="field-items"><li class="field-item even">Reviewed</li></ul></section><section class="field field-name-field-data-repository-urls field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Data repository URLs:&nbsp;</h2><div class="field-items"><div class="field-item even"><p><strong>RDF representations of manuscript content:</strong> <a href="https://raw.githubusercontent.com/data-science-hub/data/master/rdf/ds-rdf-483.ttl">https://raw.githubusercontent.com/data-science-hub/data/master/rdf/ds-rdf-483.ttl</a></p>
+</div></div></section><section class="field field-name-field-date-of-submission field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Submission:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-05-31T00:00:00-04:00">Wednesday, May 31, 2017</span></div></div></section><section class="field field-name-field-date-of-decision field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Decision:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-06-29T00:00:00-04:00">Thursday, June 29, 2017</span></div></div></section><br><br><b>Nanopublication URLs:</b> <br>                    </div>
+                    <br/>
+
+					
+                    
+                    <div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-decision field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Decision:&nbsp;</h2><div class="field-items"><div class="field-item even">Undecided</div></div></section></div><br/>                    <div id="review">
+                    		                    	</div>
+
+					
+										<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><b>Solicited Reviews:</b><br/><form action="483.html" method="post" id="get-submitted-reviews" accept-charset="UTF-8"><div><fieldset class="collapsible collapsed form-wrapper" id="edit-fset1"><legend><span class="fieldset-legend">Review #1 <strong>submitted on 09/Jun/2017</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Stephen Pettifer</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-1809-5621" target="_blank">https://orcid.org/0000-0002-1809-5621</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Weak</br><b style="color:#f39222">Suggested Decision: </b> Undecided</br><b style="color:#f39222">Technical Quality of the paper:</b> Unable to judge<br/><b style="color:#f39222">Presentation:</b> Weak<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> Moderate significance<br/><b style="color:#f39222">Background:</b> Reasonable<br/><b style="color:#f39222">Novelty:</b> Clear novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences: </b><br/><p>This article proposes a framework or approach to automatic annotation of scholarly articles that begins with an author writing regular prose, and results through an incremental process in a fully semantic marked-up document.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>There's a really important story here trying to get out; if the story can be freed from what I think are unnecessary formalisms then this could be an important piece of work.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>I should make it clear before I begin that I’ve worked with the author before, and have co-authored a paper with him. I have no connections beyond that. </p>
+<p>I should also confess at the start that I found this paper difficult to read and understand. Much of that is because it requires more knowledge of formalisms than I have; part of it I suspect is because of issues with the article itself. It’s difficult for me to judge how much is the former and how much is the latter, so the rest of this review should be read with that in mind. My review doesn't follow the standard structure requested for Data Science reviews because I'd end up writing 'N/A' or 'don't know' against most of the headings. Instead I'm returning a narrative verdict in the hope that this is helpful to the author.</p>
+<p>The general gist of the article is that it proposes a framework or approach to automatic annotation of scholarly articles that begins with an author writing regular prose, and results through an incremental process in a fully semantic marked-up document. </p>
+<p>This is a laudable aim — and I agree wholeheartedly that providing authors with tools to simplify the process of adding machine-readable semantics to articles is crucial if we are to move in that direction. </p>
+<p>This is also an exceptionally ambitious aim, and one which seems a long way off being reached by existing technology. My difficulty with this article — probably a misunderstanding — is that it seems to suggest that this is already achievable (although the suggestion in surrounded by, in my opinion, unnecessarily complex and slightly flakey discussion of Curry-Howard isomorphism) and that the rest of the aims can be achieved by layering on further semantic transformations. </p>
+<p>I think if this article was saying “here is a collection of ontologies and frameworks that form a kind of hierarchy that could in an ideal world be used to describe the perfect semantic publication; and maybe you can even reason about the relationships between the layers” then I’d be a lot more comfortable with it. As it stands, either I’m not following the formal glue that’s used to hold the different steps together, or perhaps the formal glue isn’t quite as cohesive as it might be. Or some combination of these two things. </p>
+<p>Overall I think there’s an important message in here, but it’s currently squirming to get out a bit. </p>
+<p>This may sound somewhat negative, but I really do think the author has something important to say here. I’d suggest simplifying the formalisms (I really don’t think they add clarity), and including concrete examples. I think then it could make an excellent position paper that unifies several already significant pieces of work. </p>
+<p>A few specific comments: </p>
+<p>"Automating the Semantic Publishing" -&gt; should this be “Automating Semantic Publishing” ? I’m not sure what the definite article is doing here.<br />
+I think the sub title is too dense for a general CS audience (or even for a ‘data science’ audience). It may make sense to someone that’s into formal methods. Maybe. </p>
+<p>Gutemburg -&gt; Gutenburgh</p>
+<p>Throughout the article needs a fair amount of attention to the written English; too many minor infelicities to list here. Because the article is technically dense, these risk tripping the reader rather too often.</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/></p></div></fieldset>
+<fieldset class="collapsible collapsed form-wrapper" id="edit-fset2"><legend><span class="fieldset-legend">Review #2 <strong>submitted on 17/Jun/2017</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Karin Verspoor</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-8661-1544" target="_blank">https://orcid.org/0000-0002-8661-1544</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Good</br><b style="color:#f39222">Suggested Decision: </b> Undecided</br><b style="color:#f39222">Technical Quality of the paper:</b> Average<br/><b style="color:#f39222">Presentation:</b> Good<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> Moderate significance<br/><b style="color:#f39222">Background:</b> Incomplete or inappropriate<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences: </b><br/><p>This opinion paper introduces the reader to a proposal for formally modelling the structure of scholarly papers, and supporting combinations of lower-level structures to imply higher-level structures. The author argues that this approach will allow automatic enrichment of documents with semantic information, based on a sort of projection from syntactic patterns to the semantics implied implied by those patterns.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>The notion of, as I have understood it, reasoning over combinations of annotations to infer higher-order semantic types is interesting. While the discussion here focuses mostly on formal characterisation of the relationships/patterns, I can imagine that this could also be relevant to empirically derived models, e.g. statistical models derived from data mining/machine learning over semantic features. The author's comment that a majority of authors follow consistent patterns does not surprise me and I agree could be leveraged (whether rule-based or statistical) for compliance checks or feedback purposes. It makes sense to think of the structure of documents as compositional and the approach outlined here enables that.</p>
+<p>There is pragmatic value in the approach; to the extent that semantic characteristics can be inferred from a document itself rather than demanding additional manual effort, the more likely those characteristics will be captured and represented.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>There is relevant literature that is not considered here, including the role of writing assistants for semantic enrichment [1] as well as the literature on web annotation and provenance from various W3C communities [2]-[3] and indeed the linguistic annotation communities (which often use stand-off annotation) [9]. Some work on compositionality in such models also exists [4]. The authors further mention "several tools that have been developed for addressing the automatic annotation..." without providing any details or references. I note that there is substantial work on issues such as document zoning [5] and rhetorical structure [6] and even citation analysis [7-8]. Finally the more recent and less well-developed writing of Robert Allen may be relevant [11]. While perhaps these don't (all) address the author's desire for the analysis to be independent of the language of the document content, and may not be amenable to algorithmic processing, they are certainly relevant to the broader context and argumentation -- at least for understanding how the proposals here differ. </p>
+<p>Note that the citation provided for categorial grammar is probably not the canonical/most relevant citation, see [10] inter alia.</p>
+<p>In addition, I found some of the aspects of the theory and algorithms described in section 4.1 not entirely clear. The interpretation of some of the core structural patterns as named isn't intuitive, and the notion of "coherence" that is relevant to pattern assignment is not entirely clear, especially given that every possible combination of t,s,T exists. </p>
+<p>Regarding the point related to syntactical visualisation -- is this about generalisation of the patterns from a few examples? I would see this less as "compliance" (implying guidelines exist that are expected to be followed) and more as conventions that exist.</p>
+<p>I also wonder about the use of the term "validity" in the Conclusions. In what way could this approach (as a whole) be validated as opposed to shown to apply in particular contexts?</p>
+<p>[1] DOI: 10.1186/1471-2105-11-103<br />
+[2] <a href="https://www.w3.org/TR/annotation-model/">https://www.w3.org/TR/annotation-model/</a><br />
+[3] <a href="https://www.w3.org/TR/prov-dm/">https://www.w3.org/TR/prov-dm/</a><br />
+[4] DOI: 10.1186/2041-1480-4-38<br />
+[5] lots of citations -- a cursory search reveals:<br />
+Hollingsworth, Bill, Ian Lewin, and Dan Tidhar. "Retrieving hierarchical text structure from typeset scientific articles–a prerequisite for e-science text mining." Proc. of the 4th UK E-Science All Hands Meeting. 2005.<br />
+Taghva, Kazem, Allen Condit, and Julie Borsack. "Autotag: A tool for creating structured document collections from printed materials." Electronic Publishing, Artistic Imaging, and Digital Typography. Springer Berlin Heidelberg, 1998. 420-431.<br />
+Kim, Jongwoo, Daniel X. Le, and George R. Thoma. "Automated labeling algorithms for biomedical document images." Proc. 7th World Multiconference on Systemics, Cybernetics and Informatics. Vol. 5. 2003.<br />
+[6] <a href="https://doi.org/10.1093/bioinformatics/bts071">https://doi.org/10.1093/bioinformatics/bts071</a><br />
+[7] <a href="http://clair.si.umich.edu/~radev/papers/192.pdf">http://clair.si.umich.edu/~radev/papers/192.pdf</a><br />
+[8] Nakov, P. I., Schwartz, A. S., and Hearst, M. A. 2004. Citances: Citation sentences for semantic analysis of bioscience text. In In Proceedings of the SIGIR’04 workshop on Search and Discovery in Bioinformatics.<br />
+[9] again, lots of citations. representative:<br />
+Bird, Steven, and Mark Liberman. "A formal framework for linguistic annotation." Speech communication 33.1 (2001): 23-60.<br /><a href="https://doi.org/10.1093/bioinformatics/bts071">https://doi.org/10.1093/bioinformatics/bts071</a><br />
+Chiarcos, Christian, Sebastian Nordhoff, and Sebastian Hellmann, eds. Linked data in linguistics: Representing and connecting language data and language metadata. Springer Science &amp; Business Media, 2012.<br />
+BioC:  <a href="https://doi.org/10.1093/database/bat064">https://doi.org/10.1093/database/bat064</a><br />
+[10] Steedman, Mark. The syntactic process. Vol. 24. Cambridge: MIT press, 2000.<br />
+[11] e.g. DOI: 10.1007/978-3-319-49304-6_26</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>Note there are a few typos and language usage issues. I would suggest "the Semantic Publishing" should be simply "Semantic Publishing" in the title and elsewhere.<br />
+Others (not exhaustive)<br />
+Montegue -&gt; Montague<br />
+dependent -&gt; dependant<br />
+"for automatically generate" -&gt; "to automatically generate"<br />
+What is "a rhetoric/rhetorics" (i.e. as a noun)?<br />
+What is an "easily complex" operation?<br />
+Reconsider use of "actually" in Abstract (can be safely removed)</p>
+</p></div></fieldset>
+<fieldset class="collapsible collapsed form-wrapper" id="edit-fset3"><legend><span class="fieldset-legend">Review #3 <strong>submitted on 22/Jun/2017</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Tobias Kuhn</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-1267-0234" target="_blank">https://orcid.org/0000-0002-1267-0234</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Average</br><b style="color:#f39222">Suggested Decision: </b> Undecided</br><b style="color:#f39222">Technical Quality of the paper:</b> Average<br/><b style="color:#f39222">Presentation:</b> Average<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> High significance<br/><b style="color:#f39222">Background:</b> Reasonable<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences: </b><br/><p>This paper introduces a methodology called "compositional and iterative semantic enhancement" (CISE) and argues that it is feasible and worthwhile to automatically enhance scholarly papers with semantic markup. This should be done in several stages, starting from low-level syntactic mappings to the highest levels of scientific arguments and the position of a paper in the whole discipline.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>- Interesting and controversial claims<br />
+- Built upon an impressive collection of previous work in this area<br />
+- Addresses highly relevant problem</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>- The theoretical links are not convincing<br />
+- Lack of discussion on limitations, possible downsides, and assumptions made</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>I think this paper addresses a highly relevant problem, and the author is able to build upon an impressive collection of previous work in this area. The paper furthermore makes interesting and controversial claims, which is great for a position paper. However, I found the theoretical connection to the principle of compositionality and the Curry-Howard isomorphism not convincing. I think Section 4 is the most interesting part, but unfortunately only the lowest layers are described in detail (which, in my view, are the least interesting for the main point the paper is making). I suggest to put less focus on the theoretical links and more on the practical experiences and preliminary findings at the higher levels.</p>
+<p>Specifically, I didn't understand why the Curry-Howard isomorphism is relevant to the points of this paper. Unlike the principle of compositionality, it doesn't seem to be adding anything to the argument (to the point where I could follow it).</p>
+<p>I don't think, however, that the principle of compositionality can really carry all the argumentative weight that is put onto it here. After all, there is no final proof that this principle really holds for natural languages in their entirety. There are in fact many known cases where compositionality doesn't hold, such as for idiomatic expressions or sarcasm.</p>
+<p>Furthermore, even if we assert the principle of compositionality as a fact, it would only tell us that we could in principle semantically parse papers in an automated fashion, but it would not allow us to conclude that this is feasible in any realistic setting. In fact, over and over again, all kinds of ambitious natural language processing has been proven to be very difficult and often infeasible with current technology.</p>
+<p>This leads me to what I think is the second main shortcoming of the paper: There is basically no discussion on the limitations of the approach and on many of the implicit assumptions made. Specifically:</p>
+<p>- At what accuracy do you think we can perform such a full parse of scientific papers? Automated approaches are never perfect (often with accuracy levels below 70% for non-trivial NLP tasks), and this seems to heavily affect the arguments made in the paper.</p>
+<p>- When do you think we will be able to perform complete semantic analyses of scientific papers? In 5, 10, 50 years from now? What should we be doing until then?</p>
+<p>- Sometimes authors write in ambiguous sentences (also for human readers), and deliberately or accidentally leave out important information. With your approach, we are stuck with incomplete information in these cases, whereas involving authors in the process could solve this. This shortcoming of the approach is not discussed.</p>
+<p>So, in summary, I think the paper has clear merits as a position paper but needs to improve on the aspects explained above.</p>
+<p>Below I list some more minor comments:</p>
+<p>- The "iterative" part of the "compositional and iterative semantic enhancement" is not really explained. Is "iterative" referring to applying one layer after the other? To me, this wouldn't be an intuitive use of the term "iterative". I think "iterative" would imply to go through all the layers (or the individual layers) several times.</p>
+<p>- I think "the" in the title should be omitted: "Automating Semantic Publishing" instead of "Automating the Semantic Publishing" (and same for the first sentence of the abstract)</p>
+<p>- In general, I suggest to have a native speaker check the document with respect to grammar and style. At several places, I think that some of the used grammar constructs are awkward if not incorrect, but not being a native speaker either, I don't feel confident in my own judgment in what might be borderline cases or simply a matter of taste.</p>
+<p>- The first paragraph of Section 1 contains many links but no citations (except for the last sentence) that would provide evidence for claims like "... have resulted in ... acceleration of the publishing workflow".</p>
+<p>- "... which is very close to the recent proposal of the FAIR principles for scholarly data": Very close in what sense? What are the differences?</p>
+<p>- "generally only a very low number of semantic statements (if none at all) is specified by the authors": Can you be more specific? What are the average/median/maximum values?</p>
+<p>- "incentives such us prizes" &gt; "such as"</p>
+<p>- With respect to the paragraphs connecting to Genuine Semantic Publishing, I am not sure whether an average reader is given enough background to understand this discussion. Maybe the issue of "should we or shouldn't we require authors to make a significant extra effort?" could be stated more clearly and more explicitly.</p>
+<p>- "The idea is that the aforementioned approaches can work correctly only if used with documents stored in a particular format ...": Do these *approaches* really only work with a particular format, or is it just the current *implementations* of these approaches? I think this is an important difference.</p>
+<p>- Contrary to "... if the text to process is written in a particular language such as English, as happens for FRED [9]", I read on the linked website that "FRED is [...] able to parse natural language text in 48 different languages". This should be clarified.</p>
+<p>- "It is worth mentioning that this approach is not merely theoretical, but rather it has been implemented ...": An important qualification here is that is has been *partially* implemented. None of these grammar correctly represent an entire natural language.</p>
+<p>- I didn't understand why "hierarchical markup" is needed as an assumption in Section 3. If you assume that natural language sentences can be automatically parsed at great accuracy (as you seem to be assuming), then certainly you can automatically detect the hierarchical structure of documents as well.</p>
+<p>- "there is no need of having a prior knowledge about the particular natural language used for writing the scholarly article": I don't understand what you mean by "prior knowledge" here. Somebody or something would need some knowledge (in fact deep knowledge) about the language to semantically parse the text at all the layers.</p>
+<p>- Figure 1: I think I understand the meaning of the colors in this figure, but I failed to understand the meaning of the x and y axes. This should be explained better.</p>
+<p>- Section 4: I would have liked to learn a bit more about the ontologies, tools, and existing studies on the layers 4 to 8.</p>
+<p>- Section 4: I would expect some of the most difficult but also most interesting kind of knowledge to extract from a paper to be domain knowledge, i.e. what the authors have found out about the world (e.g. about living organisms in the case of biology). I don't see this aspect anywhere in the 8 presented layers. This seems to be another limitation that is not discussed.</p>
+</p></div></fieldset>
+<input type="hidden" name="form_build_id" value="form-CTlyQFHTVMeY3ks1KaSYhBMrVkP6XrbhcnyUEgb2cL4" />
+<input type="hidden" name="form_id" value="get_submitted_reviews" />
+</div></form></div><br/>                    
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"></div><br/>
+				</fieldset>
+				
+    </div>
+
+    <div id="admin-review">
+			</div>
+
+	<div id="decision">
+			</div>
+
+
+
+
+          <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first"><span><a href="../user/login%3Fdestination=comment%252Freply%252F483%23comment-form.html">Log in</a> to post comments</span></li><li class="camera_ready_files_field_paper last"></li></ul></nav>
+    
+    <section id="comments" class="comment-wrapper">
+
+          <h2 class="title">
+      2 Comments    </h2>
+      
+  <a id="comment-18"></a>
+<article class="comment odd first clearfix" about="/comment/18#comment-18" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="../comment/18.html#comment-18" rel="bookmark">Metareview by Editor</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2017-06-29T01:35:24-04:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/tobias-kuhn" typeof="sioc:UserAccount" property="foaf:name" datatype="">Tobias Kuhn</span> on <time datetime="2017-06-29T01:35:24Z"><span class="date-time">Thu, 06/29/2017 - 01:35</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/automating-semantic-publishing-applying-format-independent-and-language-agnostic-approach" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p>The manuscript presents an important idea that needs to be further developed to be acceptable for publication. In particular, the authors should address concerns about the unnecessarily complex and unconvincing argumentation, the lack of relevant literature, and the need to discuss assumptions and limitations.</p>
+<p>Michel Dumontier (<a href="http://orcid.org/0000-0003-4727-9435">http://orcid.org/0000-0003-4727-9435</a>)</p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F483%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+<a id="comment-20"></a>
+<article class="comment even last clearfix" about="/comment/20#comment-20" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="../comment/20.html#comment-20" rel="bookmark">Anonymous Review, submited after decision</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2017-07-03T17:15:29-04:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/michel-dumontier" typeof="sioc:UserAccount" property="foaf:name" datatype="">Michel Dumontier</span> on <time datetime="2017-07-03T17:15:29Z"><span class="date-time">Mon, 07/03/2017 - 17:15</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/automating-semantic-publishing-applying-format-independent-and-language-agnostic-approach" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p><b><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#f39222">Overall Impression:</span></span></b><span style="background:#fbfbfb"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#2e2e2e"> Weak</span></span></span><br /><b><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#f39222">Suggested Decision: </span></span></b><span style="background:#fbfbfb"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#2e2e2e">Reject</span></span></span><br /><b><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#f39222">Technical Quality of the paper:</span></span></b><span style="background:#fbfbfb"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#2e2e2e"> N/A</span></span></span><br /><b><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#f39222">Presentation:</span></span></b><span style="background:#fbfbfb"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#2e2e2e"> Weak</span></span></span><br /><b><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#f39222">Reviewer`s confidence:</span></span></b><span style="background:#fbfbfb"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#2e2e2e"> High</span></span></span><br /><b><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#f39222">Significance:</span></span></b><span style="background:#fbfbfb"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#2e2e2e"> Moderate significance</span></span></span><br /><b><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#f39222">Background:</span></span></b><span style="background:#fbfbfb"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#2e2e2e"> Weak</span></span></span><br /><b><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#f39222">Novelty:</span></span></b><span style="background:#fbfbfb"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#2e2e2e"> N/A</span></span></span><br /><b><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#f39222">Data availability:</span></span></b><span style="background:#fbfbfb"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#2e2e2e"> N/A </span></span></span> <br /><b><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#f39222">Length of the manuscript:</span></span></b><span style="background:#fbfbfb"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#2e2e2e"> N/A</span></span></span></p>
+<p style="margin-bottom:.25in"><b><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#f39222">Summary of paper in a few sentences: </span></span></b></p>
+<p style="text-align:justify"><span style="text-justify:inter-ideograph"><span style="font-family:&quot;Arial&quot;,sans-serif">The author is submitting a position paper; I understand this to be a position statement paper, not an opinion but a paper in which the author states a position wrt to a problem of interest. However, it is not clear whether this is a position statement wrt semantic publications, or if this is a paper in which the author is presenting a framework.  If the former, then the author fails to present a coherent position. If the latter, then the author fails in presenting a framework.  Beyond these issues, there is the problem of readability. The paper is not clearly written, the English is not acceptable of publication standards, the paper is not well organized, there are typos, problems with punctuation, lack of examples, etc. In addition, it is not easy to understand the real scope of this paper, I am guessing the author is really trying to get a first impression about an idea; however, the idea is poorly presented. The problem is also not well discussed and again the paper is very disorganized –this is probably because the author is not clear as to the intention of the paper. The author should also consider the whole publication lifecycle; at the very least the author should somehow consider the publication workflow. </span></span></p>
+<p style="margin-bottom:.25in"><b><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#f39222">Reasons to accept: </span></span></b></p>
+<p style="margin-bottom:.25in"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#2e2e2e">Although the domain of the paper, semantics for scholarly papers, is interesting I really don’t think that this paper is ready to be accepted. The author needs to put some work in the paper and resubmit. This is interesting work that should be published but as it is right now it is not ready. The approach is interesting but again, it needs work before it is published. </span></span></p>
+<p style="margin-bottom:.25in"><b><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#f39222">Reasons to reject: </span></span></b></p>
+<p style="text-align:justify"><span style="text-justify:inter-ideograph"><span style="font-family:&quot;Arial&quot;,sans-serif">The paper lacks scope, it is difficult to read, the English doesn’t make it easy for the reader to understand the paper. The author makes quite a few unsubstantiated claims that should be better supported; there is quite a lot of literature that is not referenced in this paper and that is quite relevant. There are also commercial applications that should be analyzed against the ideas presented by the author, e.g. nature science graph, and others that I give in my review. </span></span></p>
+<p style="text-align:justify"><span style="text-justify:inter-ideograph"><span style="font-family:&quot;Arial&quot;,sans-serif">The author is submitting a “position” paper; I understand this to be a position statement paper. However, it is not clear whether this is a position statement wrt semantic publications, or if this is a paper in which the author is presenting a framework.  If the former, then the author fails to present a coherent position. If the latter, then the author fails in presenting a framework.  Beyond these issues, there is the problem of readability. The paper is not clearly written, the English is not acceptable of publication standards, the paper is not well organized, there are typos, problems with punctuation, etc. In addition, it is not easy to understand the real scope of this paper, I am guessing the author is really trying to get a first impression about an idea; however, the idea is poorly presented. The problem is also not well discussed and again the paper is very disorganized –this is probably because the author is not clear as to the intention of the paper. </span></span></p>
+<p style="text-align:justify"><span style="text-justify:inter-ideograph"><span style="font-family:&quot;Arial&quot;,sans-serif">The author touches on semantic publications but does not contextualize the work within any publication workflow. How are we getting there? Is this an approach that will work only for new publications that are born within the idea/framework/context that the author is presenting? </span></span></p>
+<p style="margin-bottom:12.0pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="text-autospace:none"><span style="font-family:&quot;Arial&quot;,sans-serif">The author does not seem to be well aware of current publication platforms that are doing many of the things that he is describing; to name but a few: </span><a href="https://science.ai/overview"><span style="font-family:&quot;Arial&quot;,sans-serif">https://science.ai/overview</span></a><span style="font-family:&quot;Arial&quot;,sans-serif">, the work at elife labs with lens and R markdown, semantics for Jupiter notebooks, nature science graph, Cochrane linked data, ZPID linked data. There is Biotea, this is somehow doing just what the author is describing. Also, close to the Biotea experience there is “</span><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Semantator: Semantic annotator for converting biomedical text to linked data”. There are more examples of work seeking to add semantics to publications. Some address the problem for existing publications; some other authors are working on solutions for novel publications. Either way, all of that is relevant for the work the author is trying to do.</span></span>  </span></span></p>
+<p style="margin-bottom:12.0pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="text-autospace:none"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">There is annotation and NLP written all over the work presented in this paper; something the author is not clear about. For instance, automatic annotation is not perfect, far from it; also, there is a lot ambiguity in domain ontologies –ambiguity that is inherited by the annotations. Has the author considered any of these in his approach? Moreover, if the author is going for reasoning over several annotations from various ontologies then I would like to see a really convincing case. SNOMED and MEDRA, ChEBI and PubCHEM illustrate how this is difficult and may lead to contradictions. A running example could do a lot for this paper. In addition, it is not clear if the author is talking about annotation as NER or annotation using NLP pipelines; in any case, neither one of them gives 100%, so one has to also consider human annotation. If human annotation is involved then what could the task look like? What quality parameters (e.g. inter-annotation agreement) should be considered, will the annotations be part of the semantic layer of the paper or will this be an additional payer somehow attached/related to the paper? </span></span></span></span></p>
+<p style="margin-bottom:12.0pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="text-autospace:none"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">From the authors:</span></span></span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">In recent experiments colleagues and I have done in the context of the SAVE-SD workshops, described in </span></span><a href="483.html#peroni2016"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black"><span style="text-decoration:none"><span style="text-underline:none">[8]</span></span></span></span></a><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">, the clear trend is that, beside a few who actually <i>believe</i> in the Semantic Publishing and even if we made available appropriate incentives (i.e. prizes) for people submitting HTML+RDF scholarly papers, generally only a very low number of semantic statements (if none at all) is specified by the authors. Possible reasons for this behaviour could be the lack of appropriate support (e.g. graphical user interfaces) for facilitating the authors in the annotation of scholarly works with semantic data.” </span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">What is the incentive for the author? Shouldn’t this be the replacement of the typesetting in the publication workflow? Is there a benchmark for tools that can automate the process? Adding the semantics, what advantages? What incentives? When in the publication workflow? Whose work is this? From my experience running a workshop addressing issues in semantics in scientific publications I could see how these are issues that need clarity for everyone. These issues are also related to <i>author's available time</i>, nowbody invests time and effort without first knowing why, what for, and how. </span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Also from the authors</span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">…but rather to have services that do it for them in an <i>automatic fashion</i> by parsing somehow the content that the authors have already written, thus by reducing the entire time spent by them to few clicks for adding the semantic annotations…</span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">sure, this has been addressed in the past by many authors but… it has also been said that automatic annotation has quite a few problems. The accuracy of the annotation and also the quality of ontologies and also the fact that these annotations will come from several ontologies and this leads to the problem of reasoning over multiple overlapping ontologies that mostly likely will bear contradictions. If the author is talking about human annotation then again, there are quite a few issues to address and investigate before doing it. Mark2cure has had relative success but they work in an overly scoped domain with an overly scoped annotation task. Also, how are u planning to define the annotation workflows involving humans and software? </span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">From the authors </span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">“…For instance, one can consider more important to have all the citations in a paper described according to their functions (i.e. the reasons why an author has cited other works), while others can consider more functional to have a formal description of the main argumentative claim of the paper with its evidences…”</span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">This is really interesting but also poorly charted territory in which lots of authors have not really succeeded in the past. Is the author advocating human annotation for the identification of function of the citation or is this some sort of sentiment analysis kind of automated task? </span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">From the authors </span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">“…the SPAR Extractor Suite developed for the </span></span><span style="font-family:&quot;Arial&quot;,sans-serif">RASH format…”</span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif">Interesting, I have checked the SPAR ontologies and as ontologies they model some of this. However, I could not find the SPAR extractor suite. </span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Fred is limited; it is yet unclear how could FRED be applied to a wider context than that described by the authors. </span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">From the authors </span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif">“…<span style="color:black">scholarly documents can be written in different natural languages</span>..</span><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">“</span></span></p>
+<p style="margin-bottom:12.0pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="text-autospace:none"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Do u mean different languages as in English, Italian, Spanish? Or do u mean different narrative structures? If the latter then, what are the narrative structures most commonly used in scientific literature? This has already been studied before. </span></span></span></span></p>
+<p style="margin-bottom:12.0pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="text-autospace:none"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">From the authors </span></span></span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">“</span></span><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">The idea is that each of these syntactic/structural/semantic aspects, that we would like to arise starting from a pure syntactic organisation of document markup, can be defined in fact as standalone languages (e.g. by means of ontologies) with their proper compositional rules and functions.</span></span><span style="font-family:&quot;Arial&quot;,sans-serif">” </span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif">Once again, the author needs examples everywhere. </span></p>
+<p style="margin-bottom:12.0pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="text-autospace:none"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">From the authors </span></span></span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">“…the main constituents they contain are in fact shared among the whole scholarly communication domain...... My hypothesis is that such ways are shared somehow between the various research areas.</span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">….:” </span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">The whole paragraph is really complicated. As just opinions it is fine. For a position statement paper I would expect to see this very well supported. As a paper in which the author is presenting a framework, this needs a lot of work. </span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">From the authors </span></span></p>
+<ul><li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="tab-stops:list .5in"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">[<strong><span style="font-family:&quot;Arial&quot;,sans-serif">hierarchical markup</span></strong>] the sources of the scholarly article are available according to (or can be easily converted into) a document markup language that is appropriate for conveying the typical hierarchical containment proper to scholarly documents (e.g. </span></span></span><code><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">body &gt; section &gt; paragraph</span></span></span></code><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">);</span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="tab-stops:list .5in"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">[<strong><span style="font-family:&quot;Arial&quot;,sans-serif">language agnosticism</span></strong>] there is no need of having a prior knowledge about the particular natural language used for writing the scholarly article;</span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="tab-stops:list .5in"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">[<strong><span style="font-family:&quot;Arial&quot;,sans-serif">layer interdependency</span></strong>] a layer describing a particular conceptualisation of the components of scholarly documents is dependent somehow on the conceptualisation of at least another lower- or higher-level layer;</span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="tab-stops:list .5in"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">[<strong><span style="font-family:&quot;Arial&quot;,sans-serif">inter-domain reuse</span></strong>] several of the structural and semantic aspects typically described in scholarly articles are shared across various research domains;</span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="tab-stops:list .5in"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">[<strong><span style="font-family:&quot;Arial&quot;,sans-serif">intra-domain reuse</span></strong>] scholarly documents of a specific domain always share several structural and semantic aspects between them, even if such aspects are not implicitly adopted by other external domains.</span></span></span></span></span></li>
+</ul><p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Ok. Lets start by saying that strictly speaking these are not hypothesis. Consider writing these a problem statements, research questions or outright hypothesis. </span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">The body&gt;section&gt;paragraph I don’t understand. Everything else in these points is really arguable and needs better backup in the form of references that really support these as assertions. For instance, “there is not need of having a prior…..” perhaps an example could come in handy. The author should focus on a particular domain, select a well-defined corpus of documents and elaborate from there on. </span></span></p>
+<p> </p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">From the author</span></span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">“…Intuitively, following the sketch illustrated in </span></span><a href="483.html#refIllustration0"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black"><span style="text-decoration:none"><span style="text-underline:none">Figure 1</span></span></span></span></a><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">, starting from a low-level definition of the structure of an article, e.g. the organisation of the XML elements that have been used to describe its content (layer 1), it is possible to create rules that describe each XML element according to more general compositional patterns depicting its structures that oblige a specific implicit and unmentioned organisation of the article content (layer 2) – e.g. the fact that there an element can behaves like a block or an inline item. Again, starting from the definitions in the first two layers, it would be possible to characterise the semantics of each XML element according to fixed categories defining its structural behaviour, e.g. paragraph, section, table, figure, etc. (layer 3). Along the same lines, starting from the aforementioned layers, it would be possible to derive the rhetorical organisation of a scholarly paper, e.g. identifying the argumentative role of each section introduced in such paper such as introduction, methods, material, experiment, data, results, conclusions, etc. (layer 4). And so on and so forth.”</span></span></p>
+<p> </p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">This is, IMHO, the most interesting paragraph of the paper. However, the lack of an example just diminishes its importance. Also, the way it is written makes it seem like a lot of opinions. Once again, if this is a position statement paper I would consider this to be part of the overall position. But, even as a position statement the author needs to give the reader more than just his word for unsubstantiated claims. </span></span></p>
+<p> </p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">From the Authors</span></span></p>
+<ol><li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="tab-stops:list .5in"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">syntactic containment (ontology: </span></span></span><a href="http://www.essepuntato.it/2008/12/earmark"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">EARMARK</span></span></span></a> <a href="483.html#diiorio2011"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black"><span style="text-decoration:none"><span style="text-underline:none">[14]</span></span></span></span></span></a><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">) – describing the dominance and containment relations </span></span></span><a href="483.html#sperbergmcqueen2004"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black"><span style="text-decoration:none"><span style="text-underline:none">[19]</span></span></span></span></span></a> <span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">that exist between the various elements and attributes included in the XML sources of scholarly articles (e.g. the fact that a certain element X is contained in another element Y);</span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="tab-stops:list .5in"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">syntactic structures (ontology: </span></span></span><a href="http://www.essepuntato.it/2008/12/pattern"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Pattern Ontology</span></span></span></a> <a href="483.html#diiorio2014"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black"><span style="text-decoration:none"><span style="text-underline:none">[15]</span></span></span></span></span></a><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">) – starting from the previous layer, inferring the particular structural pattern to which each XML element is compliant with (e.g. the fact that all the elements X behave as inline elements, while the elements Y behave as blocks);</span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="tab-stops:list .5in"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">structural semantics (ontology: </span></span></span><a href="http://purl.org/spar/doco"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">DoCO</span></span></span></a> <a href="483.html#constantin2016"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black"><span style="text-decoration:none"><span style="text-underline:none">[16]</span></span></span></span></span></a><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">) – using the particular pattern-element specification provided by the previous layer, extrapolating general rules for the pattern-based composition of article structures (e.g. sections, paragraphs, tables, figures);</span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="tab-stops:list .5in"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">rhetorical components (ontology: </span></span></span><a href="http://purl.org/spar/deo"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">DEO</span></span></span></a> <a href="483.html#constantin2016"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black"><span style="text-decoration:none"><span style="text-underline:none">[16]</span></span></span></span></span></a><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">) – by means of the organisation of the structural components obtained in the previous layer, inferring their rhetorical functions, so as to clearly characterise sections with a specific behaviour (e.g. introduction, methods, material, data, results, conclusions);</span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="tab-stops:list .5in"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">citation functions (ontology: </span></span></span><a href="http://purl.org/spar/cito"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">CiTO</span></span></span></a> <a href="483.html#peroni2012"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black"><span style="text-decoration:none"><span style="text-underline:none">[17]</span></span></span></span></span></a><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">) – using the outcomes of the previous two layers, assigning the appropriate citation function to each occurrence of a citation in a scholarly articles (e.g. by specifying the function </span></span></span><a href="http://purl.org/spar/cito/usesMethodIn"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">uses method in</span></span></span></a><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">for all the citations included in the method section);</span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="tab-stops:list .5in"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">argumentative organisation (ontology: </span></span></span><a href="http://www.essepuntato.it/2011/02/argumentmodel"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">AMO</span></span></span></a><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">) – analysing the various semantic characterisation of the previous layers, creating relations among the various components of scholarly articles by using specific argumentative models such as Toulmin's </span></span></span><a href="483.html#toulmin1958"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black"><span style="text-decoration:none"><span style="text-underline:none">[20]</span></span></span></span></span></a><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">;</span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="tab-stops:list .5in"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">article categorisation (ontology: </span></span></span><a href="http://purl.org/spar/fabio"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">FaBiO</span></span></span></a> <a href="483.html#peroni2012"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black"><span style="text-decoration:none"><span style="text-underline:none">[17]</span></span></span></span></span></a><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">) – by looking to the ways document components are organised structurally and argumentatively, annotating each scholarly paper with the appropriate type (e.g. research paper, journal article, review, conference paper, demonstration paper, poster, opinion, report);</span></span></span></span></span></li>
+<li style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="text-justify:inter-ideograph"><span style="tab-stops:list .5in"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">discipline clustering (ontology: </span></span></span><a href="http://dbpedia.org/ontology/"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">DBpedia Ontology</span></span></span></a> <a href="483.html#lehmann2015"><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black"><span style="text-decoration:none"><span style="text-underline:none">[18]</span></span></span></span></span></a><span style="font-size:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">) – understanding to which scholarly discipline each paper belong to by looking at the various characterisations that have been associated to each paper in the previous layers.</span></span></span></span></span></li>
+</ol><p> </p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif">This is fine, but… ontologies are just models and data talks lauder than words. So, in order to convince me I need to see data, not just models; along with data I would like to see tested data. If just ontologies then at the very least I would like to see instantiated ontologies so that data tells me how you are right. Once again… I need a running example in this paper, I would like to author to focus on a clear message, I would like this paper to be much better articulated. The large number of self-citations are not helping the author in making a clear case –his own previously published papers may arise further evaluation under the light of his claims in this paper. Also, there are lots of papers that should be cited here and that are missing.  His section “from structural patterns to structural semantics” indicates me that it is quite simply easier to map JATS/XML elements to ontologies (bearing in mind minimal ontological commitment) rather than embracing many of the things the author seems to embrace. The text that usually follows the e.g. is not enough explanatory; again a running example could help the author to make his case. </span></p>
+<p> </p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif">From the author</span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif">…”<span style="color:black"> additional studies and tests are needed for having more robust outcomes</span>…”</span></p>
+<p> </p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif">Yes, like for example? </span></p>
+<p><span style="font-family:&quot;Arial&quot;,sans-serif">The tittle reads funny, the author should consider making it closer to the content of the paper. Also, the analogy ised in this paper needs some work. I don’t see how it is relevant. </span></p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F483%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+
+  
+</section>
+
+  </div>
+  </article>
+
+  </div></div>                      </div>
+
+                      
+                    </div>
+                  </div>
+
+                </section>
+
+                
+              </div>
+            </div>
+
+                        
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+    
+          <div id="footer-wrapper">
+        <div class="container clearfix">
+          <footer class="clearfix" role="contentinfo">
+            <div class="region region-footer"><div class="region-inner clearfix"><div id="block-block-16" class="block block-block no-title odd first last block-count-4 block-region-footer block-16" ><div class="block-inner clearfix">  
+  
+  <div class="block-content content"><p style="text-align:center;"><a href="https://www.iospress.nl/disclaimer/" target="_blank">Disclaimer</a> | <a href="https://content.iospress.com/page/privacy" target="_blank">Privacy Policy</a> | Data Science is Published by <a href="http://www.iospress.com" target="_blank">IOS Press</a>, Copyright 2023</p>
+</div>
+  </div></div></div></div>            <p class="attribute-creator"></p>
+          </footer>
+        </div>
+      </div>
+    
+  </div>
+</div>
+  </body>
+</html>

@@ -1,0 +1,477 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="comprehensive-review-classifier-probability-calibration-metrics-0.html" />
+<link rel="shortlink" href="../node/937.html" />
+<link rel="shortcut icon" href="../sites/default/files/favicon-96x96.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>A comprehensive review of classifier probability calibration metrics | Data Science</title>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/system/system.base.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.menus.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.messages.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.core.css?t4kojz");
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/comment/comment.css?t4kojz");
+@import url("https://datasciencehub.net/modules/field/theme/field.css?t4kojz");
+@import url("../sites/all/modules/logintoboggan/logintoboggan.css%3Ft4kojz.css");
+@import url("https://datasciencehub.net/modules/node/node.css?t4kojz");
+@import url("https://datasciencehub.net/modules/search/search.css?t4kojz");
+@import url("https://datasciencehub.net/modules/user/user.css?t4kojz");
+@import url("../sites/all/modules/views/css/views.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/modules/ctools/css/ctools.css%3Ft4kojz.css");
+@import url("../sites/all/modules/ctools/css/modal.css%3Ft4kojz.css");
+@import url("../sites/default/modules/modal_forms/css/modal_forms_popup.css%3Ft4kojz.css");
+@import url("../sites/all/modules/responsive_menus/styles/responsive_menus_simple/css/responsive_menus_simple.css%3Ft4kojz.css");
+@import url("../sites/all/modules/date/date_api/date.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="screen">
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.headings.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.image.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.layout.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/themes/corolla/css/html-elements.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/forms.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/tables.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/page.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/articles.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/comments.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/fields.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/blocks.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/navigation.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/corolla.settings.style.css%3Ft4kojz.css");
+@import url("../sites/default/files/color/corolla-80fb2671/colors.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="print">
+@import url("../sites/all/themes/corolla/css/print.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/default/files/adaptivetheme/corolla_files/corolla.responsive.layout.css%3Ft4kojz.css" media="only screen" />
+<style type="text/css" media="screen">
+@import url("../sites/default/files/adaptivetheme/corolla_files/corolla.fonts.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.custom.css%3Ft4kojz.css" media="only screen" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.portrait.css%3Ft4kojz.css" media="only screen and (max-width:320px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.landscape.css%3Ft4kojz.css" media="only screen and (min-width:321px) and (max-width:480px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.portrait.css%3Ft4kojz.css" media="only screen and (min-width:481px) and (max-width:768px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.landscape.css%3Ft4kojz.css" media="only screen and (min-width:769px) and (max-width:1024px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.desktop.css%3Ft4kojz.css" media="only screen and (min-width:1025px)" />
+
+<!--[if lt IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/default/files/adaptivetheme/corolla_files/corolla.lt-ie9.layout.css?t4kojz");
+</style>
+<![endif]-->
+
+<!--[if lte IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/all/themes/corolla/css/ie-lte-9.css?t4kojz");
+</style>
+<![endif]-->
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-extend-3.4.0.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/drupal.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ui/jquery.ui.core.min.js?v=1.8.7"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.cookie.js?v=1.0"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.form.js?v=2.52"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form-single-submit.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ajax.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/default/modules/jquery_update/js/jquery_update.js%3Fv=0.0.1"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/progress.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/all/modules/ctools/js/modal.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/default/modules/modal_forms/js/modal_forms_popup.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/responsive_menus/styles/responsive_menus_simple/js/responsive_menus_simple.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js%3Ft4kojz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-107867597-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="../sites/all/modules/field_group/field_group.js%3Ft4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/tableheader.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/collapse.js?v=7.98"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"corolla","theme_token":"byI3Rd5jOj8YEgTGTSQH7OeH7QpkuOj_-I2XHFEOGBo","jquery_version":"default","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/form-single-submit.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/default\/modules\/jquery_update\/js\/jquery_update.js":1,"misc\/progress.js":1,"sites\/all\/modules\/ctools\/js\/modal.js":1,"sites\/default\/modules\/modal_forms\/js\/modal_forms_popup.js":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/js\/responsive_menus_simple.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/field_group\/field_group.js":1,"misc\/tableheader.js":1,"misc\/collapse.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ctools\/css\/modal.css":1,"sites\/default\/modules\/modal_forms\/css\/modal_forms_popup.css":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/css\/responsive_menus_simple.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.headings.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.image.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/corolla\/css\/html-elements.css":1,"sites\/all\/themes\/corolla\/css\/forms.css":1,"sites\/all\/themes\/corolla\/css\/tables.css":1,"sites\/all\/themes\/corolla\/css\/page.css":1,"sites\/all\/themes\/corolla\/css\/articles.css":1,"sites\/all\/themes\/corolla\/css\/comments.css":1,"sites\/all\/themes\/corolla\/css\/fields.css":1,"sites\/all\/themes\/corolla\/css\/blocks.css":1,"sites\/all\/themes\/corolla\/css\/navigation.css":1,"sites\/all\/themes\/corolla\/css\/fonts.css":1,"sites\/all\/themes\/corolla\/css\/corolla.settings.style.css":1,"sites\/all\/themes\/corolla\/color\/colors.css":1,"sites\/all\/themes\/corolla\/css\/print.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.responsive.layout.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.fonts.css":1,"sites\/all\/themes\/corolla\/css\/responsive.custom.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.desktop.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.lt-ie9.layout.css":1,"sites\/all\/themes\/corolla\/css\/ie-lte-9.css":1}},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E"},"modal-popup-small":{"modalSize":{"type":"fixed","width":500,"height":150},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-medium":{"modalSize":{"type":"fixed","width":550,"height":450},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-large":{"modalSize":{"type":"scale","width":0.8,"height":0.8},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"responsive_menus":[{"toggler_text":"\u2630 Menu","selectors":["#block-system-main-menu"],"media_size":"935","media_unit":"px","absolute":"1","remove_attributes":"1","responsive_menus_style":"responsive_menus_simple"}],"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/search\/node":true,"\/paper\/comprehensive-review-classifier-probability-calibration-metrics-0":true},"field_group":{"fieldset":"full"},"ctools-sample-style":{"modalSize":{"type":"fixed","width":1098,"height":500,"addWidth":20,"addHeight":15},"modalOptions":{"opacity":0.5,"background-color":"#000"},"animation":"fadeIn","modalTheme":"CToolsSampleModal","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/ctools_ajax_sample\/images\/ajax-loader.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E"},"adaptivetheme":{"corolla":{"layout_settings":{"bigscreen":"three-col-grail","tablet_landscape":"three-col-grail","tablet_portrait":"one-col-vert","smalltouch_landscape":"one-col-vert","smalltouch_portrait":"one-col-stack"},"media_query_settings":{"bigscreen":"only screen and (min-width:1025px)","tablet_landscape":"only screen and (min-width:769px) and (max-width:1024px)","tablet_portrait":"only screen and (min-width:481px) and (max-width:768px)","smalltouch_landscape":"only screen and (min-width:321px) and (max-width:480px)","smalltouch_portrait":"only screen and (max-width:320px)"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]>
+<script src="https://datasciencehub.net/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?t4kojz"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-937 node-type-submit-paper site-name-hidden atr-7.x-3.x atv-7.x-3.1 lang-en site-name-data-science section-paper color-scheme-custom corolla bs-n bb-n mb-dd rc-6 rct-6">
+  <div id="skip-link" class="nocontent">
+    <a href="comprehensive-review-classifier-probability-calibration-metrics-0.html#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="page-wrapper">
+  <div id="page" class="page ssc-n ssw-n ssa-l sss-n btc-n btw-b bta-l bts-n ntc-n ntw-b nta-l nts-n ctc-n ctw-b cta-l cts-n ptc-n ptw-b pta-l pts-n">
+
+          <div id="menu-bar-wrapper">
+        <div class="container clearfix">
+          <div id="menu-bar" class="nav clearfix"><nav id="block-system-main-menu" class="block block-system block-menu menu-wrapper menu-bar-wrapper clearfix odd first block-count-1 block-region-menu-bar block-main-menu"  role="navigation">  
+      <h2 class="element-invisible block-title">Main menu</h2>
+  
+  <ul class="menu clearfix"><li class="first leaf menu-depth-1 menu-item-757"><a href="../content/about-data-science.html">About</a></li><li class="leaf menu-depth-1 menu-item-758"><a href="../content/editors.html">Editorial Board</a></li><li class="leaf menu-depth-1 menu-item-1559"><a href="../content/submit-manuscript.html">Submit Manuscript</a></li><li class="leaf menu-depth-1 menu-item-1612"><a href="../content/calls.html">Calls</a></li><li class="leaf menu-depth-1 menu-item-759"><a href="../content/guidelines-authors.html">For Authors</a></li><li class="leaf menu-depth-1 menu-item-760"><a href="../content/guidelines-reviewers.html">For Reviewers</a></li><li class="leaf menu-depth-1 menu-item-582"><a href="../underreview.html" title="Under Review">Under Review</a></li><li class="leaf menu-depth-1 menu-item-583"><a href="../reviewed.html" title="">Reviewed</a></li><li class="last leaf menu-depth-1 menu-item-1611"><a href="../ReviewedAccepted.html" title="">Accepted</a></li></ul>
+  </nav><div id="block-orcid-login-orcid-login" class="block block-orcid-login no-title menu-wrapper menu-bar-wrapper clearfix even last block-count-2 block-region-menu-bar block-orcid-login" >  
+  
+  <p style="background-color: #003b3a; float:right;"><a style="vertical-align: middle; color: white; padding: 10px; display: inline-block; text-decoration: none;" href="https://orcid.org/oauth/authorize?client_id=APP-223SGGDDO35LKOT2&amp;response_type=code&amp;scope=%2Fauthenticate&amp;redirect_uri=https%3A%2F%2Fdatasciencehub.net%2F&amp;state=eyJyZWRpcmVjdCI6InBhcGVyXC9jb21wcmVoZW5zaXZlLXJldmlldy1jbGFzc2lmaWVyLXByb2JhYmlsaXR5LWNhbGlicmF0aW9uLW1ldHJpY3MtMCJ9"><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle;"/> Log In with ORCID</a></p>
+  </div></div>        </div>
+      </div>
+    
+    <div id="header-wrapper">
+      <div class="container clearfix">
+	        <header class="clearfix with-logo" role="banner">
+
+                      <div id="branding" class="branding-elements clearfix">
+
+                              <div id="logo">
+                  <a href="../index.html"><img class="site-logo" typeof="foaf:Image" src="../sites/default/files/DS_LOGO_vertical.png" alt="Data Science" /></a>                </div>
+              
+                              <div class="element-invisible h-group" id="name-and-slogan">
+
+                                      <h1 class="element-invisible" id="site-name"><a href="../index.html" title="Home page">Data Science</a></h1>
+                  
+                  
+                </div>
+              
+            </div>
+          
+          
+        </header>
+
+      </div>
+    </div>
+
+          <div id="top-panels-wrapper">
+        <div class="container clearfix">
+          <!-- Three column 3x33 Gpanel -->
+          <div class="at-panel gpanel panel-display three-3x33 clearfix">
+                                                          </div>
+        </div>
+      </div>
+    
+    
+    
+    <div id="content-wrapper">
+      <div class="container">
+
+        <div id="columns">
+          <div class="columns-inner clearfix">
+
+            <div id="content-column">
+              <div class="content-inner">
+
+                
+                <section id="main-content" role="main">
+
+                  
+                  <div class="content-margin">
+                    <div class="content-style">
+
+                      
+                      
+                      
+                                              <header class="clearfix">
+                          <h1 id="page-title">
+                            A comprehensive review of classifier probability calibration metrics                          </h1>
+                        </header>
+                      
+                      
+                      
+                      <div id="content">
+                        <div class="region region-content"><div id="block-system-main" class="block block-system no-title odd first last block-count-3 block-region-content block-main" >  
+  
+  <article id="node-937" class="node node-submit-paper article odd node-lang-en node-full ia-n clearfix" about="/paper/comprehensive-review-classifier-probability-calibration-metrics-0" typeof="sioc:Item foaf:Document" role="article">
+  <div class="node-inner">
+
+
+
+              <header class="node-header">
+
+        
+        
+      </header>
+        <span property="dc:title" content="A comprehensive review of classifier probability calibration metrics" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="1" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+    <div class="node-content">
+        
+      <h3>Tracking #: 937-1917</h3>          								<fieldset>
+					<!-- legend>
+						<span class="fieldset-legend">Paper Data</span>
+					</legend -->
+
+					
+
+
+					
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><h5>Authors:</h5><br/><form action="comprehensive-review-classifier-probability-calibration-metrics-0.html" method="post" id="authors-table-form-anonymus" accept-charset="UTF-8"><div><div id="authors_Container"><table class="sticky-enabled">
+ <thead><tr><th></th><th>Name</th><th>ORCID</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-2545">
+  <input type="checkbox" id="edit-authors-2545" name="authors[2545]" value="2545" class="form-checkbox" />
+</div>
+</td><td>Richard Lane</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0003-3741-0348" target="_blank">https://orcid.org/0000-0003-3741-0348</a></td> </tr>
+</tbody>
+</table>
+</div><input type="hidden" name="author_nd" value="937" />
+<input type="hidden" name="author_vd" value="1917" />
+<input type="hidden" name="form_build_id" value="form-VUj-dYSR245x9ppd65ikXbhwGyGwkYNuOgcrqdelS28" />
+<input type="hidden" name="form_id" value="authors_table_form_anonymus" />
+</div></form><hr/></div><br/>
+
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-editor field-type-user-reference field-label-above view-mode-full"><h2 class="field-label">Responsible editor:&nbsp;</h2><div class="field-items"><div class="field-item even">Francesca D. Faraci</div></div></section></div><br/>
+					                    <div style="background-color: #E3E5E3;border-radius:5px;padding-top:4px;padding-bottom:4px;padding-left:6px;">
+					<section class="field field-name-field-submission-type field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Submission Type:&nbsp;</h2><div class="field-items"><div class="field-item even">Survey Paper</div></div></section><section class="field field-name-field-abstract field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Abstract:&nbsp;</h2><div class="field-items"><div class="field-item even">Probabilities or confidence values produced by artificial intelligence (AI) and machine learning (ML) models often do not reflect their true accuracy, with some models being under or overconfident in their predictions. For example, if a model is 80% sure of an outcome, is it correct 80% of the time? Probability calibration metrics measure the discrepancy between confidence and accuracy, providing an independent assessment of model calibration performance that complements traditional accuracy metrics. Understanding calibration is important when the outputs of multiple systems are combined, to avoid overconfident subsystems dominating the output. Such awareness also underpins assurance in safety or business-critical contexts and builds user trust in models. This paper provides a comprehensive review of probability calibration metrics for classifier models, organizing them according to multiple groupings to highlight their relationships. We identify 94 metrics, and group them into four main families: point-based, bin-based, kernel or curve-based, and cumulative. For each metric, we catalogue properties of interest and provide equations in a unified notation, facilitating implementation and comparison by future researchers. Finally, we provide recommendations for which metrics should be used in different situations.</div></div></section><section class="field field-name-field-pdf field-type-file field-label-above view-mode-full"><h2 class="field-label">Manuscript:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="File" title="application/vnd.openxmlformats-officedocument.wordprocessingml.document" src="https://datasciencehub.net/modules/file/icons/x-office-document.png" /> <a href="../system/files/ds-paper-937.docx" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document; length=6187860">ds-paper-937.docx</a></span></div></div></section><section class="field field-name-field-supplementary-files field-type-file field-label-above view-mode-full"><h2 class="field-label">Supplementary Files (optional):&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="File" title="application/vnd.openxmlformats-officedocument.wordprocessingml.document" src="https://datasciencehub.net/modules/file/icons/x-office-document.png" /> <a href="../system/files/ds-supplementary-937-1553.docx" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document; length=22178">ds-supplementary-937-1553.docx</a></span></div></div></section><section class="field field-name-field-previous-version field-type-node-reference field-label-above view-mode-full"><h2 class="field-label">Previous Version:&nbsp;</h2><div class="field-items"><div class="field-item even"><a href="comprehensive-review-classifier-probability-calibration-metrics.html">A comprehensive review of classifier probability calibration metrics</a></div></div></section><section class="field field-name-field-tags field-type-taxonomy-term-reference field-label-above view-mode-full"><h2 class="field-label">Tags:&nbsp;</h2><ul class="field-items"><li class="field-item even">Reviewed</li></ul></section><section class="field field-name-field-data-repository-urls field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Data repository URLs:&nbsp;</h2><div class="field-items"><div class="field-item even"><p>none</p>
+</div></div></section><section class="field field-name-field-date-of-submission field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Submission:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2025-11-27T00:00:00-05:00">Thursday, November 27, 2025</span></div></div></section><section class="field field-name-field-date-of-decision field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Decision:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2025-12-19T00:00:00-05:00">Friday, December 19, 2025</span></div></div></section><br><br><b>Nanopublication URLs:</b> <br>                    </div>
+                    <br/>
+
+					
+                    
+                    <div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-decision field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Decision:&nbsp;</h2><div class="field-items"><div class="field-item even">Accept</div></div></section></div><br/>                    <div id="review">
+                    		                    	</div>
+
+					
+										<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><b>Solicited Reviews:</b><br/><form action="comprehensive-review-classifier-probability-calibration-metrics-0.html" method="post" id="get-submitted-reviews" accept-charset="UTF-8"><div><fieldset class="collapsible collapsed form-wrapper" id="edit-fset1"><legend><span class="fieldset-legend">Review #1 <strong>submitted on 15/Dec/2025</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">Review Details<br/><hr/></div><p>Reviewer has chosen to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Good</br><b style="color:#f39222">Suggested Decision: </b> Accept</br><b style="color:#f39222">Technical Quality of the paper:</b> Good<br/><b style="color:#f39222">Presentation:</b> Good<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> High significance<br/><b style="color:#f39222">Background:</b> Comprehensive<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data (if any) are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences (summary of changes and improvements for
+second round reviews): </b><br/><p>This survey presents a unique and exhaustive description of existing metrics that have been used for calibration (not all of them are originally for calibration, or can measure calibration in isolation). It also provides useful foundations of how some of the metrics relate to each other, and summarises how previous work unifies and evaluates calibration.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>- The author has addressed most of the points raised by the previous reviewers.<br />
+- The main text has been reduced by 6 pages by moving to the appendices multiple subsections and metrics.<br />
+- The new Section 7.2 is a great addition and I consider one of the more useful contributions of the paper.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>- Even if the main text has been reduced, the whole document including appendices has increased from 61 to 67 pages, with appendices that may not be that important for this review.<br />
+- The authors guidance indicates a maximum word count of 16,000 for surveys, and this one still has 20,893 (without including references, acknowledgements, declarations and appendices, and not counting each figure for 300 words as indicated in the guidelines). I still believe that it is too long, but I understand that trying to be that exhaustive is a very difficult task.<br />
+- The previous version had 82 major metrics and the reviewers mentioned that it may be not necessary to include everything, but focus on the metrics that are more useful. Instead, the new count increased to 94 metrics (although quite a few have been moved to the appendix). I believe that providing better overall insights should be the main contribution of this survey.</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>- Visualisation methods has been removed for the main text, but I believe that it would be a good addition in another survey. However, the section on the previous version was not informative enough to make this survey even longer.<br />
+- In the Multi-class aspects section, the matrix decomposition is mentioned as one of the methods to aggregate binary classifiers into multiclass classifiers. However, this is not put into the context of calibration (which is the focus of the paper and the section). At the moment, I don’t see why this is necessary in this survey, unless it specifically indicates what are the problems of using this method in regards to calibration. Can you aggregate the outputs of the multiple binary models? In which circumstances this will lead to calibrated models?<br />
+- Page 2: to date, instead of to-date</p>
+</p></div></fieldset>
+<input type="hidden" name="form_build_id" value="form-rFHLaV7faVWQNErpiEhfUDRYeUaGOkRZpQIwZ6gMxx0" />
+<input type="hidden" name="form_id" value="get_submitted_reviews" />
+</div></form></div><br/>                    
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><fieldset class="collapsible collapsed group-response-to-reviews field-group-fieldset form-wrapper"><legend><span class="fieldset-legend">RESPONSE TO REVIEWERS</span></legend><div class="fieldset-wrapper with-legend"><div class="field field-name-field-response-to-reviews field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even"><p>Thank you to the reviewers for positive comments in their summaries of the paper “A comprehensive review of classifier probability calibration metrics” (Tracking # 923-1903) and reasons to accept it. The reviewers are also thanked for their suggestions on how the paper could be improved. The following sections give a line-by-line response to each comment and how it has been addressed in an updated version of the paper. High-level responses to the editor’s meta review are given at the end.</p>
+<p>Reviewer 1</p>
+<p>Reasons to reject</p>
+<p>1.	While I do not recommend rejection of this manuscript, I have significant concerns regarding its timeliness and positioning within the current literature landscape. As the authors themselves acknowledge, two comprehensive and recent publications have already addressed this domain extensively: Silva Filho et al.'s survey on classifier calibration in Machine Learning (September 2023) and Tao et al.'s benchmark study presented at ICLR (May 2024). Although I recognize that this manuscript does provide incremental value to the field, the additional contribution appears modest given the existing comprehensive coverage. The primary distinction lies in the inclusion of supplementary calibration metrics that, while academically interesting, tend to be less frequently employed in practice. This raises questions about whether the marginal benefit justifies publication of another extensive survey so soon after the previous comprehensive works.<br />
+a.	Section 1 “Introduction” now clarifies the specific substantial contributions in detail. In summary:<br />
+i.	There is an evidenced demand for such a paper.<br />
+ii.	A novel categorisation of metric families is proposed.<br />
+iii.	The paper catalogues 94 metrics – a substantial increase on the 26 metrics mentioned in five combined previous surveys (including Silva Filho et al. and Tao et al.).<br />
+iv.	Equations are provided with a unified notation.<br />
+v.	Metrics that were previously treated in isolation are brought together and conceptual relationships are highlighted.<br />
+vi.	New recommendations are given for which metrics should be used in various situations.</p>
+<p>Further comments</p>
+<p>2.	While I do not recommend rejecting this paper, I believe it requires revision to enhance its readability, clarity, and analytical depth in several areas that currently appear underdeveloped or unnecessarily redundant.<br />
+a.	Low-value sentences have been removed and where discussion was too brief additional insights have been added. A substantial analysis has been added in section 7.2 “Analysis and recommendations”. Collectively, these changes improve readability, clarity, and analytical depth.<br />
+b.	Sections on object detection calibration metrics, visualisation methods, general frameworks and theory, hypothesis tests, families of metrics, and ranked probability score have been removed from the paper to improve its focus and reduce redundancy. Sections on several lesser-used metrics and the section on “Bootstrapping and consistency sampling” have been moved to Appendices A and B, respectively. This streamlining further improves readability of the main body of the paper.<br />
+3.	Following established best practices in systematic reviews (regardless of whether PRISMA guidelines are strictly applied), the authors should include explicit inclusion and exclusion criteria for their paper selection process. This section should be positioned after the Introduction to ensure the review's methodology is transparent and reproducible for future researchers.<br />
+a.	A new Section 2.5 “Scope of paper” has been added to discuss inclusion and exclusion criteria. The process has been updated to include recently published metrics that were not available at the time the first version of this paper was written.<br />
+4.	Several sections suffer from redundancy that detracts from the manuscript's focus. Paragraph 2.4 on hypothesis tests includes unnecessary exposition on p-value interpretation that most readers in this domain would already understand.<br />
+a.	Section 2.4 on “Hypothesis tests” has been removed as the relevant concepts are already discussed later in the paper in conjunction with metrics designed specifically for that purpose.<br />
+5.	Similarly, Section 2.5 on bootstrapping and consistency sampling provides excessive detail for concepts that are not central to the calibration metrics themselves.<br />
+a.	The author found the discussion on bootstrapping and consistency sampling useful for understanding uncertainty in calibration metrics. However, the author agrees that the presentation at the beginning of the paper is a distraction, so the section has been placed in Appendix B.<br />
+6.	Most notably, the entire Section 2.7 on "Families of metrics" is largely superfluous, as this taxonomy is already thoroughly established in the Introduction. This redundancy diminishes readability and could be replaced with the brief introductory approach successfully employed in Chapter 3.<br />
+a.	Section 2.7 on “Families of metrics” has now been deleted and non-redundant information moved into the introductions of Sections 3 to 6 on individual metric families.<br />
+7.	The paper would benefit significantly from a more substantive discussion of the comparative advantages and limitations of different metric families in the Conclusion (Chapter 10). Given that practical guidance represents the core value proposition of this review, a deeper analysis of when and why researchers should choose specific metric families would increase the value of the work.<br />
+a.	A substantial analysis of the merits of the most promising metrics from several families has been added in Section 7.2 “Analysis and recommendations”. This analysis includes recommendations on when and why researchers should choose specific metrics.</p>
+<p>Reviewer 2</p>
+<p>Reasons to reject</p>
+<p>8.	The most interesting parts that provide descriptions of the field and/or new insights are very short (first 8 pages and last 5 pages). It is too long, and lots of parts of the document contain information that is not new, and do not add value. There are about 32 pages of descriptions of 82 metrics that tries to be brief but is too long.<br />
+a.	Sections on object detection calibration metrics, visualisation methods, general frameworks and theory, hypothesis tests, families of metrics, and ranked probability score have been removed from the paper. Sections on several lesser-used metrics and the section on “Bootstrapping and consistency sampling” have been moved to appendices. These removals from the main body reduce the paper’s length, allowing readers to concentrate on the most important aspects.<br />
+9.	There are no new insights into how metrics connect to each other in a general form (apart from mentioning in each metric if it is related to another).<br />
+a.	The main categorisation of metrics into four families is novel, providing new insight on how metrics in the same family are related to each other. This has been made clearer in Section 1 “Introduction”. The presentation of additional categorisations (range, propriety, and hypothesis test availability) and pros and cons of each metric in a uniform manner in the summary table in Appendix D allows easy comparisons to be made across a wide range of metrics, which is not available in other papers.<br />
+10.	There are some claims and insights that do not have a reference, and it is not clear if those are new insights from the author.<br />
+a.	In several places where statements were made based directly on information from external papers, additional citations have been added to make this clear. The remaining unreferenced statements are new insights from the author.<br />
+11.	Not all the presented metrics are classifier probability calibration metrics (e.g., some of them are losses that could be potentially used as metrics).<br />
+a.	All the metrics presented can be used as calibration metrics, which puts them in scope of the review, even if they were originally designed for another purpose. Where metrics are also considered to be loss functions, this is mentioned in the discussion of each metric. Section 2.5 “Scope of paper” has been added to clarify the situation and this includes a discussion on the inclusion of loss functions.<br />
+12.	The paper does not include new comparisons (e.g., experiments).<br />
+a.	The author agrees that it would be interesting to include experiments to compare metrics. However, as pointed out by both reviewers, the paper is already quite long. Adding experiments is out of scope of the paper as there is insufficient space for such a discussion. This point has been added to Section 2.5 “Scope of paper”.<br />
+13.	There are no clear final recommendations metrics to use and for which cases.<br />
+a.	A new Section 7.2 “Analysis and recommendations” has been added to analyse the merits of the most promising metrics and to make evidence-based recommendations on specific metrics for general, multiclass, and local calibration scenarios.</p>
+<p>Further comments</p>
+<p>14.	The work has lots of insights that does not make it clear if they are from previous references, or conclusions from the author of this survey.<br />
+a.	In several places where statements were made based directly on information from external papers, additional citations have been added to make this clear. The remaining unreferenced statements are new insights from the author.<br />
+15.	Page 1: What is the source of the sentence attributed to Flach [16] from an online tutorial at ECML-PKDD? Is it a transcription of the online tutorial? It needs a clearer citation.<br />
+a.	The citation in the main text has been clarified to say that the quote is sourced from the concluding slides of Flach, which is now reference [22].<br />
+16.	Page 1: “under operational conditions” → “under some/certain operational conditions”.<br />
+a.	This phrase in Section 1 “Introduction” now reads “particularly under any operational conditions that differ from training”.<br />
+17.	Page 2: “Where available”, it would be good [to know] why the equations are not available. Is it because the original papers did not include them? Is it difficult to obtain the equation? Or is it for lack of space in this survey that they are not derived and included?<br />
+a.	Some metrics (e.g. fit on the test) are a process rather than an equation. The wording in Section 1 “Introduction” has been changed to say: “Where relevant”.<br />
+18.	Page 4: The first sentence is too ambiguous “An ideally calibrated classifier outputs confidence scores or predicted probabilities equal to its accuracy”, as the accuracy (in general) is defined for a whole dataset partition (e.g., training, validation or test accuracy). In this part of the text, it is referring to the conditional accuracy, given the model’s score.<br />
+a.	The phrase “conditional on the score” has been added to the beginning of Section 2.2 “Calibration curve and reliability diagram”.<br />
+19.	Fig 2. The Y-axis indicates “Accuracy” which is usually referred to “actual positive rate”, “fraction of positives”, “empirical probability”, or “observed relative frequency” instead. I understand that the accuracy that this figure (and the text) is referring is to the conditional accuracy given the specific scores, but I think the other definitions are clearer.<br />
+a.	Although these alternative phrases are more descriptive than “accuracy”, the calibration literature (e.g. the seminal paper of Guo et al. 2017) often uses the simple word “accuracy” in this context. The term accuracy has been kept in the figure, but at the first time it is mentioned in Section 2.2 “Calibration curve and reliability diagram”, the above alternative terms are now also mentioned.<br />
+20.	Fig 2. It shows red lines without clarification in the text or in the caption until page 10 when discussing Brier Score. I suggest adding a caption indicating that.<br />
+a.	The definition of the red lines has been added to the caption and discussed further in the paragraph immediately after Fig. 2.<br />
+21.	Page 6: The grouping diagram is mentioned without providing context first, and it would be good to have a figure depicting it.<br />
+a.	Since the grouping diagram requires additional information and is rarely used, the paragraph describing it has been removed, to reduce the length of the paper.<br />
+22.	Section 2.3 is titled Multi-class issues, but it discusses other aspects (apart from issues). I would suggest renaming to Multi-class aspects.<br />
+a.	Section 2.3 has been renamed to “Multi-class aspects”.<br />
+23.	Page 6: description of Multiclass calibration indicates “to be correct simultaneously” which is too general. I would rephrase “to be correct” with a more concrete definition.<br />
+a.	The phrase now reads “vector of probabilities to be correct in all elements simultaneously”.<br />
+24.	Page 6: One paragraph starts talking about the decomposition into a set of binary sub-problems, which can be represented in the form of matrices. It would be good to introduce the reasoning for that, and why the representation as a matrix is useful, and how the matrices are used after.<br />
+a.	Two sentences on the advantages of decomposition into binary sub-problems and a sentence to discuss the reasoning behind matrices have been added to Section 2.3 “Multi-class aspects”.<br />
+25.	Section 2.4 mentions that “using a finite dataset” may lead to a nonzero metric value. It is not obvious why that would be the case.<br />
+a.	Section 2.4 on hypothesis testing, where this phrase was previously included, has been removed.<br />
+26.	Section 2.6 when talking about the Naive Bayes assumptions, it may be good to mention the specific assumptions (e.g., independence of features).<br />
+a.	The discussion on Naive Bayes classifiers has been removed as it is not a core part of the paper’s focus on calibration metrics.<br />
+27.	Page 9. When mentioning a reliable classifier that gives 80% or 20% with a better non-zero resolution. Shouldn’t it be if the performance is kept equal to the previous model?<br />
+a.	Yes, the performance in terms of accuracy should be equal for both models so that the discussion focuses on the meaning of resolution. The paragraph in Seciton 3.2 “Proper Scores” has been re-written to make this clearer.<br />
+28.	Section 3.3 when describing Brier score, I think it is missing in the text that this is a proper score.<br />
+a.	A statement that the Brier score is a proper score has been added to Section 3.3.<br />
+29.	Page 11. (this is a personal preference) when talking about a model with confidence of zero, I find it misleading as the model may be highly confident in the true class (confidence of one) while the confidence of zero for the non-predicted class means indicates an output probability prediction of zero. This preference of mine extends to the rest of the paper in which I would refer to confidence for the highest output probability (or the prediction). I understand that this opinion may be different to the author, but it may be worth thinking about it.<br />
+a.	Some classifiers only output the confidence value of the highest predicted probability. However, more general classifiers output a full vector of probabilities. This is discussed in Section 2.3 “Multi-class aspects”. The mathematical notation is simplified when confidence is associated with a particular class, and the author has chosen to use that convention for this reason.<br />
+30.	Page 11: mentions that Focal loss… focus on hard-to-classify examples. I understand that it refers to examples that are close to the decision boundary, or that are far from both probability extremes. But a hard-to-classify example could be anywhere on the output score region (e.g., an example can be hard to classify and be in a region of high output scores).<br />
+a.	In the definition of focal loss, hard-to-classify examples are considered to result in low confidence values for the most likely class. Low confidence will occur near decision boundaries. Whether low confidence also occurs in regions far from any data point depends on the classifier model.<br />
+31.	Page 11: A section that talks about Focal loss “improves calibration”, it will be important to clarify in that same sentence that “it is not strictly proper”. It is mentioned multiple sentences later, but the first sentence is misleading, as it is counterintuitive that a not strictly proper loss improves the calibration of a strictly proper loss (NLL).<br />
+a.	The phrase “despite not being strictly proper” has been added to Section 3.4 “Logarithmic metrics”.<br />
+32.	Page 13: MAE is “always” greater than…. I would say “most of the time”, or “greater or equal”, given that “always” is not true.<br />
+a.	The text has been changed in Section A.2 “Mean absolute error” to clarify this point.<br />
+33.	Page 13: mentions that reference [15] does not recommend MAE and one of the reasons is not “taking into account the cost of different wrong decisions”. This is clearly true for most calibration metrics described in the paper. Maybe include this claim in all the metrics that do not consider that as well? Or mention in this section that most of the other metrics also have the same problem.<br />
+a.	The discussion in reference [15] (now [21]) compares MAE to MSE with respect to the cost of decisions. Section A.2 “Mean absolute error” has been updated to make it clearer that the comparison is between those two metrics, rather than a more general statement.<br />
+34.	Page 13: Mentions a “jack-knife” estimate, I am not sure I have heard about this term before. It may be too informal, or it may be that I am not familiar with the term.<br />
+a.	Jackknife estimates are well-known (see e.g. <a href="https://en.wikipedia.org/wiki/Jackknife_resampling">https://en.wikipedia.org/wiki/Jackknife_resampling</a>) and are described in detail in the cited reference by Wu. To clarify this term for readers that may be unfamiliar with the technique, it has been expanded to “leave-one-out jackknife estimate” in Section A.10 “Expected individual calibration error”.<br />
+35.	Page 15: Point metrics for isotonic regression “are not widely used for measuring classifier calibration”. I think this is an example of trying to be exhaustive on this paper, making it too long. I think it is good to have the list somewhere (e.g., in an appendix), but realistically people looking into calibration metrics may want to focus on the well stablished and/or useful metrics instead.<br />
+a.	The aim of the paper is to be a comprehensive catalogue of metrics. Nevertheless, the author agrees that these specific metrics are low priority, so the section “Point metrics for isotonic regression” has been moved to Appendix A.<br />
+36.	Page 16: Mentions that RPS has a “hidden preference”, it would be good to clarify in what sense is hidden. Or remove the word hidden.<br />
+a.	RPS has been removed from the paper as the scope has been reduced to exclude ordinal classifier metrics such as RPS.<br />
+37.	Page 20: It contains a couple of examples of metrics that are only mentioned to be exhaustive, but it is not clear why somebody would want to use them (e.g., ECE-LB and ECE-SWEEP). I am not sure if there is value in mentioning every single metric.<br />
+a.	Section 4.6 “Partially binned metrics” now clarifies that “ECE-LB has the advantage over many other binned metrics that it takes into account the variation of confidence values in each bin rather than relying only on their average”, justifying its inclusion.<br />
+b.	ECE-SWEEP appears to be a sensible improvement on ECE and is discussed in several papers. It is also the base of the DRMSE-BCS metric, which is a recommended metric. The following justification for its inclusion has been added to Section 4.5 “Variants of expected calibration error”: “ECE-SWEEP has a lower bias than several other metrics, including standard ECE – see Section 4.13 for a discussion”.<br />
+c.	The descriptions of several lesser-used metrics have been moved to Appendix A.<br />
+38.	Page 20: “the dimension with highest variance”, does it refer to the output score for the class with the highest variance? The word “dimension” is too general.<br />
+a.	The wording in Section A.11 “Max-variance mean-split” has been updated to clarify that this refers to “the mean of the class dimension with highest variance in confidence scores”.<br />
+39.	Page 26: The paper contains O(N) notation for computation time of some scores, however in this section it mentions “computation time for 50,000 data points is only one minute”. This information alone does not indicate the time complexity.<br />
+a.	The end of Section 4.14 “Hypothesis-test bin-based metrics” now has the following text to state the complexity: “Although the computation of TCE is O(NB), …”.<br />
+40.	Page 27: A sentence for WCR reinforces the point of not needing to be exhaustive as it says that because of the lack of wide use of the metric, it is recommended that these are not used. The same could be said for most of the other 82 metrics, but it is only mentioned here.<br />
+a.	WCR is speculatively an interesting metric as the thesis where it is defined, written more than 15 years ago, is highly cited. It took significant work on the part of the author to verify that all those citations refer to another aspect of the thesis. This metric has been included in the present paper to prevent other researchers from having to repeat that work. However, due to its lack of use, the author agrees that WCR should not form part of the main paper, and the relevant discussion has been moved to Appendix A.<br />
+b.	Some other metrics mentioned in the paper have been published more recently and have not yet had the chance to be highly cited. In most cases, they have been designed to solve a specific issue with other pre-existing metrics and are therefore of intrinsic interest and included in the paper.<br />
+c.	The descriptions of several other lesser-used metrics have been moved to Appendix A.<br />
+41.	Section 5.6: This and other metrics start their description without much detail. It starts by mentioning the name and providing the equation. I think if any metric is worth mentioning, before showing the equation a description should be provided (other example 5.9, 7.4).<br />
+a.	Introductory sentences have been added to the Dawid-Sebastiani score in Section 3.6, “Fit-on-the-test ECE” in Section 4.7, “Signed calibration error metrics” in Section 4.9, “Smooth Calibration Error” in Section 5.7, and “Estimated Calibration Index” in Section 5.10. The old Section 7.4 on “Localisation-aware calibration error” has been removed from the paper.<br />
+42.	Page 39: This page contains some examples of sentences that have claims for which is not clear their source. Are the following claims from previous papers? General knowledge? or is it part of the contribution of this paper? “A disadvantage of LAECE is…”, and “The advantage of LAACE over LAECE…”.<br />
+a.	The old Section 7.4 on “Localisation-aware calibration error” that contained these sentences has been removed from the paper.<br />
+b.	In several other places where statements were made based directly on information from external papers, additional citations have been added to make this clear. The remaining unreferenced statements are new insights from the author.<br />
+43.	Page 42: If I am not wrong, the method to use Brier curves to construct hybrid classifiers exist in previous literature. If that is the case, it would be good to add the references here. At the moment there are no references.<br />
+a.	The old Section 8.3 on “Brier curves” has been removed from the paper.<br />
+44.	Page 45: “does not exclude [the] use of a metric”.<br />
+a.	The word “the” has been added to this phrase in Section 7 “Conclusion”.<br />
+45.	Appendix table: Include description for some headers (e.g., HT, UO, proper).<br />
+a.	The description of the header abbreviations has been included in introductory text added to the beginning of Appendix D. Abbreviation definitions have also been added to the table caption.<br />
+46.	Appendix table entry GSB: “Very crude” sounds too informal. Explains that can be zero by reasoning on the “reliability diagram”. It sounds strange to me the justification with the use of the diagram.<br />
+a.	The phrase “Very crude” has been changed to “Imprecise” in multiple entries in the summary table.<br />
+b.	The reliability diagram is the best way to visualize under or overconfidence of a model for different confidence scores and is described in Section 2.2 on “Calibration curve and reliability diagram”. The diagram is a good way to understand the properties of metrics and its use is recommended in Section 7.2.</p>
+<p>Editor</p>
+<p>Meta Review</p>
+<p>47.	The reviewers have expressed significant concerns regarding the paper’s relevance and originality, particularly in light of recent comprehensive works in the same area (Silva Filho et al., 2023; Tao et al., 2024). The manuscript offers minimal incremental value, much of its content reiterates existing literature.<br />
+a.	The introduction of the paper now clarifies that those previous works, while valuable, were not comprehensive, and makes explicit the specific contributions of the paper.<br />
+b.	The response to comment 1 above summarises the value of the paper.<br />
+48.	It is also overly long, with excessive detail on numerous metrics but limited new insights, experimental comparisons, or clear recommendations.<br />
+a.	The focus of the paper has been narrowed, and several sections and subsections have been removed. Several other sections have been moved to appendices. Metric descriptions with excessive detail have also been cut back. These changes reduced main body length significantly. Additional insights have been added throughout the paper to highlight metric properties and the connections between them. The scope of the paper has been clarified to give reasons why new experiments are not included. A new Section 7.2 on recommendations has been added, and it is organised according to metric use cases.<br />
+49.	In addition, some sections lack proper references, and several metrics included are not strictly calibration metrics.<br />
+a.	Throughout the paper additional citations to references have been included to clarify the difference between contributions from the literature and new analysis. All metrics can be used as calibration metrics. Where they have other uses as well, this has been clarified.<br />
+50.	Overall, the contribution appears modest given the existing comprehensive coverage.<br />
+a.	The previous version of the paper did not properly articulate its value. The contributions paragraph at the end of the introduction now makes this clear.</p>
+</div></div></div></div></fieldset>
+</div><br/>
+				</fieldset>
+				
+    </div>
+
+    <div id="admin-review">
+			</div>
+
+	<div id="decision">
+			</div>
+
+
+
+
+          <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first"><span><a href="../user/login%3Fdestination=comment%252Freply%252F937%23comment-form.html">Log in</a> to post comments</span></li><li class="camera_ready_files_field_paper last"></li></ul></nav>
+    
+    <section id="comments" class="comment-wrapper">
+
+          <h2 class="title">
+      1 Comment    </h2>
+      
+  <a id="comment-188"></a>
+<article class="comment odd first last clearfix" about="/comment/188#comment-188" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="../comment/188.html#comment-188" rel="bookmark">meta-review by editor</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2025-12-19T03:35:51-05:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/tobias-kuhn" typeof="sioc:UserAccount" property="foaf:name" datatype="">Tobias Kuhn</span> on <time datetime="2025-12-19T03:35:51Z"><span class="date-time">Fri, 12/19/2025 - 03:35</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/comprehensive-review-classifier-probability-calibration-metrics-0" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Although the length of the main text has been reduced, the overall size of the manuscript—including appendices—has increased from 61 to 67 pages. Several of the appendices may not be essential for the purposes of this review. Survey papers should not exceed 16,000 words; however, the current manuscript still contains 20,893 words (excluding references, acknowledgements, declarations, and appendices, and without applying the guideline that counts each figure as 300 words). While we acknowledge that achieving such a comprehensive coverage is challenging, the manuscript appears to be excessively long. Please reduce it as much as possible, but it's fine if it remains above the 16,000 word limit.</p>
+<p>Francesca D. Faraci (<a href="https://orcid.org/0000-0002-8720-1256">https://orcid.org/0000-0002-8720-1256</a>)</p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F937%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+
+  
+</section>
+
+  </div>
+  </article>
+
+  </div></div>                      </div>
+
+                      
+                    </div>
+                  </div>
+
+                </section>
+
+                
+              </div>
+            </div>
+
+                        
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+    
+          <div id="footer-wrapper">
+        <div class="container clearfix">
+          <footer class="clearfix" role="contentinfo">
+            <div class="region region-footer"><div class="region-inner clearfix"><div id="block-block-16" class="block block-block no-title odd first last block-count-4 block-region-footer block-16" ><div class="block-inner clearfix">  
+  
+  <div class="block-content content"><p style="text-align:center;"><a href="https://www.iospress.nl/disclaimer/" target="_blank">Disclaimer</a> | <a href="https://content.iospress.com/page/privacy" target="_blank">Privacy Policy</a> | Data Science is Published by <a href="http://www.iospress.com" target="_blank">IOS Press</a>, Copyright 2023</p>
+</div>
+  </div></div></div></div>            <p class="attribute-creator"></p>
+          </footer>
+        </div>
+      </div>
+    
+  </div>
+</div>
+  </body>
+</html>

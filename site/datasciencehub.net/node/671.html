@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../paper/complex-link-between-filter-bubbles-and-opinion-polarization-0.html" />
+<link rel="shortlink" href="671.html" />
+<link rel="shortcut icon" href="../sites/default/files/favicon-96x96.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>The complex link between filter bubbles and opinion polarization | Data Science</title>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/system/system.base.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.menus.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.messages.css?t4kojz");
+@import url("https://datasciencehub.net/modules/system/system.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.core.css?t4kojz");
+@import url("https://datasciencehub.net/misc/ui/jquery.ui.theme.css?t4kojz");
+</style>
+<style type="text/css" media="all">
+@import url("https://datasciencehub.net/modules/comment/comment.css?t4kojz");
+@import url("https://datasciencehub.net/modules/field/theme/field.css?t4kojz");
+@import url("../sites/all/modules/logintoboggan/logintoboggan.css%3Ft4kojz.css");
+@import url("https://datasciencehub.net/modules/node/node.css?t4kojz");
+@import url("https://datasciencehub.net/modules/search/search.css?t4kojz");
+@import url("https://datasciencehub.net/modules/user/user.css?t4kojz");
+@import url("../sites/all/modules/views/css/views.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/modules/ctools/css/ctools.css%3Ft4kojz.css");
+@import url("../sites/all/modules/ctools/css/modal.css%3Ft4kojz.css");
+@import url("../sites/default/modules/modal_forms/css/modal_forms_popup.css%3Ft4kojz.css");
+@import url("../sites/all/modules/responsive_menus/styles/responsive_menus_simple/css/responsive_menus_simple.css%3Ft4kojz.css");
+@import url("../sites/all/modules/date/date_api/date.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="screen">
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.headings.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.settings.style.image.css%3Ft4kojz.css");
+@import url("../sites/all/themes/adaptivetheme/at_core/css/at.layout.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="all">
+@import url("../sites/all/themes/corolla/css/html-elements.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/forms.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/tables.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/page.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/articles.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/comments.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/fields.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/blocks.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/navigation.css%3Ft4kojz.css");
+@import url("../sites/all/themes/corolla/css/corolla.settings.style.css%3Ft4kojz.css");
+@import url("../sites/default/files/color/corolla-80fb2671/colors.css%3Ft4kojz.css");
+</style>
+<style type="text/css" media="print">
+@import url("../sites/all/themes/corolla/css/print.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/default/files/adaptivetheme/corolla_files/corolla.responsive.layout.css%3Ft4kojz.css" media="only screen" />
+<style type="text/css" media="screen">
+@import url("../sites/default/files/adaptivetheme/corolla_files/corolla.fonts.css%3Ft4kojz.css");
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.custom.css%3Ft4kojz.css" media="only screen" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.portrait.css%3Ft4kojz.css" media="only screen and (max-width:320px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.smartphone.landscape.css%3Ft4kojz.css" media="only screen and (min-width:321px) and (max-width:480px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.portrait.css%3Ft4kojz.css" media="only screen and (min-width:481px) and (max-width:768px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.tablet.landscape.css%3Ft4kojz.css" media="only screen and (min-width:769px) and (max-width:1024px)" />
+<link type="text/css" rel="stylesheet" href="../sites/all/themes/corolla/css/responsive.desktop.css%3Ft4kojz.css" media="only screen and (min-width:1025px)" />
+
+<!--[if lt IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/default/files/adaptivetheme/corolla_files/corolla.lt-ie9.layout.css?t4kojz");
+</style>
+<![endif]-->
+
+<!--[if lte IE 9]>
+<style type="text/css" media="screen">
+@import url("https://datasciencehub.net/sites/all/themes/corolla/css/ie-lte-9.css?t4kojz");
+</style>
+<![endif]-->
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-extend-3.4.0.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/drupal.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ui/jquery.ui.core.min.js?v=1.8.7"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.cookie.js?v=1.0"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/jquery.form.js?v=2.52"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form-single-submit.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/form.js?v=7.98"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/ajax.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/default/modules/jquery_update/js/jquery_update.js%3Fv=0.0.1"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/progress.js?v=7.98"></script>
+<script type="text/javascript" src="../sites/all/modules/ctools/js/modal.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/default/modules/modal_forms/js/modal_forms_popup.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/responsive_menus/styles/responsive_menus_simple/js/responsive_menus_simple.js%3Ft4kojz"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js%3Ft4kojz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-107867597-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="../sites/all/modules/field_group/field_group.js%3Ft4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/tableheader.js?t4kojz"></script>
+<script type="text/javascript" src="https://datasciencehub.net/misc/collapse.js?v=7.98"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"corolla","theme_token":"orUc3M1pwkB5eGbeI6QZ17HtiyQZXKD7NHz8UO8tzRc","jquery_version":"default","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/form-single-submit.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/default\/modules\/jquery_update\/js\/jquery_update.js":1,"misc\/progress.js":1,"sites\/all\/modules\/ctools\/js\/modal.js":1,"sites\/default\/modules\/modal_forms\/js\/modal_forms_popup.js":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/js\/responsive_menus_simple.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/field_group\/field_group.js":1,"misc\/tableheader.js":1,"misc\/collapse.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ctools\/css\/modal.css":1,"sites\/default\/modules\/modal_forms\/css\/modal_forms_popup.css":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/css\/responsive_menus_simple.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.headings.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.settings.style.image.css":1,"sites\/all\/themes\/adaptivetheme\/at_core\/css\/at.layout.css":1,"sites\/all\/themes\/corolla\/css\/html-elements.css":1,"sites\/all\/themes\/corolla\/css\/forms.css":1,"sites\/all\/themes\/corolla\/css\/tables.css":1,"sites\/all\/themes\/corolla\/css\/page.css":1,"sites\/all\/themes\/corolla\/css\/articles.css":1,"sites\/all\/themes\/corolla\/css\/comments.css":1,"sites\/all\/themes\/corolla\/css\/fields.css":1,"sites\/all\/themes\/corolla\/css\/blocks.css":1,"sites\/all\/themes\/corolla\/css\/navigation.css":1,"sites\/all\/themes\/corolla\/css\/fonts.css":1,"sites\/all\/themes\/corolla\/css\/corolla.settings.style.css":1,"sites\/all\/themes\/corolla\/color\/colors.css":1,"sites\/all\/themes\/corolla\/css\/print.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.responsive.layout.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.fonts.css":1,"sites\/all\/themes\/corolla\/css\/responsive.custom.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.smartphone.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.portrait.css":1,"sites\/all\/themes\/corolla\/css\/responsive.tablet.landscape.css":1,"sites\/all\/themes\/corolla\/css\/responsive.desktop.css":1,"public:\/\/adaptivetheme\/corolla_files\/corolla.lt-ie9.layout.css":1,"sites\/all\/themes\/corolla\/css\/ie-lte-9.css":1}},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E"},"modal-popup-small":{"modalSize":{"type":"fixed","width":500,"height":150},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-medium":{"modalSize":{"type":"fixed","width":550,"height":450},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-large":{"modalSize":{"type":"scale","width":0.8,"height":0.8},"modalOptions":{"opacity":0.85,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/default\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"responsive_menus":[{"toggler_text":"\u2630 Menu","selectors":["#block-system-main-menu"],"media_size":"935","media_unit":"px","absolute":"1","remove_attributes":"1","responsive_menus_style":"responsive_menus_simple"}],"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/search\/node":true,"\/node\/671":true},"field_group":{"fieldset":"full"},"ctools-sample-style":{"modalSize":{"type":"fixed","width":1098,"height":500,"addWidth":20,"addHeight":15},"modalOptions":{"opacity":0.5,"background-color":"#000"},"animation":"fadeIn","modalTheme":"CToolsSampleModal","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 class=\u0022image-style-none\u0022 src=\u0022https:\/\/datasciencehub.net\/sites\/all\/modules\/ctools\/ctools_ajax_sample\/images\/ajax-loader.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E"},"adaptivetheme":{"corolla":{"layout_settings":{"bigscreen":"three-col-grail","tablet_landscape":"three-col-grail","tablet_portrait":"one-col-vert","smalltouch_landscape":"one-col-vert","smalltouch_portrait":"one-col-stack"},"media_query_settings":{"bigscreen":"only screen and (min-width:1025px)","tablet_landscape":"only screen and (min-width:769px) and (max-width:1024px)","tablet_portrait":"only screen and (min-width:481px) and (max-width:768px)","smalltouch_landscape":"only screen and (min-width:321px) and (max-width:480px)","smalltouch_portrait":"only screen and (max-width:320px)"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]>
+<script src="https://datasciencehub.net/sites/all/themes/adaptivetheme/at_core/scripts/html5.js?t4kojz"></script>
+<![endif]-->
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-671 node-type-submit-paper site-name-hidden atr-7.x-3.x atv-7.x-3.1 lang-en site-name-data-science section-paper color-scheme-custom corolla bs-n bb-n mb-dd rc-6 rct-6">
+  <div id="skip-link" class="nocontent">
+    <a href="671.html#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="page-wrapper">
+  <div id="page" class="page ssc-n ssw-n ssa-l sss-n btc-n btw-b bta-l bts-n ntc-n ntw-b nta-l nts-n ctc-n ctw-b cta-l cts-n ptc-n ptw-b pta-l pts-n">
+
+          <div id="menu-bar-wrapper">
+        <div class="container clearfix">
+          <div id="menu-bar" class="nav clearfix"><nav id="block-system-main-menu" class="block block-system block-menu menu-wrapper menu-bar-wrapper clearfix odd first block-count-1 block-region-menu-bar block-main-menu"  role="navigation">  
+      <h2 class="element-invisible block-title">Main menu</h2>
+  
+  <ul class="menu clearfix"><li class="first leaf menu-depth-1 menu-item-757"><a href="../content/about-data-science.html">About</a></li><li class="leaf menu-depth-1 menu-item-758"><a href="../content/editors.html">Editorial Board</a></li><li class="leaf menu-depth-1 menu-item-1559"><a href="../content/submit-manuscript.html">Submit Manuscript</a></li><li class="leaf menu-depth-1 menu-item-1612"><a href="../content/calls.html">Calls</a></li><li class="leaf menu-depth-1 menu-item-759"><a href="../content/guidelines-authors.html">For Authors</a></li><li class="leaf menu-depth-1 menu-item-760"><a href="../content/guidelines-reviewers.html">For Reviewers</a></li><li class="leaf menu-depth-1 menu-item-582"><a href="../underreview.html" title="Under Review">Under Review</a></li><li class="leaf menu-depth-1 menu-item-583"><a href="../reviewed.html" title="">Reviewed</a></li><li class="last leaf menu-depth-1 menu-item-1611"><a href="../ReviewedAccepted.html" title="">Accepted</a></li></ul>
+  </nav><div id="block-orcid-login-orcid-login" class="block block-orcid-login no-title menu-wrapper menu-bar-wrapper clearfix even last block-count-2 block-region-menu-bar block-orcid-login" >  
+  
+  <p style="background-color: #003b3a; float:right;"><a style="vertical-align: middle; color: white; padding: 10px; display: inline-block; text-decoration: none;" href="https://orcid.org/oauth/authorize?client_id=APP-223SGGDDO35LKOT2&amp;response_type=code&amp;scope=%2Fauthenticate&amp;redirect_uri=https%3A%2F%2Fdatasciencehub.net%2F&amp;state=eyJyZWRpcmVjdCI6Im5vZGVcLzY3MSJ9"><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle;"/> Log In with ORCID</a></p>
+  </div></div>        </div>
+      </div>
+    
+    <div id="header-wrapper">
+      <div class="container clearfix">
+	        <header class="clearfix with-logo" role="banner">
+
+                      <div id="branding" class="branding-elements clearfix">
+
+                              <div id="logo">
+                  <a href="../index.html"><img class="site-logo" typeof="foaf:Image" src="../sites/default/files/DS_LOGO_vertical.png" alt="Data Science" /></a>                </div>
+              
+                              <div class="element-invisible h-group" id="name-and-slogan">
+
+                                      <h1 class="element-invisible" id="site-name"><a href="../index.html" title="Home page">Data Science</a></h1>
+                  
+                  
+                </div>
+              
+            </div>
+          
+          
+        </header>
+
+      </div>
+    </div>
+
+          <div id="top-panels-wrapper">
+        <div class="container clearfix">
+          <!-- Three column 3x33 Gpanel -->
+          <div class="at-panel gpanel panel-display three-3x33 clearfix">
+                                                          </div>
+        </div>
+      </div>
+    
+    
+    
+    <div id="content-wrapper">
+      <div class="container">
+
+        <div id="columns">
+          <div class="columns-inner clearfix">
+
+            <div id="content-column">
+              <div class="content-inner">
+
+                
+                <section id="main-content" role="main">
+
+                  
+                  <div class="content-margin">
+                    <div class="content-style">
+
+                      
+                      
+                      
+                                              <header class="clearfix">
+                          <h1 id="page-title">
+                            The complex link between filter bubbles and opinion polarization                          </h1>
+                        </header>
+                      
+                      
+                      
+                      <div id="content">
+                        <div class="region region-content"><div id="block-system-main" class="block block-system no-title odd first last block-count-3 block-region-content block-main" >  
+  
+  <article id="node-671" class="node node-submit-paper article odd node-lang-en node-full ia-n clearfix" about="/paper/complex-link-between-filter-bubbles-and-opinion-polarization-0" typeof="sioc:Item foaf:Document" role="article">
+  <div class="node-inner">
+
+
+
+              <header class="node-header">
+
+        
+        
+      </header>
+        <span property="dc:title" content="The complex link between filter bubbles and opinion polarization" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="1" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+    <div class="node-content">
+        
+      <h3>Tracking #: 671-1651</h3>          								<fieldset>
+					<!-- legend>
+						<span class="fieldset-legend">Paper Data</span>
+					</legend -->
+
+					
+
+
+					
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><h5>Authors:</h5><br/><form action="671.html" method="post" id="authors-table-form-anonymus" accept-charset="UTF-8"><div><div id="authors_Container"><table class="sticky-enabled">
+ <thead><tr><th></th><th>Name</th><th>ORCID</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td><div class="form-item form-type-checkbox form-item-authors-1210">
+  <input type="checkbox" id="edit-authors-1210" name="authors[1210]" value="1210" class="form-checkbox" />
+</div>
+</td><td>Michael Maes</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0001-9416-3211" target="_blank">https://orcid.org/0000-0001-9416-3211</a></td> </tr>
+ <tr class="even"><td><div class="form-item form-type-checkbox form-item-authors-1226">
+  <input type="checkbox" id="edit-authors-1226" name="authors[1226]" value="1226" class="form-checkbox" />
+</div>
+</td><td>Marijn Keijzer</td><td><img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-7585-062X" target="_blank">https://orcid.org/0000-0002-7585-062X</a></td> </tr>
+</tbody>
+</table>
+</div><input type="hidden" name="author_nd" value="671" />
+<input type="hidden" name="author_vd" value="1651" />
+<input type="hidden" name="form_build_id" value="form-zs45OCgKYErGPXh196BfXEnDhHBvQl3FhA6bgp3tQfI" />
+<input type="hidden" name="form_id" value="authors_table_form_anonymus" />
+</div></form><hr/></div><br/>
+
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-editor field-type-user-reference field-label-above view-mode-full"><h2 class="field-label">Responsible editor:&nbsp;</h2><div class="field-items"><div class="field-item even">Victor de Boer</div></div></section></div><br/>
+					                    <div style="background-color: #E3E5E3;border-radius:5px;padding-top:4px;padding-bottom:4px;padding-left:6px;">
+					<section class="field field-name-field-submission-type field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Submission Type:&nbsp;</h2><div class="field-items"><div class="field-item even">Position Paper</div></div></section><section class="field field-name-field-abstract field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Abstract:&nbsp;</h2><div class="field-items"><div class="field-item even">There is public and scholarly debate about the effects of personalized recommender systems implemented in online social networks, online markets, and search engines. On the one hand, it has been warned that personalization algorithms reduce the diversity of information diets which confirms users’ previously held attitudes and beliefs. Opinionated social media posts, shared news items, and online discussion could fragment social groups, alienate users with different political views, and ultimately foster opinion polarization. On the other hand, critics of this “personalization-polarization hypothesis” argue that the effects of personalization algorithms on information diets are too weak to have meaningful effects. Here, we argue that contributions to both sides of the debate fail to consider the complexity that arises when large numbers of interdependent Internet users interact and exert influence on one another in algorithmically governed communication systems. Reviewing insights from the literature of opinion dynamics in social networks, we demonstrate that opinion dynamics can be critically influenced by mechanisms active on three levels of analysis: the individual, local, and global level. We show that theoretical and empirical research on these three levels is needed to answer the question whether personalization fosters polarization or not, advocating an approach that combines rigorous theoretical modeling with the emergent field of data science.</div></div></section><section class="field field-name-field-pdf field-type-file field-label-above view-mode-full"><h2 class="field-label">Manuscript:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="File" title="application/vnd.openxmlformats-officedocument.wordprocessingml.document" src="https://datasciencehub.net/modules/file/icons/x-office-document.png" /> <a href="../system/files/ds-paper-671.docx" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document; length=1450009">ds-paper-671.docx</a></span></div></div></section><section class="field field-name-field-supplementary-files field-type-file field-label-above view-mode-full"><h2 class="field-label">Supplementary Files (optional):&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="PDF icon" title="application/pdf" src="https://datasciencehub.net/modules/file/icons/application-pdf.png" /> <a href="../system/files/ds-supplementary-671-1042.pdf" type="application/pdf; length=245493">ds-supplementary-671-1042.pdf</a></span></div></div></section><section class="field field-name-field-previous-version field-type-node-reference field-label-above view-mode-full"><h2 class="field-label">Previous Version:&nbsp;</h2><div class="field-items"><div class="field-item even"><a href="../paper/complex-link-between-filter-bubbles-and-opinion-polarization.html">The complex link between filter bubbles and opinion polarization</a></div></div></section><div class="view view-revised-verision view-id-revised_verision view-display-id-entity_view_1 view-dom-id-c33edd7a96b24ee6dfbffe6ffd7c19c6">
+      
+      <div class="view-header">
+      <b>Revised Version:</b>    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="../paper/complex-link-between-filter-bubbles-and-opinion-polarization-1.html">The complex link between filter bubbles and opinion polarization</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> <section class="field field-name-field-tags field-type-taxonomy-term-reference field-label-above view-mode-full"><h2 class="field-label">Tags:&nbsp;</h2><ul class="field-items"><li class="field-item even">Reviewed</li></ul></section><section class="field field-name-field-data-repository-urls field-type-text-long field-label-above view-mode-full"><h2 class="field-label">Data repository URLs:&nbsp;</h2><div class="field-items"><div class="field-item even"><p><span style="font-size:10.0pt;mso-bidi-font-size:12.0pt;&lt;br /&gt;&#10;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;MS Mincho&quot;;&lt;br /&gt;&#10;mso-ansi-language:EN-US;mso-fareast-language:JA;mso-bidi-language:AR-SA">github.com/marijnkeijzer/polarizingBubbles</span></p>
+</div></div></section><section class="field field-name-field-date-of-submission field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Submission:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2020-12-21T00:00:00-05:00">Monday, December 21, 2020</span></div></div></section><section class="field field-name-field-date-of-decision field-type-datetime field-label-above view-mode-full"><h2 class="field-label">Date of Decision:&nbsp;</h2><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2021-04-07T00:00:00-04:00">Wednesday, April 7, 2021</span></div></div></section><br><br><b>Nanopublication URLs:</b> <br>                    </div>
+                    <br/>
+
+					
+                    
+                    <div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><section class="field field-name-field-decision field-type-list-text field-label-above view-mode-full"><h2 class="field-label">Decision:&nbsp;</h2><div class="field-items"><div class="field-item even">Accept</div></div></section></div><br/>                    <div id="review">
+                    		                    	</div>
+
+					
+										<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><b>Solicited Reviews:</b><br/><form action="671.html" method="post" id="get-submitted-reviews" accept-charset="UTF-8"><div><fieldset class="collapsible collapsed form-wrapper" id="edit-fset1"><legend><span class="fieldset-legend">Review #1 <strong>submitted on 29/Mar/2021</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Catherine Faron</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0001-5959-5561" target="_blank">https://orcid.org/0000-0001-5959-5561</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Good</br><b style="color:#f39222">Suggested Decision: </b> Accept</br><b style="color:#f39222">Technical Quality of the paper:</b> Good<br/><b style="color:#f39222">Presentation:</b> Excellent<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> Moderate significance<br/><b style="color:#f39222">Background:</b> Comprehensive<br/><b style="color:#f39222">Novelty:</b> Limited novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data (if any) are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences (summary of changes and improvements for
+second round reviews): </b><br/><p>This paper presents and discusses state of the art results on the effect of personalization algorithms in online social networks on opinion polarization. In section 2 the authors introduce the notions of recommendation, homophily, and opinion polarization and report the warnings emitted by political decision makers and scientists on personalization fostering polarization. Then they show that this is a debatable and debated question. In section 3 they highlight the complexity of the relationship between recommendation and polarization that should be studied at the individual, local and global levels. At the individual level they show that depending on the chosen model (rejection or reinforcement) the conclusions are opposite on the effect of personalization on polarization; at the local level they show that the effect of personalization depends on the communication mode (one to one or one to many); at the global level, they show that the effect of personalization on opinion fragmentation depends on network clustering. They conclude on the need to conduct much more theoretical and empirical work in social network analysis and more generally data science and computational social science to conclude on the effect of personalization.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>This paper is a good introduction to the question of the effect of personnalization on social networks or opinion dynamics and to the state of the art on this important research question.<br />
+It is very well written and accessible for beginners. It should also be of interest for researchers in the domain to step back from the issue.<br />
+In addition to their survey, the autors report on two original experiments they conducted at the local and global level to show the complexity of the effect of personalization and the sorce code is freely available online.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>Apart from the two experiments conducted to show the complexity of the effect of personalization, the authors do not propose any original model to capture the overall effect of personalization. But this was not their goal, they aimed at highlighting the need for further research works on social network to answer this question.<br />
+The question of the effect of personnalization addressed in the paper is related to data science but is not at the heart of it. Data science is mentioned only in conclusion.</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>Wherever the term Internet is used in the paper, it should be replaced by Web</p>
+<p>A few typos:<br />
+P6 the "the<br />
+P8 The following -&gt; In the following<br />
+Table 1 communication online -&gt; online communication<br />
+P9 and Table 1 I do not understand "who is when"<br />
+Figure 1 the first diagram is missing<br />
+P11 is has<br />
+P12 The two users on the right -&gt; left<br />
+P16 Equation 1 should be Equation 2<br />
+Figure 4 should better come P17</p>
+</p></div></fieldset>
+<fieldset class="collapsible collapsed form-wrapper" id="edit-fset2"><legend><span class="fieldset-legend">Review #2 <strong>submitted on 01/Apr/2021</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Jacco van Ossenbruggen</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0002-7748-4715" target="_blank">https://orcid.org/0000-0002-7748-4715</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Weak</br><b style="color:#f39222">Suggested Decision: </b> Reject</br><b style="color:#f39222">Technical Quality of the paper:</b> Weak<br/><b style="color:#f39222">Presentation:</b> Good<br/><b style="color:#f39222">Reviewer`s confidence:</b> High<br/><b style="color:#f39222">Significance:</b> Low significance<br/><b style="color:#f39222">Background:</b> Incomplete or inappropriate<br/><b style="color:#f39222">Novelty:</b> Lack of novelty<br/><b style="color:#f39222">Data availability:</b> All used and produced data (if any) are FAIR and openly available in established data repositories<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences (summary of changes and improvements for
+second round reviews): </b><br/><p>The paper provides an extensive literature overview of the effect of personalization technologies on polarization.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>Interesting topic that is of high relevance for the field.<br />
+Authors improved many aspects of the first submission on request of the reviewers.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>The authors did not address the main objection of R1: that the paper in its current form is insufficiently relevant for the readers of this journal.<br />
+This is partly due to the type of paper:<br />
+While the paper contains some small-scale simulations, these are insufficient for it to pass as a research paper. There is no serious data-driven research here to be reported on. Also, in remains unclear what the formal models are that are being proposed. While the paper contains a significant literature review, this is insufficiently systematic to pass as a survey paper. The paper is not a resource paper either, but has been submitted as a position paper. It indeed does provide an opinionated view on a specific topic, but not one that is sufficiently novel and potentially disruptive as earlier noticed by R1. So I agree with R1, and not with the authors rebuttal: "Whether a paper is disruptive or not is not a fruitful discussion, mainly because disruptiveness is not a scientific criterion". I would agree with the authors for surveys, resource or research papers, but not for position papers. Please double check on the guidelines at <a href="../content/guidelines-reviewers.html">https://datasciencehub.net/content/guidelines-reviewers</a>.</p>
+<p>Apart from the form, I think a key problem is that it remains unclear what the majority of data scientists that are not directly working on simulations of polarization can learn from this., not from a practical point of view nor from an academic point of view. The major missing ingredient is a conclusion that states: this is what data scientists can learn from these insights from taking a social science perspective.</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>I think it would also be better for the authors to publish this work in a more social science journal where their work might be more appreciated. I think their intended audience is not a subset of this journal's readership.</p>
+</p></div></fieldset>
+<fieldset class="collapsible collapsed form-wrapper" id="edit-fset3"><legend><span class="fieldset-legend">Review #3 <strong>submitted on 01/Apr/2021</strong></span></legend><div class="fieldset-wrapper with-legend"><div class="fieldset-description">By <strong>Ronald Siebes</strong> <img alt="ORCID logo" src="../sites/default/files/orcid_24x24.png" style="vertical-align: middle; margin:0px;"/> <a href="https://orcid.org/0000-0001-8772-7904" target="_blank">https://orcid.org/0000-0001-8772-7904</a><br/><br/>Review Details<br/><hr/></div><p>Reviewer has chosen <b>not</b> to be <strong><em>Anonymous</em></strong></p><b style="color:#f39222">Overall Impression:</b> Good</br><b style="color:#f39222">Suggested Decision: </b> Accept</br><b style="color:#f39222">Technical Quality of the paper:</b> Good<br/><b style="color:#f39222">Presentation:</b> Good<br/><b style="color:#f39222">Reviewer`s confidence:</b> Medium<br/><b style="color:#f39222">Significance:</b> Moderate significance<br/><b style="color:#f39222">Background:</b> Reasonable<br/><b style="color:#f39222">Novelty:</b> Clear novelty<br/><b style="color:#f39222">Data availability:</b> Not all used and produced data are FAIR and openly available in established data repositories; authors need to fix this<br/><b style="color:#f39222">Length of the manuscript:</b> The length of this manuscript is about right</p><p><b style="color:#f39222">Summary of paper in a few sentences (summary of changes and improvements for
+second round reviews): </b><br/><p>The main point of this paper is to provide a detailed argument that the scientific basis for certain claims about the effect of personalized recommendation algorithms on thought polarization is missing. This paper is a perfect rationale for the relevance of this journal in general:  the research discipline of Data Science form the community to answer if the above claims are correct or not.<br />
+The authors provide a guidance to relevant research to start tackling the claims that are often used as 'facts' in the political discourse.</p>
+</p><p><b style="color:#f39222">Reasons to accept: </b><br/><p>I was asked to do this second-round review, taking into account the reviews from the first submission. This is because the content is well written and founded on existing research, a discussion point was the relevance to this journal.<br />
+My conclusion is: yes. Motivational papers, where this one belongs to, are a valuable contribution to the field of Data Science. It demonstrates the relevance of this field and challenges researchers to bridge 'real world problems and consequences' with theoretical science and practical engineering. </p>
+<p>The authors dealt sufficiently the comments of the reviewers by providing elaborate feedback and adding updates to the paper that address these comments.</p>
+</p><p><b style="color:#f39222">Reasons to reject: </b><br/><p>Despite the fact that I am not an expert in the field of Complexity Research, there are some things that came into my mind, like 1) the lack of distinction why you are in a certain group (e.g. physical neighbors, colleagues, online hobby-groups) and its effect on 'like-mindedness' or 2) the influence of 'Big Tech' recommending content to propose or limit content for other reasons (e.g. ethical, moral, political) than pure personalisation goals based on algorithms.<br />
+It is a missed chance that the author did not address these two issues.</p>
+</p><p><b style="color:#f39222">Nanopublication comments: </b><br/></p><p><b style="color:#f39222">Further comments: </b><br/><p>The goal of my review is  to see if the paper was relevant for this journal and if it addressed the reviewers comments satisfactory. That is the case.</p>
+</p></div></fieldset>
+<input type="hidden" name="form_build_id" value="form-6kgrKlzzCRozvvE7_cPb_54mQR_z8akwXJ_-PF36ZNU" />
+<input type="hidden" name="form_id" value="get_submitted_reviews" />
+</div></form></div><br/>                    
+					<div style="background-color: #E3E5E3;border-radius: 5px;padding-top:4px;padding-bottom:4px;padding-left:6px;"><fieldset class="collapsible collapsed group-response-to-reviews field-group-fieldset form-wrapper"><legend><span class="fieldset-legend">RESPONSE TO REVIEWERS</span></legend><div class="fieldset-wrapper with-legend"><div class="field field-name-field-response-to-reviews field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even"><p>We also uploaded our reactions as a pdf (see supplementary material), as the website has limited formatting options. We feel that the pdf is easier to read.</p>
+<p>REVIEWER 1:</p>
+<p>We want to thank you for your very detailed and helpful feedback. You greatly helped us improve the paper. Below, we list your comments (in capital letters) and our reactions. Please note that we respond only briefly to your general comments, as you kindly detailed them in your “further comments”. These comments are addressed in detail.</p>
+<p>SUMMARY OF PAPER IN A FEW SENTENCES:<br />
+THIS PAPER DISCUSSES THE EFFECT OF PERSONALISATION TECHNOLOGIES ON POLARISATION.</p>
+<p>REASONS TO ACCEPT:<br />
+1.- THE PAPER ADDRESSES A RELEVANT TOPIC, THAT OF THE EFFECT OF PERSONALISATION TECHNOLOGIES ON POLARISATION<br />
+2.- THE HIGHLIGHTS IMPORTANT POINTS OF THE DEBATE<br />
+3.- THE PAPER PROPOSES AN ABSTRACTION OF THE PROBLEM, IDENTIFYING THREE LEVELS OR DIMENSIONS: INDIVIDUAL, LOCAL AND GLOBAL</p>
+<p>REASONS TO REJECT:<br />
+1.- THE PAPER ADDRESSES THE PROBLEM MAINLY FROM A SOCIAL SCIENCE PERSPECTIVE, SIDELINING THE TECHNOLOGICAL AND DATA SCIENCE PERSPECTIVES. IN THIS SENSE, THE PAPER MAY NOT FIT WELL THE TOPICS OF THE JOURNAL</p>
+<p>Thank you for your comment. The aim of the paper is indeed to advocate a perspective that is, in our opinion, underrepresented in the data-science literature. The personalization-polarization-hypothesis proposes that technology has an effect on a social dynamic. We argue, in a nutshell, that an empirical test of the hypothesis and the design of technology that prevents undesired effects requires a thorough theoretical understanding of this social dynamic. The field of complexity research, which originates from physics and mathematics, provides a framework for such a theoretical analysis. In our responses to your detailed comments, we show how we tried to better convey this message. That is, we tried to more explicitly demonstrate what the perspective of our paper adds to the technological and data-science perspective. In addition, we also tried to make more explicit that theoretical modeling can contribute to the development of new personalization technology that prevents undesired effects on opinion dynamics.</p>
+<p>2.- THE PAPER PRESENTS A WIDE RANGE OF CONCEPTS IN AN AMBIGUOUS MANNER. FOR EXAMPLE, RECOMMENDATION ALGORITHMS, AND PERSONALISATION ALGORITHMS ARE NOT THE SAME, AND ACKNOWLEDGING THIS DISTINCTION IS IMPORTANT FOR THE PROBLEM BEING DISCUSSED. SIMILARLY WITH THE EFFECT OF PERSONALISATION ALGORITHMS VS. THE EFFECT OF COMMUNICATION VIA SOCIAL NETWORKS.</p>
+<p>We agree with both points. To improve, we added a paragraph defining the concept of personalization and acknowledging the diversity of different algorithms and purposes. We also make explicit that the personalization-polarization-hypothesis and our work is focused on one core aspect of these algorithms: their tendency to expose users to political and cultural views that are in line with their own opinions. What is more, we tried to use the terms “personalization algorithms” and “recommend systems” more consistently throughout the paper. That is, we now refer only to “personalization algorithms”.<br />
+Concerning your second point, we also agree and thank you for pointing us to the confusion. There are indeed two distinct hypotheses. First, Sunstein [1] argued that online communication intensifies polarization. Second, Pariser and, in particular, modelers inspired by his work added that personalization has an effect on top of the effect proposed by Sunstein [2–4]. The two hypotheses are closely related, as they are based on very similar theoretical arguments. What is more, the effects proposed by the two hypotheses may reinforce each other. Nevertheless, they need to be clearly distinguished, as you point out. Below, we describe how we adjusted the manuscript accordingly.</p>
+<p>3.- THE PAPER SEEMS TO BE MISSING IMPORTANT LITERATURE FROM COMPUTER SCIENCE AND FROM COMPUTATIONAL SOCIAL SCIENCE RESEARCH.</p>
+<p>Thanks. We describe below how we tried to tackle this point, listing further references.</p>
+<p>FURTHER COMMENTS:<br />
+THE PAPER ADDRESSES AN IMPORTANT TOPIC AND DISCUSSES IMPORTANT POINTS WITHIN THE DEBATE. IS IS ALSO WELL WRITTEN AND STRUCTURED. HOWEVER, MULTIPLE IMPORTANT ISSUES ARE NOT BEING CONSIDERED IN THIS DISCUSSION.</p>
+<p>Thank you for your nice words and your detailed and helpful comments. </p>
+<p>FIRST, PLEASE NOTE THAT THERE ARE IMPORTANT DISTINCTIONS BETWEEN PERSONALISATION, RECOMMENDATION, AND THE EFFECT OF SOCIAL NETWORKS. COMMUNICATION VIA SOCIAL NETWORKS HAVE ENABLED US TO CONNECT WITH INDIVIDUALS THAT ARE PHYSICALLY FAR FROM US, TO BE EXPOSED TO HIGH AMOUNTS OF INFORMATION FROM A VARIETY OF SOURCES, TO HIDE ON THE ANONYMITY OF USER ACCOUNTS, ETC. THESE ARE ASPECTS OF THE COMMUNICATION MEDIUM THAT MAY INCENTIVISE POLARISATION, BUT THESE ASPECTS ARE DIFFERENT THAN THE ALGORITHMIC ASPECTS OF PERSONALISATION OR RECOMMENDATION METHODS.</p>
+<p>This comment details your second general comment from above. We agree that the effects online communication and personalization need to be distinguished. To avoid confusion, we made more explicit that there are indeed two separate arguments. The following paragraphs were added on Page 4:<br />
+Homophily is a strong force in human interaction also in the absence of personalization [19,33]. There is a rich empirical literature documenting that humans tend to interact with others who hold similar demographic attributes, have similar social status, and hold similar opinions [34–36]. In addition, it has been proposed that the Internet makes it especially easy to find and contact like-minded individuals, allowing in particular users with extreme opinions to form online enclaves that would be very difficult to establish and maintain offline [37]. Sunstein argued that this high degree of homophily is potentially harmful, as it intensifies processes of opinion polarization, the development of antagonistic groups, where opinion differences between groups intensify and positions between the two extremes of an opinion spectrum are increasingly sparsely occupied [38]. Informed by social-psychological research [39,40], he argued that strong homophily intensifies users’ opinions, as they are mainly exposed to online content containing persuasive information that reinforces their initial opinions. As opinions of users from the left end of the political spectrum grow more leftist and users identifying with rightist political views also grow more extreme, opinion differences between the political camps increase and the opinion distribution polarizes.<br />
+Scholars and experts have noted that personalization technology is yet another source of homophily, a hypothesis that found empirical support with research on Facebook [41]. Personalization algorithms might have further intensified opinion polarization and may even be responsible for the growing opinion polarization observed in many western countries [42,43]. Here, we refer to this conjecture as the personalization-polarization hypothesis.</p>
+<p>Next, your comments showed us that our illustration of local aspects did not focus on personalization effects but on the effects of communication in online social networks. The central point that we did not convey clearly is that personalization can intensify the effects of local aspects of online communication on polarization. As this insight has actually never been formally demonstrated, we conducted a new simulation experiment and added a figure driving home the insight that the one-to-many communication regime of many online social networks fosters polarization more when personalization is strong. We rewrote large parts of Section 3.2 and repeat below the main paragraphs:</p>
+<p>“The increased tendency to generate opposing clusters under the one-to-many regime is relevant for the personalization-polarization debate, because the difference between the two communication regimes is greater when homophily is increased. To demonstrate this, we conducted a simulation experiment with Axelrod’s model of cultural dissemination, extending the analyses of [105].<br />
+[…]<br />
+Figure 3 reports the results of our simulation experiment. In this experiment, we studied seven different values of personalization strength h and conducted 200 independent simulation runs per condition with one-to-one and with one-to-many communication.<br />
+[…]<br />
+In sum, the example of one-to-many communication effects illustrates that local-level aspects can impact opinion dynamics in social networks. The example also shows that the effect of personalization technology on opinion polarization can depend on local-level aspects. We conclude that a thorough analysis of the personalization-polarization hypothesis needs to consider relevant local-level aspects. Unfortunately, researchers are only starting to explore local-level aspects, which suggests that it is too early to draw conclusions about the truth of the personalization-polarization hypothesis.“ </p>
+<p>AT NO POINT IN THE PAPER THE ALGORITHMIC ASPECTS ARE BEING DISCUSSED. WHAT ARE THE PARTICULARITIES OF COLLABORATIVE FILTERING, MATRIX FACTORISATION, CONTENT-BASED, OR OTHER RECOMMENDATION METHODS THAT MAY INCREASE POLARISATION? HOW CAN DIFFERENT USER PROFILES, ITEM PROFILES OR MATCHING METHODS MAY INFLUENCE POLARISATION? HOW CAN THE DATA THAT IS BEING PERSONALISED INFLUENCE POLARISATION?</p>
+<p>Indeed, these aspects are not discussed in the paper, and we feel that they are not in the scope of this paper. We, therefore, chose to acknowledge the diversity of personalization techniques and to make explicit why we abstract from it. We also made clear that we focus on the central aspect that personalization technology has been designed and criticized for: their tendency to expose users to content that is similar to their interests. In addition, we added references to articles describing different personalization approaches. [19–24] We added the following paragraph to Section 2 of the paper:<br />
+“Personalization algorithms have been developed for various online services including online social networks, search engines, and online markets [23–28]. What is more, for each of these services there is a vast number of different technical approaches to personalization. What these approaches share, however, is that they seek to infer individual users’ interests from information they provided, from their earlier behavior, and from the behavior of other individuals who share relevant attributes with the respective user. For instance, if a YouTube user regularly watches a certain car show on the platform, its algorithms will recommend other car-related content and content that other users who watched the same car show have selected in the past. As a consequence, users are exposed to content that is in one way or the other similar to the content they chose to consume earlier. This tendency to provide users to similar content and to limit their exposure to content that deviates from users’ interests and opinions is central to the debate about undesired social effects of the technology. Accordingly, we also focus on this central aspect, abstracting from the large variety of technical implementations of personalization.”</p>
+<p>IT IS ALSO IMPORTANT TO CONSIDER THAT 'SOCIAL CONNECTION' DOES NOT MEAN INFLUENCE. USERS MAY RECEIVE INFORMATION THAT DOES NOT INFLUENCE THEM IN ANY WAY. NOTE THAT SOME USERS ARE MORE PRONE TO POLARISATION THAN OTHERS. THERE IS IMPORTANT RESEARCH ON THE FIELD OF MISINFORMATION RELATED TO THE TOPICS DISCUSSED IN THIS ARTICLE, INCLUDING THE EFFECTS OF CONFIRMATION BIASES, OR THE EFFECT OF HUMAN VALUES AND PERSONALITY TYPES ON THE SPREAD OF MISINFORMATION AND POLARISATION. THERE ARE ALSO RELEVANT WORKS ON SOCIAL MEDIA 'INFLUENCE' AND ENGAGEMENT. NOTE THAT NOT ALL USERS HAVE THE SAME INFLUENCE THAN OTHERS (AUTHORITIES, CELEBRITIES, ETC.) HAVE A HIGHER DEGREE OF INFLUENCE. THEY ALSO TEND TO HAVE MORE FOLLOWERS AND HENCE HIGHER CHANCES TO SPREAD THEIR MESSAGES. </p>
+<p>We agree that there are many other aspects that could affect whether or not personalization affects polarization. The aim of our paper is to illustrate that factors on the individual, local, and global level might matter critically, highlighting three examples that are underrepresented in the debate about personalization. To better acknowledge that there are also further potentially important aspects, we mention possible aspects at the end of the three sections focusing on the three levels of analysis.  For instance, we added at the end of Section 3.1 that individuals differ in the degree to which they are open to influence and their persuasiveness, as you describe. We also added references to the modeling literature on this aspect, mentioning that this is an important research . We write at the end of Section 3.1: “In conclusion, alternative theories of the individual-level processes in communication network make opposing predictions about whether the personalization-polarization hypothesis is true or false. In reality, online communication may be best described by a hybrid of assumptions from rejection and reinforcement models, but without empirical information about which theory is true under what conditions, there are too many possible ways to combine assumptions of the competing theories into a single model. Furthermore, there are further individual-level factors that may have critical effects on whether polarization emerges or not. For instance, the described models abstract from possible heterogeneity between individuals. Some individuals may be more open to influence from online contacts than others, and some may exert stronger influence than others. To our knowledge, such heterogeneity has not been studied in the context of the two models, but for alternative opinion-dynamics models researchers documented critical effects [101–103].”</p>
+<p>Likewise, we added¬ further aspects that we could not cover in Section 3.3.:<br />
+“The presented analysis of the effects of network clustering illustrates, in a nutshell, that the structure of the communication network can affect the degree to which personalization technology affects the outcomes of opinion-dynamics processes. Network clustering was taken here as an example and is just one of many potentially important global aspects. Other potentially relevant global aspects that have been shown to influence-model dynamics are demographic diversity [88,115,116], network segregation [108,117], the number of bridges connecting otherwise disconnected network clusters [115], and the existence of agents with many connections [107,118]. Considerable empirical and theoretical research is needed to understand whether and under what conditions global aspects affect how personalization technology affects opinion polarization. Without this research, however, it is not possible to evaluate whether or not online communication systems are a setting where personalization could affect polarization or whether global aspects prevent any desired or undesired effects.”</p>
+<p>THESE FEATURES, SUCH AS THE NUMBER OF FOLLOWERS, AS WELL AS NETWORK STRUCTURES AND INFORMATION CASCADES, HAVE BEEN STUDIED IN THE CONTEXT OF MULTIPLE ELECTION CAMPAIGNS, ON THE SPREAD OF MISINFORMATION AND IN THE CONTEXT OF RADICALISATION STUDIES. HOWEVER, THE AUTHORS MENTIONED THAT LOCAL-LEVEL ASPECTS OF COMMUNICATION AND THEIR EFFECTS ON POLARISATION HAVE NOT BEEN CONSIDERED. I WOULD RECOMMEND THE AUTHORS TO TAKE A LOOK TO THE WORK OF FILIPPO MENCZER, EMILIO FERRARA OR CLAUDIA WAGNER.</p>
+<p>Thanks for the comment as it helped us clarify our paper. First, it is not our intention to claim that there is no research on individual, local, or global-level variables, but we argue that there is too little of it and that the consequences that individual, local, and global-level variables have on personalization effects are often complex and poorly understood. Throughout the text, we corrected formulations that suggested the opposite, in order to make clearer that the research we highlight serves as illustrations of urgently needed work. For instance, we now write on Page 16:</p>
+<p>“In sum, the example of one-to-many communication effects illustrates that local-level aspects can impact opinion dynamics in social networks. The example also shows that the effect of personalization technology on opinion polarization can depend on local-level aspects. We conclude that a thorough analysis of the personalization-polarization hypothesis needs to consider relevant local-level aspects. Unfortunately, researchers are only starting to explore local-level aspects, which suggests that it is too early to draw conclusions about the truth of the personalization-polarization hypothesis.”  </p>
+<p>Second, you pointed to research on the diffusion of fake and true content on the web. This work is indeed very relevant and needs to be mentioned. However, models of diffusion are concerned with the spreading of, for instance, a rumor in a network and, thus, typically do not model opinions, which makes it difficult to derive conclusions about opinion polarization from these models. To acknowledge this literature, to distinguish diffusion models from the models of social influence, and to explain the reader why we focus on social-influence models, we added the following paragraph to the introduction of the paper:</p>
+<p>“Opinion dynamics models differ in important ways from models of diffusion in networks, a class of models that has been used to model, for instance the spreading of rumors and (mis)information in online social networks [16,17]. In both model classes, populations are represented as a set of nodes integrated in a network of social relationships. These connections allow nodes to pass information around or to exert influence on each other. In diffusion models, it is assumed that nodes receive content from their neighbors and subsequently share it with their network neighbors. Models of social influence, in contrast, often do not attempt to model this spreading of information explicitly, but focus on opinion values to describe nodes. When two connected nodes interact, they exert social influence on each other, influencing the opinion value of their network neighbor. The central difference between the two classes of models is that diffusion models assume that for instance a piece of fake news can be passed on from one node to another. However, a node that, for instance, has never been exposed to the piece cannot pass its unawareness on to its network neighbors. In social-influence models, in contrast, influence can be bi-directional in that nodes can push and pull each other’s opinions in all possible directions independent of their current state. We focus here on opinion dynamics models rather than diffusion models, as opinion dynamics models have a direct representation of opinions and can, therefore, be used to study the conditions of opinion polarization.”</p>
+<p>We added references to the work you mentioned:</p>
+<p>•	Nematzadeh A, Ferrara E, Flammini A, Ahn Y-Y. Optimal Network Modularity for Information Diffusion. Phys Rev Lett. 113(8):088701.<br />
+•	Weng L, Flammini A, Vespignani A, Menczer F. Competition among memes in a world with limited attention. Sci Rep. 2(335):1–9. </p>
+<p>IN SUMMARY, WHILE THIS PAPER TARGETS AN IMPORTANT PROBLEM, AND BRINGS IMPORTANT ASPECTS INTO DISCUSSION, THE ARTICLE SEEMS TO MISS THE TECHNICAL ANGLE, AS WELL AS A WIDER REVIEW OF TECHNICAL WORKS FROM THE COMPUTER SCIENCE AND COMPUTATIONAL SOCIAL SCIENCE FIELDS. MOREOVER, THE ARTICLE DOES NOT SEEM TO PROVIDE A NOVEL AND POTENTIALLY DISRUPTIVE VIEW OF THE TOPIC (AS REQUIRED FOR POSITION PAPERS HTTPS://DATASCIENCEHUB.NET/CONTENT/GUIDELINES-REVIEWERS) BUT MORE OF AN OVERVIEW AND AN IN DEPTH DISCUSSION OF THE DIFFERENT ASPECTS OF THE TOPIC.</p>
+<p>Whether a paper is disruptive or not is not a fruitful discussion, mainly because disruptiveness is not a scientific criterion. What you comment makes clear, however, is that we failed to clearly state implications of our insights for future research and technology development. In a nutshell, we feel that our paper has two general messages for data-scientists interested in opinion dynamics on the Internet. First, online communication platforms are complex systems and, therefore, require a rigorous analysis of the system´s complexity. The examples provided in our manuscript illustrate that formal modeling helps identify aspects that have been overlooked before even in a field that attracts as much scholarly attention as the personalization-polarization-hypothesis. Second, formal models that have been carefully calibrated can serve as a tool to test and improve personalization technology, and to explore the consequences of technology on societal dynamics before being implemented.<br />
+In order to better communicate these two insights, we rewrote large parts of the introduction and the conclusion section. In the introduction, we included the following paragraph.</p>
+<p>“In a nutshell, we demonstrate that models’ predictions about the effects of personalization on polarization hinge on assumptions about (i) individual behavior, (ii) individuals’ local information environment and local communication structure, and (iii) global characteristics of the whole communication network. We conclude that these aspects need to be studied both theoretically and empirically before one should draw conclusions about the effects of personalization and we criticize that important contributions to the debate have so far failed to do so. While we echo the warning that personalization might have serious effects on societal processes, we demonstrate that experts, politicians, and scientists leap to conclusions when they propose that personalization is responsible for increased polarization. Unlike other recent contributions to the debate [18,19], however, we do not conclude that personalization is an innocent technology, but point to gaps in the empirical literature that need to be filled before one can draw conclusions. Accordingly, we call for more research on communication in online environments, pointing to the potential of approaches that combine rigorous theoretical modeling with the emerging fields of data science and computational social science. While these fields provide innovative sources of data and powerful methods of data analysis, we argue that their potential may not be exploited if it is not combined with rigorous theoretical modeling of the complex dynamics emerging in online communication systems, an approach that is increasingly popular [20–22]. We also discuss how carefully calibrated formal models can inform the development of personalization technology that prevents undesired effects on opinion dynamics on the web.”</p>
+<p>Also the concluding section has been rewritten. The two final paragraphs address the two general take-home messages of the paper:</p>
+<p>“From our perspective, the most promising approach to deriving predictions about the future effects of personalization on opinion polarization is to develop empirically calibrated models, an endeavor that requires empirical and theoretical research from various disciplines [13]. Theoretical research is needed to identify those theoretical assumptions that have a critical impact on model predictions, as these assumptions need to be put to the test by empirical research. Our review has covered several aspects that require empirical investigation, but this list is not conclusive. To identify the most important mechanisms, modelers should invest more into comparing the predictions of alternative models [52,53,125–127]. Unfortunately, a recent review of the literature concluded that many contributors fail to highlight the similarities and differences between the model underlying their work and existing models [13], hampering the field’s ability to accumulate knowledge and move forward. To improve, modelers should invest more into identifying these critical model assumptions, understanding why their model generates outcomes that other models do not. Furthermore, theoretical work should not only derive predictions about when a given model generates certain outcomes, but should find conditions under which different models provide different predictions. These insights will point empirical researchers to the empirical settings where competing models can be tested against each other, which in turn will help modelers develop validated models.<br />
+The emerging fields of data science and computational social science provide novel computational tools, sources of data, and methods of analysis to study opinion dynamics in online environments. Without proper theoretical foundations, however, attempts to empirically quantify the amount of online polarization or network segregation will remain underutilized [128–130]. Informing research on the individual level, many online services offer application programming interfaces (APIs)  that provide researchers with information about the content that users share online. In tandem with novel methods of sentiment analysis and topic modeling, this may allow testing assumptions about who is communicating what content to whom on the Internet [95,131]. In addition, controlled online experiments shed light on how users adjust their opinions as a result of online communication [68,96,132–134]. On the local level, models need to be enriched with empirical information on how often users are exposed to online content on different online platforms and when they decide to contribute to online debates. Finally, there have been advances in gathering, storing, and analyzing detailed information about global-level factors [120–122]. In particular, there is considerable research on the structure of online communication networks, which make it possible to directly implement or regrow realistic communication networks in models of opinion dynamics [135–137]. When this empirical information is fed into a formal model of opinion dynamics, it will be possible to predict the collective dynamics arising from social influence and to study whether and to which degree personalization technology affects model dynamics.<br />
+Empirically validated models of social influence dynamics will not only make it possible to predict the consequences of web personalization, but they can also serve as a powerful tool to virtually experiment with alternative personalization algorithms and to develop technology that prevents undesired effects on public debate and opinion dynamics. Theoretically informed and empirically grounded computational models allow programmers to experiment with alternative specifications of personalization algorithms and analyze when they outperform each other on dimensions such as accuracy, scalability, user experience, and computational efficiency. In addition, validated models will make it possible to predict undesired effects of personalization technology on societal processes such as public debate, opinion polarization, and political decision-making. These predictions will yield new tools to understand and design new algorithms that generate the best browsing experience for individual users without harming societal dynamics. As communication technology is critical to deliberative democracy, tools that help us understand its consequences are urgently needed.”</p>
+<p>REVIEWER 2.</p>
+<p>Thank you very much for your careful review and the helpful comments. You greatly helped us improve the paper, pointing to missing information and unclear arguments. We have rewritten large parts of the manuscript and added new analyses, which we detail in the following. Below you find your comments (all capitalized) and our reactions.</p>
+<p>SUMMARY OF PAPER IN A FEW SENTENCES:<br />
+THE AUTHORS ARGUE THAT TO ADDRESS THE PERSONALIZATION- POLARIZATION HYPOTHESIS, A COMPLEX APPROACH IS NEEDED. IN THREE LEVELS OF ANALYSIS (INDIVIDUAL, LOC.AL, AND, GLOBAL) THE AUTHORS SET OUT THEIR TAKE ON HOW TO APPROACH THE PERSONALIZATION- POLARIZATION HYPOTHESIS, ENCOURAGING OTHER RESEARCHERS IN THE FIELD TO BUILD UPON THIS APPROACH.</p>
+<p>REASONS TO ACCEPT:<br />
+THE AUTHORS ADDRESS AN IMPORTANT TOPIC, AND AN INNOVATIVE WAY TO STUDY THIS TOPIC. THEIR DISCUSSION IN SECTION 3 IS VERY USEFUL TO GO BEYOND THE STATE OF THE ART.</p>
+<p>REASONS TO REJECT:<br />
+DESPITE THE MANUSCRIPT BEING QUITE LENGTHY, THERE IS NO ENGAGEMENT WITH THE KEY LITERATURE FROM POLITICAL SCIENCE/ POLITICAL COMMUNICATION ON THIS TOPIC. </p>
+<p>We added references to contributions to this literature reporting findings on ideological segregation of online and offline media and processes of opinion polarization:</p>
+<p>•	Morris JS. The Fox News factor. Harvard Int J Press. 10(3):56–79.<br />
+•	Stroud NJ. Media use and political predispositions: Revisiting the concept of selective exposure. Polit Behav. 30(3):341–66.<br />
+•	Barberá P. How Social Media Reduces Mass Political Polarization. Evidence from Germany, Spain, and the U.S. 2015.<br />
+•	Abramowitz AI, Saunders KL. Is polarization a myth? J Polit. 70(2):542–55.<br />
+•	Iyengar S, Hahn KS. Red Media, Blue Media: Evidence of Ideological Selectivity in Media Use. J Commun. 59(1):19-U6.<br />
+•	Peterson E, Goel S, Iyengar S. Partisan selective exposure in online news consumption: evidence from the 2016 presidential campaign. Polit Sci Res Methods. :1–17. </p>
+<p>MOREOVER, THE AUTHORS DO NOT PROVIDE CLEAR DEFINITION OF EITHER OF THE KEY CONCEPTS IN THE MANUSCRIPT. </p>
+<p>To better define the concept of personalization, we adjusted the first two paragraphs of Section 2. The first paragraph provides an intuitive definition and a set of examples. The second responds to a comment by Reviewer 1, acknowledging that there is a vast amounts of alternative approaches to personalization and identifying the central aspects of personalization that the debate about personalization and polarization is concerned with.</p>
+<p>“Personalization is ubiquitous on the Internet. Providers of Internet services seek to tailor their products to the needs and interests of individual users. Search engines, for instance, rank the results of users’ search queries according to the interests of the individual user. When the authors of the present article google the term “polarization”, for example, websites discussing political polarization should be ranked higher than websites of manufacturers selling “polarized” sunglasses, even though both websites contain the search term. Likewise, online markets recommend products based on the purchases of other customers who bought similar products in the past and online social networks sort incoming messages according to the similarity between the user and the source of the message. Personalization has tremendously improved online companies’ services, making it easier for users to navigate the immense and rapidly growing amount of online content. Personalization has also turned into a multibillion-dollar business area, increasing engagement on online platforms using this technology, and allowing advertisers to directly target potential customers.<br />
+Personalization algorithms have been developed for various online services including online social networks, search engines, and online markets [23–28]. What is more, for each of these services there is a vast number of different technical approaches to personalization. What these approaches share, however, is that they seek to infer individual users’ interests from information they provided, from their earlier behavior, and from the behavior of other individuals who share relevant attributes with the respective user. For instance, if a YouTube user regularly watches a certain car show on the platform, its algorithms will recommend other car-related content and content that other users who watched the same car show have selected in the past. As a consequence, users are exposed to content that is in one way or the other similar to the content they chose to consume earlier. This tendency to provide users to similar content and to limit their exposure to content that deviates from users’ interests and opinions is central to the debate about undesired social effects of the technology. Accordingly, we also focus on this central aspect, abstracting from the large variety of technical implementations of personalization.”</p>
+<p>In the new version of the paper, the concept of polarization is defined already in the first paragraph as “a dynamic where a population falls apart into subgroups with increasingly opposing opinions.” The definition is mentioned a second time on Page 4: “As opinions of users from the left end of the political spectrum grow more leftist and users identifying with rightist political views also grow more extreme, opinion differences between the political camps increase and the opinion distribution polarizes.”</p>
+<p>FOR A GREAT RECENT LIT REVIEW ON MEDIA DIVERSITY IN ONLINE ENVIRONMENT (AND POTENTIAL RISKS), SEE HTTPS://WWW.TANDFONLINE.COM/DOI/FULL/10.1080/21670811.2020.1764374</p>
+<p>Thanks for pointing us to the brand-new paper. We now refer to it on Page 4. </p>
+<p>MOREOVER, THE AUTHORS DO NOT GIVE ANY RECOMMENDATIONS ON HOW TO (NOT) USE THE METHOD FOR A BROAD VARIETY OF SCHOLARS INTERESTED IN THIS HYPOTHESIS.</p>
+<p>We feel that an introduction to the complexity approach is out of the scope of this paper, as complexity research is a vast field comprised of researchers from diverse disciplines who, in addition, also use a variety of empirical and theoretical methods. However, to respond to your comment, we tried to make clearer recommendations about future research in the conclusion section. Rather than advocating the complexity approach in general, we now argue that the integration of empirical and theoretical research is required and point to gaps in the empirical and the theoretical literature.</p>
+<p>“We advocate here an approach that combines formal theoretical modeling with empirical research. On the one hand, a purely empirical approach to testing the personalization-polarization hypothesis can lead to false conclusions. Assume, for instance, that an empirical study quantified the degree of personalization-induced homophily in various settings and found no correlation with opinion polarization in these settings. This finding certainly challenges the personalization-polarization hypothesis. However, in complex systems effects can take very long to unfold and can then be very abrupt and strong. In Panel A of Figure 1, for instance, polarization remained low for a long time, until it grew rapidly [52]. In addition, personalization algorithms are still being elaborated. The fact that they have not contributed to opinion polarization so far, does not imply that further advances in personalization will also remain without negative effects [86]. This suggests that the empirical observation that personalization so far appears to be relatively mild and its effects on opinions modest [18,41], should not lead one to conclude that personalization will remain an innocent technology in the future. On the other hand, also a purely theoretical approach will fail to generate reliable predictions about personalization effects, even when analytical and computational tools are used to derive predictions. Our review of the opinion-dynamics literature provided several examples of modeling decisions that can have big impact on the model’s predictions. As a consequence, models relying on assumptions that have not been backed up by rigorous empirical research in the context of online social networks may fail to make true predictions and, in addition, will not be considered reliable tools for anticipating future opinion dynamics.<br />
+From our perspective, the most promising approach to deriving predictions about the future effects of personalization on opinion polarization is to develop empirically calibrated models, an endeavor that requires empirical and theoretical research from various disciplines [13]. Theoretical research is needed to identify those theoretical assumptions that have a critical impact on model predictions, as these assumptions need to be put to the test by empirical research. Our review has covered several aspects that require empirical investigation, but this list is not conclusive. To identify the most important mechanisms, modelers should invest more into comparing the predictions of alternative models [52,53,126–128]. Unfortunately, a recent review of the literature concluded that many contributors fail to highlight the similarities and differences between the model underlying their work and existing models [13], hampering the field’s ability to accumulate knowledge and move forward. To improve, modelers should invest more into identifying these critical model assumptions, understanding why their model generates outcomes that other models do not. Furthermore, theoretical work should not only derive predictions about when a given model generates certain outcomes, but should find conditions under which different models provide different predictions. These insights will point empirical researchers to the empirical settings where competing models can be tested against each other, which in turn will help modelers develop validated models. ”</p>
+<p>To be sure, we do not argue that the complexity approach is superior to contributions from other fields. In contrast, the three levels of analysis that our manuscript is concerned with show that an interdisciplinary effort is needed.</p>
+</div></div></div></div></fieldset>
+</div><br/>
+				</fieldset>
+				
+    </div>
+
+    <div id="admin-review">
+			</div>
+
+	<div id="decision">
+			</div>
+
+
+
+
+          <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first"><span><a href="../user/login%3Fdestination=comment%252Freply%252F671%23comment-form.html">Log in</a> to post comments</span></li><li class="camera_ready_files_field_paper last"></li></ul></nav>
+    
+    <section id="comments" class="comment-wrapper">
+
+          <h2 class="title">
+      1 Comment    </h2>
+      
+  <a id="comment-105"></a>
+<article class="comment odd first last clearfix" about="/comment/105#comment-105" typeof="sioc:Post sioct:Comment">
+
+  
+  
+      <header class="comment-header">
+ 
+          <h3 property="dc:title" datatype="" class="comment-title"><a href="../comment/105.html#comment-105" rel="bookmark">Meta-Review by Editor</a></h3>
+    
+        
+    <p class="comment-submitted"><span property="dc:date dc:created" content="2021-04-07T03:52:06-04:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/tobias-kuhn" typeof="sioc:UserAccount" property="foaf:name" datatype="">Tobias Kuhn</span> on <time datetime="2021-04-07T03:52:06Z"><span class="date-time">Wed, 04/07/2021 - 03:52</span></time></span><p>
+  </header>
+    
+  <div class="comment-content">
+    <span rel="sioc:reply_of" resource="/paper/complex-link-between-filter-bubbles-and-opinion-polarization-0" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Among the three reviewers, there is still considerable disagreement, specifically on the appropriateness of this article for this specific journal (in the form of a position paper). I have carefully considered the arguments by original reviewer 1 echoed and repeated by new reviewer 2 on one side, and the positive reviews on the other side. I would argue that this paper is indeed in scope of the journal, that the authors have done a commendable job in addressing the issues presented by the reviewers. I think the article is a valuable addition to the journal as a position paper and therefore decide to accept the paper. </p>
+<p>We do ask the authors to please take the reviews in this second round into account when preparing the final version. Specifically we ask <br />- to use the suggestions (typos and terminology) by reviewer 1 to improve the paper<br />- to consider including a comment on the suggestions made by reviewer 3 <br />- to consider addressing the concern raised by reviewer 2: "The major missing ingredient is a conclusion that states: this is what data scientists can learn from these insights from taking a social science perspective." Even though to a certain extent this is written in the conclusion section, a suggestion is to more directly speak to the data scientist readers of this paper and list what can be learned. </p>
+<p>Victor de Boer (<a href="https://orcid.org/0000-0001-9079-039X">https://orcid.org/0000-0001-9079-039X</a>)</p>
+</div></div></div>  </div>
+
+  
+      <nav class="clearfix"><ul class="links inline"><li class="comment_forbidden first last"><span><a href="../user/login%3Fdestination=comment%252Freply%252F671%23comment-form.html">Log in</a> to post comments</span></li></ul></nav>
+  
+</article>
+
+  
+</section>
+
+  </div>
+  </article>
+
+  </div></div>                      </div>
+
+                      
+                    </div>
+                  </div>
+
+                </section>
+
+                
+              </div>
+            </div>
+
+                        
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+    
+          <div id="footer-wrapper">
+        <div class="container clearfix">
+          <footer class="clearfix" role="contentinfo">
+            <div class="region region-footer"><div class="region-inner clearfix"><div id="block-block-16" class="block block-block no-title odd first last block-count-4 block-region-footer block-16" ><div class="block-inner clearfix">  
+  
+  <div class="block-content content"><p style="text-align:center;"><a href="https://www.iospress.nl/disclaimer/" target="_blank">Disclaimer</a> | <a href="https://content.iospress.com/page/privacy" target="_blank">Privacy Policy</a> | Data Science is Published by <a href="http://www.iospress.com" target="_blank">IOS Press</a>, Copyright 2023</p>
+</div>
+  </div></div></div></div>            <p class="attribute-creator"></p>
+          </footer>
+        </div>
+      </div>
+    
+  </div>
+</div>
+  </body>
+</html>
